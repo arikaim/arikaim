@@ -1,0 +1,35 @@
+{%- macro input(attributes,value) %}
+{%  if value is defined %}
+{%  set attributes = attributes|merge({"value": value}) %}
+{%  endif %}
+{{  "input"|singleTag(attributes) }}
+{%  endmacro input %}
+
+{%- macro field(field,value) %}
+{%  import _self as form %}
+{% if field is iterable and field.type != "custom" %}
+<div class="field">
+    <label>{{ field.label }}</label>
+    {{ form.input(field,value) }}
+</div>
+{% endif %}
+{%  endmacro field %}
+
+{%- macro fields(fields,values) %}
+{% import _self as form %}
+{% for field in fields %}
+    {% if field.type == "fields" %}   
+    <div class="fields">
+        {% for sub_field in field %}      
+        {{ form.field(sub_field,attribute(values,sub_field.name)) }}
+        {% endfor %}                  
+    </div>
+    {% else %}
+        {% if field.type == "hidden" %}
+        {{ form.input(field,attribute(values,field.name)) }}
+        {% else %}        
+        {{ form.field(field,attribute(values,field.name)) }}
+        {% endif %}
+    {% endif %}    
+{% endfor %}
+{% endmacro fields %}

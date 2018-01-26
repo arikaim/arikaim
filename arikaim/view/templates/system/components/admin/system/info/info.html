@@ -1,0 +1,45 @@
+{% set info = executeMethod("System\\System","getSystemInfo")  %}
+<div class="ui items">
+    <div class="item">
+        <div class="content">
+            <div class="header">
+                <i class="icon info circular"></i>
+                Arikaim 
+                <div class="ui label">{{ info.cms_version }}</div>              
+            </div>
+        </div>
+    </div>     
+    <div class="item">
+        <div class="content">               
+            <div class="ui header accordion" id="php_extensions_info">
+                <div class="title">                                       
+                    <i class="icon code circular"></i> 
+                    <i class="dropdown icon"></i>
+                    PHP 
+                    <div class="ui label">{{ info.php_version }}</div>    
+                </div>                                     
+                <div class="content margin-left-2">
+                {{ component("system:admin/system/info/php-info") }}
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="item">
+        <div class="content">
+            <div class="header">
+                <i class="icon database circular"></i>
+                {{ labels.database.content }} <span class="margin-left-1 ">{{ info.database.driver }}</span> 
+                <div class="ui label">{{ info.database.version }}</div>
+            </div>                             
+        </div>
+    </div>    
+    <div class="item">
+        <div class="content">
+            <div class="header">
+                <i class="icon server circular"></i>
+                {{ labels.server.content }} <span class="margin-left-1 small text">{{ info.os_name }}</span> 
+                <span class="small text">{{ info.os_version }} {{ info.os_node }}</span>
+            </div>                             
+        </div>
+    </div>    
+</div>

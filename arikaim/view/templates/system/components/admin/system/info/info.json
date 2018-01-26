@@ -1,0 +1,15 @@
+{
+    "component":{      
+        "labels": {
+            "version": {
+                "content": "Version"
+            },
+            "server": {
+                "content": "Server"
+            },
+            "database": {
+                "content": "Database"
+            }
+        }  
+    }
+}

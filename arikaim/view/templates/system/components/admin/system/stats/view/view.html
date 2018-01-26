@@ -1,0 +1,43 @@
+{% import "/macros/pagination.html" as pagination %}
+{% set data = loadData("Logs","","created DESC",true,true) %}
+<div class="ui text menu">
+    <div class="item right aligned">
+        {{ pagination.pageSizeMenu(data.paginator.per_page,page_size_menu) }}
+    </div>
+</div>
+<table class="ui compact table">
+    <thead>
+        <tr>
+            <th>
+                <a href="#" class="rows-order-link" order-field="created" ><i class="icon caret down"></i></a>
+                {{ columns.date }}
+            </th>
+            <th>Url</th>
+            <th>
+                <a href="#" class="rows-order-link" order-field="method" ><i class="icon caret down"></i></a>
+                {{ columns.method }} 
+            </th>    
+            <th>{{ columns.user_agent }}</th>     
+            <th>{{ columns.client_ip }}</th>           
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data.rows %}
+        <tr>
+            <td>{{ row.created|dateFormat }}</td>
+            <td>{{ row.url }}</td>
+            <td>{{ row.method }}</td>
+            <td>{{ row.user_agent }}</td>
+            <td>{{ row.ip_address }}</td>
+        </tr>
+    {% endfor %}
+    {% if data.rows is empty %}
+        <tr>
+            <td colspan="5">{{ messages.empty }}</td>
+        </tr>
+    {% endif %}
+    </tbody>  
+</table>
+<div class="margin-top-1">
+    {{ component("system:paginator",data.paginator) }}
+</div>

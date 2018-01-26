@@ -1,0 +1,13 @@
+{
+    "page": {
+        "brand": {
+            "title"  : "Arikaim",
+            "image" : {
+                "src" : "arikaim_logo_3_64x64.png"
+            }   
+        },
+        "labels": {
+            "version": "Version"
+        }
+    }
+}

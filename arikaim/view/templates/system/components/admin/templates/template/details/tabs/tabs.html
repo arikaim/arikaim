@@ -1,0 +1,21 @@
+{% import "/macros/list.html" as list %}
+{% set data = execute("getTemlateDetails",template_name) %}
+
+<div class="ui top pointing secondary small menu" id="templates_details_tab">
+    <a class="item active" data-tab="themes_tab">{{ themes_tab.content }}</a>    
+    <a class="item" data-tab="components_tab">{{ components_tab.content }}</a>    
+    <a class="item" data-tab="macros_tab">{{ macros_tab.content }}</a>  
+    <a class="item" data-tab="pages_tab">{{ pages_tab.content }}</a>   
+</div>
+<div class="ui top tab segment active {{ themes_tab.class }}" data-tab="themes_tab">
+    {{ list.itemsList(data.themes.items,"file text outline") }}
+</div>
+<div class="ui top tab segment {{ themes_tab.class }}" data-tab="components_tab">
+    {{ list.itemsList(data.components,"code") }}
+</div>
+<div class="ui top tab segment {{ themes_tab.class }}" data-tab="macros_tab">
+    {{ list.itemsList(data.macros,"settings") }}
+</div>
+<div class="ui top tab segment {{ pages_tab.class }}" data-tab="pages_tab">
+    {{ list.itemsList(data.pages,"file text outline") }}
+</div>

@@ -1,0 +1,19 @@
+{% import "/macros/include.html" as include %}
+{% import "/macros/head.html" as head %}
+<head lang="{{ getLanguageCode() }}">
+    <title>{{ title }}</title>    
+    <meta charset="utf-8">  
+    {{ head.metaHttp("Content-Type",content_type) }}         
+    {{ head.metaHttp("Cache-Control",cache_control) }}    
+    {{ head.meta("description",description) }}
+    {{ head.meta("keywords",keywords) }}
+    {{ head.meta("application-name",application_name) }}
+    {{ head.meta("googlebot",googlebot) }}
+    {{ head.meta("robots",robots) }}
+    {{ head.meta("viewport",viewport) }}
+    {{ head.base(base_url) -}}
+    {{ head.favicon(favicons) -}}
+    {{ include.includeLibraries() -}}   
+    {{ include.includeTemplateFiles() -}}
+    {{ include.includeComponentFiles() }}
+</head>

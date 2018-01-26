@@ -1,0 +1,12 @@
+{% set events = loadData("Events") %}
+{% if events is empty %}
+<div class="ui message">
+    {{ messages.empty }}
+</div>
+{% else %}
+<div class="ui accordion events-list">
+{% for event in events %}
+    {{ component("system:admin.system.events.event",{event: event}) }}
+{% endfor %}
+</div>
+{% endif %}

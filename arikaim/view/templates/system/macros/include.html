@@ -1,0 +1,63 @@
+{%- macro includeTemplateFiles() -%}
+{%- set template_js_files  = getTemplateJSFiles() %}
+{%  set template_css_files = getTemplateCSSFiles() %}
+{%- if template_js_files or template_css_files %} 
+{%  set page_type = getPageType() %}
+{%  set files_path = template_url %}
+{%  if page_type == 2 %}
+{%  set files_path = system_template_url %}
+{%  endif %}
+{%- set theme = getTheme() %}
+{%- if theme -%} 
+<!-- include theme file -->
+    {% for item in theme -%}
+    <link rel="stylesheet" type="text/css" href="{{ files_path }}/css/{{ item.file }}"> 
+    {% endfor -%}    
+{% endif %}
+<!-- include template files -->
+{% for file in template_js_files -%}
+    <script src="{{ files_path }}/js/{{ file }}" type="text/javascript"></script>
+{% endfor %}
+{% for file in template_css_files %}
+    <link rel="stylesheet" type="text/css" href="{{ files_path }}/css/{{ file }}">      
+{% endfor %}
+{% endif -%}
+{% endmacro includeTemplateFiles -%}
+
+{%- macro includeComponentFiles() %}
+{% set include_components_js  = getComponentsJSFiles() %}
+{% set include_components_css = getComponentsCSSFiles() %}
+{% if include_components_js or include_components_css %}
+<!-- include component files -->
+    {% for js_file in include_components_js -%}
+        <script src="{{ js_file }}" type="text/javascript"></script>
+    {% endfor -%}
+    {% for css_file in include_components_css -%}
+        <link rel="stylesheet" type="text/css" href="{{ css_file }}">
+    {% endfor -%}
+{% endif -%}
+{% set include_page_js  = getPageJSFiles() %}
+{% set include_page_css = getPageCSSFiles() %}
+{% if include_page_js or include_page_css %}
+<!-- include page files -->
+    {% for file in include_page_js -%}
+        <script src="{{ file }}" type="text/javascript"></script>
+    {%- endfor -%}
+    {%- for file in include_page_css %}
+        <link rel="stylesheet" type="text/css" href="{{ file }}">      
+    {%- endfor -%}
+{%- endif -%}
+{%- endmacro includeComponentFiles -%}
+
+{%- macro includeLibraries() -%}
+{%- set files = getLibraryFiles() -%}
+<!-- include lib files -->
+{%- for file in files -%}           
+    {%- if file.type == "js" %} 
+    <script type="text/javascript" src="{{ ui_library_url }}{{ file.name }}/{{ file.file }}"></script>
+    {%- endif %}
+    {%- if file.type == "css" %} 
+    <link rel="stylesheet" type="text/css" href="{{ ui_library_url }}{{ file.name }}/{{ file.file }}">
+    {%- endif -%}
+{%- endfor %}
+{%-  endmacro includeLibraries -%}

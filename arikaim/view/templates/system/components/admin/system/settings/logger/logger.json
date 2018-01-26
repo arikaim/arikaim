@@ -1,0 +1,16 @@
+{
+    "component":{
+        "title": {
+            "content": "Logger"
+        },
+        "fields": {
+            "logger": {
+                "label": "System Logger",
+                "description": "Logs errors, warrnigs and system messages."              
+            },
+            "stats": {
+                "label": "Site stats"             
+            }
+        }
+    }
+}

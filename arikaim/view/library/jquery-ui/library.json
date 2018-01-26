@@ -1,0 +1,9 @@
+{
+    "library": {
+        "version": "1.12.1",
+        "description": "JQuery user interface library",
+        "files": [
+            "jquery-ui.min.js"
+        ]    
+    }
+}

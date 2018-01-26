@@ -1,0 +1,33 @@
+{
+    "component": {       
+        "labels": {
+            "requirements": {
+                "content": "Requirements"
+            },
+            "database": {
+                "content": "Database",
+                "sub_title": "Connection settings"
+            }
+        },           
+        "fields": {
+            "database": {
+                "label": "Database Name"
+            },
+            "user": {
+                "label": "Database Username"
+            },
+            "password": {
+                "label": "Database Password"
+            },
+            "host": {
+                "label": "Host"
+            },
+            "type": {
+                "label": "Type"
+            }
+        }
+    },
+    "info": {
+        "title": "Install Config component" 
+    }
+}

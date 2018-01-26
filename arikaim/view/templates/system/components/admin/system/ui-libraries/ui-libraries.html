@@ -1,0 +1,35 @@
+{% set items = executeMethod("View\\UiLibrary","scan") %}
+<div class="ui stackable cards">
+{% for library in items %}
+{% set files = executeMethod("View\\UiLibrary","getFiles",library.name) %}
+    <div class="ui card">
+        <div class="content">    
+            <i class="ui left floated cube icon"></i>   
+            <div class="right floated meta">
+                <div class="ui horizontal label">               
+                    {{ labels.version }} <span class="bold">{{ library.version }}</span>
+                </div>
+            </div>        
+            <div class="header margin-left-1">
+                {{ library.name }}                
+            </div>  
+            <div class="description margin-top-1">
+                {{ library.description }}
+                <div class="ui divider"></div>
+                <div class="bold">Files</div>
+                <div class="list">                  
+                {% for file in files %}
+                    <div class="item">
+                        <i class="file code outline icon"></i>
+                        {{ file }}
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="meta">
+                
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>

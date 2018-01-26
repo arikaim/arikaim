@@ -1,0 +1,18 @@
+{
+    "component": {
+        "title": "Confirm",
+        "icon": {
+            "class": "blue"
+        },
+        "description": "",
+        "buttons": {
+            "cancel": {
+                "content": "Cancel"
+            },
+            "confirm": {
+                "class" : "blue",
+                "content": "Confirm"
+            }
+        }
+    }
+}

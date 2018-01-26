@@ -1,0 +1,9 @@
+{
+    "component":{
+        "labels": {
+            "extension": "Extension",
+            "active": "Active",
+            "priority": "Priority"
+        }
+    }
+}

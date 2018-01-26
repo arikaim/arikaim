@@ -1,0 +1,27 @@
+{% import "/macros/date.html" as date %}
+{% set time_zone = getOption("time.zone") %}
+{% set date_format = getOption("date.format") %}
+{% set time_format = getOption("time.format") %}
+<div class="ui grid">    
+    <div class="ui three wide column segment">
+        <div class="ui block header">
+            <i class="icon calendar mini grey"></i>
+            <h4 class="content">{{ title.content }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui equal width form"> 
+            <div class="field">
+                <label>{{ fields.time_zone.label }}</label>              
+                {{ date.timeZoneDropdown(time_zone,fields.time_zone) }}
+            </div>
+            <div class="field">
+                <label>{{ fields.date_format.label }}</label>                
+                {{ date.dateFormatDropdown(date_format,fields.date_format) }}                  
+            </div>
+            <div class="field">
+                <label>{{ fields.time_format.label }}</label>   
+                {{ date.timeFormatDropdown(time_format,fields.time_format) }}                  
+            </div>
+        </div>
+    </div>
+</div>

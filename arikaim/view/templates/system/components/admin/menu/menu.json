@@ -1,0 +1,26 @@
+{
+    "component": {
+        "buttons": {            
+            "extensions": { 
+                "content": "Extensions",
+                "sub_title": "View,Install,Update" 
+            }, 
+            "templates": { 
+                "content": "Templates",
+                "sub_title": "View,Change" 
+            }, 
+            "languages": { 
+                "content": "Languages",
+                "sub_title": "View,Edit,Add" 
+            },
+            "system": { 
+                "content": "System",
+                "sub_title": "Settings,Update,Logs, Stats, System Info" 
+            },    
+            "logout": { 
+                "content": "Log out",
+                "sub_title": "Exit"
+            }     
+        }
+    }
+}

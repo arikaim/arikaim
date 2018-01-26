@@ -1,0 +1,10 @@
+{
+    "component":{  
+        "labels": {
+            "themes": "Themes",
+            "components": "Components",
+            "macros": "Macros",
+            "pages": "Pages"           
+        }      
+    }
+}

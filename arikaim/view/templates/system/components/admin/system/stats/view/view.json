@@ -1,0 +1,17 @@
+{
+    "component":{
+        "columns": {
+            "date": "Date",
+            "method": "Method",
+            "user_agent": "User Agent",
+            "client_ip": "Client IP"
+        },
+        "page_size_menu": {
+            "title": "Rows per page",
+            "label": ""
+        },
+        "messages": {
+            "empty": "..."
+        }
+    }
+}

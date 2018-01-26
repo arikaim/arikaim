@@ -1,0 +1,15 @@
+{
+    "component": {
+        "login": {
+            "content": "Log in"
+        },
+        "items": {
+            "settings": { 
+                "content": "Change details"
+            },
+            "logout": { 
+                "content": "Log out"
+            }
+        }
+    }
+}

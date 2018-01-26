@@ -1,0 +1,42 @@
+{% set options = getOptions("mailer") %}
+<div class="ui grid">    
+    <div class="ui three wide column segment">
+        <div class="ui block header">
+            <i class="icon mail outline mini grey"></i>
+            <h4 class="content">{{ title.content }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="field">
+            <div class="ui slider checkbox change-option">
+                <input name="mailer.use.sendmail" type="checkbox" value="1" {{ options.mailer.use.sendmail|ifthen(true,'checked') }} >
+                <label class="bold">{{ fields.use_sendmail.label }}</label>
+            </div>
+        </div> 
+        <div class="ui hidden divider"></div>
+        <form class="ui equal width form" id="mailer_settings_form">             
+            <h4 class="ui dividing header">SMTP Server</h4>
+            <div class="field">
+                <label>{{ fields.smtp_host.label }}</label> 
+                <input name="mailer.smpt.host" value="{{ options.mailer.smpt.host }}" {{ fields.smtp_host.placeholder|attr('placeholder') }}>                   
+            </div>   
+            <div class="field">
+                <label>{{ fields.smtp_port.label }}</label> 
+                <input name="mailer.smpt.port" value="{{ options.mailer.smpt.port }}" {{ fields.smtp_port.placeholder|attr('placeholder') }}>                   
+            </div> 
+            <div class="field">
+                <label>{{ fields.smtp_user_name.label }}</label> 
+                <input name="mailer.username" value="{{ options.mailer.username }}" {{ fields.smtp_user_name.placeholder|attr('placeholder') }}>                   
+            </div>
+            <div class="field">
+                <label>{{ fields.smtp_password.label }}</label> 
+                <input name="mailer.password" value="{{ options.mailer.password }}" {{ fields.smtp_password.placeholder|attr('placeholder') }}>                   
+            </div>
+            <div class="ui horizontal divider"></div>
+            <button class="ui button green save-button">{{ buttons.save.content }}</button>
+            <div class="ui error message form-errors"></div>
+            <div class="ui positive hidden message" id="message">
+                <div class="header"></div>
+            </div>  
+        </form>
+    </div>
+</div>

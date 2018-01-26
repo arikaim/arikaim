@@ -1,0 +1,18 @@
+{
+    "component":{
+        "text": {
+            "current": "Current",
+            "system": "System",
+            "version": "Version",
+            "requires": "Requires",
+            "buttons": {
+                "details": {
+                    "content": "Details"
+                },
+                "set_current": {
+                    "content": "Set Current"
+                }
+            }
+        }
+    }
+}

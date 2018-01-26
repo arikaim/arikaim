@@ -1,0 +1,48 @@
+{% import "/macros/extensions.html" as macros %}
+{% import "/macros/list.html" as list %}
+{% set data = executeMethod("Extension\\ExtensionsManager","getExtensionDetails",extension_name)  %}
+
+<div class="ui six basic mini buttons">
+    <div class="ui button popup-button">
+        <i class="icon database linkify" title="{{ labels.routes }}"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui dividing header center aligned">{{ labels.routes }}</h5>    
+        {{ macros.routesList(data.routes,"linkify") }}
+    </div>
+    <div class="ui button icon popup-button">
+        <i class="icon calendar" title="{{ labels.events }}"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.events }}</h5>        
+        {{ list.itemsList(data.events,"calendar") }}
+    </div>
+    <div class="ui button icon popup-button">
+        <i class="icon database" title="{{ labels.database }}"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.database }}</h5>
+        {{ list.itemsList(data.macros,"settings") }}
+    </div>       
+    <div class="ui button icon popup-button">
+        <i class="icon file text outline"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui dividing header center aligned">{{ labels.pages }}</h5>    
+        {{ list.itemsList(data.pages,"file text outline") }}
+    </div>
+    <div class="ui button icon popup-button">
+        <i class="icon code" title="{{ labels.components }}"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.components }}</h5>        
+        {{ list.itemsList(data.components,"code") }}
+    </div>
+    <div class="ui button icon popup-button" >
+        <i class="icon settings" title="{{ labels.macros }}"></i>
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.macros }}</h5>
+        {{ list.itemsList(data.macros,"settings") }}
+    </div>        
+</div>

@@ -1,0 +1,13 @@
+{
+    "component": {
+        "title": "Install",        
+        "buttons": {
+            "install": {
+                "content": "Install"
+            },
+            "continue": {
+                "content": "Continue"
+            }
+        }
+    }
+}

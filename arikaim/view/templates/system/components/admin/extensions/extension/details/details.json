@@ -1,0 +1,13 @@
+{
+    "component":{
+        "labels": {
+            "routes": "Routes" ,           
+            "database": "Database",
+            "events": "Events",
+            "template": "Template",        
+            "components": "Components",
+            "pages": "Pages",               
+            "macros": "Macros"
+        }
+    }
+}

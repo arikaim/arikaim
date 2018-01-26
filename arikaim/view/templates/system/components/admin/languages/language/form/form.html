@@ -1,0 +1,32 @@
+{% import "/macros/countries.html" as countries %}
+{% if uuid is defined %}
+{% set key = {"uuid":uuid} %}
+{% set values = loadDataRow("Language",key) %}
+{% endif %}
+<form class="ui equal width form" id="language_form">  
+    <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">  
+    <div class="field">
+        <label>{{ title.label }}</label>
+        <input type="text" name="title" id="title" {{ title.placeholder|attr('placeholder') }} value="{{ values.title }}">  
+    </div>
+    <div class="fields">
+        <div class="field">
+            <label>{{ code.label }}</label>
+            <input type="text" name="code" id="code" {{ code.placeholder|attr('placeholder') }} value="{{ values.code }}">  
+        </div>    
+        <div class="field">
+            <label>{{ code_3.label }}</label>
+            <input type="text" name="code_3" id="code_3" {{ code_3.placeholder|attr('placeholder') }} value="{{ values.code_3 }}">  
+        </div>             
+    </div>   
+    <div class="field">
+        <label>{{ native_title.label }}</label>
+        <input type="text" name="native_title" id="native_title" {{ native_title.placeholder|attr('placeholder') }} value="{{ values.native_title }}">  
+    </div>                   
+    <div class="field">
+        <label>Country</label>
+        {{ countries.countriesList(values.country_code,country.label,"country_code") }}
+    </div>
+    <button class="ui button green save-button" id="save_language_button">{{ save_button.content }}</button>
+    <div class="ui error message form-errors"></div>
+</form>

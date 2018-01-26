@@ -1,0 +1,13 @@
+{
+    "component": {
+        "title": {
+            "content": "Edit Language"
+        },
+        "menu": {
+            "label": "Select Language",
+            "name" : "language",
+            "id": "language_dropdown",
+            "class": "teal"
+        }
+    }
+}

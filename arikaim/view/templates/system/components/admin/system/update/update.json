@@ -1,0 +1,12 @@
+{
+    "component":{
+        "labels":{
+            "version": "Version"
+        },
+        "buttons": {
+            "update": {
+                "content": "Update"
+            }
+        }     
+    }
+}

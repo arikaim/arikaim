@@ -1,0 +1,30 @@
+{% set php_extensions = executeMethod("System\\System","getPhpExtensions")  %}
+{% set php_stream_wrappers = executeMethod("System\\System","getStreamWrappers") %}
+{% set pdo_drivers = executeMethod("System\\System","getPdoDrivers") %}
+<div class="small text">PDO Drivers</div>
+{% for item in pdo_drivers %}
+<div class="ui left pointing label">{{ item }}</div>
+{% endfor %}
+<div class="ui horizontal divider"></div>
+<div class="small text">Stream Wrappers</div>
+{% for item in php_stream_wrappers %}
+<div class="ui left pointing label">{{ item }}</div>
+{% endfor %}
+<div class="ui horizontal divider"></div>
+<div class="small text">Extensions</div>
+<div class="ui mini list">
+{% for item in php_extensions %}
+    <div class="item">
+        <i class="icon puzzle grey"></i>
+        <div class="content">
+            <div class="header">{{ item.name }}
+            {% if item.version != "" %}
+                <span class="small text">
+                    <div class="ui mini label">{{ version_label.content }} {{ item.version }}</div>
+                </span>
+            {% endif %}
+            </div>         
+        </div>
+    </div>
+{% endfor %}
+</div>   

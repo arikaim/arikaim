@@ -1,0 +1,25 @@
+{% set requirements = executeMethod("System\\System","checkSystemRequirements") %}
+<div class="ui container margin-top-2">
+    <div class="ui very padded segment">
+        <h2 class="ui header">{{ title }}</h2>
+        <div class="ui divider"></div>
+        <div class="ui items">
+            {{ component("system:admin/install/config",{'requirements': requirements}) }}
+        </div>       
+        {{ component("system:progress-bar") }}      
+        <div class="ui horizontal divider"></div>     
+        {% if requirements.errors is empty %}
+        {% set hide = "hidden" %}
+        {% endif %}
+        <div class="ui icon error message {{ hide }}" id="errors">            
+            <ul class="ui list">           
+            {% for error in requirements.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}                
+            </ul>          
+        </div>
+        <div class="ui horizontal divider"></div>
+        <button class="ui button blue large" id="install_button">{{ buttons.install.content }}</button>
+        <button class="ui button olive aligned large" id="continue_button">{{ buttons.continue.content }}</button>
+    </div>
+</div>

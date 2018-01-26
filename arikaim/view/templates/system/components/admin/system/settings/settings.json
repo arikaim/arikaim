@@ -1,0 +1,21 @@
+{
+    "component":{
+        "links": {
+            "date": {
+                "content": "Date / Time"
+            },
+            "user": {
+                "content": "Control Panel User"
+            },
+            "numbers": {
+                "content": "Numbers"
+            },
+            "mailer": {
+                "content": "Mailer"
+            },
+            "logger": {
+                "content": "Logger"
+            }
+        }
+    }
+}

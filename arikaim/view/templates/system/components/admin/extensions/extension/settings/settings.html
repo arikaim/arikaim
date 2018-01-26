@@ -1,0 +1,12 @@
+{% import "/macros/extensions.html" as extensions %}
+<div class="ui three column centered grid">
+    <div class="column center aligned">
+        {{ extensions.extensionsDropdown(extension_name) }}
+    </div>                
+</div>    
+<div class="ui horizontal divider"></div>
+<div id="extension_details">
+{% if extension_name != "" %}
+{{ component("system:admin/extensions/extension.settings/tabs",{extension_name : extension_name}) }}
+{% endif %}
+</div>

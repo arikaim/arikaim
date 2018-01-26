@@ -1,0 +1,16 @@
+{
+    "component":{        
+        "themes_tab": {
+            "content": "Themes"
+        },
+        "components_tab": {
+            "content": "Components"
+        },
+        "macros_tab": {
+            "content": "Macros"
+        },
+        "pages_tab": {
+            "content": "Pages"
+        }
+    }
+}

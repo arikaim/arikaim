@@ -1,0 +1,25 @@
+{
+    "component":{
+        "settings": {
+            "content": "Settings"
+        },
+        "update": {
+            "content": "Update"
+        },
+        "logs": {
+            "content": "Logs"
+        },
+        "stats": {
+            "content": "Stats"
+        },
+        "events": {
+            "content": "Events"
+        },
+        "system_info": {
+            "content": "System Info"
+        },       
+        "ui_libraries": {
+            "content": "UI Libraries"
+        }
+    }
+}

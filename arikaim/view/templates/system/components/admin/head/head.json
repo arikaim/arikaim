@@ -1,0 +1,10 @@
+{
+    "component": {
+        "class" : "",
+        "id"    : "",
+        "title" : "Arikaim Control Panel",
+        "viewport": {
+            "scale": "1.0"
+        }       
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "component":{
+        "title": {
+            "content": "Mailer"
+        },
+        "fields": {
+            "use_sendmail": {
+                "label": "Use Sendmail"                
+            },
+            "smtp_host": {
+                "label": "Host",
+                "placeholder": "Enter SMTP Host"
+            },
+            "smtp_port": {
+                "label": "Port",
+                "placeholder": "Enter SMTP Port"
+            },
+            "smtp_user_name": {
+                "label": "Username",
+                "placeholder": "Enter SMTP Username"
+            },
+            "smtp_password": {
+                "label": "Password",
+                "placeholder": "Enter SMTP Password"
+            }
+        },
+        "buttons": {
+            "save": {
+                "content": "Save"
+            }
+        },
+        "messages": {
+            "save": "Mailer settings saved."
+        }
+    }
+}

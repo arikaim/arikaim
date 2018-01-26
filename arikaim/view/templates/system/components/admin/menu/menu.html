@@ -1,0 +1,18 @@
+{% import "/macros/menu.html" as menu %}
+<div class="ui divider"></div>
+<div class="ui vertical fluid stackable dark-background pointing menu inverted" id="extensions_menu">
+    {{ component("system:admin/menu/extensions") }}
+</div>
+<div class="ui horizontal divider">
+    <h5 class="tiny header">
+        <button id="system_menu_button" class="ui olive icon basic button mini circular"><i class="dropdown icon"></i></button>
+    </h5>
+</div>
+<div class="ui vertical fluid stackable pointing menu dark-background inverted" id="system_menu">
+    {{ menu.adminMenuItem("system:admin.extensions","",buttons.extensions.content,"puzzle","admin-menu-link",buttons.extensions.sub_title)  }}
+    {{ menu.adminMenuItem("system:admin.templates","",buttons.templates.content,"browser","admin-menu-link",buttons.templates.sub_title)    }}
+    {{ menu.adminMenuItem("system:admin.languages","",buttons.languages.content,"globe","admin-menu-link",buttons.languages.sub_title)      }}
+    {{ menu.adminMenuItem("system:admin.system","",buttons.system.content,"setting","admin-menu-link",buttons.system.sub_title)       }}
+    {{ menu.adminMenuItem("system:admin.logout","",buttons.logout.content,"sign out","admin-menu-link",buttons.logout.sub_title)            }}
+</div>
+{{ component('system:admin/footer')}}

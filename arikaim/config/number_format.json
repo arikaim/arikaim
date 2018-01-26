@@ -1,0 +1,16 @@
+{
+    "items": [
+        {   
+            "name": "default",         
+            "decimals": "2", 
+            "decimals_separator": ".",
+            "thousands_separator": " "
+        },
+        {   
+            "name": "accounting",         
+            "decimals": "3", 
+            "decimals_separator": ",",
+            "thousands_separator": " "
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{% set data = executeMethod("System\\Install","getConfigDetails") %}
+<div class="item">
+    <div class="middle aligned content">
+        <i class="large icon server middle aligned"></i>   
+        <div class="header">{{ labels.requirements.content }}</div>
+        <div class="description margin-left-2">
+            <div class="ui list">
+            {% for item in requirements.items %}
+                <div class="item">
+                {% if item.status == 1 %}
+                    <i class="icon checkmark olive"></i>
+                {% elseif item.status == 0 %}
+                    <i class="icon warning sign red"></i>
+                {% elseif item.status == 2 %}
+                    <i class="icon warning circle orange"></i>
+                {% endif %}
+                    {{ item.message }}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="item">
+    <i class="large icon database middle aligned"></i>
+    <div class="middle aligned content">
+        <div class="header">{{ labels.database.content }}</div>
+        <div class="meta">
+            <span>{{ labels.database.sub_title }}</span>
+        </div>
+        <div class="description">            
+            <form class="ui segment form" id='config_form'>
+                <div class="field">
+                    <label>{{ fields.host.label }}</label>
+                    {{ data.db.host }}
+                </div>
+                <div class="field">
+                    <label>{{ fields.type.label }}</label>
+                    {{ data.db.driver }}
+                </div>
+                <div class="field">
+                    <label>{{ fields.database.label }}</label>
+                    <input type="text" name="database" id="database" value="{{ data.db.database }}">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>{{ fields.user.label }}</label>
+                        <input type="text" name="username" id="username" value="{{ data.db.username }}">
+                    </div>
+                    <div class="field">
+                        <label>{{ fields.password.label }}</label>
+                        <input type="text" name="password" id="password" value="{{ data.db.password }}">
+                    </div>
+                </div>
+                <div class="ui error message mini form-errors"></div>      
+            </form>                           
+        </div>
+    </div>
+</div>

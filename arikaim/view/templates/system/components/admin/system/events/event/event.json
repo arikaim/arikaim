@@ -1,0 +1,10 @@
+{
+    "component":{
+        "labels": {
+            "subscribers": "Subscribers",
+            "extension": "Extension",
+            "details": "Show details",
+            "active": "Active"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "component":{
+        "messages": {
+            "empty": "...",
+            "confirm": {
+                "delete": {
+                    "title": "Confirm delete logs",
+                    "description": "Delete all system logs?"
+                }
+            }
+        },
+        "buttons": {
+            "delete": {
+                "content": "Delete"
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{% import "/macros/list.html" as list %}
+{% set data = execute("getTemlateDetails",template_name) %}
+
+<div class="ui four basic mini buttons">
+    <div class="ui icon button popup-button">
+        <i class="icon file text outline" title="{{ labels.pages }}"></i>       
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui dividing header center aligned">{{ labels.pages }}</h5>    
+        {{ list.itemsList(data.pages,"file text outline") }}
+    </div>
+    <div class="ui icon button popup-button">
+        <i class="icon code" title="{{ labels.components }}"></i>       
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.components }}</h5>        
+        {{ list.itemsList(data.components,"code") }}
+    </div>
+    <div class="ui icon button popup-button">
+        <i class="icon settings" title="{{ labels.macros }}"></i>      
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">
+        <h5 class="ui header dividing center aligned">{{ labels.macros }}</h5>
+        {{ list.itemsList(data.macros,"settings") }}
+    </div>
+    <div class="ui icon button popup-button">
+        <i class="icon paint brush" title="{{ labels.themes }}"></i>       
+    </div> 
+    <div class="ui segment flowing popup top left transition hidden">       
+        <h5 class="ui header dividing center aligned">{{ labels.themes }}</h5> 
+        {{ list.itemsList(data.themes.items,"paint brush") }}
+    </div>
+</div>
