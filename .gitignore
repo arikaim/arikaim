@@ -1,5 +1,3 @@
 # Composer packages
 vendor/
-arikaim/logs/
-arikaim/files/
 composer.lock
