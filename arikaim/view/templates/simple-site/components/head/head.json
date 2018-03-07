@@ -1,8 +1,0 @@
-{         
-    "title" : "Arikaim",
-    "viewport": "width=device-width, initial-scale=1.0",
-    "robots": "index,follow",
-    "googlebot": "index,follow",
-    "cache_control": "no-cache",
-    "content_type": "text/html"        
-}
