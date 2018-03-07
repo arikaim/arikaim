@@ -1,6 +1,0 @@
-.gitignore  export-ignore
-composer.lock   export-ignore
-.gitattributes  export-ignore
-tests/  export-ignore
-docs/   export-ignore
-arikaim/logs/errors.log export-ignore

@@ -1,8 +1,0 @@
-{
-    "version": "1.0",
-    "description": "Semantic UI Calendar Component",
-    "files": [
-        "calendar.min.js",
-        "calendar.min.css"
-    ]
-}
