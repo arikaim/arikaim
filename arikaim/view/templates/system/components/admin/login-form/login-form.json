@@ -1,0 +1,14 @@
+{
+    "title": "Log in",
+    "login_button": {
+        "title": "Log in"
+    },
+    "user_name":{
+        "label": "Username",
+        "placeholder": "Enter Username"            
+    },
+    "password":{
+        "placeholder": "Enter Password",
+        "label": "Password"
+    }
+}

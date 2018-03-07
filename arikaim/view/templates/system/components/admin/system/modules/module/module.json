@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "details": "Show details",
+        "active": "Active",
+        "version": "Version",
+        "bootable": "Bootable",
+        "packages": "Composer packages"
+    }
+}

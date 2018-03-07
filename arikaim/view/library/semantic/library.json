@@ -1,0 +1,14 @@
+{
+    "title": "Semantic UI",
+    "version": "2.3",
+    "description": "Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML",
+    "themes": {
+        "default": {
+            "title": "Default",
+            "file": "semantic.min.css"
+        }
+    },
+    "files": [
+        "semantic.min.js"            
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "tabs": {
+        "settings": {
+            "content": "Settings"
+        },
+        "update": {
+            "content": "Update"
+        },
+        "logs": {
+            "content": "Logs"
+        },
+        "stats": {
+            "content": "Stats"
+        },
+        "events": {
+            "content": "Events"
+        },
+        "jobs": {
+            "content": "Jobs Queue"
+        },
+        "modules": {
+            "content": "Modules"
+        },
+        "info": {
+            "content": "System Info"
+        },       
+        "libraries": {
+            "content": "UI Libraries"
+        }
+    }
+}

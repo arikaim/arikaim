@@ -1,0 +1,7 @@
+{
+    "version": "1.0",
+    "description": "Arikaim Widget library",
+    "files": [
+        "arikaim-widget.js"
+    ]
+}

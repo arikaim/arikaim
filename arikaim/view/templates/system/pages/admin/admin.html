@@ -1,0 +1,9 @@
+{{ component("system:admin/navbar") }}
+{{ component("system:admin/user") }}
+<div id="content" class="full-height">  
+{% if loged_in == true %}
+    {{ component("system:admin/layout") }}
+{% else %}
+    {{ component("system:admin/login") }}
+{% endif %}
+</div>

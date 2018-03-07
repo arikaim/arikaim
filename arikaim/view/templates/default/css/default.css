@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+.page-title {
+  font-family: 'Monoton' !important;
+  font-weight: 400!important;
+}
+.version {
+  font-weight: 300!important;
+  font-size: 12pt!important;
+}
+.footer a {
+  font-weight: 300!important;
+  font-size: 10pt!important;
+}
+h3 {
+  font-weight: 300!important;
+  font-size: 20pt!important;
+}
+h2 {
+  font-weight: 100!important;
+  font-size: 24pt!important;
+}
+.sub.header {
+  font-weight: 300!important;
+  font-size: 12pt!important;
+}
+.ui.footer.segment {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+.full-height {
+  height: 90%;
+}
+.full-min-height {
+  min-height: 100%;
+}
+.bold {
+  font-weight: bold;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+.margin-top-2 {
+  margin-top: 2em;
+}
+.margin-top-5 {
+  margin-top: 5em;
+}
+.margin-top-10 {
+  margin-top: 10em;
+}
+.padding-left-1 {
+  padding-left: 1em;
+}
+.page-title {
+  font-family: 'Open Sans Condensed';
+  color: #c5c2c2;
+  font-size: 40px;
+  font-style: 300;
+  margin-left: 5px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #474646;
+}
+.shadow {
+  -webkit-box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  -moz-box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  -o-box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+}
+.footer-shadow {
+  -webkit-box-shadow: 0px -5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  -moz-box-shadow: 0px -5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  box-shadow: 0px -5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+  -o-box-shadow: 0px -5px 4px -4px rgba(0, 0, 0, 0.55) !important;
+}
+.masthead {
+  height: 10%;
+}
+.vertical-align {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}

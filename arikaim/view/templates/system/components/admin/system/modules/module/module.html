@@ -1,0 +1,37 @@
+
+{% import systemMacro("list.html") as list %}
+{% set status = callStatic('Arikaim','hasModule',{ module: module.service_name }) %}
+<div class="title header">
+    <i class="dropdown icon" title="{{ labels.details }}"></i>
+    {% if status == true %}
+    <i class="icon checkmark olive" title="{{ labels.active }}"></i>
+    {% endif %}
+    <span class="bold">{{ module.service_name }}</span>
+</div>
+<div class="content margin-left-1">
+    {{ module.description }}
+    <div class="list">
+        <div class="item">
+            <div class="ui label mini basic">
+                {{ labels.version }}
+                <div class="detail">{{ module.version }}</div>
+            </div>
+            {% if module.bootable == true %}
+            <div class="ui label mini basic">
+                {{ labels.bootable }}
+            </div>
+            {% endif %}
+        </div>
+        <div class="item">
+            <i class="icon code"></i>
+            {{ module.class }}
+        </div>
+        <div class="item">
+            <i class="icon archive"></i>
+            {{ labels.packages }}
+            <div class="margin-left-1">
+                {{ list.itemsList(module.requires,'checkmark') }}
+            </div>
+        </div>
+    </div>
+</div>

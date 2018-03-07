@@ -1,0 +1,40 @@
+{% if last_page < 1 %}
+{% set last_page = 1 %}
+{% endif %}
+{% if buttons_count is null %}
+{% set buttons_count = 4 %}
+{% endif %}
+{% if current_page < 1 %}
+{% set current_page = 1 %}
+{% endif %}
+{% set start_page = current_page - buttons_count %}
+{% if start_page < 1 %}
+{% set start_page = 1 %}
+{% endif %}
+{% set end_page = start_page + buttons_count %}
+{% if end_page > last_page %}
+{% set end_page = last_page %}
+{% endif %}
+<div class="ui pagination menu">
+    {% if current_page > buttons_count %}
+    <div class="item page-link link" page="1">
+        <i class="ui icon angle double left"></i>
+    </div>
+    <div class="item page-link link" page="{{ prev_page }}">
+        <i class="ui icon angle left"></i>
+    </div>
+    {% endif %}
+    {% for index in start_page..end_page %}
+    <div class="item page-link link {{ index|ifthen(current_page,'active') }}" page="{{ index }}">
+        {{ index }}
+    </div>
+    {% endfor %}
+    {% if end_page > buttons_count %}
+    <div class="item page-link link" page="{{ next_page }}">
+        <i class="ui icon angle right"></i>
+    </div>
+    <div class="item page-link link" page="{{ last_page }}">
+        <i class="ui icon angle double right"></i>
+    </div>
+    {% endif %}
+</div>

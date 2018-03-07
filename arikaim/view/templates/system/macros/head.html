@@ -1,0 +1,32 @@
+{%- macro meta(name,content) -%}
+<meta name="{{ name }}" content="{{ content }}"/>
+{%- endmacro meta -%}
+
+{%- macro metaHttp(name,content) -%}
+{%- if content != "" -%}
+<meta http-equiv="{{ name }}" content="{{ content }}"/>
+{%- endif -%}
+{%- endmacro metaHttp -%}
+
+{%- macro base(href,target) -%}
+{%- set target_attr = "" -%}
+{%- if target != "" -%}
+{%- set target_attr = "target='" ~ target ~ "'" -%}
+{%- endif -%}
+{%- if href is defined -%}
+<base href="{{ href }}" {{ target_attr }}/>
+{%- endif -%}
+{%- endmacro base -%}
+
+{%- macro favicon(icons) -%}
+
+{% if icons.micro is defined -%}
+<link rel="icon" type="image/png" sizes="16x16" href="{{ template_url }}/images/{{ icons.micro.src }}">
+{%- endif -%}
+{%- if icons.mini is defined -%}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ template_url }}/images/{{ icons.mini.src }}">
+{%- endif %}
+{%- if icons.small is defined -%}
+<link rel="icon" type="image/png" sizes="96x96" href="{{ template_url }}/images/{{ icons.small.src }}">
+{%- endif -%}
+{%- endmacro favicon -%}

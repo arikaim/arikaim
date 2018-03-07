@@ -1,0 +1,21 @@
+<div class="item">
+    {% if subscriber.status == 1 %}
+    <i class="icon checkmark olive" title="{{ labels.active }}"></i>
+    {% endif %}
+    <i class="icon puzzle"></i>
+    <div class="content">
+        {{ subscriber.extension_name }}
+        <div class="list">
+            <div class="item">
+                <i class="icon code"></i>
+                {{ subscriber.handler_class }}
+            </div>
+            <div class="item">
+                <div class="ui mini label">
+                    {{ labels.priority }}
+                    <div class="detail">{{ subscriber.priority }}</div>                                            
+                </div>                            
+            </div>
+        </div>
+    </div>                   
+</div>

@@ -1,0 +1,6 @@
+{% set items = executeMethod("Extension\\ExtensionsManager","scan") %}
+<div class="ui stackable cards">
+{% for item in items %}
+{{ component("system:admin/extensions/extension",{ extension_name: item }) }}      
+{% endfor %}
+</div>

@@ -1,0 +1,10 @@
+{
+    "title": {
+        "content": "Edit Language"
+    },
+    "menu": {
+        "label": "Select Language",
+        "name" : "language",
+        "class": "teal"
+    }
+}
