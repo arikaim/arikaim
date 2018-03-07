@@ -1,0 +1,20 @@
+<div class="ui grid">
+    <div class="one wide column">
+        <div class="ui vertical fluid tabular poiting menu" id="languages_tab">           
+            <a id="view_button" class="item languages-tab active {{ buttons.view.class }}" {{ buttons.view.title|attr("title") }} component="system:admin.languages.view">
+                <i class="icon grid layout"></i>{{ buttons.view.content }}   
+            </a>  
+            <a class="item languages-tab {{ buttons.add.class }}" {{ buttons.add.title|attr("title") }} component="system:admin.languages.language.add">
+                <i class="icon plus"></i>{{ buttons.add.content }}   
+            </a>  
+            <a id="edit_button" class="item languages-tab {{ buttons.edit.class }}" {{ buttons.edit.title|attr("title") }} component="system:admin.languages.language.edit">
+                <i class="icon edit"></i>{{ buttons.edit.content }}   
+            </a>            
+        </div>
+    </div>
+    <div class="fifteen wide stretched column">
+        <div class="padding-1" id="features_content">
+            {{ component("system:admin/languages/view")}}
+        </div>
+    </div>
+</div>

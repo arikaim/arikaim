@@ -1,0 +1,17 @@
+{% import systemMacro("numbers.html") as number %}
+{% set number_format = getOption('number.format') %}
+<div class="ui grid">    
+    <div class="ui three wide column segment">
+        <div class="ui block header">
+            <i class="icon table mini grey"></i>
+            <h4 class="content">{{ title.content }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui equal width form"> 
+            <div class="field">
+                <label>{{ fields.number_format.label }}</label> 
+                {{ number.numberFormatDropdown(number_format,fields.number_format) }}
+            </div>                
+        </div>
+    </div>
+</div>

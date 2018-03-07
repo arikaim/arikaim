@@ -1,0 +1,12 @@
+{% import systemMacro("templates.html") as templates %}
+<div class="ui three column centered grid">
+    <div class="column center aligned">
+        {{ templates.templatesDropdown(template_name) }}
+    </div>                
+</div>    
+<div class="ui horizontal divider"></div>
+<div id="template_details">   
+{% if template_name != "" %}  
+    {{ component("system:admin/templates/template/details/tabs",{template_name : template_name}) }}
+{% endif %}
+</div>

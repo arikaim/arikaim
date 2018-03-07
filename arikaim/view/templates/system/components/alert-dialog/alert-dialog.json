@@ -1,0 +1,11 @@
+{
+    "title": "Alert",
+    "icon": {
+        "class": "orange"
+    },
+    "description": "...",
+    "close_button": {
+        "class": "blue",
+        "title": "Close"
+    }
+}

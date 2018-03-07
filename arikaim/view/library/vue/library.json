@@ -1,0 +1,7 @@
+{
+    "version": "2.4.0",
+    "description": "Vue JavaScript framework",
+    "files": [
+        "vue.js"
+    ]
+}

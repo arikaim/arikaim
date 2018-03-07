@@ -1,0 +1,26 @@
+{
+    "tabs": {
+        "themes": {
+            "content": "Themes"
+        },
+        "components": {
+            "content": "Components"
+        },
+        "macros": {
+            "content": "Macros"
+        },
+        "pages": {
+            "content": "Pages"
+        },
+        "routes": {
+            "content": "Routes"
+        }
+    },
+    "labels": {
+        "current": "Current",
+        "system": "System",
+        "version": "Version",
+        "requires": "Requires",
+        "library": "UI Library"
+    }         
+}

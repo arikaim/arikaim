@@ -1,0 +1,7 @@
+{
+    "title": "Flysystem",
+    "description": "Flysystem allows you to easily swap out a local filesystem for a remote one.",
+    "requires": [
+        "league/flysystem"
+    ]
+}

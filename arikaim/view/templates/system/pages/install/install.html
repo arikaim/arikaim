@@ -1,0 +1,16 @@
+{% set version = executeMethod("System\\System","getVersion") %}
+<div class="ui top attached inverted menu borderless dark-background shadow">
+    <div title="{{ brand.title }}" class="item margin-left-4">    
+        {% if brand.image.src -%}
+        <img alt="{{ brand.image.alt }}" src="{{ system_template_url }}/images/{{ brand.image.src }}">
+        {% endif -%}   
+        <div class="page-title">
+            Arikaim
+            <span class="white sub-title small text megin-left-1">{{ labels.version }}
+                <span class="bold">{{ version }}</span>
+            </span>            
+        </div>
+    </div>              
+</div>
+{{ component("system:admin/install") }}
+{{ component("system:footer") }}

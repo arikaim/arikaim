@@ -1,0 +1,21 @@
+{
+    "text": {
+        "version": {
+            "content": "Version"
+        },
+        "buttons": {
+            "install": {
+                "content": "Install"
+            },
+            "uninstall": {
+                "content": "Uninstall"
+            },
+            "update": {
+                "content": "Update"
+            },
+            "details": {
+                "content": "Details"
+            }
+        }
+    }
+}

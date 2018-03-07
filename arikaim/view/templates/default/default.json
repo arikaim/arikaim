@@ -1,0 +1,28 @@
+{      
+    "title": "Default",
+    "version": "1.0",
+    "include": {            
+        "css": [
+            "default.css"
+        ],
+        "library": [
+            "jquery",
+            "jquery-ui",   
+            "arikaim",
+            "semantic"
+        ]
+    },
+    "default-theme": "arikaim",
+    "themes": {           
+        "arikaim": {
+            "title": "Arikaim",
+            "template": "system",
+            "file": "semantic.min.css"                    
+        }
+    },
+    "routes": [{
+            "path": "/",
+            "page": "home",
+            "name": "Home page"
+    }]
+}

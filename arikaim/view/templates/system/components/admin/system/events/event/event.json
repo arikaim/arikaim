@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "subscribers": "Subscribers",
+        "extension": "Extension",
+        "details": "Show details",
+        "core": "Core",
+        "active": "Active"
+    }
+}

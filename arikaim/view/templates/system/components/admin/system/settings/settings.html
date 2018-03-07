@@ -1,0 +1,28 @@
+<div class="ui grid">
+    <div class="two wide column">
+        <div class="ui vertical fluid tabular poiting menu" id="system_settings_tab">           
+            <a id="user_settings_button" class="item active {{ links.user.class }}" {{ links.user.title|attr("title") }} component="system:admin.system.settings.user">
+                <i class="icon user"></i>{{ links.user.content }}   
+            </a> 
+            <a id="date_time_button" class="item {{ links.date.class }}" {{ links.date.title|attr("title") }} component="system:admin.system.settings.date-time">
+                <i class="icon calendar"></i>{{ links.date.content }}   
+            </a>   
+            <a id="numbers_button" class="item {{ links.numbers.class }}" {{ links.numbers.title|attr("title") }} component="system:admin.system.settings.numbers">
+                <i class="icon table"></i>{{ links.numbers.content }}   
+            </a> 
+            <a id="numbers_button" class="item {{ links.mailer.class }}" {{ links.mailer.title|attr("title") }} component="system:admin.system.settings.mailer">
+                <i class="icon mail outline"></i>{{ links.mailer.content }}   
+            </a> 
+            <a id="numbers_button" class="item {{ links.logger.class }}" {{ links.logger.title|attr("title") }} component="system:admin.system.settings.logger">
+                <i class="icon tasks"></i>{{ links.logger.content }}   
+            </a>  
+            <a id="numbers_button" class="item {{ links.theme.class }}" {{ links.theme.title|attr("title") }} component="system:admin.system.settings.theme">
+                <i class="icon paint brush"></i>{{ links.theme.content }}   
+            </a>        
+        </div>
+    </div>
+    <div class="ui fourteen wide stretched column">
+        <div class="padding-1" id="system_settings_content">            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "title": "Arikaim Control Panel",
+    "viewport": {
+        "scale": "1.0"
+    },
+    "favicons": {
+        "mini": {
+            "src": "arikaim_icon_32x32.png"
+        }
+    }       
+}

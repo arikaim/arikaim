@@ -1,0 +1,23 @@
+{% set errors = getErrors() %}
+<div class="ui middle aligned grid full-height" id="content">
+    <div class="three column row">
+        <div class="column"></div>
+        <div class="ui raised segment column">
+            <h3 class="ui header">
+                <i class="icon orange warning sign"></i>
+                {{ title }}
+            </h3>    
+            <div class="ui divider"></div>       
+            <div class="ui list">
+            {% for error in errors %}
+                <div clas="item">                   
+                    <div class="header">
+                        <i class="warning circle icon"></i>
+                        {{ error }}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

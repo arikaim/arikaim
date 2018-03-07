@@ -1,0 +1,87 @@
+{%- macro routesList(routes,icon)   %}
+<div class="ui middle aligned divided list">
+    {% for route in routes %}
+    <div class="item">
+        {% if route.auth > 0 %}
+        {% set title = executeMethod("Access\\Access","getAuthName",route.auth) %}
+        {% endif %}
+        {% if title != "" %}
+            <div class="right floated content" title="Authentication">
+                <div class="ui tiny left pointing olive label">{{ title }}</div>
+            </div>            
+        {% endif %}    
+        {% if route.status == 1 %}
+            <i class="icon checkmark olive"></i>
+        {% endif %}
+        {% if icon is defined %} 
+        <i class="icon grey {{ icon }}"></i>
+        {% endif %} 
+        <div class="content">
+            {{ base_url }}{{ route.path }}{{ route.pattern }}
+            {% set methods = route.method|split(",") %}
+            {% for method in methods %}
+                <div class="ui tiny label">{{ method }}</div>
+            {% endfor %}              
+        </div>                    
+    </div>
+    {% endfor %}
+</div>
+{%  endmacro routesList -%}
+
+{%- macro templatesDropdown(selected)   %}
+{% set items = executeMethod("View\\TemplatesManager","scan") %}
+<div class="ui floating dropdown labeled search icon basic button" id='templates_dropdown'>
+    <input name="templates_dropdown" type="hidden" value="{{ selected }}">
+    <i class="icon browser"></i>
+    <span class="text">Select Template</span>
+    <div class="menu">
+    {% for item in items %}
+        <div class="item" data-value="{{ item }}">           
+            {{ item }}
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endmacro templatesDropdown -%}
+
+{%- macro themesDropdown(selected, template)   %}
+{% set themes = executeMethod("View\\TemplatesManager","getThemes","system") %}
+<div class="ui floating dropdown labeled search icon basic button" id="themes_dropdown" template="{{ template }}">
+    <input name="themes_dropdown" type="hidden" value="{{ selected }}">
+    <i class="icon paint brush"></i>
+    <span class="text">Select Theme</span>
+    <div class="menu">
+    {% for name, theme in themes %}
+        <div class="item" data-value="{{ name }}">           
+            {{ theme.title }}
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endmacro themesDropdown -%}
+
+{%- macro themesList(items,icon) %}
+<div class="ui list">
+    {% if items is empty %}
+    <div class="item">..</div>
+    {% endif %}
+    {% for item in items %}
+    <div class="item">               
+        {% if icon is defined %}  
+        <i class="icon grey {{ icon }}"></i>
+        {% endif %} 
+        <div class="content">           
+            <div class="text">
+                    {% if item.library is defined %}
+                    <div class="ui mini horizontal basic label" title="Ui Library">
+                        <i class="icon cube olive"></i>
+                        {{ item.library }}
+                    </div>
+                {% endif %}
+                {{ item.title }}
+            </div>
+        </div>       
+    </div>
+    {% endfor %}
+</div>
+{%  endmacro themesList -%}

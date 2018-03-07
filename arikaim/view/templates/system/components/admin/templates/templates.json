@@ -1,0 +1,13 @@
+{ 
+    "buttons": {
+        "details": {
+            "content": "Details"
+        },            
+        "view": {
+            "content": "View"
+        },
+        "downoad": {
+            "content": "Download"
+        }
+    }               
+}

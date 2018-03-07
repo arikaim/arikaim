@@ -1,0 +1,17 @@
+{
+    "labels": {
+        "executed": "Executed",
+        "disabled": "Disabled",
+        "active": "Active",
+        "empty": "..",
+        "interval": {
+            "year": "year(s)",
+            "month": "month(s)",
+            "day": "day(s)",
+            "hour": "hour(s)",
+            "minute": "minute",
+            "minutes": "minutes",
+            "every": "every"
+        }
+    }
+}

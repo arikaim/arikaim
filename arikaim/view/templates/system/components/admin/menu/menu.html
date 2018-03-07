@@ -1,0 +1,14 @@
+{% set user_type = createModel('Extensions','getConstant',['USER']) %}
+<div class="ui divider"></div>
+<div class="ui vertical fluid stackable dark-background pointing menu inverted" id="extensions_menu">
+    {{ component("system:admin/menu/extensions",{status: 1,type: user_type}) }}
+</div>
+<div class="ui horizontal divider">
+    <h5 class="tiny header">
+        <button id="system_menu_button" class="ui olive icon basic button mini circular"><i class="dropdown icon"></i></button>
+    </h5>
+</div>
+<div class="ui vertical fluid stackable pointing menu dark-background inverted" id="system_menu">
+        {{ component("system:admin/menu/system") }}
+</div>
+{{ component('system:admin/footer') }}
