@@ -1,0 +1,11 @@
+{
+    "items": [    
+        {"title":"English","native_title":"English","code":"en","code_3":"eng","default":"1","country_code":"us"},   
+        {"title":"French","native_title":"Français","code":"fr","code_3":"fra"},        
+        {"title":"German","native_title":"Deutsch","code":"de","code_3":"deu"},
+        {"title":"Spanish","native_title":"Español","code":"es","code_3":"spa"},
+        {"title":"Italian","native_title":"Italiano","code":"it","code_3":"ita"},
+        {"title":"Russian","native_title":"Русский","code":"ru","code_3":"rus"},
+        {"title":"Bulgarian","native_title":"Български","code":"bg","code_3":"bul"}
+    ]
+}
