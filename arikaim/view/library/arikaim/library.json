@@ -1,9 +1,0 @@
-{
-    "library": {
-        "version": "1.0",
-        "description": "Arikaim library",
-        "files": [
-            "arikaim.js"
-        ]
-    }
-}

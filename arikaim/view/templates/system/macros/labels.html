@@ -1,8 +1,0 @@
-{%- macro labels(text,separator,class) %}
-{% if text != "" %}
-    {% set words = text|split(separator) %}
-    {% for word in words %}
-    <span class="ui label {{ class }}">{{ word }}</span>
-    {% endfor %}
-{% endif %}
-{%- endmacro labels -%}
