@@ -1,0 +1,7 @@
+{% set items = extension('Dashboard','DashboardItems','getItems') %}
+<div class="ui cards">     
+    {{ component("dashboard:admin.dashboard.item",{item_content: 'dashboard:admin.dashboard.about'}) }}          
+    {% for item in items %}
+        {{ component("dashboard:admin.dashboard.item",{item_content: item }) }}       
+    {% endfor %}
+</div>
