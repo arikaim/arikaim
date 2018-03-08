@@ -1,0 +1,20 @@
+{
+    "title": "Footer",
+    "description": "Footer text",
+    "columns": {
+        "about": {
+            "header": "About",
+            "links": [{
+                "content": "Link 1",
+                "href": "#"
+            }]
+        },
+        "services": {
+            "header": "Services",
+            "links": [{
+                "content": "Service 1",
+                "href": "#"
+            }]
+        }
+    }
+}

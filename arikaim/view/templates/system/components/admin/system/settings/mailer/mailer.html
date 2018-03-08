@@ -1,0 +1,54 @@
+{% set options = getOptions("mailer") %}
+{% set user = createModel("Users","getLogedUser") %}
+<div class="ui grid">    
+    <div class="ui three wide column segment">
+        <div class="ui block header">
+            <i class="icon mail outline mini grey"></i>
+            <h4 class="content">{{ title.content }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="field">
+            <div class="ui slider checkbox change-option" id="use_sendmail">
+                <input name="mailer.use.sendmail" type="checkbox" value="1" {{ options.mailer.use.sendmail|ifthen(true,'checked') }} >
+                <label class="bold">{{ fields.use_sendmail.label }}</label>
+            </div>
+        </div> 
+        <div class="ui hidden divider"></div>
+        <form class="ui equal width form" id="mailer_settings_form">             
+            <h4 class="ui dividing header">SMTP Server</h4>
+            <div class="field">
+                <label>{{ fields.smtp.host.label }}</label> 
+                <input id="host" name="mailer.smpt.host" value="{{ options.mailer.smpt.host }}" {{ fields.smtp.host.placeholder|attr('placeholder') }}>                   
+            </div>   
+            <div class="field">
+                <label>{{ fields.smtp.port.label }}</label> 
+                <input id="port" name="mailer.smpt.port" value="{{ options.mailer.smpt.port }}" {{ fields.smtp.port.placeholder|attr('placeholder') }}>                   
+            </div> 
+            <div class="field">
+                <label>{{ fields.smtp.user_name.label }}</label> 
+                <input id="user_name" name="mailer.username" value="{{ options.mailer.username }}" {{ fields.smtp.user_name.placeholder|attr('placeholder') }}>                   
+            </div>
+            <div class="field">
+                <label>{{ fields.smtp.password.label }}</label> 
+                <input id="password" type="password" name="mailer.password" value="{{ options.mailer.password }}" {{ fields.smtp.password.placeholder|attr('placeholder') }}>                   
+            </div>
+            <div class="ui horizontal divider"></div>
+            {% if user.email != "" %}
+            <div class="ui field segment" id="test_email">
+                <h5 class="ui header">{{ labels.test }}</h5>
+                <span class='text bold'>{{ user.email }}</span>
+                <div class="ui mini right floated basic button" id="send_button">
+                    <i class="icon olive mail outline"></i>
+                    {{ buttons.send.content }}
+                </div>
+            </div>
+            <div class="ui horizontal divider"></div>
+            {% endif %}
+            <button class="ui button submit green save-button">{{ buttons.save.content }}</button>
+            <div class="ui error message form-errors"></div>
+            <div class="ui positive hidden message" id="message">
+                <div class="header"></div>
+            </div>  
+        </form>
+    </div>
+</div>

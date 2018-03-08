@@ -1,0 +1,61 @@
+{%- macro includeTemplateFiles() -%}
+{%- set js_files = getTemplateJsFiles() %}
+{%  set css_files = getTemplateCssFiles() %}
+{%- set theme = getThemeFiles() %}
+{%- if theme %} 
+    <!-- theme files -->
+{% for file in theme %}
+    <link rel="stylesheet" type="text/css" href="{{ file }}"> 
+{% endfor -%}    
+{% endif %}
+{%- if js_files or css_files %}
+    <!-- template files -->
+{% for file in js_files -%}
+    <script src="{{ file }}" type="text/javascript"></script>
+{% endfor %}
+{% for file in css_files %}
+    <link rel="stylesheet" type="text/css" href="{{ file }}">      
+{% endfor %}
+{% endif -%}
+{% endmacro includeTemplateFiles -%}
+
+{%- macro includeComponentFiles() -%}
+{% set js_files = getComponentsJsFiles() %}
+{% set css_files = getComponentsCssFiles() %}
+{% if js_files or css_files %}
+    <!-- component files -->
+    {% for file in js_files -%}
+        <script src="{{ file }}" type="text/javascript"></script>
+    {% endfor -%}
+    {% for file in css_files -%}
+        <link rel="stylesheet" type="text/css" href="{{ file }}">
+    {% endfor -%}
+{% endif %}
+{% endmacro includeComponentFiles %}
+
+{% macro includePageFiles() %}
+{% set js_files = getPageJsFiles() %}
+{% set css_files = getPageCssFiles() %}
+{% if js_files or css_files %}
+<!-- page files -->
+    {% for file in js_files -%}
+        <script src="{{ file }}" type="text/javascript"></script>
+    {%- endfor -%}
+    {% for file in css_files %}
+        <link rel="stylesheet" type="text/css" href="{{ file }}">      
+    {%- endfor -%}
+{% endif %}
+{%- endmacro includePageFiles %}
+
+{%- macro includeLibraries() -%}
+{%- set files = getLibraryFiles() -%}
+    <!-- library files -->
+{%- for file in files -%}           
+{%- if file.type == "js" %} 
+    <script type="text/javascript" src="{{ file.file }}"></script>
+{%- endif %}
+{%- if file.type == "css" %} 
+    <link rel="stylesheet" type="text/css" href="{{ file.file }}">
+{%- endif -%}
+{%- endfor %}
+{%- endmacro includeLibraries -%}

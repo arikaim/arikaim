@@ -1,0 +1,12 @@
+{%- macro pageSizeMenu(current_value,attributes) %}
+<div class="ui icon labeled dropdown basic button page-size-menu {{ attributes.class }}" {{ attributes.title|attr('title') }}>
+    <i class="ui icon list"></i>
+    <span class="header text">{{ attributes.label }} {{ current_value }}</span>
+    <div class="ui menu">
+    {% for index in 1..4 %}
+    {% set value = value + 25 %}
+        <div class="item" data-value="{{ value }}">{{ value }}</div>    
+    {% endfor %}      
+    </div>
+</div>
+{% endmacro pageSizeMenu %}

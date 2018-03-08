@@ -1,0 +1,25 @@
+<div class="ui grid">
+    <div class="one wide column">
+        <div class="ui vertical fluid tabular poiting menu" id="extensions_tab">           
+            <a class="item extension-tab active {{ buttons.view.class }}" {{ buttons.view.title|attr("title") }} component="system:admin.extensions.view">
+                <i class="icon grid layout"></i>
+                {{ buttons.view.content }}   
+            </a>                 
+            <a id="details_button" class="item extension-tab {{ buttons.details.class }}" {{ buttons.details.title|attr("title") }} component="system:admin.extensions.extension.details">
+                <i class="icon edit"></i>
+                {{ buttons.details.content }}   
+            </a>
+            <!--
+            <a id="download_button" class="item extension-tab {{ buttons.download.class }}" {{ buttons.download.title|attr("title") }} component="system:admin.extensions.store">
+                <i class="icon cloud download"></i>
+                {{ buttons.download.content }}   
+            </a>
+            -->           
+        </div>
+    </div>
+    <div class="fifteen wide stretched column">
+        <div class="padding-1" id="tab_content">
+            {{ component("system:admin/extensions/view") }}
+        </div>
+    </div>
+</div>

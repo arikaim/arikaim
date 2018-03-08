@@ -1,0 +1,226 @@
+@full-height: 100%;
+@full-min-height: 100%;
+@margin-one: 1em;
+@margin-two: 2em;
+@margin-three: 3em;
+@padding-one: 1em;
+@dark-color: #474646;
+@white-color: #c5c2c2;
+@red-color: #ad2424;
+@small: 1rem;
+@dark-background: #333;
+@icon-shadow-background: rgba(37, 36, 36, 0.5);
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=latin,cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+
+
+.dark-background {
+    background-color: @dark-background!important;
+}
+
+.shadow {          
+    -webkit-box-shadow: 0px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    -moz-box-shadow: 0px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    box-shadow: 0px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    -o-box-shadow: 0px 5px 4px -4px rgba(0,0,0,0.75)!important;
+}
+.admin-menu-shadow {          
+    -webkit-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    -moz-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.75)!important;
+    -o-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.75)!important;
+}
+.icon-shadow {
+    background-color: @icon-shadow-background!important;
+    -webkit-box-shadow: 0px 0px 4px 3px @icon-shadow-background!important;
+    -moz-box-shadow: 0px 0px 4px 3px @icon-shadow-background!important;
+    box-shadow: 0px 0px 4px 3px @icon-shadow-background!important;
+    border-radius:100px;
+}
+
+.hide-menu-button {
+    position:relative;
+    left:-38px;
+    top:50%;
+}
+
+.login-form {
+    min-height:360px;
+}
+
+.slider.olive {
+    color:green!important;
+}
+
+.sortable-state-highlight {
+    opacity: 0.5;
+}
+
+.hidden {   
+    visibility: hidden!important;
+}
+
+.small.text {
+    font-size:@small!important;
+}
+
+.form-errors {
+    color: @red-color!important;
+}
+
+.sub-title {
+    font-family: 'Roboto'!important;
+    font-size:20px;
+    font-weight:300;
+}
+
+.page-title {
+    font-family: 'Monoton'!important;
+    font-weight: 400!important;
+    color: @white-color;
+    font-size:34px;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    height:100%;
+}
+
+.footer .link:hover {
+    text-decoration: underline;
+}
+
+.ui.footer.segment {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.footer {
+    position: absolute;   
+    bottom: 0;
+    width: 100%;   
+    margin-bottom: 0.3em;
+    text-align: center;
+}
+
+.full-height {
+    height: @full-height;   
+}
+
+.full-min-height {
+    min-height: @full-min-height;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ui.vertical.menu .item > i.icon.left {
+    float: none;
+    margin: 0em 0.35714286em 0em 0em;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.padding-top-1 {
+    padding-top:1em;
+}
+
+.title {
+    text-shadow: none!important;
+}
+
+.padding-1 {
+    padding: @padding-one @padding-one @padding-one @padding-one;
+}
+
+.padding-left-1 {
+    padding-left:@padding-one;
+}
+.padding-right-1 {
+    padding-right:@padding-one;
+}
+.padding-top-0 {
+    padding-left:0px!important;
+}
+.padding-top-5 {
+    padding-left:5em!important;
+}
+.margin-left-1 {
+    margin-left: @margin-one;
+}
+.margin-left-2 {
+    margin-left: @margin-two;
+}
+.margin-left-3 {
+    margin-left: @margin-three;
+}
+.margin-right-1 {
+    margin-left: @margin-one;
+}
+.margin-right-2 {
+    margin-right: @margin-two;
+}
+.margin-right-3 {
+    margin-right: 3em!important;
+}
+.margin-top-0 {
+    margin-top:0px!important;
+}
+.margin-top-1 {
+    margin-top: @margin-one!important;
+}
+.margin-top-2 {
+    margin-top: @margin-two!important;
+}
+.margin-top-3 {
+    margin-top: @margin-three!important;
+}
+.margin-top-4 {
+    margin-top: 4em!important;
+}
+.margin-top-5 {
+    margin-top: 5em!important;
+}
+.margin-top-6 {
+    margin-top: 6em!important;
+}
+.margin-top-7 {
+    margin-top: 8em!important;
+}
+
+.margin-bottom-2 {
+    margin-bottom: @margin-two;
+}
+
+.page-loader {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.white {
+    color: @white-color!important;
+}
+
+.backgorund .dark {
+    background-color: @dark-color!important;
+}
+
+.opacity-5 {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.opacity-2 {
+    opacity: 0.2;
+    filter: alpha(opacity=20); /* For IE8 and earlier */
+}

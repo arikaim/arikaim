@@ -1,0 +1,12 @@
+{
+    "fields_filter": {
+        "url": {
+            "name": "url",
+            "label": "Url"
+        },
+        "method": {
+            "name": "method",
+            "label": "Method"
+        }       
+    }
+}

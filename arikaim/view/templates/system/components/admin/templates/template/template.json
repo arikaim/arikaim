@@ -1,0 +1,16 @@
+{
+    "labels": {
+        "current": "Current",
+        "system": "System",
+        "version": "Version",
+        "requires": "Requires"
+    },
+    "buttons": {
+        "details": {
+            "content": "Details"
+        },
+        "current": {
+            "content": "Set Current"
+        }
+    }
+}
