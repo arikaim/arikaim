@@ -84,7 +84,7 @@ function Install() {
         $(continue_button_id).hide();
         $(continue_button_id).off();
         $(continue_button_id).on('click',function() {   
-            arikaim.page.load('/admin/'); // load admin panel page
+            arikaim.page.load(arikaim.getBaseUrl() + '/admin/'); // load admin panel page
         });
     
         // install button

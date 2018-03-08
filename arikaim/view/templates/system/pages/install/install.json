@@ -2,10 +2,10 @@
     "brand": {
         "title": "Arikaim",
         "image": {
-            "src": "arikaim_logo_3_64x64.png"
+            "src": "arikaim_logo_64x64.png"
         }   
     },
     "labels": {
-        "version": "Version"
+        "version": "version"
     }
 }
