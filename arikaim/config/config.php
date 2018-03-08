@@ -8,8 +8,8 @@
 
 // database settings
 $db['database'] = "arikaim";
-$db['username'] = "database username";
-$db['password'] = "database passowrd";
+$db['username'] = "";
+$db['password'] = "";
 $db['driver'] = "mysql";
 $db['host'] = "localhost";
 $db['charset'] = "utf8";
