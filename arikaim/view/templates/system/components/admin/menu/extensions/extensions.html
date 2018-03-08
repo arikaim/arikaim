@@ -1,6 +1,0 @@
-{% import systemMacro("menu.html") as menu %}
-{% set extensions = executeMethod('Extension\\ExtensionsManager','getExtensions',[status,type]) %}
-
-{% for extension in extensions %}
-{{ menu.adminMenuItem(extension.admin_link_component,extension.name,extension.admin_link_title,extension.admin_link_icon,"admin-menu-link",extension.admin_link_sub_title) }}
-{% endfor %}

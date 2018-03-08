@@ -1,6 +1,0 @@
-{% set items = loadData("Language","","position",true) %}
-<div class="ui stackable cards" id="languages_list">
-    {% for item in items.rows %}
-    {{ component("system:admin/languages/language",{"language": item}) }}
-    {% endfor %}
-</div>       
