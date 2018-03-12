@@ -1,0 +1,22 @@
+<div class="ui fixed inverted stackable menu borderless dark-background shadow">   
+    <div title="{{ brand.title }}" class="item">    
+        {% if brand.image.src -%}
+        <img width="32px" height="32px" alt="{{ brand.image.alt }}" src="{{ system_template_url }}/images/{{ brand.image.src }}">
+        {% endif -%}    
+        <div class="page-title">
+            Arikaim
+            <span class="white sub-title margin-left-1">{{ brand.content }}</span>
+        </div> 
+    </div>             
+    <div class="ui inverted right menu margin-right-3 dark-background">    
+        <div class="item">
+            <a title="{{ hint.view }}" href="{{ site_url }}" target="site"><i class="icon browser alternate"></i></a>
+        </div>   
+        <div class="item" id="language-menu">
+            {{ component("system:language-menu") }}
+        </div>
+        <div class="item" id="user_menu">
+            {{ component("system:admin/user-menu") }}
+        </div>                             
+    </div>    
+</div>

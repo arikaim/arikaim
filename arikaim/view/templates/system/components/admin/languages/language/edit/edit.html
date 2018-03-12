@@ -1,0 +1,13 @@
+{% import systemMacro("languages.html") as languages %}
+<div class="ui grid">
+    <div class="ui three wide column segment">
+        <div class="ui block header">
+            <i class="icon file outline mini grey"></i>
+            <h4 class="content">{{ title.content }}</h4>
+        </div>
+        <div class="ui hidden divider"></div>  
+        {{ languages.languagesList(uuid,menu) }}       
+        <div class="ui hidden divider"></div>
+        <div id="form_content"></div>
+    </div>
+</div>

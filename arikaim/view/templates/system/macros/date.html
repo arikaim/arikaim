@@ -1,0 +1,77 @@
+{%- macro timeZoneDropdown(selected,attributes) %}
+{% set items = getTimeZonesList() %}
+<div class="ui mini search selection dropdown {{ attributes.class }}" id="time_zone">   
+    <i class="icon world"></i>
+    <i class="icon dropdown"></i>   
+    {% if selected == "" %}      
+        <div class="default text">{{ attributes.placeholder }}</div>
+    {% else %}
+        <div class="text">{{ selected }}</div>
+    {% endif %}   
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item {{ item|ifthen(selected,'active') }}" data-value="{{ item }}">{{ item }}</div>      
+    {% endfor %}
+    </div>
+</div>
+{%  endmacro timeZoneDropdown -%}
+
+{%- macro dateFormatDropdown(selected,attributes) %}
+{% set items = getOption('date.format.items') %}
+<div class="ui mini search selection dropdown {{ attributes.class }}" id="date_format">   
+    <i class="icon calendar"></i>
+    <i class="icon dropdown"></i>   
+    {% if selected == "" %}      
+        <div class="default text">{{ attributes.placeholder }}</div>
+    {% else %}
+        <div class="text">{{ "now"|date(selected) }}</div>
+    {% endif %}   
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item {{ item.value|ifthen(selected,'active') }}" data-value="{{ item.value }}">{{ "now"|date(item.value) }}</div>      
+    {% endfor %}
+    </div>
+</div
+{%  endmacro dateFormatDropdown -%}
+
+{%- macro timeFormatDropdown(selected,attributes) %}
+{% set items = getOption('time.format.items') %}
+<div class="ui mini search selection dropdown {{ attributes.class }}" id="time_format">   
+    <i class="icon wait"></i>
+    <i class="dropdown icon"></i>   
+    {% if selected == "" %}      
+        <div class="default text">{{ attributes.placeholder }}</div>
+    {% else %}
+        <div class="text">{{ "now"|date(selected) }}</div>
+    {% endif %}   
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item {{ item.value|ifthen(selected,'active') }}" data-value="{{ item.value }}">{{ "now"|date(item.value) }}</div>      
+    {% endfor %}
+    </div>
+</div
+{%  endmacro timeFormatDropdown -%}
+
+{%- macro getIntervalText(interval,labels) %}
+{{ labels.every }} 
+{% if interval.years > 0 %}
+ {{ interval.years }} {{ labels.year }}
+{% endif %}
+
+{% if interval.months > 0 %}
+ {{ interval.months }} {{ labels.month }}
+{% endif %}
+
+{% if interval.days > 0 %}
+{{ interval.days }} {{ labels.day }}
+{% endif %}
+
+{% if interval.hours > 0 %}
+{{ interval.hours }} {{ labels.hour }}
+{% endif %}
+
+{% if interval.minutes > 0 %}
+{{ interval.minutes }} {{ labels.minutes }}
+{% endif %}
+
+{%- endmacro getIntervalText -%}

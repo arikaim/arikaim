@@ -1,0 +1,70 @@
+{% set version = executeMethod("System\\System","getVersion") %}
+{{ component('navbar') }}
+<div class="ui vertical text inverted olive masthead vertical-align segment shadow">
+  <div class="ui container basic segment">     
+      <h2>{{ sub_title }}</h2> 
+      <div class="version">
+        {{ labels.version }} <span class="bold">{{ version }}</span>
+      </div>
+  </div>
+</div>
+<div class="ui container grid">
+    <div class="ui two column row margin-top-10">
+        <div class="one column">
+        <h3 class="ui header">
+            <i class="icon large circular coffee"></i>
+            <div class="content">
+                {{ features.easy.title }}
+                <div class="sub header">
+                    {{ features.easy.description }}
+                </div>
+            </div> 
+        </h3>
+        </div>
+        <div class="one column">
+        <h3 class="ui header">
+            <i class="icon large circular unlock alternate"></i>
+            <div class="content">
+                {{ features.open_source.title }}
+                <div class="sub header">
+                    {{ features.open_source.description }}
+                    <A href='#' target="license">{{ labels.details }}</A>.
+                </div>
+            </div>
+        </h3>
+        </div>
+    </div> 
+    <div class="ui two column row margin-top-5">
+        <div class="one column">
+        <h3 class="ui header">
+            <i class="icon large circular mobile alternate"></i>
+            <div class="content">
+                {{ features.responsive.title }}
+                <div class="sub header">   
+                    {{ features.responsive.description }}
+                </div>
+            </div>                 
+        </h3>
+        </div>
+        <div class="one column">
+        <h3 class="ui header">
+            <i class="icon circular large puzzle piece"></i>
+            <div class="content">
+                {{ features.extensions.title }}
+                <div class="sub header">
+                    {{ features.extensions.description }} 
+                    <A href="#" target="store">{{ labels.store }}</A>.
+                </div>
+            </div>          
+        </h3>
+        </div>
+    </div>
+    <div class="ui one column centered row margin-top-5">
+        <h2 class="ui header">      
+            <a href="{{ url('admin/') }}" class="black">
+                <i class="icon large circular options"></i>{{ labels.admin }}
+            </a>
+        </h2>
+    </div>
+</div>
+{{ component('footer') }}

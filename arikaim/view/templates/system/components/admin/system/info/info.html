@@ -1,0 +1,53 @@
+{% set info = executeMethod("System\\System","getSystemInfo")  %}
+<div class="ui items">
+    <div class="item">
+        <div class="content">
+            <div class="text bold">
+                <i class="icon info circular"></i>
+                Arikaim 
+                <div class="ui basic mini label">{{ info.cms_version }}</div>              
+            </div>
+        </div>
+    </div>     
+    <div class="item">
+        <div class="content">               
+            <div class="ui accordion" id="php_extensions_info">
+                <div class="title">                                       
+                    <i class="icon code circular"></i> 
+                    <i class="dropdown icon"></i>
+                    PHP 
+                    <div class="ui basic min label">{{ info.php_version }}</div>    
+                </div>                                     
+                <div class="content margin-left-2">
+                {{ component("system:admin/system/info/php-info") }}
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="item">
+        <div class="content">
+            <div class="text">
+                <i class="icon database circular"></i>
+                {{ labels.database.content }} 
+                <div class="list margin-left-2">
+                    <div class="item">
+                        {{ info.database.driver }}
+                        <div class="ui basic mini label">{{ info.database.version }}</div>
+                    </div>
+                    <div class="item text">
+                        {{ info.database.name }}
+                    </div>
+                </div>
+            </div>                             
+        </div>
+    </div>    
+    <div class="item">
+        <div class="content">
+            <div class="text">
+                <i class="icon server circular"></i>
+                {{ labels.server.content }} <span class="margin-left-1 small text">{{ info.os_name }}</span> 
+                <span class="small text">{{ info.os_version }} {{ info.os_node }}</span>
+            </div>                             
+        </div>
+    </div>    
+</div>

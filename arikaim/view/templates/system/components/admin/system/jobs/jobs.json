@@ -1,0 +1,12 @@
+{
+    "labels": {
+        "jobs": "Jobs",
+        "recuring": "Recuring Jobs",
+        "worker": "Queue Worker",
+        "scheduled": "Scheduled Jobs"
+    },
+    "buttons": {
+        "delete": "Delete",
+        "update": "Update"
+    }
+}

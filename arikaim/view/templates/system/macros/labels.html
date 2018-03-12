@@ -1,0 +1,16 @@
+{%- macro labels(text,separator,class) %}
+{% if text != "" %}
+    {% set words = text|split(separator) %}
+    {% for word in words %}
+    <span class="ui label {{ class }}">{{ word }}</span>
+    {% endfor %}
+{% endif %}
+{%- endmacro labels -%}
+
+{%- macro getStatusIcon(status,active_class,disabled_css) %}
+{% if status == 1 %}
+    <i class="icon olive checkmark {{ active_class }}"></i>
+{% else %}
+    <i class="icon remove orange {{ disabled_css }}"></i>
+{% endif %}
+{%- endmacro getStatusIcon -%}

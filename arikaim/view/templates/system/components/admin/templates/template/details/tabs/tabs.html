@@ -1,0 +1,77 @@
+{% import systemMacro("list.html") as list %}
+{% import systemMacro("extensions.html") as extensions %}
+{% import systemMacro("templates.html") as themes %}
+{% set template = executeMethod("View\\TemplatesManager","getTemlateDetails",template_name) %}
+<div class="ui card padded">
+    <div class="content">
+        <div class="header">
+            {% if template_name == current_template_name %}
+            <div class="ui left corner olive mini label" title="{{ labels.current }}">
+                <i class="icon checkmark"></i>
+            </div>     
+            {% endif %}
+            {% if template_name == system_template_name %}
+                <div class="ui left ribbon blue label">{{ labels.system }}</div>                
+            {% endif %}
+            <i class="icon browser"></i>
+            <span>{{ template_name }}</span>
+            <div class="right floated meta">
+                <div class="ui horizontal label">
+                    {{ labels.version }}
+                    <div class="detail">
+                        {{ template.version }}
+                    </div>
+                </div>
+            </div>
+        </div>           
+    </div>      
+    <img class="ui image opacity-2" src="{{ system_template_url }}/images/{{ template.image.src|ifthen('','placeholder.png') }}">     
+    <div class="content">
+        <div class="text bold">{{ labels.requires }}</div>       
+        <div class="ui list">
+            {% for item in template.requires.library %}
+                <div class="item">
+                    <i class="cube icon"></i>
+                    {{ item }}
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+</div>
+<div class="ui top attached tabular menu margin-top-2" id="templates_details_tab">
+    <a class="item active" data-tab="themes_tab">
+        <i class="icon paint brush"></i>
+        {{ tabs.themes.content }}
+    </a>    
+    <a class="item" data-tab="components_tab">
+        <i class="icon code"></i>
+        {{ tabs.components.content }}
+    </a>    
+    <a class="item" data-tab="macros_tab">
+        <i class="icon settings"></i>
+        {{ tabs.macros.content }}
+    </a>  
+    <a class="item" data-tab="pages_tab">
+        <i class="icon file text outline"></i>
+        {{ tabs.pages.content }}
+    </a>   
+    <a class="item" data-tab="routes_tab">
+        <i class="icon linkify"></i>
+        {{ tabs.routes.content }}
+    </a>   
+</div>
+<div class="ui bottom attached tab segment active {{ tabs.themes.class }}" data-tab="themes_tab">
+    {{ themes.themesList(template.themes,"paint brush") }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="components_tab">
+    {{ list.itemsList(template.components,"code") }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="macros_tab">
+    {{ list.itemsList(template.macros,"settings") }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="pages_tab">
+    {{ list.itemsList(template.pages,"file text outline") }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="routes_tab">
+    {{ extensions.routesList(template.routes,"code") }}
+</div>
