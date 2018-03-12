@@ -1,11 +1,9 @@
 {
     "items": [    
-        {"title":"English","native_title":"English","code":"en","code_3":"eng","default":"1","country_code":"us"},   
-        {"title":"French","native_title":"Français","code":"fr","code_3":"fra"},        
-        {"title":"German","native_title":"Deutsch","code":"de","code_3":"deu"},
-        {"title":"Spanish","native_title":"Español","code":"es","code_3":"spa"},
-        {"title":"Italian","native_title":"Italiano","code":"it","code_3":"ita"},
-        {"title":"Russian","native_title":"Русский","code":"ru","code_3":"rus"},
-        {"title":"Bulgarian","native_title":"Български","code":"bg","code_3":"bul"}
+        {"title":"English","native_title":"English","code":"en","code_3":"eng","default":"1","country_code":"us","status": 1},   
+        {"title":"French","native_title":"Français","code":"fr","code_3":"fra","status": 0},        
+        {"title":"German","native_title":"Deutsch","code":"de","code_3":"deu","status": 0},
+        {"title":"Spanish","native_title":"Español","code":"es","code_3":"spa","status": 0},
+        {"title":"Italian","native_title":"Italiano","code":"it","code_3":"ita","status": 0}
     ]
 }
