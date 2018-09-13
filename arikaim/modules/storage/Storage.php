@@ -7,30 +7,33 @@
  * @license     http://www.arikaim.com/license.html
  * 
 */
-namespace Arikaim\Modules\File;
+namespace Arikaim\Modules\Storage;
 
 use League\Flysystem\MountManager;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 
-use Arikaim\Core\FileSystem\File as FileUtils;
+use Arikaim\Core\FileSystem\File;
 use Arikaim\Core\Utils\Utils;
 use Arikaim\Core\Module\Module;
 
-class File extends Module
+class Storage extends Module
 {
     private $manager;
 
     public function __construct()
     {
         $this->manager = new MountManager();
-        $local_adapter = new Local(FileUtils::getFilesPath());
-        $this->mount('local',$local_adapter);
-
         // module details
-        $this->setServiceName('file');
-        $this->setModuleVersion('1.0');        
+        $this->setServiceName('storage');
+        $this->setVersion('1.0');        
         $this->setBootable();
+    }
+
+    public function boot()
+    {
+        $local_adapter = new Local(File::getStoragePath());
+        $this->mount('local',$local_adapter);
     }
 
     public function mount($name,$adapter)
