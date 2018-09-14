@@ -1,0 +1,32 @@
+{      
+    "title": "Simple",
+    "version": "1.0",
+    "include": {            
+        "css": [
+            "simple.css"
+        ],
+        "js": [
+            "simple.js"
+        ],
+        "library": [
+            "jquery",
+            "jquery-ui",   
+            "arikaim",
+            "semantic"
+        ]
+    },
+    "current": true,
+    "default-theme": "arikaim",
+    "themes": {           
+        "arikaim": {
+            "title": "Arikaim",
+            "template": "system",
+            "file": "semantic.min.css"                    
+        }
+    },
+    "routes": [{
+            "path": "/",
+            "page": "home",
+            "name": "Home page"
+    }]
+}

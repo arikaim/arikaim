@@ -1,0 +1,30 @@
+{
+    "head": {
+        "title": "Arikaim",
+        "description": "Arikaim CMS"
+    },
+    
+    "labels": {
+        "store": "Arikaim Store",
+        "details": "details",
+        "test": "test"
+    },
+    "features": {
+        "easy": {
+            "title": "Easy to use",
+            "description": "Easy for editors, designers and developers."
+        },
+        "responsive": {
+            "title": "Responsive Design",
+            "description": "Single content for desktops and mobile devices."
+        },
+        "extensions": {
+            "title": "Extensions",
+            "description": "Download extensions and templates from"
+        },
+        "open_source": {
+            "title": "Open source",
+            "description": "Free to use for both personal and commercial websites.No encrypted code. License"
+        }
+    }
+}

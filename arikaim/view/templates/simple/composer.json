@@ -1,8 +1,8 @@
 {
-    "name": "arikaim/arikaim",
-    "description": "Arikam CMS",
-    "keywords": ["CMS", "Content Management System"],
-    "type": "project",
+    "name": "arikaim/simple-template",
+    "description": "Arikam Simple Template",
+    "keywords": ["Module", "Arikaim Simple template"],
+    "type": "arikaim-template",
     "license": "GPL-3.0-or-later",
     "authors": [{
         "name": "Konstantin Atanasov",
@@ -11,13 +11,12 @@
     }],
     "require": {
         "php": ">=5.6.0",
-        "arikaim/core": ">=1.0",
-        "arikaim/storage-module": "^1.2",
-        "arikaim/simple-template": "^1.0"
+        "arikaim/installer": "*"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
-        }
+        },
+        "path": "simple"
     }
 }

@@ -1,0 +1,14 @@
+{
+    "id"    : "navbar",
+    "brand": {
+        "title"  : "Arikaim",
+        "image" : {
+            "src" : "arikaim_logo_64x64.png"
+        }   
+    },
+    "sub_title": "Content Management System",
+    "labels": {
+        "version": "version",
+        "admin": "Control Panel"
+    }
+}

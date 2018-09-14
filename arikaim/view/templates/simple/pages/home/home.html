@@ -1,0 +1,62 @@
+{{ component('navbar') }}
+<div class="ui container stackable grid">
+    <div class="ui two mobile only column row margin-top-10"></div>
+    <div class="ui two computer only column row margin-top-6"></div>
+    <div class="ui two tablet only column row margin-top-2"></div>
+    <div class="ui two column stretched row">
+        <div class="one column">
+            <h3 class="ui header raised segment">
+                <i class="icon large coffee"></i>
+                <div class="content">
+                    {{ features.easy.title }}
+                    <div class="sub header">
+                        {{ features.easy.description }}
+                        </br>&nbsp;
+                    </div>
+                </div> 
+            </h3>
+        </div>
+        <div class="one column">
+            <h3 class="ui header raised segment">
+                <i class="icon large unlock alternate"></i>
+                <div class="content">
+                    {{ features.open_source.title }}
+                    <div class="sub header">
+                        {{ features.open_source.description }}
+                        <a href='#' target="license">{{ labels.details }}</a>.
+                        </br>&nbsp;
+                    </div>
+                </div>
+            </h3>
+        </div>
+    </div>
+    <div class="ui two column stretched row margin-top-4">
+        <div class="one column">
+            <h3 class="ui header raised segment">
+                <i class="icon large mobile alternate"></i>
+                <div class="content">
+                    {{ features.responsive.title }}
+                    <div class="sub header">   
+                        {{ features.responsive.description }}
+                        </br>&nbsp;
+                    </div>
+                </div>                 
+            </h3>
+        </div>
+        <div class="one column">
+            <h3 class="ui header raised segment">
+                <i class="icon large puzzle piece"></i>
+                <div class="content">
+                    {{ features.extensions.title }}
+                    <div class="sub header">
+                        {{ features.extensions.description }} 
+                        <a href="#" target="store">{{ labels.store }}</a>.
+                        </br>&nbsp;
+                    </div>
+                </div>          
+            </h3>
+        </div>
+    </div>
+    <div class="ui two column row margin-top-10"></div>
+</div>
+{{ component('footer') }}
