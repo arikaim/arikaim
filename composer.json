@@ -13,7 +13,8 @@
         "php": ">=5.6.0",
         "arikaim/core": ">=1.0",
         "arikaim/storage-module": "^1.2",
-        "arikaim/simple-template": "^1.0"
+        "arikaim/simple-template": "^1.0",
+        "arikaim/dashboard-extension": "^1.0"
     },
     "extra": {
         "branch-alias": {

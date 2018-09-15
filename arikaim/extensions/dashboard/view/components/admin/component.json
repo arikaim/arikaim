@@ -1,0 +1,8 @@
+{
+    "access": {
+        "auth": "JWT",
+        "permissions": {
+            "ControlPanel": ["read","write","delete","execute"]
+        }
+    }
+}

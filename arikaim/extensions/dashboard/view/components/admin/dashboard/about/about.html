@@ -1,0 +1,11 @@
+{% set system = executeMethod('System\\System','getSystemInfo') %}
+<div class="ui header">
+    <i class="icon info circle"></i>
+    {{ labels.title }}
+</div>
+<div class="ui divider"></div>
+<div class="description margin-top-2">
+    <h3>Arikaim CMS</h3>
+    {{ labels.version }} {{ system.cms_version }}
+</div>
+<div class="ui hidden divider margin-top-2"></div>
