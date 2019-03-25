@@ -14,7 +14,7 @@
         "arikaim/installer": "*",
         "arikaim/core": ">=1.0",
         "arikaim/storage-module": "^1.2",
-        "arikaim/simple-template": "^1.0",
+        "arikaim/blog-template": "^1.0",
         "arikaim/dashboard-extension": "^1.0",
         "arikaim/system-template": "^1.0"
     },

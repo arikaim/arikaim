@@ -9,8 +9,8 @@ RewriteRule ^ index.php [QSA,L]
 # Deny access to html, json, zip, phar files
 RewriteRule \.(?:htm|html|json|zip|phar)$ - [F,NC]
 
-# Deny access for all fils in /storage/private
-RewriteRule ^arikaim/storage/private(.*)$ - [F,NC]
+# Deny access for all fils in /storage/
+RewriteRule ^arikaim/storage/(.*)$ - [F,NC]
 
 # Deny access for all php files except index.php
 RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ]
