@@ -10,7 +10,7 @@
             "description": ""
         },
         "SYSTEM_ERROR": {
-            "message": "Error {{ details }}",
+            "message": "Error: {{ details }}",
             "description": ""
         },
         "DB_MODEL_CLASS_NOT_EXIST": {
@@ -30,15 +30,15 @@
             "description": ""
         },
         "TEMPLATE_COMPONENT_ERROR": {
-            "message": "Error loading component: <b>{{ full_component_name }}</b> {{ details }}",
+            "message": "Error loading component '{{ full_component_name }}'  {{ details }}",
             "description": ""
         },
         "TEMPLATE_COMPONENT_NOT_FOUND": {
-            "message": "Can't find component with name: <b>{{ full_component_name }}</b>",
+            "message": "Can't find component with name '{{ full_component_name }}' ",
             "description": ""
         },
         "TEMPLATE_PAGE_NOT_FOUND": {
-            "message": "Can't find page with name: <b>{{ full_page_name }}</b>",
+            "message": "Can't find page with name '{{ full_page_name }}' ",
             "description": ""
         },
         "ACCESS_DENIED": {
@@ -55,6 +55,10 @@
         },
         "EXTENSION_CLASS_NOT_VALID": {
             "message": "Extension class name not valid",
+            "description": ""
+        },
+        "LANGUAGE_EXISTS":{
+            "message": "Language {{ code }} exists",
             "description": ""
         },
         "EXTENSION_NOT_EXISTS": {
@@ -82,11 +86,11 @@
             "description": ""
         },
         "NUMBER_MAX_VALUE_ERROR": {
-            "message": "Valid maximum value {{ max }}",
+            "message": "Not valid value maximum {{ max }}",
             "description": ""
         },
         "NUMBER_MIN_VALUE_ERROR": {
-            "message": "Valid minimum value {{ max }}",
+            "message": "Not valid value minimum {{ min }}",
             "description": ""
         },
         "EMAIL_NOT_VALID_ERROR": {
@@ -170,7 +174,7 @@
             "description": ""
         },
         "DELETE_FILE_ERROR": {
-            "message": "Failed to remove file {file_name}",
+            "message": "Failed to remove file {{ file_name }}",
             "description": ""
         },
         "INSTALLED_ERROR": {

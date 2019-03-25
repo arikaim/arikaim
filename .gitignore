@@ -1,10 +1,5 @@
 # Composer packages
 vendor/
-arikaim/logs/
-arikaim/storage/
-arikaim/cache/
-arikaim/bin/
-docs/
 node_modules
 composer.lock
 node_modules
