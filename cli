@@ -9,8 +9,6 @@
  * 
 */
 include_once "vendor/autoload.php";
-include_once "arikaim/core/System/ClassLoader.php";
-include_once "arikaim/core/Arikaim.php";
 
 use Arikaim\Core\System\Console\Application;
 use Arikaim\Core\Arikaim;
