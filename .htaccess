@@ -6,17 +6,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
-<Files *.php >
-    Order Deny,Allow
-    Deny from all
-</Files>
+# Deny access to html, json, zip, phar files
+RewriteRule \.(?:htm|html|json|zip|phar)$ - [F,NC]
 
-<Files index.php >
-    Order Allow,Deny
-    Allow from all
-</Files>
+# Deny access for all fils in /storage/private
+RewriteRule ^arikaim/storage/private(.*)$ - [F,NC]
 
-<FilesMatch "arikaim\.(?:htm|html|json)$" >
-    Order deny,allow
-    Deny from all
-</FilesMatch>
+# Deny access for all php files except index.php
+RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ]
+RewriteRule \.php$ - [F]

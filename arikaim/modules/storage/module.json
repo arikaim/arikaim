@@ -1,7 +1,0 @@
-{
-    "title": "Storage",
-    "description": "Local and remote filesystem.",
-    "requires": [
-        "league/flysystem"
-    ]
-}

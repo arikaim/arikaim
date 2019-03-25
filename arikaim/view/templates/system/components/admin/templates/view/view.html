@@ -1,6 +1,0 @@
-{% set items = executeMethod("View\\TemplatesManager","scan") %}
-<div class="ui seven cards">
-{% for template in items %}
-    {{ component("system:admin/templates/template",{template_name: template}) }}
-{% endfor %}
-</div>

@@ -1,7 +1,0 @@
-{
-    "version": "3.2.1",
-    "description": "jQuery JavaScript library",
-    "files": [
-        "jquery-3.2.1.min.js"
-    ]       
-}
