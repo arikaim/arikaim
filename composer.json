@@ -12,12 +12,12 @@
     "require": {
         "php": ">=7.1",
         "arikaim/installer": "*",
-        "arikaim/core": ">=1.0",
-        "arikaim/storage-module": "^1.*",
-        "arikaim/dashboard-extension": "^1.*",
-        "arikaim/blog-template": "^1.0",
-        "arikaim/system-template": "^1.0",
-        "arikaim/ui": "^1.0"
+        "arikaim/core": "1.*",
+        "arikaim/storage-module": "1.*",
+        "arikaim/dashboard-extension": "1.*",
+        "arikaim/blog-template": "1.*",
+        "arikaim/system-template": "1.*",
+        "arikaim/ui": "1.*"
     },
     "extra": {
         "branch-alias": {
