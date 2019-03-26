@@ -8,6 +8,8 @@
  * @license     http://www.arikaim.com/license.html
  * 
 */
+define('ARIKAIM_ROOT_PATH',__DIR__);
+
 include_once "vendor/autoload.php";
 
 use Arikaim\Core\System\Console\Application;
