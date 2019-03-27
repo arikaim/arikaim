@@ -2,4 +2,6 @@
 vendor/
 node_modules
 composer.lock
-node_modules
+arikaim/cache/*
+arikaim/logs/*
+!*.gitkeep
