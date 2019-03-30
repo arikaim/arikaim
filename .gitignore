@@ -1,5 +1,7 @@
 # Composer packages
 vendor/
+arikaim/view/templates/system/
+arikaim/extensions/dashboard/
 node_modules
 composer.lock
 arikaim/cache/*
