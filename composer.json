@@ -14,10 +14,15 @@
         "arikaim/installer": "*",
         "arikaim/core": "1.*",
         "arikaim/storage-module": "1.*",
+        "arikaim/cors-module": "1.*",
+        "arikaim/recaptcha-module": "1.*",
         "arikaim/dashboard-extension": "1.*",
+        "arikaim/category-extension": "1.*",
+        "arikaim/captcha-extension": "1.*",
         "arikaim/blog-template": "1.*",
         "arikaim/system-template": "1.*",
-        "arikaim/ui": "1.*"
+        "arikaim/ui": "1.*",
+        "arikaim/ui-components": "1.*"
     },
     "extra": {
         "branch-alias": {

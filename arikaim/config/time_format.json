@@ -1,16 +1,14 @@
-{
-    "items": [
-        { "value": "H:i:s", "default": 1 },
-        { "value": "H:i" },
-        { "value": "h:i:s A" },
-        { "value": "h:i:s a" },
-        { "value": "h:i a" },
-        { "value": "h:i A" },
-        { "value": "G:i:s"},
-        { "value": "g:i" },
-        { "value": "g:i:s A" },
-        { "value": "g:i:s a" },
-        { "value": "G:i a" },
-        { "value": "G:i A" }
-    ]
-}
+[
+    { "value": "H:i:s", "default": 1 },
+    { "value": "H:i" },
+    { "value": "h:i:s A" },
+    { "value": "h:i:s a" },
+    { "value": "h:i a" },
+    { "value": "h:i A" },
+    { "value": "G:i:s"},
+    { "value": "g:i" },
+    { "value": "g:i:s A" },
+    { "value": "g:i:s a" },
+    { "value": "G:i a" },
+    { "value": "G:i A" }
+]

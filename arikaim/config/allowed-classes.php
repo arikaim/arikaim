@@ -1,6 +1,8 @@
 <?php
+/**
+ * Allowed classs in template code.
+ */
 return [
-    'Arikaim\\Core\\Db\\Paginator',
     'Arikaim\\Core\\Extension\\Routes',           
     'Arikaim\\Core\\Packages\\Template\\TemplatesManager',
     'Arikaim\\Core\\Packages\\Library\\LibraryManager',
@@ -11,7 +13,6 @@ return [
     'Arikaim\\Core\\System\\Install',
     'Arikaim\\Core\\System\\Update',
     'Arikaim\\Core\\Access\\Access',
-    'Arikaim\\Core\\Utils\\Utils',
-    'Arikaim\\Core\\Logger\\SystemLogger',
+    'Arikaim\\Core\\Utils\\Utils',  
     'Arikaim\\Core\\System\\System'
 ];

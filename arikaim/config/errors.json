@@ -49,16 +49,8 @@
             "message": "Authentication failed",
             "description": ""
         },
-        "LOGIN_ERROR": {
-            "message": "Not valid login details",
-            "description": ""
-        },
         "EXTENSION_CLASS_NOT_VALID": {
             "message": "Extension class name not valid",
-            "description": ""
-        },
-        "LANGUAGE_EXISTS":{
-            "message": "Language {{ code }} exists",
             "description": ""
         },
         "EXTENSION_NOT_EXISTS": {
@@ -67,10 +59,6 @@
         },
         "TEMPLATE_NOT_EXISTS": {
             "message": "Template {{ template_name }} not exists",
-            "description": ""
-        },
-        "EXTENSION_INSTALL_ERROR": {
-            "message": "Error install Extension {{ extension_name }}",
             "description": ""
         },
         "INT_NOT_VALID_ERROR": {
@@ -166,19 +154,14 @@
             "description": ""
         },
         "PHP_VERSION_ERROR": {
-            "message": "PHP version 5.6 or above is required.",
-            "description": ""
-        },
-        "SAVE_ERROR": {
-            "message": "Error save data.",
-            "description": ""
-        },
-        "DELETE_FILE_ERROR": {
-            "message": "Failed to remove file {{ file_name }}",
+            "message": "PHP version 7.1 or above is required.",
             "description": ""
         },
         "INSTALLED_ERROR": {
             "message": "Arikaim is already installed."
+        },
+        "UNKNOWN_ERROR": {
+            "message": "Unknown error."
         }
     }
 }

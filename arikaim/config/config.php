@@ -2,36 +2,34 @@
 /**
 * Arikaim
 * @link        http://www.arikaim.com
-* @copyright   Copyright (c) 2017-2018 Konstantin Atanasov <info@arikaim.com>
+* @copyright   Copyright (c) 2017-2019 Konstantin Atanasov <info@arikaim.com>
 * @license     http://www.arikaim.com/license.html
 */
 
-// database settings
-$db['database'] = "arikaim";
-$db['username'] = "";
-$db['password'] = "";
-$db['driver'] = "mysql";
-$db['host'] = "localhost";
-$db['charset'] = "utf8";
-$db['collation'] = "utf8_bin";
-$db['prefix'] = "";
-
-// application settings
-$settings['displayErrorDetails'] = true;
-$settings['determineRouteBeforeAppMiddleware'] = true;
-$settings['debug'] = true;
-$settings['debugTrace'] = false;
-$settings['httpVersion'] = "1.1";
-$settings['responseChunkSize'] = "165096";
-$settings['outputBuffering'] = 'append';
-$settings['addContentLengthHeader'] = true;
-$settings['jwt_key'] = "jwt_key_1";
-$settings['defaultLanguage'] = "en";
-// cache
-$settings['cache'] = true;
-$settings['cache_disabled'] = false;
-$settings['routerCacheFile'] = ARIKAIM_CACHE_PATH . "routes.cache.php";
-
-$config['settings'] = $settings;
-$config['db'] = $db;
-return $config;
+return [
+ 	// application settings
+	'settings' => [
+		'displayErrorDetails'					=> true,
+		'determineRouteBeforeAppMiddleware'		=> true,
+		'debug'									=> true,
+		'debugTrace'							=> true,
+		'httpVersion'							=> "1.1",
+		'responseChunkSize'						=> "165096",
+		'outputBuffering'						=> "append",
+		'addContentLengthHeader'				=> true,
+		'jwt_key'								=> "jwt_key_1",
+		'defaultLanguage'						=> "en",
+		'cache'									=> true
+	],
+	// database settings
+	'db' => [
+		'database'		=> "arikaim",
+		'username'		=> "",
+		'password'		=> "",
+		'driver'		=> "mysql",
+		'host'			=> "localhost",
+		'charset'		=> "utf8",
+		'collation'		=> "utf8_bin",
+		'prefix'		=> ""
+	] 
+];

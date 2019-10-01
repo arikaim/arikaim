@@ -1,7 +1,5 @@
-{
-    "items": [
-        { "value": "Y-m-d", "default": true },
-        { "value": "Y/m/d" },
-        { "value": "F j, Y" }        
-    ]
-}
+[
+    { "value": "Y-m-d", "default": true },
+    { "value": "Y/m/d" },
+    { "value": "F j, Y" }        
+]
