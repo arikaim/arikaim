@@ -9,17 +9,11 @@
 return [
  	// application settings
 	'settings' => [
-		'displayErrorDetails'					=> true,
-		'determineRouteBeforeAppMiddleware'		=> true,
-		'debug'									=> true,
-		'debugTrace'							=> true,
-		'httpVersion'							=> "1.1",
-		'responseChunkSize'						=> "165096",
-		'outputBuffering'						=> "append",
-		'addContentLengthHeader'				=> true,
-		'jwt_key'								=> "jwt_key_1",
-		'defaultLanguage'						=> "en",
-		'cache'									=> true
+		'debug'				=> true,
+		'debugTrace'		=> true,
+		'jwt_key'			=> "jwt_key_1",
+		'defaultLanguage'	=> "en",
+		'cache'				=> true
 	],
 	// database settings
 	'db' => [
