@@ -20,9 +20,16 @@
         "arikaim/category-extension": "^1.0.0",
         "arikaim/captcha-extension": "^1.0.0",
         "arikaim/blog-template": "^1.0.0",
-        "arikaim/system-template": "^1.0.0",
-        "arikaim/ui": "^1.0.0",
-        "arikaim/ui-components": "^1.0.0"
+        "arikaim/system-template": "^1.0.0",        
+        "arikaim/ui-components": "^1.0.0",
+        "arikaim/arikaim-library": "^1.0.0",
+        "arikaim/arikaim-ui-library": "^1.0.0",
+        "arikaim/jquery-library": "^1.0.0",
+        "arikaim/jquery-ui-library": "^1.0.0",
+        "arikaim/filepond-library": "^1.0.0",
+        "arikaim/foundation-emails-library": "^1.0.0",
+        "arikaim/fomantic-library": "^1.0.0",
+        "arikaim/tailwind-library": "^1.0.0"
     },
     "extra": {
         "branch-alias": {
