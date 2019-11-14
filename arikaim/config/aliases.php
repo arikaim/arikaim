@@ -1,4 +1,5 @@
 <?php
+
 return [
     'Arikaim\\Core\\Validator\\Validator'            => 'Validator',
     'Arikaim\\Core\\Db\\Model'                       => 'Model',

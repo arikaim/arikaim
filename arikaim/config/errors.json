@@ -1,16 +1,8 @@
 {
     "prefix": "",
     "errors": {
-        "FILE_NOT_FOUND": {
-            "message": "File not found {{ file_name }}.",
-            "description": ""
-        },
         "PDO_ERROR": {
             "message": "PDO php extensin or PDO driver {{ driver }} not installed.",
-            "description": ""
-        },
-        "SYSTEM_ERROR": {
-            "message": "Error: {{ details }}",
             "description": ""
         },
         "DB_MODEL_CLASS_NOT_EXIST": {
@@ -23,10 +15,6 @@
         },
         "DB_DATABASE_ERROR": {
             "message": "Error Creating Database {{ database_name }}",
-            "description": ""
-        },
-        "NOT_ALLOWED_METHOD_ERROR": {
-            "message": "Not allowed method execution class {{ class_name }}",
             "description": ""
         },
         "TEMPLATE_COMPONENT_ERROR": {
@@ -84,11 +72,7 @@
         "EMAIL_NOT_VALID_ERROR": {
             "message": "Not valid email.",
             "description": ""
-        },
-        "IP_NOT_VALID_ERROR": {
-            "message": "Not valid IP address",
-            "description": ""
-        },
+        },       
         "TEXT_NOT_VALID_ERROR": {
             "message": "Required text value",
             "description": ""
