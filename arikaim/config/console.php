@@ -7,8 +7,11 @@ return [
     "Arikaim\\Core\\App\\Commands\\InstallCommand",
     "Arikaim\\Core\\App\\Commands\\ClearLogsCommand",
     "Arikaim\\Core\\App\\Commands\\AdminResetCommand",
+    "Arikaim\\Core\\App\\Commands\\ComposerCommand",
     // update
     "Arikaim\\Core\\App\\Commands\\Update\\UpdateCommand",
+    "Arikaim\\Core\\App\\Commands\\Update\\ControlPanelUpdateCommand",
+    "Arikaim\\Core\\App\\Commands\\Update\\UiComponentsUpdateCommand",
     // cache
     "Arikaim\\Core\\App\\Commands\\Cache\\ClearCommand",
     "Arikaim\\Core\\App\\Commands\\Cache\\EnableCommand",
