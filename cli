@@ -16,7 +16,7 @@ use Arikaim\Core\System\Console\Application;
 use Arikaim\Core\Arikaim;
 use Arikaim\Core\App\Console;
 
-Arikaim::init(false);
+Arikaim::init();
 
 $application = new Application("Arikaim Cli",Arikaim::getVersion());
 $application->addCommands(Console::getCoreCommands());
