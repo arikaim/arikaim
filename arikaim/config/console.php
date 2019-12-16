@@ -3,11 +3,15 @@
  * Console commands classes
  */
 return [
-    "Arikaim\\Core\\App\\Commands\\HelpCommand",   
-    "Arikaim\\Core\\App\\Commands\\InstallCommand",
+    "Arikaim\\Core\\App\\Commands\\HelpCommand",      
     "Arikaim\\Core\\App\\Commands\\ClearLogsCommand",
     "Arikaim\\Core\\App\\Commands\\AdminResetCommand",
     "Arikaim\\Core\\App\\Commands\\ComposerCommand",
+    // install
+    "Arikaim\\Core\\App\\Commands\\Install\\InstallCommand",
+    "Arikaim\\Core\\App\\Commands\\Install\\EnableInstallCommand",
+    "Arikaim\\Core\\App\\Commands\\Install\\DisableInstallCommand",
+    "Arikaim\\Core\\App\\Commands\\Install\\RepairInstallCommand",
     // update
     "Arikaim\\Core\\App\\Commands\\Update\\UpdateCommand",
     "Arikaim\\Core\\App\\Commands\\Update\\ControlPanelUpdateCommand",

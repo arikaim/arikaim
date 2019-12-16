@@ -9,4 +9,8 @@
 */
 
 include_once "vendor/autoload.php";
+
+// set start time
+define('APP_START_TIME',microtime(true));
+
 Arikaim\Core\Arikaim::run();
