@@ -1,0 +1,27 @@
+{% set parent_id = parent_id|default(null) %}
+{% set id = id|default('category_dropdown') %}
+{% set page_url = page_url|default('') %}
+
+{% set model = createModel('Category','category').getActive().where('parent_id','=',parent_id) %}
+{% set items = model.orderBy('position','asc').orderBy('id','asc') %}
+{% if offset is not empty %}
+    {% set items = items.offset(offset).limit(100) %}
+{% endif %}
+
+<div class="ui dropdown {{ class }}" id="{{ id }}">
+    {% if icon is not empty %}
+        <i class="icon {{ icon }}"></i>
+    {% endif %}
+    {% if label is not empty %}
+        <div class="text">{{ label }}</div>
+    {% endif %}  
+    <i class="dropdown icon"></i>
+    <div class="ui menu {{ menu_class }}"> 
+        {% for item in items.get() %}  
+        {% set url = page_url|renderText({ slug: item.translation().slug }) %}
+        <a class="item {{ item_class }}" href="{{ url(url,true) }}">  
+            {{ item.getTitle(null,language)|string }}  
+        </a>    
+        {% endfor %}
+    </div>
+</div>

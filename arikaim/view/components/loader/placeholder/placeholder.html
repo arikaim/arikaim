@@ -1,0 +1,7 @@
+{% set lines = lines|default(5) %}
+{% set class = class|default('fluid') %}
+<div class="ui placeholder {{ class }}" id="loader">
+    {% for line in lines %}
+        <div class="line"></div>
+    {% endfor %}    
+</div>

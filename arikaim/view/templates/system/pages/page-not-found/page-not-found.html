@@ -1,0 +1,15 @@
+{% component "components:layout" %}
+    {{ component("system:navbar") }}
+    <div id="content" class="ui mt-40 h-full h-min-full">
+        <div class="ui middle aligned centered sixteen wide column doubling grid h-64">       
+            <div class="ui five wide computer eight wide tablet column">
+                <div class="ui raised segment h-20">                
+                    <h3 class="mt-2 pt-2">
+                        <i class="icon orange warning large sign"></i>
+                        <span class="pl-2">{{ message }}</span>
+                    </h3>
+                </div>                   
+            </div>
+        </div>
+    </div>
+{% endcomponent %}

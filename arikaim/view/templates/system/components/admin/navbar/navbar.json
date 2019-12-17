@@ -1,0 +1,12 @@
+{      
+    "brand": {
+        "content": "Control Panel",
+        "title": "Arikaim",
+        "image": {
+            "src": "arikaim-logo-64x64.png"
+        }   
+    },
+    "hint": {
+        "view": "View Site"
+    }           
+}

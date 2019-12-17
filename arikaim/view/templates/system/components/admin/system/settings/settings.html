@@ -1,0 +1,19 @@
+{% set items = [ 
+    { title: links.user.content, component: 'system:admin.system.settings.user', icon: 'user', active: true },
+    { title: links.date.content, component: 'system:admin.system.settings.date', icon: 'calendar' },
+    { title: links.numbers.content, component: 'system:admin.system.settings.numbers', icon: 'table' },
+    { title: links.mailer.content, component: 'system:admin.system.settings.mailer', icon: 'mail outline' },
+    { title: links.logger.content, component: 'system:admin.system.settings.logger', icon: 'warning circle' },
+    { title: links.session.content, component: 'system:admin.system.settings.session', icon: 'server' },
+    { title: links.cache.content, component: 'system:admin.system.settings.cache', icon: 'sync alternate' },
+    { title: links.other.content, component: 'system:admin.system.settings.other', icon: 'code' },
+    { title: links.install.content, component: 'system:admin.system.settings.install', icon: 'server' }
+] %}
+
+{{ component('components:tabs.vertical',{ 
+        items: items, 
+        menu: { id: null }, 
+        item_class: 'settings-item',
+        content: { id: 'settings_content', component: 'system:admin.system.settings.user' } 
+   })
+}}

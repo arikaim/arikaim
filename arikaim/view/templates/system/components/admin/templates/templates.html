@@ -1,0 +1,11 @@
+{% set items = [ 
+    { id: 'view_button', title: labels.view.content, component: 'system:admin.templates.view', icon: 'grid layout', active: true },
+    { id: 'details_button', title: labels.details.content, component: 'system:admin.templates.template.details', icon: 'edit' },
+    { id: 'store_button', title: labels.store.content, component: 'system:admin.templates.store', icon: 'shopping cart' }
+] %}
+
+{{  component('components:tabs',{ 
+        items: items,
+        content: { component: 'system:admin.templates.view' } 
+    })
+}}

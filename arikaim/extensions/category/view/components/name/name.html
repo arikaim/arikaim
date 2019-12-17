@@ -1,0 +1,9 @@
+{% set uuid|default(null) %}
+{% set language|default(getLanguage()) %}
+{% set title = createModel('Category','category').getTitle(uuid,language) %}
+<div class="ui breadcrumb">      
+    {% for item in title %}
+        <div class="divider">/</div>    
+        <div class="section">{{ title }}</div>
+    {% endfor %}
+</div>

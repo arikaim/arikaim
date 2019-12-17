@@ -1,0 +1,28 @@
+<div class="ui segment">  
+    {{ component('components:segment-title',{ title: labels.view,icon: "list" }) }}
+    <div class="ui stackable text menu">
+        <div class="item right floated">
+            {{ component('components:paginator.dropdown',{ namespace: 'drivers' }) }}
+        </div>
+    </div>
+    <div class="ui mt-2">   
+        <table class="ui compact stackable selectable borderless very basic table">
+            <thead>
+                <tr>
+                    <th class="collapsing">{{ columns.config }}</th>  
+                    <th class="one wide center aligned">
+                        {{ columns.status }}
+                    </th>                                
+                    <th class="one wide">{{ columns.name }}</th>  
+                    <th class="one wide">{{ columns.category }}</th>
+                    <th class="two wide">{{ columns.title }}</th>                         
+                    <th>{{ columns.class }}</th>
+                    <th class="two wide">{{ columns.description }}</th>                           
+                </tr>
+            </thead>
+            <tbody id="drivers_rows" component="system:admin.modules.drivers.view.rows" namespace="drivers">
+                {{ component('system:admin.modules.drivers.view.rows') }}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{% set items = getOption('time.format.items') %}
+{% set id = id|default('time_format') %}
+{% set default = default|default(default.text) %}
+
+<div class="ui basic button dropdown {{ class }}" id="{{ id }}">   
+    <i class="icon calendar"></i>
+    <i class="icon dropdown"></i>   
+    {% if selected == "" %}      
+        <div class="text">{{ default }}</div>
+    {% else %}
+        <div class="text">{{ "now"|date(selected) }}</div>
+    {% endif %}   
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item {{ item.value|ifthen(selected,'active') }}" data-value="{{ item.value }}">{{ "now"|date(item.value) }}</div>      
+    {% endfor %}
+    </div>
+</div>

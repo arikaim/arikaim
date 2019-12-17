@@ -1,0 +1,34 @@
+<div class="ui middle aligned divided list">
+    {% if routes is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    {% for route in routes %}
+    <div class="item">
+        {% set title = (route.auth > 0) ? service("auth").getAuthName(route.auth) : "" %}
+        <div class="right floated content" title="Authentication">
+            {% if title != "" %}
+            <div class="ui tiny left pointing olive label">{{ title }}</div>
+            {% endif %}  
+            {{ component('components:labels.route-type',{ type: route.type }) }}                            
+        </div>          
+        {{ component('components:status.icon',{ status: route.status }) }}               
+        {% if icon is defined %} 
+            <i class="icon grey middle aligned {{ icon }}"></i>
+        {% endif %} 
+        <div class="content">
+            {% set methods = route.method|default('GET')|split(",") %}     
+            {% for method in methods %}
+                <div class="ui tiny label">{{ method }}</div>
+            {% endfor %}
+            {{ base_url }}{{ route.path }}{{ route.pattern }}                  
+            {% if route.page is not empty %}
+            <div class="ui basic horizontal label">
+                {{ labels.page }}
+                <i class="icon angle right"></i>
+                <span class="bold text">{{ route.page }}</span>               
+            </div>
+            {% endif %}         
+        </div>                    
+    </div>
+    {% endfor %}    
+</div>

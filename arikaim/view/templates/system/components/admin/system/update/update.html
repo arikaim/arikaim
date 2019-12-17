@@ -1,0 +1,22 @@
+<div class="ui stackable grid">
+    <div class="ui six wide column">
+        <div class="ui segment fluid">
+            {{ component('components:segment-title',{ title: 'Arikaim CMS' }) }}    
+            <div class="mt-4">
+                <h5>{{ labels.core }}</h5>
+                <div class="ui divider"></div>
+            </div>
+            {{ component('system:admin.system.update.package') }}
+            <div class="mt-4">
+                <h5>{{ labels.admin }}</h5>
+                <div class="ui divider"></div>
+            </div>
+            {{ component('system:admin.system.update.package',{ package: 'arikaim/system-template' }) }}
+            <div class="mt-4">
+                <h5>{{ labels.ui }}</h5>
+                <div class="ui divider"></div>
+            </div>
+            {{ component('system:admin.system.update.package',{ package: 'arikaim/ui-components' }) }}
+        </div>  
+    </div>
+</div>

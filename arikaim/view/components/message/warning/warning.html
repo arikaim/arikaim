@@ -1,0 +1,18 @@
+{% set show_icon = show_icon|default(false) %}
+{% set show_close_icon = show_close_icon|default(false) %}
+{% set class = class|default('warning icon small') %}
+<div class="ui message {{ class }}" {{ id|attr(id) }}>
+    {% if show_icon == true %}
+    <i class="exclamation tiny icon"></i>
+    {% endif %}
+    {% if show_close_icon == true %}
+    <i class="close icon"></i>
+    {% endif %}
+    <div class="content">
+        {% if title is not empty %}
+        <div class="header">{{ title }}</div>
+        {% endif %}
+        <p>{{ message }}</p>
+        {{ content }}
+    </div>
+</div>

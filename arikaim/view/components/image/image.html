@@ -1,0 +1,10 @@
+{% set width = width|default(20) %}
+{% set height = height|default(20) %}
+
+<div class="border border-solid border-gray-500 w-{{ width }} h-{{ height }} {{ class|default('rounded') }} ">
+{% if url is empty %}
+    <i class="icon huge image outline fitted disabled"></i>        
+{% else %}
+    <img class="image w-{{ width }} h-{{ height }} {{ class|default('rounded') }}" src="{{ url }}">
+{% endif %}
+</div>

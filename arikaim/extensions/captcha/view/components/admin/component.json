@@ -1,0 +1,11 @@
+{
+    "include": {
+        "js": [
+            "system:admin.drivers"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "permissions": "ControlPanel:full"           
+    }
+}

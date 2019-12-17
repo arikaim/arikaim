@@ -1,0 +1,12 @@
+{
+    "title": "Markdown editor",
+    "package-type": "library",
+    "name": "markdown-editor",
+    "version": "1.11.3",
+    "description": "Markdown editor",
+    "repository": "https://github.com/arikaim/markdown-editor-library.git",
+    "files": [
+        "simplemde.min.js",
+        "simplemde.min.css"      
+    ]    
+}

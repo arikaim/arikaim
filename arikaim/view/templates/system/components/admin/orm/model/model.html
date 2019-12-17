@@ -1,0 +1,33 @@
+{% if name is empty %}
+    {% set relations = service('db').getRelationsMap() %}
+    {% set name = relations[type] %}
+{% endif %}
+{% set model = createModel(name,extension).findById(uuid) %}
+
+{% if model is empty %}
+<div class="ui error message">
+    {{ error }}
+</div>
+{% else %}
+<div>    
+    <h4 class="bg-gray-300 p-4">{{ name|baseClass }}</h4>
+    <table class="ui basic table">
+        {% for key,value in model.toArray() %}     
+        <tr>
+            <td class="right aligned font-bold collapsing">{{ key|titleCase }}</td>
+            <td class="collapsing">{{ value|string|sliceLabel(30,'...') }}</td>
+        </tr>         
+        {% endfor %}     
+    </table>       
+    <table class="ui basic table">            
+        <tr>
+            <td class="right aligned font-bold collapsing">{{ labels.class }}</td>
+            <td class="collapsing">{{ name }}</td>
+        </tr>   
+        <tr>
+            <td class="right aligned font-bold collapsing">{{ labels.relation }}</td>
+            <td class="collapsing">{{ type }}</td>
+        </tr>                          
+    </table>          
+</div>
+{% endif %}

@@ -1,0 +1,12 @@
+{# Show countries dropdwon #}
+{% set items = componentProperties("components:countries") %}
+<div class="ui fluid search selection dropdown" {{ name|attr("id") }}>
+    <input name="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{ label.default }}</div>
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item" data-value="{{ item.code|lower }}"><i class="flag {{ item.code|lower }}"></i>{{ item.name }}</div>      
+    {% endfor %}
+    </div>
+</div>

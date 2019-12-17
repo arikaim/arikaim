@@ -1,0 +1,11 @@
+{
+    "title": {
+        "content": "Appearance",
+        "icon": "paint brush"
+    },
+    "labels": {
+        "theme": {
+            "content": "Theme"
+        }
+    }
+}

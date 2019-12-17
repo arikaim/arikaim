@@ -1,0 +1,20 @@
+{% component 'blog:layout' %}
+    <div class="ui container">
+        <div class="ui very basic segment">   
+            <div class="ui left dividing rail">
+                {{ component('blog:panel.left') }}
+            </div>
+            <div class="bg-indigo-100 mt-8">
+                <h2 class="p-2 pl-4 page-title">{{ title }}</h2>               
+            </div>
+            <div class="mt-10">
+                {{ content }}
+            </div>
+            <div class="ui right dividing rail">
+                <div class="mt-12">
+                    {{ component('blog:panel.right',{ title: labels.categories }) }}
+                </div>               
+            </div>
+        </div> 
+    </div>
+{% endcomponent %}

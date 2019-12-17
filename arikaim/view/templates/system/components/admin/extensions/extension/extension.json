@@ -1,0 +1,24 @@
+{
+    "labels": {
+        "version": "Version",          
+        "enabled": "Enabled",
+        "system": "System Extension"
+    },
+    "buttons": {
+        "install": {
+            "content": "Install"
+        },
+        "uninstall": {
+            "content": "Uninstall"
+        },
+        "update": {
+            "content": "Update"
+        },
+        "details": {
+            "content": "Details"
+        }
+    },
+    "messages": {
+        "error": "Missing extension files!"
+    }
+}

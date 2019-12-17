@@ -1,0 +1,11 @@
+{% set per_page = getRowsPerPage(namespace) %}
+{% set items = [15,25,50,70,100] %}
+<div class="ui icon labeled dropdown basic button page-size-menu {{ class }}" {{ title|attr('title') }}>
+    <i class="ui icon list"></i>
+    <span class="header text">{{ label }} {{ per_page }}</span>
+    <div class="ui menu">
+    {% for value in items %} 
+        <div class="item" data-value="{{ value }}">{{ value }}</div>    
+    {% endfor %}      
+    </div>
+</div>

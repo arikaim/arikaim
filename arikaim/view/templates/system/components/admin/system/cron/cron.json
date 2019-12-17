@@ -1,0 +1,13 @@
+{
+    "labels": {
+        "installed": "Installed",
+        "title": "Scheduler",
+        "disabled": "Disabled",
+        "user": "User",
+        "entry": "Entry"     
+    },
+    "buttons": {
+        "install": "Install",
+        "uninstall": "Uninstall"
+    }
+}

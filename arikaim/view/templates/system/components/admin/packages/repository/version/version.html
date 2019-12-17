@@ -1,0 +1,38 @@
+{% if name is not empty %}
+    {% set repository = package(type).getRepository(name) %}
+    {% set package = package(type).createPackage(name) %}
+{% endif %}
+{% set confirm_overwrite = confirm_overwrite|default(false) %}
+<span>
+    {% if repository is not empty %}      
+        {% set lastVersion = repository.getLastVersion() %}
+        {% if lastVersion is not empty  %}
+            {{ labels.version }} 
+            <span>{{ lastVersion }}</span>
+        {% endif %}
+    {% endif %}
+</span>
+<div class="mt-2">    
+    {% if repository.getLastVersion() is versionCompare(package.getVersion())  %}     
+        <div class="ui green button install-repository-button" package-name="{{ name }}" package-type="{{ type }}">
+            <i class="icon download"></i>
+            {{ labels.install }}
+        </div>
+        {% if confirm_overwrite == true %}
+            {% component 'components:message.warning' %}  
+            {% set title = warning.title %}          
+            {% set class = 'icon error' %}
+            {% set show_icon = true %}
+            {% set message = warning_message|default(warning.message) %}
+            <!--
+                <div class="ui checkbox">
+                    <input type="checkbox" name="owerwrite" value="1">
+                    <label>{{ warning.message  }}</label>
+                </div>
+            -->
+            {% endcomponent %}
+        {% endif %}
+    {% endif %}
+</div>
+<div class="ui message opacity-0 mt-2" id="message">
+</div>

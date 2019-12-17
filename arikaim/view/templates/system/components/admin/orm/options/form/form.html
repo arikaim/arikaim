@@ -1,0 +1,26 @@
+{% set options = createModel(model,extension).getOptions(id) %}
+<form class="ui form" id="options_form">   
+    <input type="hidden" value="{{ extension }}" name="extension">
+    <input type="hidden" value="{{ model }}" name="model">
+    <input type="hidden" value="{{ id }}" name="id">
+    {% for option in options.get() %}
+    <div class="field">
+        <label>{{ option.title }}</label>      
+        {% if option.type == option.TEXT() %}
+            <input class="option-field" type="text" name="options[{{ option.key }}]" value="{{ option.value }}" id="{{ option.key }}" data-content="{{ option.description }}">
+        {% elseif option.type == option.CHECKBOX() %}
+            <div class="ui checkbox">
+                <input class="option-field" type="checkbox" name="options[{{ option.key }}]" value="1" {{ option.value|ifthen(1,'checked') }} id="{{ option.key }}" data-content="{{ option.description }}">
+                <label></label>
+            </div>
+        {% elseif option.type == option.DROPDOWN() %}      
+            <select class="ui dropdown option-dropdown option-field" name="options[{{ option.key }}]" data-content="{{ option.description }}">
+                {% for key,value in option.items %}              
+                <option value="{{ key }}" {{ option.value|ifthen(key,'selected') }} >{{ value }}</option>
+                {% endfor %}
+            </select>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {{ component('components:form.footer') }}
+</form>

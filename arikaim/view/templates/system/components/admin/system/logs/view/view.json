@@ -1,0 +1,15 @@
+{
+    "columns": {
+        "date": "Date",
+        "type": "Type",
+        "message": "Message",
+        "details": "Details"
+    },
+    "page_size_menu": {
+        "title": "Rows per page",
+        "label": ""
+    },
+    "messages": {
+        "empty": "..."
+    }
+}

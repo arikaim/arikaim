@@ -1,0 +1,48 @@
+<form class="ui equal width form mt-8" id="user_settings_form"> 
+    <div class="field">
+        <label>{{ fields.user_name.label }}</label> 
+        <div class="ui left icon input">
+            <i class="icon user"></i>
+            <input type="text" name="user_name" id="user_name" {{ fields.user_name.placeholder|attr('placeholder') }} value="{{ user.user_name }}">    
+        </div>
+    </div>            
+    <div class="field">
+        <label>{{ fields.email.label }}</label>
+        <div class="ui left icon input">
+            <i class="icon mail outline"></i>
+            <input type="text" name="email" id="email" {{ fields.email.placeholder|attr("placeholder") }} value="{{ user.email }}">    
+        </div>                       
+    </div>
+    <div class="ui accordion field">
+        <div class="ui title">
+            <i class="icon dropdown"></i>
+            {{ labels.change_password }}
+        </div>
+        <div class="content">
+            <div class="field">
+                <label>{{ fields.password.label }}</label>
+                <div class="ui left icon input">
+                    <i class="icon lock"></i>
+                    <input type="password" name="password" id="password" {{ fields.old_password.placeholder|attr("placeholder") }} value="">    
+                </div>                       
+            </div>
+            <div class="ui fields">
+                <div class="field">
+                    <label>{{ fields.new_password.label }}</label>
+                    <div class="ui left icon input">
+                        <i class="icon lock"></i>
+                        <input type="password" name="new_password" id="new_password" {{ fields.new_password.placeholder|attr("placeholder") }} value="">    
+                    </div>                       
+                </div>
+                <div class="field">
+                    <label>{{ fields.repeat_password.label }}</label>
+                    <div class="ui left icon input">
+                        <i class="icon lock"></i>
+                        <input type="password" name="repeat_password" id="repeat_password" {{ fields.repeat_password.placeholder|attr("placeholder") }} value="">    
+                    </div>                       
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ component('components:form.footer') }}                 
+</form>

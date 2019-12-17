@@ -1,0 +1,20 @@
+{
+    "name": "arikaim/fomantic-library",
+    "description": "Arikaim CMS Fomantic UI library",
+    "keywords": ["UI", "Arikaim CMS Fomantic UI library","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {        
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "path": "fomantic"
+    }
+}

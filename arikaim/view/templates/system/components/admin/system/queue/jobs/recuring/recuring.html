@@ -1,0 +1,11 @@
+{% set extension = extension|default(null) %}
+{% set jobs = service('queue').getRecuringJobs(extension) %}
+
+{% if jobs is empty %}
+    <div class="ml-1">{{ labels.empty }}</div>
+{% endif %}
+<div class="ui accordion recurring-jobs ml-1 {{ class }}">
+    {% for job in jobs %}    
+    {{ component('system:admin.jobs.job',{ job: job }) }}
+    {% endfor %}
+</div>

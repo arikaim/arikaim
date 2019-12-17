@@ -1,0 +1,22 @@
+<div class="ui mini fixed inverted menu borderless dark-color shadow">  
+    <div class="ui item tablet mobile only column grid" id="mobile_menu">
+        {{ component("system:admin.menu.mobile") }}
+    </div> 
+    <div {{ brand.title|attr('title') }} class="pl-0 ml-0">           
+        <div class="page-title ml-1 align-middle">
+            <img class="pt-1 mt-1" width="28px" height="28px" alt="{{ brand.image.alt }}" src="{{ system_template_url }}/images/{{ brand.image.src }}">
+            <span class="pb-2 align-middle text-white" style="display:inline">Arikaim</span> 
+        </div>
+    </div>           
+    <div class="ui inverted right menu mr-3 bg-gray-700 dark-color">    
+        <div class="ui item tablet computer only column grid">
+            <a title="{{ hint.view }}" href="{{ site_url }}" target="site"><i class="icon browser alternate"></i></a>
+        </div>   
+        <div class="item" id="language_menu">
+            {{ component("components:language.dropdown") }}
+        </div>
+        <div class="ui item tablet computer only column grid" id="user_menu">
+            {{ component("system:admin.user-menu") }}
+        </div>                             
+    </div>    
+</div>

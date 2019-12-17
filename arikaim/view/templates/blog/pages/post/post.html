@@ -1,0 +1,5 @@
+{% component 'blog:layout.page' %}
+    {% set post = createModel('Posts','blog').findById(uuid) %} 
+    {% set title = post.page.name %}                 
+    {{ component('blog:post',{ post: post }) }}
+{% endcomponent %}

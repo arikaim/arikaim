@@ -1,0 +1,13 @@
+{% if params|length > 0 %}
+<form class="ui form" id="library_config" library="{{ library }}">
+    {% for name,param in params %}
+    <div class="field">
+        <label>{{ name }}</label>
+        <input name="{{ name }}" value="{{ param }}" type="text">
+    </div>
+    {% endfor %}
+    {{ component('components:form.footer') }}
+</form>
+{% else %}
+<div>..</div>
+{% endif %}

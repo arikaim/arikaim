@@ -1,0 +1,17 @@
+{% if name is not empty %}
+{% set repository = package(type).getRepository(name) %}
+{% endif %}
+{% set confirm_overwrite = confirm_overwrite|default(false) %}
+<h4>{{ labels.repository }}</h4>
+{% if repository is empty %}
+    <div class="ui basic blue label">{{ labels.empty }}</div>            
+{% else %}
+    <div>
+        <div class="ui basic label">{{ repository.getRepositoryUrl() }}</div> 
+        {% if repository.isPrivate() == true %}
+        <div class="ui basic blue label">{{ labels.private }}</div> 
+        {% endif %}
+        <div class="mt-4" id="package_version_content" package-name="{{ name }}" package-type="{{ type }}" confirm-overwrite="{{ confirm_overwrite }}">             
+        </div>
+    </div>
+{% endif %}

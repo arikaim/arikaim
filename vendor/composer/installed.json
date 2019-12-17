@@ -1,0 +1,4352 @@
+[
+    {
+        "name": "arikaim/access",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/access.git",
+            "reference": "f999bd87c06d7094fc9ad1ca8f7776fc3b4a4ec5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/access/zipball/f999bd87c06d7094fc9ad1ca8f7776fc3b4a4ec5",
+            "reference": "f999bd87c06d7094fc9ad1ca8f7776fc3b4a4ec5",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "lcobucci/jwt": "3.2.*",
+            "php": ">=7.1",
+            "psr/http-message": "1.0.*",
+            "psr/http-server-handler": "1.0.*",
+            "psr/http-server-middleware": "1.0.*"
+        },
+        "time": "2019-12-05T16:07:12+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Access\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Access package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "auth",
+            "cms"
+        ]
+    },
+    {
+        "name": "arikaim/arikaim-library",
+        "version": "1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/arikaim-library.git",
+            "reference": "089dd1e6a31d1a27aa9b7f512c7572d51450f5ce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/arikaim-library/zipball/089dd1e6a31d1a27aa9b7f512c7572d51450f5ce",
+            "reference": "089dd1e6a31d1a27aa9b7f512c7572d51450f5ce",
+            "shasum": ""
+        },
+        "time": "2019-12-05T15:51:40+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "arikaim"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS library",
+        "keywords": [
+            "Arikaim",
+            "Arikam CMS library",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/arikaim-ui-library",
+        "version": "1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/arikaim-ui-library.git",
+            "reference": "9b732fe800428b6e378ed791bab83eec02b1ec13"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/arikaim-ui-library/zipball/9b732fe800428b6e378ed791bab83eec02b1ec13",
+            "reference": "9b732fe800428b6e378ed791bab83eec02b1ec13",
+            "shasum": ""
+        },
+        "time": "2019-12-08T07:46:12+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "arikaim-ui"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS UI library",
+        "keywords": [
+            "Arikaim",
+            "Arikam CMS UI library",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/blog-extension",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/blog-extension.git",
+            "reference": "475933b7dff212dd19028300144cf498fcd97fce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/blog-extension/zipball/475933b7dff212dd19028300144cf498fcd97fce",
+            "reference": "475933b7dff212dd19028300144cf498fcd97fce",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T14:36:03+00:00",
+        "type": "arikaim-extension",
+        "extra": {
+            "path": "blog"
+        },
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Blog extension",
+        "keywords": [
+            "Arikaim CMS Blog extension",
+            "extension"
+        ]
+    },
+    {
+        "name": "arikaim/blog-template",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/blog-template.git",
+            "reference": "4bf6493adf2fcfae2547a28f018d9fe20712ec78"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/blog-template/zipball/4bf6493adf2fcfae2547a28f018d9fe20712ec78",
+            "reference": "4bf6493adf2fcfae2547a28f018d9fe20712ec78",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T07:16:14+00:00",
+        "type": "arikaim-template",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "blog"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Blog Template",
+        "keywords": [
+            "Arikaim Blog template",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/cache",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/cache.git",
+            "reference": "3969ed370a475439c883134d62506a9daf29c525"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/cache/zipball/3969ed370a475439c883134d62506a9daf29c525",
+            "reference": "3969ed370a475439c883134d62506a9daf29c525",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "doctrine/cache": "1.8.*",
+            "php": ">=7.1"
+        },
+        "time": "2019-11-24T09:31:35+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Cache\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam Cache package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cache",
+            "cms"
+        ]
+    },
+    {
+        "name": "arikaim/captcha-extension",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/captcha-extension.git",
+            "reference": "b192265443a56edee9ba44ecc50d6c1496e0ed59"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/captcha-extension/zipball/b192265443a56edee9ba44ecc50d6c1496e0ed59",
+            "reference": "b192265443a56edee9ba44ecc50d6c1496e0ed59",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T08:40:49+00:00",
+        "type": "arikaim-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "captcha"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS captcha service extension",
+        "keywords": [
+            "Arikaim captcha extension",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/category-extension",
+        "version": "1.0.15",
+        "version_normalized": "1.0.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/category-extension.git",
+            "reference": "a2d53c652a08ad52c00718ee67a47e35c630c036"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/category-extension/zipball/a2d53c652a08ad52c00718ee67a47e35c630c036",
+            "reference": "a2d53c652a08ad52c00718ee67a47e35c630c036",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T09:38:19+00:00",
+        "type": "arikaim-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "category"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Category extension",
+        "keywords": [
+            "Arikaim CMS Category extension",
+            "extension"
+        ]
+    },
+    {
+        "name": "arikaim/collection",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/collection.git",
+            "reference": "8eda63b530a46dc7530167eb8a03aeaba704599d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/collection/zipball/8eda63b530a46dc7530167eb8a03aeaba704599d",
+            "reference": "8eda63b530a46dc7530167eb8a03aeaba704599d",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/utils": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-11-24T11:20:40+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Collection\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam collection package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "collection"
+        ]
+    },
+    {
+        "name": "arikaim/console",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/console.git",
+            "reference": "891cc9ae6518e4e4d1d429d8f6c3cbf54cb52a7e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/console/zipball/891cc9ae6518e4e4d1d429d8f6c3cbf54cb52a7e",
+            "reference": "891cc9ae6518e4e4d1d429d8f6c3cbf54cb52a7e",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1",
+            "symfony/console": "4.1.*"
+        },
+        "time": "2019-12-13T14:04:14+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Console\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Console package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "console"
+        ]
+    },
+    {
+        "name": "arikaim/container",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/container.git",
+            "reference": "e9ca141171762a0cc3d3618842dca34e7cd01d33"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/container/zipball/e9ca141171762a0cc3d3618842dca34e7cd01d33",
+            "reference": "e9ca141171762a0cc3d3618842dca34e7cd01d33",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0",
+            "psr/container": "^1.0"
+        },
+        "time": "2019-11-14T06:51:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Container\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com"
+            }
+        ],
+        "description": "Dependency Injection Container",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "container",
+            "dependency injection"
+        ]
+    },
+    {
+        "name": "arikaim/controllers",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/controllers.git",
+            "reference": "ffbbf47ba09a9092c3772979a7537d4649cf195c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/controllers/zipball/ffbbf47ba09a9092c3772979a7537d4649cf195c",
+            "reference": "ffbbf47ba09a9092c3772979a7537d4649cf195c",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/view": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-11T16:02:53+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Controllers\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS controllers package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "auth",
+            "cms"
+        ]
+    },
+    {
+        "name": "arikaim/core",
+        "version": "1.0.56",
+        "version_normalized": "1.0.56.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/core.git",
+            "reference": "2d6be5f23aea7f8352065a33e57d87590483ddfe"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/core/zipball/2d6be5f23aea7f8352065a33e57d87590483ddfe",
+            "reference": "2d6be5f23aea7f8352065a33e57d87590483ddfe",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/access": "^1.0.0",
+            "arikaim/cache": "^1.0.0",
+            "arikaim/collection": "^1.0.0",
+            "arikaim/console": "^1.0.0",
+            "arikaim/container": "^1.0.0",
+            "arikaim/controllers": "^1.0.0",
+            "arikaim/db": "^1.0.0",
+            "arikaim/driver": "^1.0.0",
+            "arikaim/events": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/installer": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/logger": "^1.0.0",
+            "arikaim/mail": "^1.0.0",
+            "arikaim/options": "^1.0.0",
+            "arikaim/packages": "^1.0.0",
+            "arikaim/paginator": "^1.0.0",
+            "arikaim/queue": "^1.0.0",
+            "arikaim/routes": "^1.0.0",
+            "arikaim/storage": "^1.0.0",
+            "arikaim/system": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "arikaim/validator": "^1.0.0",
+            "arikaim/view": "^1.0.0",
+            "guzzlehttp/guzzle": "6.3.*",
+            "http-interop/http-factory-guzzle": "1.*",
+            "php": ">=7.1",
+            "slim/slim": "4.3.*"
+        },
+        "time": "2019-12-17T13:39:24+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS core component",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "Content management system",
+            "cms"
+        ]
+    },
+    {
+        "name": "arikaim/cors-module",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/cors-module.git",
+            "reference": "e3e7b9a1720f4fca462557834d92c9062cab65c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/cors-module/zipball/e3e7b9a1720f4fca462557834d92c9062cab65c2",
+            "reference": "e3e7b9a1720f4fca462557834d92c9062cab65c2",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T15:28:40+00:00",
+        "type": "arikaim-module",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "cors"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam Cors Middleware module",
+        "keywords": [
+            "Arikaim Cors Middleware module",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/dashboard-extension",
+        "version": "1.0.11",
+        "version_normalized": "1.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/dashboard-extension.git",
+            "reference": "4b1a58d991a1b16ad3ff9e9252cdb186173dbaaf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/dashboard-extension/zipball/4b1a58d991a1b16ad3ff9e9252cdb186173dbaaf",
+            "reference": "4b1a58d991a1b16ad3ff9e9252cdb186173dbaaf",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T07:32:27+00:00",
+        "type": "arikaim-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "dashboard"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim Dashboard extension",
+        "keywords": [
+            "Arikaim Dashboard extension",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/db",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/db.git",
+            "reference": "2de44056a849aabc4953b24d44c8f38eccc3d5f2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/db/zipball/2de44056a849aabc4953b24d44c8f38eccc3d5f2",
+            "reference": "2de44056a849aabc4953b24d44c8f38eccc3d5f2",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/http": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "illuminate/database": "5.8.*",
+            "illuminate/events": "5.8.*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-16T15:46:02+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Db\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS database package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "database"
+        ]
+    },
+    {
+        "name": "arikaim/driver",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/driver.git",
+            "reference": "07ec6806c2d0b926568e5ead3e02ad87c4d2eece"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/driver/zipball/07ec6806c2d0b926568e5ead3e02ad87c4d2eece",
+            "reference": "07ec6806c2d0b926568e5ead3e02ad87c4d2eece",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T16:14:09+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Driver\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Driver package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "driver"
+        ]
+    },
+    {
+        "name": "arikaim/events",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/events.git",
+            "reference": "644d211b5dcff63dbc1aa5d5e4b13befb9d73fef"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/events/zipball/644d211b5dcff63dbc1aa5d5e4b13befb9d73fef",
+            "reference": "644d211b5dcff63dbc1aa5d5e4b13befb9d73fef",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T16:15:35+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Events\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Events package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "collection"
+        ]
+    },
+    {
+        "name": "arikaim/filepond-library",
+        "version": "4.4.3",
+        "version_normalized": "4.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/filepond-library.git",
+            "reference": "8076adf57cda9b19628eafebc5b605d1d900038a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/filepond-library/zipball/8076adf57cda9b19628eafebc5b605d1d900038a",
+            "reference": "8076adf57cda9b19628eafebc5b605d1d900038a",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:14:48+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "filepond"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Filepond UI library",
+        "keywords": [
+            "Arikaim",
+            "Arikam CMS Filepond UI library",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/fomantic-library",
+        "version": "2.7.8",
+        "version_normalized": "2.7.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/fomantic-library.git",
+            "reference": "86f19c1ea534ad205608893792de025f5c177a01"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/fomantic-library/zipball/86f19c1ea534ad205608893792de025f5c177a01",
+            "reference": "86f19c1ea534ad205608893792de025f5c177a01",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:22:06+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "fomantic"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Fomantic UI library",
+        "keywords": [
+            "Arikaim",
+            "Arikaim CMS Fomantic UI library",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/foundation-emails-library",
+        "version": "2.2.2",
+        "version_normalized": "2.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/foundation-emails-library.git",
+            "reference": "22a1c306671945323a50ff802d0d960a6a0bda76"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/foundation-emails-library/zipball/22a1c306671945323a50ff802d0d960a6a0bda76",
+            "reference": "22a1c306671945323a50ff802d0d960a6a0bda76",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:28:40+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "foundation-emails"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Foundation for Emails UI library for Arikaim CMS",
+        "keywords": [
+            "Arikaim",
+            "Foundation for Emails UI library for Arikaim CMS",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/http",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/http.git",
+            "reference": "939ae69095d46203f0460c737687746e06398f9c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/http/zipball/939ae69095d46203f0460c737687746e06398f9c",
+            "reference": "939ae69095d46203f0460c737687746e06398f9c",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "guzzlehttp/psr7": "^1.4",
+            "php": ">=7.1",
+            "psr/http-message": "1.0.*"
+        },
+        "time": "2019-12-17T13:38:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Http\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam http package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "http"
+        ]
+    },
+    {
+        "name": "arikaim/installer",
+        "version": "1.1.3",
+        "version_normalized": "1.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/installer.git",
+            "reference": "057074bb02246c0dba26ec605276e1f233e5da9f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/installer/zipball/057074bb02246c0dba26ec605276e1f233e5da9f",
+            "reference": "057074bb02246c0dba26ec605276e1f233e5da9f",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-11-12T12:34:19+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Arikaim\\Installer\\InstallerPlugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Installer\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS installers",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "Arikaim",
+            "arikaim-extension",
+            "arikaim-module",
+            "arikaim-template",
+            "install arikaim",
+            "installer"
+        ]
+    },
+    {
+        "name": "arikaim/interfaces",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/interfaces.git",
+            "reference": "aa4ec6f6e5ac5eaecafd6e14b968fb85a591238b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/interfaces/zipball/aa4ec6f6e5ac5eaecafd6e14b968fb85a591238b",
+            "reference": "aa4ec6f6e5ac5eaecafd6e14b968fb85a591238b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2019-12-16T16:37:31+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Interfaces\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS interfaces package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "http"
+        ]
+    },
+    {
+        "name": "arikaim/jquery-library",
+        "version": "3.4.2",
+        "version_normalized": "3.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/jquery-library.git",
+            "reference": "e477a6d5df1d305754e8813d398fa923785ab0eb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/jquery-library/zipball/e477a6d5df1d305754e8813d398fa923785ab0eb",
+            "reference": "e477a6d5df1d305754e8813d398fa923785ab0eb",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:35:08+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "jquery"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "jQuery library for Arikaim CMS",
+        "keywords": [
+            "Arikaim",
+            "jQuery library for Arikaim CMS",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/jquery-ui-library",
+        "version": "1.12.2",
+        "version_normalized": "1.12.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/jquery-ui-library.git",
+            "reference": "44ee38d6b68419b6f5dccd326f2f031c21a4797c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/jquery-ui-library/zipball/44ee38d6b68419b6f5dccd326f2f031c21a4797c",
+            "reference": "44ee38d6b68419b6f5dccd326f2f031c21a4797c",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:41:44+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "jquery-ui"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "jQuery UI library for Arikaim CMS",
+        "keywords": [
+            "Arikaim",
+            "jQuery UI library for Arikaim CMS",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/logger",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/logger.git",
+            "reference": "f8caab38ac43d88c65c538ad58fc211dc32a60e3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/logger/zipball/f8caab38ac43d88c65c538ad58fc211dc32a60e3",
+            "reference": "f8caab38ac43d88c65c538ad58fc211dc32a60e3",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/utils": "^1.0.0",
+            "monolog/monolog": "1.23.*",
+            "php": ">=7.1"
+        },
+        "time": "2019-11-29T10:46:20+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Logger\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Logger package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "logger"
+        ]
+    },
+    {
+        "name": "arikaim/mail",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/mail.git",
+            "reference": "201a4560f6934668bcd058e6795f52c33bbad133"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/mail/zipball/201a4560f6934668bcd058e6795f52c33bbad133",
+            "reference": "201a4560f6934668bcd058e6795f52c33bbad133",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1",
+            "swiftmailer/swiftmailer": "5.4.*"
+        },
+        "time": "2019-12-05T16:21:33+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Mail\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS mail package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "http"
+        ]
+    },
+    {
+        "name": "arikaim/markdown-editor-library",
+        "version": "1.11.3",
+        "version_normalized": "1.11.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/markdown-editor-library.git",
+            "reference": "1e18815539f1f48f0e880807b194f5a9a78651dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/markdown-editor-library/zipball/1e18815539f1f48f0e880807b194f5a9a78651dd",
+            "reference": "1e18815539f1f48f0e880807b194f5a9a78651dd",
+            "shasum": ""
+        },
+        "time": "2019-12-17T07:23:08+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "markdown-editor"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim Markdown Editor Library",
+        "keywords": [
+            "Arikaim",
+            "Arikam CMS library",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/options",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/options.git",
+            "reference": "0b37ce89be88a8e30a1993705b0c59dd456bf9f3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/options/zipball/0b37ce89be88a8e30a1993705b0c59dd456bf9f3",
+            "reference": "0b37ce89be88a8e30a1993705b0c59dd456bf9f3",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T16:23:05+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Options\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam options package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "collection",
+            "options"
+        ]
+    },
+    {
+        "name": "arikaim/packages",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/packages.git",
+            "reference": "bd640849f994f54772787cc84a753eaaa8dcd52c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/packages/zipball/bd640849f994f54772787cc84a753eaaa8dcd52c",
+            "reference": "bd640849f994f54772787cc84a753eaaa8dcd52c",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T15:03:27+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Packages\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Packages package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "packages"
+        ]
+    },
+    {
+        "name": "arikaim/paginator",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/paginator.git",
+            "reference": "7ecb2c135bedd4b297fc922f9e7e152813ddd923"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/paginator/zipball/7ecb2c135bedd4b297fc922f9e7e152813ddd923",
+            "reference": "7ecb2c135bedd4b297fc922f9e7e152813ddd923",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T16:25:59+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Paginator\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS paginator package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "paginator"
+        ]
+    },
+    {
+        "name": "arikaim/queue",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/queue.git",
+            "reference": "6a2a6eedba657d75a3be10ea01a4c569f2e04efa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/queue/zipball/6a2a6eedba657d75a3be10ea01a4c569f2e04efa",
+            "reference": "6a2a6eedba657d75a3be10ea01a4c569f2e04efa",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/system": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "dragonmantank/cron-expression": "2.3.*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-06T13:44:17+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Queue\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Queue Package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "queue"
+        ]
+    },
+    {
+        "name": "arikaim/recaptcha-module",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/recaptcha-module.git",
+            "reference": "e8f5b38f900467de8641625023c704d2a8a9d293"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/recaptcha-module/zipball/e8f5b38f900467de8641625023c704d2a8a9d293",
+            "reference": "e8f5b38f900467de8641625023c704d2a8a9d293",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "google/recaptcha": "1.2.*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T15:41:28+00:00",
+        "type": "arikaim-module",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "recaptcha"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS ReCaptcha Module",
+        "keywords": [
+            "Arikaim CMS ReCaptcha module",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/routes",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/routes.git",
+            "reference": "bbb5e9f2f1f59f693e240e7d2e585d940e978e64"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/routes/zipball/bbb5e9f2f1f59f693e240e7d2e585d940e978e64",
+            "reference": "bbb5e9f2f1f59f693e240e7d2e585d940e978e64",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/interfaces": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-16T16:44:08+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Routes\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikaim CMS Routes Package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "routes"
+        ]
+    },
+    {
+        "name": "arikaim/stats-module",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/stats-module.git",
+            "reference": "1a493c3b6c9ae8ea1876db4793f5cac162085f3b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/stats-module/zipball/1a493c3b6c9ae8ea1876db4793f5cac162085f3b",
+            "reference": "1a493c3b6c9ae8ea1876db4793f5cac162085f3b",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T15:37:16+00:00",
+        "type": "arikaim-module",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "stats"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam Stats Middleware module",
+        "keywords": [
+            "Arikaim Stats Middleware module",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/storage",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/storage.git",
+            "reference": "7605be1772f9528cdbb14163531e043e378f32ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/storage/zipball/7605be1772f9528cdbb14163531e043e378f32ee",
+            "reference": "7605be1772f9528cdbb14163531e043e378f32ee",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "league/flysystem": "^1.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-17T15:02:16+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Storage\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS local storage package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "storage"
+        ]
+    },
+    {
+        "name": "arikaim/system",
+        "version": "1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/system.git",
+            "reference": "cd0c9afb0e2b08a067f808f4483099e4340c3f5b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/system/zipball/cd0c9afb0e2b08a067f808f4483099e4340c3f5b",
+            "reference": "cd0c9afb0e2b08a067f808f4483099e4340c3f5b",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1",
+            "psr/http-message": "1.0.*",
+            "symfony/process": "3.4.*"
+        },
+        "time": "2019-12-16T12:50:02+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\System\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS system package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "helpers",
+            "system"
+        ]
+    },
+    {
+        "name": "arikaim/system-template",
+        "version": "1.0.18",
+        "version_normalized": "1.0.18.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/system-template.git",
+            "reference": "d58c0150616d72e1e5406cf660aebe4c01847692"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/system-template/zipball/d58c0150616d72e1e5406cf660aebe4c01847692",
+            "reference": "d58c0150616d72e1e5406cf660aebe4c01847692",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/arikaim-library": "*",
+            "arikaim/arikaim-ui-library": "*",
+            "arikaim/filepond-library": "*",
+            "arikaim/fomantic-library": "*",
+            "arikaim/foundation-emails-library": "*",
+            "arikaim/installer": "*",
+            "arikaim/jquery-library": "*",
+            "arikaim/jquery-ui-library": "*",
+            "arikaim/tailwind-library": "*"
+        },
+        "time": "2019-12-17T07:55:28+00:00",
+        "type": "arikaim-template",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "system"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Control Panel Template",
+        "keywords": [
+            "Arikaim Control Panel template",
+            "module"
+        ]
+    },
+    {
+        "name": "arikaim/tailwind-library",
+        "version": "1.1.3",
+        "version_normalized": "1.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/tailwind-library.git",
+            "reference": "5b5b108bd5fdbeec47fa3b7821c36a1e99fd6125"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/tailwind-library/zipball/5b5b108bd5fdbeec47fa3b7821c36a1e99fd6125",
+            "reference": "5b5b108bd5fdbeec47fa3b7821c36a1e99fd6125",
+            "shasum": ""
+        },
+        "time": "2019-11-18T15:52:19+00:00",
+        "type": "arikaim-library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": "tailwind"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Tailwind CSS library for Arikaim CMS",
+        "keywords": [
+            "Arikaim",
+            "Tailwind CSS library for Arikaim CMS",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/ui-components",
+        "version": "1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/ui-components.git",
+            "reference": "c67b73f414591f6481c40e4f0badd4fef310d135"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/ui-components/zipball/c67b73f414591f6481c40e4f0badd4fef310d135",
+            "reference": "c67b73f414591f6481c40e4f0badd4fef310d135",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/installer": "*"
+        },
+        "time": "2019-12-16T12:46:37+00:00",
+        "type": "arikaim-component",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "path": ""
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS UI components",
+        "keywords": [
+            "Arikaim",
+            "Arikam UI components",
+            "ui"
+        ]
+    },
+    {
+        "name": "arikaim/utils",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/utils.git",
+            "reference": "2e7e95cdb3e1bf447657e632d0105b668b38ce6a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/utils/zipball/2e7e95cdb3e1bf447657e632d0105b668b38ce6a",
+            "reference": "2e7e95cdb3e1bf447657e632d0105b668b38ce6a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2019-12-16T15:44:38+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Utils\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam utils package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "helpers",
+            "utils"
+        ]
+    },
+    {
+        "name": "arikaim/validator",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/validator.git",
+            "reference": "45ccf5958ccf503b818e2d9778d93c04d2c973c8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/validator/zipball/45ccf5958ccf503b818e2d9778d93c04d2c973c8",
+            "reference": "45ccf5958ccf503b818e2d9778d93c04d2c973c8",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "php": ">=7.1"
+        },
+        "time": "2019-12-05T16:33:18+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\Validator\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS Validator Package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "storage"
+        ]
+    },
+    {
+        "name": "arikaim/view",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arikaim/view.git",
+            "reference": "f05e40ac0c523ff5620985dc6edeb5c2d103e164"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arikaim/view/zipball/f05e40ac0c523ff5620985dc6edeb5c2d103e164",
+            "reference": "f05e40ac0c523ff5620985dc6edeb5c2d103e164",
+            "shasum": ""
+        },
+        "require": {
+            "arikaim/collection": "^1.0.0",
+            "arikaim/http": "^1.0.0",
+            "arikaim/interfaces": "^1.0.0",
+            "arikaim/utils": "^1.0.0",
+            "erusev/parsedown-extra": "^0.7",
+            "php": ">=7.1",
+            "twig/twig": "2.7.*"
+        },
+        "time": "2019-12-17T07:46:02+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Arikaim\\Core\\View\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Atanasov",
+                "email": "info@arikaim.com",
+                "homepage": "http://arikaim.com"
+            }
+        ],
+        "description": "Arikam CMS View package",
+        "homepage": "http://arikaim.com",
+        "keywords": [
+            "cms",
+            "view"
+        ]
+    },
+    {
+        "name": "doctrine/cache",
+        "version": "1.8.2",
+        "version_normalized": "1.8.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/cache.git",
+            "reference": "cf73f063172f4ec18b6cbb293e30363e11e8d30a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/cache/zipball/cf73f063172f4ec18b6cbb293e30363e11e8d30a",
+            "reference": "cf73f063172f4ec18b6cbb293e30363e11e8d30a",
+            "shasum": ""
+        },
+        "require": {
+            "php": "~7.1"
+        },
+        "conflict": {
+            "doctrine/common": ">2.2,<2.4"
+        },
+        "require-dev": {
+            "alcaeus/mongo-php-adapter": "^1.1",
+            "doctrine/coding-standard": "^4.0",
+            "mongodb/mongodb": "^1.1",
+            "phpunit/phpunit": "^7.0",
+            "predis/predis": "~1.0"
+        },
+        "suggest": {
+            "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
+        },
+        "time": "2019-11-11T01:40:42+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Caching library offering an object-oriented API for many cache backends",
+        "homepage": "https://www.doctrine-project.org",
+        "keywords": [
+            "cache",
+            "caching"
+        ]
+    },
+    {
+        "name": "doctrine/inflector",
+        "version": "1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/inflector.git",
+            "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/inflector/zipball/ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
+            "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.2"
+        },
+        "time": "2019-10-30T19:59:35+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "inflection",
+            "pluralize",
+            "singularize",
+            "string"
+        ]
+    },
+    {
+        "name": "dragonmantank/cron-expression",
+        "version": "v2.3.0",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dragonmantank/cron-expression.git",
+            "reference": "72b6fbf76adb3cf5bc0db68559b33d41219aba27"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/72b6fbf76adb3cf5bc0db68559b33d41219aba27",
+            "reference": "72b6fbf76adb3cf5bc0db68559b33d41219aba27",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.4|^7.0"
+        },
+        "time": "2019-03-31T00:38:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cron\\": "src/Cron/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Chris Tankersley",
+                "email": "chris@ctankersley.com",
+                "homepage": "https://github.com/dragonmantank"
+            }
+        ],
+        "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+        "keywords": [
+            "cron",
+            "schedule"
+        ]
+    },
+    {
+        "name": "erusev/parsedown",
+        "version": "1.7.3",
+        "version_normalized": "1.7.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown.git",
+            "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown/zipball/6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
+            "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35"
+        },
+        "time": "2019-03-17T18:48:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Parsedown": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "Parser for Markdown.",
+        "homepage": "http://parsedown.org",
+        "keywords": [
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "erusev/parsedown-extra",
+        "version": "0.7.1",
+        "version_normalized": "0.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown-extra.git",
+            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "~1.4"
+        },
+        "time": "2015-11-01T10:19:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ParsedownExtra": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "An extension of Parsedown that adds support for Markdown Extra.",
+        "homepage": "https://github.com/erusev/parsedown-extra",
+        "keywords": [
+            "markdown",
+            "markdown extra",
+            "parsedown",
+            "parser"
+        ]
+    },
+    {
+        "name": "google/recaptcha",
+        "version": "1.2.3",
+        "version_normalized": "1.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/recaptcha.git",
+            "reference": "98c4a6573b27e8b0990ea8789c74ea378795134c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/recaptcha/zipball/98c4a6573b27e8b0990ea8789c74ea378795134c",
+            "reference": "98c4a6573b27e8b0990ea8789c74ea378795134c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.2.20|^2.15",
+            "php-coveralls/php-coveralls": "^2.1",
+            "phpunit/phpunit": "^4.8.36|^5.7.27|^6.59|^7.5.11"
+        },
+        "time": "2019-08-16T15:48:25+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ReCaptcha\\": "src/ReCaptcha"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "Client library for reCAPTCHA, a free service that protects websites from spam and abuse.",
+        "homepage": "https://www.google.com/recaptcha/",
+        "keywords": [
+            "Abuse",
+            "captcha",
+            "recaptcha",
+            "spam"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.3.3",
+        "version_normalized": "6.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.4",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+            "psr/log": "^1.0"
+        },
+        "suggest": {
+            "psr/log": "Required for using the Log middleware"
+        },
+        "time": "2018-04-22T15:46:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "guzzlehttp/promises",
+        "version": "v1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/promises.git",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2016-12-20T10:07:11+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle promises library",
+        "keywords": [
+            "promise"
+        ]
+    },
+    {
+        "name": "guzzlehttp/psr7",
+        "version": "1.6.1",
+        "version_normalized": "1.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/psr7.git",
+            "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
+            "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "psr/http-message": "~1.0",
+            "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "ext-zlib": "*",
+            "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+        },
+        "suggest": {
+            "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
+        },
+        "time": "2019-07-01T23:21:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Psr7\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Tobias Schultze",
+                "homepage": "https://github.com/Tobion"
+            }
+        ],
+        "description": "PSR-7 message implementation that also provides common utility methods",
+        "keywords": [
+            "http",
+            "message",
+            "psr-7",
+            "request",
+            "response",
+            "stream",
+            "uri",
+            "url"
+        ]
+    },
+    {
+        "name": "http-interop/http-factory-guzzle",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/http-interop/http-factory-guzzle.git",
+            "reference": "34861658efb9899a6618cef03de46e2a52c80fc0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/http-interop/http-factory-guzzle/zipball/34861658efb9899a6618cef03de46e2a52c80fc0",
+            "reference": "34861658efb9899a6618cef03de46e2a52c80fc0",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/psr7": "^1.4.2",
+            "psr/http-factory": "^1.0"
+        },
+        "provide": {
+            "psr/http-factory-implementation": "^1.0"
+        },
+        "require-dev": {
+            "http-interop/http-factory-tests": "^0.5",
+            "phpunit/phpunit": "^6.5"
+        },
+        "time": "2018-07-31T19:32:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Http\\Factory\\Guzzle\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "An HTTP Factory using Guzzle PSR7",
+        "keywords": [
+            "factory",
+            "http",
+            "psr-17",
+            "psr-7"
+        ]
+    },
+    {
+        "name": "illuminate/container",
+        "version": "v5.8.35",
+        "version_normalized": "5.8.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/container.git",
+            "reference": "b42e5ef939144b77f78130918da0ce2d9ee16574"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/container/zipball/b42e5ef939144b77f78130918da0ce2d9ee16574",
+            "reference": "b42e5ef939144b77f78130918da0ce2d9ee16574",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.8.*",
+            "illuminate/support": "5.8.*",
+            "php": "^7.1.3",
+            "psr/container": "^1.0"
+        },
+        "time": "2019-08-20T02:00:23+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Container\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Container package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "illuminate/contracts",
+        "version": "v5.8.35",
+        "version_normalized": "5.8.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/contracts.git",
+            "reference": "00fc6afee788fa07c311b0650ad276585f8aef96"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/contracts/zipball/00fc6afee788fa07c311b0650ad276585f8aef96",
+            "reference": "00fc6afee788fa07c311b0650ad276585f8aef96",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "psr/container": "^1.0",
+            "psr/simple-cache": "^1.0"
+        },
+        "time": "2019-07-30T13:57:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Contracts\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Contracts package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "illuminate/database",
+        "version": "v5.8.35",
+        "version_normalized": "5.8.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/database.git",
+            "reference": "56635c5e683a2e3c6c01a8a3bcad3683223d3cec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/database/zipball/56635c5e683a2e3c6c01a8a3bcad3683223d3cec",
+            "reference": "56635c5e683a2e3c6c01a8a3bcad3683223d3cec",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "illuminate/container": "5.8.*",
+            "illuminate/contracts": "5.8.*",
+            "illuminate/support": "5.8.*",
+            "php": "^7.1.3"
+        },
+        "suggest": {
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (^1.4).",
+            "illuminate/console": "Required to use the database commands (5.8.*).",
+            "illuminate/events": "Required to use the observers with Eloquent (5.8.*).",
+            "illuminate/filesystem": "Required to use the migrations (5.8.*).",
+            "illuminate/pagination": "Required to paginate the result set (5.8.*)."
+        },
+        "time": "2019-08-31T17:01:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Database\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Database package.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "database",
+            "laravel",
+            "orm",
+            "sql"
+        ]
+    },
+    {
+        "name": "illuminate/events",
+        "version": "v5.8.35",
+        "version_normalized": "5.8.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/events.git",
+            "reference": "a85d7c273bc4e3357000c5fc4812374598515de3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/events/zipball/a85d7c273bc4e3357000c5fc4812374598515de3",
+            "reference": "a85d7c273bc4e3357000c5fc4812374598515de3",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/container": "5.8.*",
+            "illuminate/contracts": "5.8.*",
+            "illuminate/support": "5.8.*",
+            "php": "^7.1.3"
+        },
+        "time": "2019-02-18T18:37:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Events\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Events package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "illuminate/support",
+        "version": "v5.8.35",
+        "version_normalized": "5.8.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/support.git",
+            "reference": "e63a495d3bf01654f70def1046fb925c4bb56506"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/e63a495d3bf01654f70def1046fb925c4bb56506",
+            "reference": "e63a495d3bf01654f70def1046fb925c4bb56506",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "^1.1",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "illuminate/contracts": "5.8.*",
+            "nesbot/carbon": "^1.26.3 || ^2.0",
+            "php": "^7.1.3"
+        },
+        "conflict": {
+            "tightenco/collect": "<5.5.33"
+        },
+        "suggest": {
+            "illuminate/filesystem": "Required to use the composer class (5.8.*).",
+            "moontoast/math": "Required to use ordered UUIDs (^1.1).",
+            "ramsey/uuid": "Required to use Str::uuid() (^3.7).",
+            "symfony/process": "Required to use the composer class (^4.2).",
+            "symfony/var-dumper": "Required to use the dd function (^4.2).",
+            "vlucas/phpdotenv": "Required to use the env helper (^3.3)."
+        },
+        "time": "2019-09-03T16:36:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Support\\": ""
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Support package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "lcobucci/jwt",
+        "version": "3.2.5",
+        "version_normalized": "3.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lcobucci/jwt.git",
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/82be04b4753f8b7693b62852b7eab30f97524f9b",
+            "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-openssl": "*",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "mdanter/ecc": "~0.3.1",
+            "mikey179/vfsstream": "~1.5",
+            "phpmd/phpmd": "~2.2",
+            "phpunit/php-invoker": "~1.1",
+            "phpunit/phpunit": "~4.5",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "suggest": {
+            "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
+        },
+        "time": "2018-11-11T12:22:26+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Lcobucci\\JWT\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Luís Otávio Cobucci Oblonczyk",
+                "email": "lcobucci@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+        "keywords": [
+            "JWS",
+            "jwt"
+        ]
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.61",
+        "version_normalized": "1.0.61.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "4fb13c01784a6c9f165a351e996871488ca2d8c9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/4fb13c01784a6c9f165a351e996871488ca2d8c9",
+            "reference": "4fb13c01784a6c9f165a351e996871488ca2d8c9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-fileinfo": "*",
+            "php": ">=5.5.9"
+        },
+        "conflict": {
+            "league/flysystem-sftp": "<1.0.6"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "^3.4",
+            "phpunit/phpunit": "^5.7.10"
+        },
+        "suggest": {
+            "ext-fileinfo": "Required for MimeType",
+            "ext-ftp": "Allows you to use FTP server storage",
+            "ext-openssl": "Allows you to use FTPS server storage",
+            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+            "league/flysystem-webdav": "Allows you to use WebDAV storage",
+            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+            "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
+            "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
+        },
+        "time": "2019-12-08T21:46:50+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction: Many filesystems, one API.",
+        "keywords": [
+            "Cloud Files",
+            "WebDAV",
+            "abstraction",
+            "aws",
+            "cloud",
+            "copy.com",
+            "dropbox",
+            "file systems",
+            "files",
+            "filesystem",
+            "filesystems",
+            "ftp",
+            "rackspace",
+            "remote",
+            "s3",
+            "sftp",
+            "storage"
+        ]
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.23.0",
+        "version_normalized": "1.23.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "sentry/sentry": "^0.13",
+            "swiftmailer/swiftmailer": "^5.3|^6.0"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+            "sentry/sentry": "Allow sending log messages to a Sentry server"
+        },
+        "time": "2017-06-19T01:22:40+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "nesbot/carbon",
+        "version": "2.27.0",
+        "version_normalized": "2.27.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "13b8485a8690f103bf19cba64879c218b102b726"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/13b8485a8690f103bf19cba64879c218b102b726",
+            "reference": "13b8485a8690f103bf19cba64879c218b102b726",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "php": "^7.1.8 || ^8.0",
+            "symfony/translation": "^3.4 || ^4.0 || ^5.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
+            "kylekatarnls/multi-tester": "^1.1",
+            "phpmd/phpmd": "dev-php-7.1-compatibility",
+            "phpstan/phpstan": "^0.11",
+            "phpunit/phpunit": "^7.5 || ^8.0",
+            "squizlabs/php_codesniffer": "^3.4"
+        },
+        "time": "2019-11-20T06:59:06+00:00",
+        "bin": [
+            "bin/carbon"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Carbon\\Laravel\\ServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Carbon\\": "src/Carbon/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            },
+            {
+                "name": "kylekatarnls",
+                "homepage": "http://github.com/kylekatarnls"
+            }
+        ],
+        "description": "An API extension for DateTime that supports 281 different languages.",
+        "homepage": "http://carbon.nesbot.com",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "nikic/fast-route",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/FastRoute.git",
+            "reference": "181d480e08d9476e61381e04a71b34dc0432e812"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nikic/FastRoute/zipball/181d480e08d9476e61381e04a71b34dc0432e812",
+            "reference": "181d480e08d9476e61381e04a71b34dc0432e812",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35|~5.7"
+        },
+        "time": "2018-02-13T20:26:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "FastRoute\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov",
+                "email": "nikic@php.net"
+            }
+        ],
+        "description": "Fast request router for PHP",
+        "keywords": [
+            "router",
+            "routing"
+        ]
+    },
+    {
+        "name": "psr/container",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-02-14T16:28:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
+        "name": "psr/http-factory",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-factory.git",
+            "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-factory/zipball/12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
+            "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0",
+            "psr/http-message": "^1.0"
+        },
+        "time": "2019-04-30T12:38:16+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interfaces for PSR-7 HTTP message factories",
+        "keywords": [
+            "factory",
+            "http",
+            "message",
+            "psr",
+            "psr-17",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "psr/http-message",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06T14:39:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "psr/http-server-handler",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-server-handler.git",
+            "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
+            "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/http-message": "^1.0"
+        },
+        "time": "2018-10-30T16:46:14+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side request handler",
+        "keywords": [
+            "handler",
+            "http",
+            "http-interop",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response",
+            "server"
+        ]
+    },
+    {
+        "name": "psr/http-server-middleware",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-server-middleware.git",
+            "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/2296f45510945530b9dceb8bcedb5cb84d40c5f5",
+            "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/http-message": "^1.0",
+            "psr/http-server-handler": "^1.0"
+        },
+        "time": "2018-10-30T17:12:04+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side middleware",
+        "keywords": [
+            "http",
+            "http-interop",
+            "middleware",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+            "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2019-11-01T11:05:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "psr/simple-cache",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/simple-cache.git",
+            "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+            "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-10-23T01:57:42+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\SimpleCache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interfaces for simple caching",
+        "keywords": [
+            "cache",
+            "caching",
+            "psr",
+            "psr-16",
+            "simple-cache"
+        ]
+    },
+    {
+        "name": "ralouphie/getallheaders",
+        "version": "3.0.3",
+        "version_normalized": "3.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ralouphie/getallheaders.git",
+            "reference": "120b605dfeb996808c31b6477290a714d356e822"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/120b605dfeb996808c31b6477290a714d356e822",
+            "reference": "120b605dfeb996808c31b6477290a714d356e822",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "^2.1",
+            "phpunit/phpunit": "^5 || ^6.5"
+        },
+        "time": "2019-03-08T08:55:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/getallheaders.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ralph Khattar",
+                "email": "ralph.khattar@gmail.com"
+            }
+        ],
+        "description": "A polyfill for getallheaders."
+    },
+    {
+        "name": "slim/slim",
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/slimphp/Slim.git",
+            "reference": "26020e9a099e69b0b12918115894f7106364dcb7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/slimphp/Slim/zipball/26020e9a099e69b0b12918115894f7106364dcb7",
+            "reference": "26020e9a099e69b0b12918115894f7106364dcb7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "nikic/fast-route": "^1.3",
+            "php": "^7.1",
+            "psr/container": "^1.0",
+            "psr/http-factory": "^1.0",
+            "psr/http-message": "^1.0",
+            "psr/http-server-handler": "^1.0",
+            "psr/http-server-middleware": "^1.0"
+        },
+        "require-dev": {
+            "ext-simplexml": "*",
+            "guzzlehttp/psr7": "^1.5",
+            "http-interop/http-factory-guzzle": "^1.0",
+            "nyholm/psr7": "^1.1",
+            "nyholm/psr7-server": "^0.3.0",
+            "phpspec/prophecy": "^1.8",
+            "phpstan/phpstan": "^0.11.5",
+            "phpunit/phpunit": "^7.5",
+            "slim/http": "^0.7",
+            "slim/psr7": "^0.3",
+            "squizlabs/php_codesniffer": "^3.4.2",
+            "zendframework/zend-diactoros": "^2.1"
+        },
+        "suggest": {
+            "ext-simplexml": "Needed to support XML format in BodyParsingMiddleware",
+            "ext-xml": "Needed to support XML format in BodyParsingMiddleware",
+            "slim/psr7": "Slim PSR-7 implementation. See http://www.slimframework.com/docs/v4/start/installation.html for more information."
+        },
+        "time": "2019-10-05T21:24:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Slim\\": "Slim",
+                "Slim\\Tests\\": "tests"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Josh Lockhart",
+                "email": "hello@joshlockhart.com",
+                "homepage": "https://joshlockhart.com"
+            },
+            {
+                "name": "Andrew Smith",
+                "email": "a.smith@silentworks.co.uk",
+                "homepage": "http://silentworks.co.uk"
+            },
+            {
+                "name": "Rob Allen",
+                "email": "rob@akrabat.com",
+                "homepage": "http://akrabat.com"
+            },
+            {
+                "name": "Pierre Berube",
+                "email": "pierre@lgse.com",
+                "homepage": "http://www.lgse.com"
+            },
+            {
+                "name": "Gabriel Manricks",
+                "email": "gmanricks@me.com",
+                "homepage": "http://gabrielmanricks.com"
+            }
+        ],
+        "description": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs",
+        "homepage": "https://www.slimframework.com",
+        "keywords": [
+            "api",
+            "framework",
+            "micro",
+            "router"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.4.12",
+        "version_normalized": "5.4.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "181b89f18a90f8925ef805f950d47a7190e9b950"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/181b89f18a90f8925ef805f950d47a7190e9b950",
+            "reference": "181b89f18a90f8925ef805f950d47a7190e9b950",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.1",
+            "symfony/phpunit-bridge": "~3.2"
+        },
+        "time": "2018-07-31T09:26:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Corbyn"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "https://swiftmailer.symfony.com",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "symfony/console",
+        "version": "v4.1.12",
+        "version_normalized": "4.1.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "9e87c798f67dc9fceeb4f3d57847b52d945d1a02"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/console/zipball/9e87c798f67dc9fceeb4f3d57847b52d945d1a02",
+            "reference": "9e87c798f67dc9fceeb4f3d57847b52d945d1a02",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/dependency-injection": "<3.4",
+            "symfony/process": "<3.3"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~3.4|~4.0",
+            "symfony/dependency-injection": "~3.4|~4.0",
+            "symfony/event-dispatcher": "~3.4|~4.0",
+            "symfony/lock": "~3.4|~4.0",
+            "symfony/process": "~3.4|~4.0"
+        },
+        "suggest": {
+            "psr/log": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/lock": "",
+            "symfony/process": ""
+        },
+        "time": "2019-01-25T14:34:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/polyfill-ctype",
+        "version": "v1.13.1",
+        "version_normalized": "1.13.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-ctype.git",
+            "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
+            "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-ctype": "For best performance"
+        },
+        "time": "2019-11-27T13:56:44+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.13-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Ctype\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gert de Pagter",
+                "email": "BackEndTea@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for ctype functions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "ctype",
+            "polyfill",
+            "portable"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.13.1",
+        "version_normalized": "1.13.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7b4aab9743c30be783b73de055d24a39cf4b954f",
+            "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2019-11-27T14:18:11+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.13-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/process",
+        "version": "v3.4.36",
+        "version_normalized": "3.4.36.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/process.git",
+            "reference": "9a4545c01e1e4f473492bd52b71e574dcc401ca2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/process/zipball/9a4545c01e1e4f473492bd52b71e574dcc401ca2",
+            "reference": "9a4545c01e1e4f473492bd52b71e574dcc401ca2",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.5.9|>=7.0.8"
+        },
+        "time": "2019-11-28T10:05:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Process\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/translation",
+        "version": "v4.4.1",
+        "version_normalized": "4.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "897fb68ee7933372517b551d6f08c6d4bb0b8c40"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/897fb68ee7933372517b551d6f08c6d4bb0b8c40",
+            "reference": "897fb68ee7933372517b551d6f08c6d4bb0b8c40",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "symfony/polyfill-mbstring": "~1.0",
+            "symfony/translation-contracts": "^1.1.6|^2"
+        },
+        "conflict": {
+            "symfony/config": "<3.4",
+            "symfony/dependency-injection": "<3.4",
+            "symfony/http-kernel": "<4.4",
+            "symfony/yaml": "<3.4"
+        },
+        "provide": {
+            "symfony/translation-implementation": "1.0"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "^3.4|^4.0|^5.0",
+            "symfony/console": "^3.4|^4.0|^5.0",
+            "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+            "symfony/finder": "~2.8|~3.0|~4.0|^5.0",
+            "symfony/http-kernel": "^4.4",
+            "symfony/intl": "^3.4|^4.0|^5.0",
+            "symfony/service-contracts": "^1.1.2|^2",
+            "symfony/yaml": "^3.4|^4.0|^5.0"
+        },
+        "suggest": {
+            "psr/log-implementation": "To use logging capability in translator",
+            "symfony/config": "",
+            "symfony/yaml": ""
+        },
+        "time": "2019-11-12T17:18:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.4-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Translation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Translation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/translation-contracts",
+        "version": "v1.1.7",
+        "version_normalized": "1.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/translation-contracts.git",
+            "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/364518c132c95642e530d9b2d217acbc2ccac3e6",
+            "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3"
+        },
+        "suggest": {
+            "symfony/translation-implementation": ""
+        },
+        "time": "2019-09-17T11:12:18+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Contracts\\Translation\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Generic abstractions related to translation",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "abstractions",
+            "contracts",
+            "decoupling",
+            "interfaces",
+            "interoperability",
+            "standards"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "v2.7.4",
+        "version_normalized": "2.7.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "ed9c49220e09bfaeb1ba4d48077c08a7b09908dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/ed9c49220e09bfaeb1ba4d48077c08a7b09908dd",
+            "reference": "ed9c49220e09bfaeb1ba4d48077c08a7b09908dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "symfony/polyfill-ctype": "^1.8",
+            "symfony/polyfill-mbstring": "^1.3"
+        },
+        "require-dev": {
+            "psr/container": "^1.0",
+            "symfony/debug": "^2.7",
+            "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+        },
+        "time": "2019-03-23T14:28:58+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            },
+            "psr-4": {
+                "Twig\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "https://twig.symfony.com/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "https://twig.symfony.com",
+        "keywords": [
+            "templating"
+        ]
+    }
+]

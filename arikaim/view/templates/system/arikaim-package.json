@@ -1,0 +1,28 @@
+{    
+    "title": "Control Panel",
+    "name": "system",
+    "package-type": "template",
+    "description": "Arikaim CMS Control Panel",
+    "repository": "https://github.com/arikaim/system-template.git",
+    "version": "1.0.18",
+    "image": {
+        "src": "",
+        "alt": ""
+    },
+    "include": {            
+        "css": [
+            "admin.css"
+        ],
+        "library": [
+            "jquery",
+            "jquery-ui",   
+            "arikaim",
+            "arikaim-ui",
+            "fomantic",
+            "filepond",
+            "markdown-editor",
+            "tailwind"
+        ],
+        "loader": "components:loader.dimmer"
+    }
+}

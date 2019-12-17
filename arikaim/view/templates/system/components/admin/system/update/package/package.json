@@ -1,0 +1,15 @@
+{
+    "labels":{
+        "version": "Version"      
+    },
+    "buttons": {
+        "update": {
+            "content": "Update"
+        }
+    },
+    "messages": {
+        "new": "New version available.",
+        "no": "There are no available updates.",
+        "install": "Installing new version"
+    }     
+}

@@ -1,0 +1,13 @@
+{% set themes = package('template').getThemes('system') %}
+<div class="ui floating dropdown labeled search icon basic button" id="themes_dropdown" template="{{ template }}">
+    <input name="themes_dropdown" type="hidden" value="{{ selected }}">
+    <i class="icon paint brush"></i>
+    <span class="text">Select Theme</span>
+    <div class="menu">
+    {% for name, theme in themes %}
+        <div class="item" data-value="{{ name }}">           
+            {{ theme.title }}
+        </div>
+    {% endfor %}
+    </div>
+</div>

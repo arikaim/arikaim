@@ -1,0 +1,20 @@
+{# Show order by link #}
+{%- macro orderByLink(namespace,field,title,component_name) %}
+{% set order = getOrderBy(namespace) %}
+{% if order[field] == 'asc' %}
+    {% set icon = 'sort down' %}
+    {% set type = 'desc' %}
+{% endif %}
+{% if order[field] == 'desc' %}
+    {% set icon = 'sort up' %}
+    {% set type = 'asc' %}   
+{% endif %}
+{% if order[field] is empty %}
+    {% set icon = 'sort' %}
+    {% set type = 'asc' %}   
+{% endif %}
+<a class="link order-by-link" order-by="{{ field }}" order-by-type="{{ type }}">
+    <i class="icon {{ icon }}"></i>
+</a>
+{{ title }}
+{%- endmacro orderByLink %}

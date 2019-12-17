@@ -1,0 +1,12 @@
+{% set package = package('extension').createPackage(extension) %}
+<div class="ui icon left top pointing dropdown {{ class }}" id="extension_actions_dropdown" extension="{{ extension }}">
+    <i class="puzzle blue icon"></i>
+    <div class="ui verical menu extension-repository-menu">
+        <div class="item" id="extension_details">{{ items.details }}</div>
+        <div class="item disabled">        
+            {{ items.version }}
+            <span>{{ package.getVersion() }}</span>
+        </div>
+        <div class="item">Repository</div>
+    </div>
+</div>

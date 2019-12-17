@@ -1,0 +1,25 @@
+{% set labels = componentProperties('components:status') %}
+{% set selected = labels.status[status] %}
+{% if skip is empty %}
+    {% set skip = [2] %}
+{% endif %}
+<div class="ui dropdown {{ class }} status-dropdown" uuid="{{ uuid }}">
+    <div class="text">
+        <span class="ui empty mini label circular {{ selected.class }}"></span>  
+        {{ selected.title }}
+    </div>
+    <i class="dropdown icon"></i>   
+    <div class="ui menu">
+        {% if all == true %}
+            <div class="item" data-value="">{{ text.all }}</div>
+        {% endif %}
+        {% for label in labels.status %}
+            {% if label.index not in skip %}          
+                <div class="item {{ label.index|ifthen(selected.index,'active') }}" data-value="{{ label.index }}">  
+                    <span class="ui empty mini label circular {{ label.class }}"></span>           
+                    {{ label.title }}
+                </div>   
+            {% endif %} 
+        {% endfor %}           
+    </div>
+</div>

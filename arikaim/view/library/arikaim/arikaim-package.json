@@ -1,0 +1,15 @@
+{
+    "title": "Arikaim",
+    "package-type": "library",
+    "name": "arikaim",
+    "version": "1.0.10",
+    "description": "Arikaim client library",
+    "repository": "https://github.com/arikaim/arikaim-library.git",
+    "files": [
+        "arikaim.js"
+    ],
+    "params-readonly": true,
+    "params": {
+        "arikaim_base_url": "{{ base_url }}"
+    }
+}

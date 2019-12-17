@@ -1,0 +1,12 @@
+{
+    "labels": {
+        "framework": "Front-end Framework",
+        "details": "Details",
+        "files": "Files",             
+        "themes": "Themes",
+        "version": "Version",
+        "current": "Current",
+        "help": "Help",
+        "crossorigin": "Crossorigin"
+    }
+}

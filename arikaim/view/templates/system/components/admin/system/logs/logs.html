@@ -1,0 +1,18 @@
+<div class="ui stackable grid">
+    <div class="sixteen wide column">
+        <div class="ui stackable text menu">
+            <div class="item">       
+                <button class="ui aligned basic button delete-logs">
+                    <i class="icon orange trash"></i>
+                    {{ buttons.delete.content }}
+                </button>
+            </div>
+            <div class="item right floated">
+                {{ component('components:paginator.dropdown',{ namespace : 'logs' }) }}
+            </div>
+        </div>       
+        <div class="ui mt-2" id="logs_view">
+            {{ component("system:admin.system.logs.view") }}
+        </div>
+    </div>
+</div>

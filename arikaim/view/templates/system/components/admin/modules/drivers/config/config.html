@@ -1,0 +1,18 @@
+{% if driver_name is not empty %}
+    {% set driver = service('driver').getDriver(driver_name) %}
+{% endif %}
+{% set title = title|merge({ content: (driver is empty) ? title.content : driver.title })  %}
+
+{% component 'components:tabs.vertical.content' %}
+{% if driver_name is empty %}
+<div class="ui field mt-8">
+    <h5>{{ labels.driver }}</h5>
+    {{ component('system:admin.drivers.dropdown',{ selected: driver_name, class: 'fluid', category: category }) }}
+</div>           
+{% endif %}
+<div id="driver_config" class="mt-8">              
+    {% if driver_name is not empty %}
+        {{ component('system:admin.modules.drivers.config.form',{ name: driver_name }) }}    
+    {% endif %}
+</div>           
+{% endcomponent %}

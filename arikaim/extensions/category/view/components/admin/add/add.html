@@ -1,0 +1,6 @@
+{% component 'components:tabs.vertical.content' %}
+<div class="ui hidden divider"></div>
+<div class="ui" id="form_content"> 
+    {{ component('category::admin.form',{ parent_id: parent_id, language: language }) }}
+</div>   
+{% endcomponent %}

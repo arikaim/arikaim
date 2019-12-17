@@ -1,0 +1,10 @@
+{% set filter = (type is empty) ? null : { 'type': type } %}   
+{% set modules = package('module').getPackages(false,filter) %}
+<div class="ui stackable six cards mt-1" id="modules">
+    {% if modules is empty %}
+        {{ labels.empty }}
+    {% endif %}
+    {% for module in modules %}      
+        {{ component("system:admin.modules.module",{ name: module }) }}       
+    {% endfor %}
+</div>

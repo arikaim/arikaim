@@ -1,0 +1,8 @@
+{
+    "labels": {
+        "title": "Component Options",
+        "auth": "Authorization",
+        "permissions": "Required Permissions",
+        "none": "none"
+    }
+}

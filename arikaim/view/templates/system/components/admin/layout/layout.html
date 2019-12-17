@@ -1,0 +1,19 @@
+{% set dashboard = componentProperties('dashboard::admin.dashboard') %}
+<div id="content" class="ui sixteen column grid">    
+    <div class="one wide column mt-4" id="left_space" style="min-width:140px">
+        {{ component("system:admin.menu") }}
+    </div>
+    <div class="fifteen wide column mt-10 p-0">                        
+        <div class="ui horizontal divider header">
+            <i class="icon blue {{ dashboard.icon }}" id="page_icon"></i>
+            <div class="content" id="page_title">
+                {{ dashboard.title }}
+            </div>
+        </div>
+        <div class="pl-2" id="tool_content">
+            {% if hasExtension('dashboard') == true %}
+                {{ component('dashboard::admin.dashboard') }}
+            {% endif %}
+        </div>                
+    </div>    
+</div>

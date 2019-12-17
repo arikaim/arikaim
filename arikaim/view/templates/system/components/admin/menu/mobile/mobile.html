@@ -1,0 +1,8 @@
+<div class="ui icon top left pointing dropdown big" id="admin_menu_dropdown">
+    <i class="bars text-white big icon"></i>
+    <div class="ui large menu">               
+        {{ component("system:admin.menu.extensions",{ status: 1, type: user_type }) }}       
+        <div class="ui horizontal divider"></div>
+        {{ component("system:admin/menu/system") }}      
+    </div>
+</div>

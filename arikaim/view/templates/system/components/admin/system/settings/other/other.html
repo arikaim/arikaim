@@ -1,0 +1,11 @@
+{% set debug_config = service('config').getByPath('settings/debug') %}
+{% component 'components:tabs.vertical.content' %}
+<div class="ui equal width form mt-8" id="other_settings_form">     
+    <div class="field">
+        <div class="ui slider checkbox" id="debug_toggle">
+            <input name="debug" type="checkbox" value="1" {{ debug_config|ifthen(true,'checked') }} >
+            <label class="font-bold">{{ fields.debug.label }}</label>
+        </div>             
+    </div>           
+</div>
+{% endcomponent %}

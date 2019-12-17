@@ -1,0 +1,12 @@
+{
+    "version": "3.4.2",
+    "name": "jquery",
+    "title": "JQuery",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/jquery-library.git",
+    "help": "https://api.jquery.com/",
+    "description": "jQuery JavaScript library",
+    "files": [
+        "jquery-3.4.1.min.js"
+    ]       
+}

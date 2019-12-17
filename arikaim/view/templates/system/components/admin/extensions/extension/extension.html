@@ -1,0 +1,63 @@
+{% set extension = package('extension').getPackageProperties(extension_name) %}
+<div class="ui raised card min-h-full {{ error|ifthen(1,'red') }}" id="{{ extension.name }}">     
+    <div class="content item">    
+        {% if extension.type == 1 %}
+            <div class="ui right corner blue mini label" title="{{ labels.system }}">
+                <i class="icon exclamation"></i>
+            </div>      
+        {% endif %} 
+        <i class="left floated big blue icon {{ extension.get('admin-menu').icon }}"></i>  
+        
+        {% if extension.status == 1 %}
+        <div class="ui left corner mini olive label" {{ labels.enabled|attr('title') }} >
+            <i class="icon checkmark {{ error|ifthen(1,'hidden') }}"></i>
+        </div>
+        {% endif %}         
+        <div class="ui horizontal right floated basic mini label">               
+            {{ labels.version }} 
+            <div class="detail">{{ extension.version }}</div>
+        </div>        
+        <div class="font-bold mt-1 pl-4">{{ extension.title }}</div>    
+    </div>
+    <div class="content">     
+        <p>{{ extension.description }}</p>                     
+        {% if error == 1 %}
+        <div class="ui meta mt-1">
+            <div class="ui mini error message">
+                {{ messages.error }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="p-2">
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ extension.name }}"></div>
+    </div>   
+    <div class="extra content">
+        <div class="ui mini fluid basic buttons"> 
+            {% if extension.installed == true %}        
+                {% if error != 1 %}  
+                <button class="ui button basic olive update-button" extension="{{ extension.name }}">
+                    <i class="icon refresh"></i>
+                    {{ buttons.update.content }}
+                </button> 
+                {% endif %}
+                <button class="ui icon basic button orange un-install-button {{ error|ifthen(1,'fluid') }}" extension="{{ extension.name }}">
+                    <i class="icon trash"></i>
+                    {{ buttons.uninstall.content }}
+                </button> 
+                {% if extension.type != 1 %}
+                {{ component('components:dropdown.enable',{ class: '', selected: extension.status, attributes: { extension: extension.name } }) }}
+                {% endif %}
+            {% else %}
+            <button class="ui button basic olive install-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}">
+                <i class="icon download"></i>                    
+                {{ buttons.install.content }}
+            </button> 
+            {% endif %}           
+            <button class="ui toggle mini button details-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}">
+                <i class="icon list layout"></i>                    
+                {{ buttons.details.content }}
+            </button>  
+        </div>
+    </div>
+</div>

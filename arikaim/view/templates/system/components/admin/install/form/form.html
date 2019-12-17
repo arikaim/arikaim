@@ -1,0 +1,27 @@
+{% set data = installConfig() %}
+<form class="ui segment form" id='install_form'>
+    <div class="field">
+        <label>{{ fields.host.label }}</label>
+        {{ data.db.host }}
+    </div>
+    <div class="field">
+        <label>{{ fields.type.label }}</label>
+        {{ data.db.driver }}
+    </div>
+    <div class="field">
+        <label>{{ fields.database.label }}</label>
+        <input type="text" name="database" id="database" value="{{ data.db.database }}">
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label>{{ fields.user.label }}</label>
+            <input type="text" name="username" id="username" value="{{ data.db.username }}">
+        </div>
+        <div class="field">
+            <label>{{ fields.password.label }}</label>
+            <input type="text" name="password" id="password" value="{{ data.db.password }}">
+        </div>
+    </div>      
+    {{ component('components:form.footer',{ button_class: 'blue large button', button_title: buttons.install }) }}
+</form>     
+{{ component("components:progress-bar") }}    

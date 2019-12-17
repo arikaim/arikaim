@@ -1,0 +1,49 @@
+{
+    "fields": {
+        "use_sendmail": {
+            "label": "Use Sendmail"                
+        },
+        "smtp": {
+            "host": {
+                "label": "Host",
+                "placeholder": "Enter SMTP Host"
+            },
+            "port": {
+                "label": "Port",
+                "placeholder": "Enter SMTP Port"
+            },
+            "ssl": {
+                "label": "SSL",
+                "description": "Use SSL encryption"    
+            },
+            "user_name": {
+                "label": "Username",
+                "placeholder": "Enter SMTP Username"
+            },
+            "password": {
+                "label": "Password",
+                "placeholder": "Enter SMTP Password"
+            }
+        },
+        "from": {
+            "email": {
+                "label": "Email",
+                "placeholder": "Enter Email"
+            },
+            "name": {
+                "label": "Name",
+                "placeholder": "Enter Name"
+            }
+        }
+    },
+    "labels": {
+        "test": "Send test email to ",
+        "smtp": "SMTP Settings",
+        "from": "Send From Settings"
+    },
+    "buttons": {
+        "send": {
+            "content": "Send"
+        }
+    }   
+}

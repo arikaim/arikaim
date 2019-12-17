@@ -1,0 +1,30 @@
+{% import systemMacro("head.html") as macro %}
+{% set head = head|merge(items) %}
+{% set charset = head.charset|default('utf-8') %}
+{% set exclude = ['viewport','favicons','og','twitter'] %}
+<head lang="{{ getLanguage() }}">   
+    <title>{{ head.title }}</title>
+    <meta charset="{{ charset }}">  
+    <base href="{{ base_url }}"/>
+    <meta name="language" content="{{ getLanguage() }}">
+    {%- for key,value in head -%}      
+    {% if value is not empty and key not in exclude %}
+    <meta name="{{ key }}" content="{{ value }}"/>
+    {% endif %}
+    {%- endfor %}
+    {% for item in head.og %}
+    <meta property="og:{{ item.name }}" content="{{ item.value }}"/>
+    {% for key, value in item.options %}
+    <meta property="og:{{ item.name }}:{{ key }}" content="{{ value }}"/>
+    {% endfor %}
+    {% endfor %}
+    {% for item in head.twitter %}
+    <meta name="twitter:{{ item.name }}" content="{{ item.value }}"/>
+    {% endfor %}
+    {{ macro.favicon(favicons) }}
+    {{- macro.viewport(viewport.initial,viewport.minimum,viewport.maximum) }}
+    {{ macro.includeLibraries() -}}   
+    {{ macro.includeTemplateFiles() -}}
+    {{ macro.includeComponentFiles() -}}
+    {{ macro.includePageFiles() }}
+</head>

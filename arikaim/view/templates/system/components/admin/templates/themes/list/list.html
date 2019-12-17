@@ -1,0 +1,23 @@
+<div class="ui list">
+    {% if items is empty %}
+        <div class="item">..</div>
+    {% endif %}
+    {% for item in items %}
+    <div class="item">               
+        {% if icon is defined %}  
+            <i class="icon {{ icon }}"></i>
+        {% endif %} 
+        <div class="content">           
+            <div class="text">
+                {% if item.library is defined %}
+                    <div class="ui mini horizontal basic label" title="Ui Library">
+                        <i class="icon cube olive"></i>
+                        {{ item.library }}
+                    </div>
+                {% endif %}
+                {{ item.title }}
+            </div>
+        </div>       
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,26 @@
+<span id="version_info">
+    {{ component('system:admin.system.info.version',{ package: package }) }}   
+</span>          
+<div class="ui hidden divider"></div>  
+package: {{ package }}
+last ver: {{ getLastVersion(package) }}
+current ver:  {{ getVersion(package) }}
+{% if getLastVersion(package) is versionCompare(getVersion(package))  %}   
+<div class="mt-4">                
+    <div class="ui message" id="new_message">
+        {{ messages.new }}
+    </div>  
+    <div class="ui message hidden" id="install_message">
+        {{ messages.install }}
+    </div> 
+    <button class="ui button green update-button" id="update_button" version="{{ package.version }}">
+        <i class="icon download"></i>
+        {{ buttons.update.content }}
+    </button>   
+    <div class="ui success hidden message" id="message">                    
+    </div>    
+{% else %}
+    <div class="ui message">
+        {{ messages.no }}
+    </div>
+{% endif %}    

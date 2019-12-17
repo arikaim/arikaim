@@ -1,0 +1,20 @@
+{   
+    "title": "Fomantic UI",
+    "version": "2.7.8",
+    "name": "fomantic",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/fomantic-library.git",
+    "description": "A community fork of Semantic-UI",
+    "framework": true,
+    "themes": {
+        "default": {
+            "title": "Default",
+            "file:": "semantic.min.css"         
+        }
+    },
+    "help": "https://fomantic-ui.com/introduction/getting-started.html",
+    "files": [
+        "semantic.min.js",
+        "semantic.min.css"      
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "items": {
+        "robots": "index,follow",
+        "googlebot": "index,follow",
+        "cache-control": "no-cache",
+        "content-type": "text/html",
+        "viewport": {
+            "initial": "1.0",
+            "minimum": "1.0",
+            "maximum": "1.0"
+        },
+        "favicons": {}
+    }
+}

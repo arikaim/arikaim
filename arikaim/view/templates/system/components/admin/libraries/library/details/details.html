@@ -1,0 +1,10 @@
+<div class="ui stackable three column centered grid mt-4">
+    <div class="two wide column center aligned">
+        {{ component("system:admin.libraries.dropdown",{ selected : library_name, class: 'fluid' }) }}  
+    </div>                
+</div>    
+<div id="library_details" class="mt-8">   
+{% if library_name is not empty %}  
+    {{ component("system:admin.libraries.library.details.tabs",{ library_name : library_name }) }}
+{% endif %}
+</div>

@@ -1,0 +1,12 @@
+{
+    "title": {
+        "content": "Logger",
+        "icon": "warning circle"
+    },
+    "fields": {
+        "logger": {
+            "label": "System Logger",
+            "description": "Logs errors, warrnigs and system messages."              
+        }        
+    }
+}

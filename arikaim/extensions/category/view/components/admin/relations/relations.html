@@ -1,0 +1,26 @@
+{% component 'components:tabs.vertical.content' %}
+{% if uuid is not empty %}
+    {% set category = createModel('Category','category').findById(uuid) %}
+{% endif %}
+<div class="ui equal width form mt-4">
+    <div class="ui segment mt-4">
+        <div class="field">
+            <label>{{ labels.category }}</label>
+            {{  component("category::dropdown",{ 
+                    selected: uuid, 
+                    language: language, 
+                    name: 'select_category', 
+                    id: 'select_category',
+                    data_type: 'id',
+                    class: 'basic'                    
+                }) 
+            }}
+        </div>
+    </div>    
+</div>
+<div class="mt-8" id="form_content">
+    {% if uuid is not empty %}
+    {{ component('system:admin.orm.relations',{ extension: 'category', model: 'CategoryRelations', id: category.id }) }}
+    {% endif %}
+</div>
+{% endcomponent %}

@@ -1,0 +1,6 @@
+{
+    "access": {
+        "auth": "session",
+        "permissions": "ControlPanel:full"           
+    }
+}

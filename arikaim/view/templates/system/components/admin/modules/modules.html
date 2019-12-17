@@ -1,0 +1,13 @@
+{% set items = [ 
+    { id: 'view_button', title: labels.service.content, component: 'system:admin.modules.view', icon: 'grid layout', active: true, params: { type: 'service' } },
+    { id: 'middleware_button', title: labels.middleware.content, component: 'system:admin.modules.view', icon: 'code', params: { type: 'middleware' } },
+    { id: 'package_button', title: labels.package.content, component: 'system:admin.modules.view', icon: 'code', params: { type: 'package' } },
+    { id: 'drivers_button', title: labels.drivers.content, component: 'system:admin.modules.drivers', icon: 'code' },
+    { id: 'drivers_button', title: labels.download.content, component: 'system:admin.modules.download', icon: 'download' }
+] %}
+
+{{  component('components:tabs',{ 
+        items: items,
+        content: { component: 'system:admin.modules.view', params: { type: 'service' } } 
+    })
+}}

@@ -1,0 +1,30 @@
+<div class="ui icon top left pointing dropdown big" id="mobile_menu">
+    <i class="bars white big icon"></i>
+    <div class="ui large menu inverted">
+        <a href="http://arikaim.com" class="item" target="arikaim">
+            <i class="icon home"></i> 
+            {{ links.home }}
+        </a>
+        <a href="http://arikaim.com/license.html" class="item" target="arikaim">
+            <i class="icon copyright"></i> 
+            {{ links.license }}
+        </a>
+        <a href="http://store.arikaim.com" class="item" target="arikaim">
+            <i class="icon shopping basket"></i>
+            {{ links.store }}
+        </a> 
+        <a href="http://arikaim.com/documentation/" class="item" target="arikaim">
+            <i class="icon info circle"></i>
+            {{ links.doc }}
+        </a>
+        <a href="http://arikaim.com/news.html" class="item" target="arikaim">
+            <i class="icon newspaper outline"></i> 
+            {{ links.news }}
+        </a>
+        <div class=" horizontal divider"></div>
+        <a class="item" href="{{ url('admin/') }}">
+            <i class="icon options"></i>
+            {{ links.admin }}
+        </a>
+    </div>
+</div>

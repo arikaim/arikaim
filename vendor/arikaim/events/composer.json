@@ -1,0 +1,29 @@
+{
+    "name": "arikaim/events",
+    "description": "Arikam CMS Events package",
+    "keywords": ["cms", "collection"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "arikaim/utils": "^1.0.0",
+        "arikaim/collection": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Events\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

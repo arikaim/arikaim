@@ -1,0 +1,50 @@
+{% set editable = properties.gePropertiesList(true) %}
+{% set readonly = properties.gePropertiesList(false,false) %}
+{% set show_readonly = show_readonly|default(true) %}
+
+{% if editable is empty and readonly is empty %}
+    <div class="ui segment">
+        {{ labels.empty }}
+    </div>
+{% endif %}
+{% for property in editable %}      
+    {% if property.getTypeText() == 'url' %}
+        <div class="field {{ property.getRequired()|ifthen(true,'required') }}">      
+            <label>{{ property.getTitle() }}</label>
+            <div class="ui labeled input">
+                <div class="ui label">http://</div>
+                <input type="text" name="{{ property.getName() }}" value="{{ property.getValue() }}"> 
+            </div>                
+        </div>
+    {% elseif property.getTypeText() == 'boolean' %}
+        <div class="field {{ property.getRequired()|ifthen(true,'required') }}">      
+            <div class="ui checkbox">                                          
+                <input type="checkbox" name="{{ property.getName() }}" value="true" {{ property.getValue()|ifthen(true,'checked') }}> 
+                <label>{{ property.getTitle() }}</label>  
+            </div>
+        </div>
+    {% else %}
+        <div class="field {{ property.getRequired()|ifthen(true,'required') }}">      
+            <label>{{ property.getTitle() }}</label>               
+            <input type="text" name="{{ property.getName() }}" value="{{ property.getValue() }}"> 
+        </div>
+    {% endif %}
+{% endfor %}
+{% if readonly is not empty and show_readonly == true %}
+    <div class="ui segment">
+        <h5>{{ labels.readonly }}</h5>
+        <div class="ui list">
+        {% for property in readonly %}  
+            <div class="item">                   
+                <div class="ui basic fluid label">
+                    {{ property.getTitle() }}
+                    <div class="detail">
+                        {% set value = (property.isHidden() == true) ? labels.hidden : property.getValue() %}                          
+                        {{ value|string }}
+                    </div>   
+                </div>                                                     
+            </div>
+        {% endfor %}
+        </div>
+    </div>            
+{% endif %}

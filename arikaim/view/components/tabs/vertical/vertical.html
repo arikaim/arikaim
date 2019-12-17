@@ -1,0 +1,21 @@
+<div class="ui stackable very compact grid">
+    <div class="one wide computer two wide tablet two wide mobile column">       
+        <div class="ui small tabular fluid right pointing vertical menu {{ menu.class }}" id="{{ menu.id }}">
+            {% for item in items %}
+            <div class="item {{ item.active|ifthen(true,'active') }} link {{ item_class }}" component="{{ item.component }}" {{ item.id|attr('id') }} {{ item.params|attr }}>
+                {% if item.icon is not empty %}
+                <i class="icon left floated blue {{ item.icon }}"></i>  
+                {% endif %}              
+                {{ item.title }}
+            </div>           
+            {% endfor %}
+        </div>
+    </div>    
+    <div class="ui fifteen wide computer fourteen wide tablet fourteen wide mobile column">  
+        <div class="padding-top-0 {{ content.class }}" id="{{ content.id }}">
+            {% if content.component is not empty %}          
+                {{ component(content.component, content.params) }}
+            {% endif %}
+        </div>   
+    </div>
+</div>

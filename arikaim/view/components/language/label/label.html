@@ -1,0 +1,18 @@
+{% set show_label = show_label|default(true) %}
+{% set icon = icon|default('globe') %}
+{% set model = createModel('Language').findByColumn(language,'code') %}
+
+<div class="ui left icon label {{ class }}">
+    {% if show_icon == true %}
+        <i class="icon {{ icon }}"></i>
+    {% endif %}  
+    {% if show_label == true %}
+        {{ title }}
+        <div class="detail font-bold">           
+            <i class="flag {{ model.country_code|lower }}"></i>
+            {{ language }}
+        </div>
+    {% else %}
+        {{ language }}
+    {% endif %}
+</div>  

@@ -1,0 +1,11 @@
+<div class="ui stackable centered grid mt-4">
+    <div class="two wide column center aligned">       
+       {{ component('system:admin.templates.dropdown',{ selected: template_name, class: 'fluid' }) }}
+    </div>                
+</div>    
+<div class="ui horizontal divider"></div>
+<div id="template_details">   
+{% if template_name is not empty %}  
+    {{ component("system:admin.templates.template.details.tabs",{ template_name : template_name }) }}
+{% endif %}
+</div>

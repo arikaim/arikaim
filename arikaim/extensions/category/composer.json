@@ -1,0 +1,22 @@
+{
+    "name": "arikaim/category-extension",
+    "description": "Arikaim CMS Category extension",
+    "keywords": ["Extension", "Arikaim CMS Category extension"],
+    "type": "arikaim-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "php": ">=7.1",
+        "arikaim/installer": "^1.0.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "path": "category"
+    }
+}

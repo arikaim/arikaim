@@ -1,0 +1,39 @@
+{% set info = system().getSystemInfo()  %}
+<div class="ui stackable grid">
+    <div class="ui six wide column">
+        <div class="ui segment fluid">
+            <div class="ui items">
+                <div class="item">
+                    <div class="content">
+                        {{ component('components:segment-title',{ title: 'Arikaim CMS' }) }}   
+                        {{ component('system:admin.system.info.version') }}                   
+                    </div>
+                </div>     
+                <div class="item">
+                    <div class="content">               
+                        <div class="ui accordion" id="php_extensions_info">
+                            <div class="title">                                       
+                                <i class="icon code circular"></i> 
+                                <i class="dropdown icon"></i>
+                                PHP 
+                                <div class="ui basic min label">{{ info.php_version }}</div>    
+                            </div>                                     
+                            <div class="content ml-2">
+                            {{ component("system:admin/system/info/php-info") }}
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="icon server circular"></i>
+                            {{ labels.server.content }} <span class="ml-1 small text">{{ info.os_name }}</span> 
+                            <span class="small text">{{ info.os_version }}</span>
+                        </div>                             
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>

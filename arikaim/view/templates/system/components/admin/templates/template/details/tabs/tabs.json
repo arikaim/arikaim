@@ -1,0 +1,28 @@
+{
+    "tabs": {
+        "themes": {
+            "content": "Themes"
+        },
+        "styles": {
+            "content": "Styles"
+        },
+        "components": {
+            "content": "Components"
+        },
+        "macros": {
+            "content": "Macros"
+        },
+        "pages": {
+            "content": "Pages"
+        },
+        "routes": {
+            "content": "Routes"
+        }
+    },
+    "labels": {
+        "current": "Current",
+        "system": "System",
+        "version": "Version",
+        "library": "UI Library"
+    }         
+}

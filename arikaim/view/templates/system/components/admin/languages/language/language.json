@@ -1,0 +1,22 @@
+{
+    "default_language_icon": {
+        "title": "Default language"
+    },
+    "labels": {
+        "native_name": "Native name",
+        "code": "Code"
+    },
+    "buttons": {
+        "edit": {
+            "title": "Edit language"   
+        },
+        "default": {
+            "content": "Set Default",            
+        "title": "Set default language"
+        },
+        "remove": {
+            "content": "Delete",
+            "title": "Delete language"       
+        }
+    }
+}

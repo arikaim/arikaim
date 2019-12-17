@@ -1,0 +1,22 @@
+{                
+    "fields": {
+        "database": {
+            "label": "Database Name"
+        },
+        "user": {
+            "label": "Username"
+        },
+        "password": {
+            "label": "Password"
+        },
+        "host": {
+            "label": "Host"
+        },
+        "type": {
+            "label": "Type"
+        }
+    },
+    "buttons": {
+        "install": "Install"                   
+    }
+}

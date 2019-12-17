@@ -1,0 +1,13 @@
+{
+    "title": {
+        "content": "Install",
+        "icon": "server"
+    },
+    "labels": {
+        "disable": "Disable Install Page",
+        "repair": "Repair installation."
+    },
+    "buttons": {
+        "repair": "Repair"
+    }
+}

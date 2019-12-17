@@ -1,0 +1,11 @@
+{
+    "messages": {
+        "remove": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove category '<b><% title %></b>' and all sub categories."
+        }
+    },
+    "labels": {
+        "language": "Language"
+    }  
+}

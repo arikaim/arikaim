@@ -1,0 +1,12 @@
+{% set items = [ 
+    { title: menu.view, component: 'system:admin.modules.drivers.view', icon: 'list', active: true },
+    { title: menu.config, component: 'system:admin.modules.drivers.config', icon: 'cogs', id: 'drivers_config' }
+] %}
+
+{{ component('components:tabs.vertical',{ 
+        items: items, 
+        menu: { id: 'drivers_menu' }, 
+        item_class: 'drivers-tab-item',
+        content: { id: 'drivers_tab', component: 'system:admin.modules.drivers.view' } 
+   })
+}}

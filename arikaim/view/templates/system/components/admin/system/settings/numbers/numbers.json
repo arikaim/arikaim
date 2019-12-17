@@ -1,0 +1,12 @@
+{
+    "title": {
+        "content": "Edit Numbers Format",
+        "icon": "table"
+    },
+    "fields": {
+        "number_format": {
+            "label": "Number Format",
+            "placeholder": "Choose number format"
+        }
+    }
+}

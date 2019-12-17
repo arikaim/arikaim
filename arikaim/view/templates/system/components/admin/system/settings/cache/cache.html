@@ -1,0 +1,18 @@
+{% set cache = service('cache') %}
+{% set stats = cache.getStats() %}
+{% set status = cache.getStatus() %}
+
+{% component 'components:tabs.vertical.content' %}
+<div class="ui equal width form mt-8">    
+    <div class="ui mt-2" id="cache_info">
+        {% if status == true %}
+            {{ component('system:admin.system.settings.cache.info',{ stats: stats }) }}
+        {% endif %}
+    </div>          
+    {{ component('components:dropdown.enable',{ selected: status, class: 'mini' }) }}
+    <div class="ui green mini button right floated {{ status|ifthen(false,'hidden') }}" id="clear_cache_button">
+        {{ buttons.clear }}
+    </div>
+    <div class="ui success message opacity-0" id="message"></div>          
+</div>
+{% endcomponent %}

@@ -1,0 +1,21 @@
+{% set items = createModel(model,extension) %}
+
+{% if uuid is not empty %} 
+    {% set relation_model = createModel(items.getRelationModelClass(),extension).findById(uuid) %}
+    {% set id = relation_model.id %}
+{% endif %}
+{% set items = items.getRows(id) %}
+
+{% for item in items.get() %}
+    {% if attribute_name is empty %}
+        {% set name = component('system:admin.orm.model.name',{ extension: extension, type: item.relation_type, uuid: item.relation_id }) %}
+    {% else %}
+        {% set name = item[attribute_name] %}
+    {% endif %}
+    <div class="ui label {{ class }}">
+        {{ name }}
+        <div class="detail">
+            {{ item.relation_type }}
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,48 @@
+{% set template = package('template').getPackageProperties(template_name,true) %}
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="ui two wide column">
+            {{ component('system:admin.templates.template',{ template: template, show_buttons: 0, show_requires: true }) }}
+        </div>
+        <div class="ui four wide column">
+            {{ component('system:admin.packages.repository',{ type: 'template', name: template.name, confirm_overwrite: true  }) }}
+        </div>
+    </div>
+</div>
+<div class="ui stackable top attached tabular menu mt-2" id="templates_details_tab">
+    <a class="item active" data-tab="themes_tab">
+        <i class="icon paint blue brush"></i>
+        {{ tabs.styles.content }}
+    </a>    
+    <a class="item" data-tab="components_tab">
+        <i class="icon blue code"></i>
+        {{ tabs.components.content }}
+    </a>    
+    <a class="item" data-tab="macros_tab">
+        <i class="icon blue settings"></i>
+        {{ tabs.macros.content }}
+    </a>  
+    <a class="item" data-tab="pages_tab">
+        <i class="icon blue file text outline"></i>
+        {{ tabs.pages.content }}
+    </a>   
+    <a class="item" data-tab="routes_tab">
+        <i class="icon blue linkify"></i>
+        {{ tabs.routes.content }}
+    </a>   
+</div>
+<div class="ui bottom attached tab segment active {{ tabs.styles.class }}" data-tab="themes_tab">
+    {{ component('system:admin.templates.themes.list',{ items: template.themes, icon: 'grey paint brush' }) }}    
+</div>
+<div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="components_tab">   
+    {{ component('system:admin.component',{ components: template.components, template: template_name }) }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="macros_tab">
+    {{ component('components:list.items',{ items:template.macros, icon:"settings" }) }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="pages_tab">
+    {{ component('components:list.items',{ items:template.pages, icon:"file text outline" }) }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="routes_tab">  
+    {{ component('system:admin.extensions.extension.routes',{ routes: template.routes }) }}
+</div>

@@ -1,0 +1,13 @@
+{% set parent_id = parent_id|default(null) %}
+{% component 'components:tabs.vertical.content' %}
+    {% set class = 'sixteen wide column' %}
+    <div class="mt-8 pl-4">
+        {{ component('category::admin.branch') }}
+    </div>
+    <div class="mt-10" id="category_rows" component="category::admin.view.items" namespace="category" branch="{{ branch }}">
+        {{ component('category::admin.view.items',{ parent_id: parent_id, language: language, branch: branch }) }}   
+    </div>
+    <div class="mt-2" id="paginator">
+        {{ component('components:paginator',{ namespace: 'category' }) }}
+    </div>
+{% endcomponent %}

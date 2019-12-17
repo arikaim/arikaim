@@ -1,0 +1,22 @@
+{
+    "name": "arikaim/stats-module",
+    "description": "Arikam Stats Middleware module",
+    "keywords": ["Module", "Arikaim Stats Middleware module"],
+    "type": "arikaim-module",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "php": ">=7.1",
+        "arikaim/installer": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "path": "stats"
+    }
+}

@@ -1,0 +1,21 @@
+<div class="font-bold">{{ labels.params }}</div>
+{% if params|length > 0 %}   
+    <table class="ui very compact basic small table borderless">
+        <thead>
+            <tr>
+                <th>{{ labels.name }}</th>
+                <th>{{ labels.value }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name,param in params %}
+            <tr class="item">
+                <td>{{ name }}</td>
+                <td>{{ param }}</td>                                                 
+            </tr>                   
+            {% endfor %}
+        </tbody>
+    </table>    
+{% else %}  
+<div>..</div>
+{% endif %}  

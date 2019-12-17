@@ -1,0 +1,6 @@
+{# Extensins menu #}
+{{ component("system:admin.menu.extensions",{ status: 1, type: 1 }) }}
+{# System menu #}
+{% for item in menu.items %}
+    {{ component('system:admin.menu.item',{ menu: item, class: "admin-menu-link" }) }}     
+{% endfor %}

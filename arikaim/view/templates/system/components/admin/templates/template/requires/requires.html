@@ -1,0 +1,12 @@
+<div class="font-bold">{{ labels.title }}</div>  
+{% if items is empty %}
+    <div class="item">..</div>
+{% endif %}     
+<div class="ui list">
+    {% for item in items %}
+    <div class="item">
+        <i class="cube icon"></i>
+        {{ item }}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,16 @@
+{
+    "include": {            
+        "css": [
+            "admin.css"
+        ],
+        "library": [
+            "jquery",
+            "arikaim",
+            "arikaim-ui",
+            "fomantic",
+            "filepond",
+            "tailwind"
+        ],
+        "loader": "components:loader.dimmer"
+    }
+}

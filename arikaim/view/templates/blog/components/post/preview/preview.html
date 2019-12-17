@@ -1,0 +1,16 @@
+<div class="ui row mt-8">
+    <h2 class="ui header {{ class }}">               
+        <div class="content">                 
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <div class="sub header">
+                <span class="ui text small">{{ labels.published }}</span>
+                <span class="ui text small bold">{{ post.date_created|dateTimeFormat }}</span>
+            </div>
+        </div>
+    </h2>
+    <div class="post-text mt-2">
+    {% md %}
+        {{ post.content }}
+    {% endmd %}
+    </div>
+</div>

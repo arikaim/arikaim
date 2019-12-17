@@ -1,0 +1,10 @@
+{    
+    "title": "Install",
+    "labels": {
+        "database": "Database",   
+        "connection": "Connection settings"        
+    },
+    "buttons": {       
+        "continue": "Continue"          
+    }    
+}

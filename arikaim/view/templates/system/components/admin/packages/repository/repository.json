@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "repository": "Repository",
+        "private": "Private",
+        "empty": "not set"       
+    },
+    "messages": {
+        "error": ""
+    }
+}

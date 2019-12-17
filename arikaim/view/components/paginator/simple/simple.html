@@ -1,0 +1,22 @@
+{% set paginator = getPaginator(namespace) %} 
+{% set show_current_page = show_current_page|default(true) %}
+{% if paginator.last_page != -1 %}
+    {% set show_next_button = (paginator.current_page < paginator.last_page) ? '' : 'invisible' %}
+{% endif %}
+{% set show_prev_button = (paginator.current_page == 1) ? 'invisible' : '' %}
+
+{% if paginator.last_page > 1 %}
+<div class="ui buttons">
+    <button class="ui icon button page-link {{ class }} prev-page {{ show_prev_button }}" page="prev">
+        <i class="icon angle chevron left {{ icon_class }} page-link-icon"></i>    
+    </button>   
+    <div class="pt-3 {{ current_page_class }}" page="{{ paginator.current_page }}">
+        {% if show_current_page == true %}
+        <span class="text-lg font-bold" id="current_page">{{ paginator.current_page }}</span>
+        {% endif %}
+    </div>  
+    <button class="ui icon button page-link {{ class }} next-page {{ show_next_button }}" page="next">
+        <i class="icon angle chevron right {{ icon_class }} page-link-icon" style=" background-color: none"></i>     
+    </button>   
+</div>
+{% endif %}

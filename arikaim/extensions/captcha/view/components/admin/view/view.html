@@ -1,0 +1,6 @@
+{% set drivers = service('driver').getList('captcha') %}
+{% set current = getOption('captcha.current') %}
+{% set buttons = [
+    { icon: "code", class: "view-button", title: labels.view }
+] %}
+{{ component('system:admin.drivers.list',{ category: 'captcha', current : current, buttons: buttons }) }}

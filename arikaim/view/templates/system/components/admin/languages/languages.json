@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "view": "View", 
+        "add": "Add",           
+        "edit": "Edit"      
+    },
+    "message": {
+        "title": "Confirm Delete",
+        "description": "Delete language <b>'<% title %>'</b>"
+    }            
+}

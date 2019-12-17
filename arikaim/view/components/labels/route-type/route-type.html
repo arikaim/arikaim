@@ -1,0 +1,5 @@
+{% if type == 1 %}
+    <div class="ui tiny left pointing label" {{ labels.title|attr('title') }}>Page</div>
+{% elseif type == 2 %}
+    <div class="ui tiny left pointing label" {{ labels.title|attr('title') }}>Api</div>
+{% endif %}

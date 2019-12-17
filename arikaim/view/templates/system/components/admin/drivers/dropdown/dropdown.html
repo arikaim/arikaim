@@ -1,0 +1,20 @@
+{% set items = service('driver').getList(category) %}
+{% set id = id|default('drivers_dropdown') %}
+{% set name = name|default('driver') %}
+{% set selected = service('driver').getDriver(selected) %}
+<div class="ui button basic dropdown drivers-dropdown {{ class }}" id="{{ id }}">
+    <input type="hidden" name="{{ name }}" id="{{ id }}" value="{{ selected.name }}">
+    {% if selected is not empty %}
+        <div class="text">{{ selected.title }}</div>  
+    {% else %}
+        <div class="default text">{{ labels.default }}</div>  
+    {% endif %}   
+    <i class="dropdown icon"></i>  
+    <div class="ui menu">       
+        {% for item in items %}            
+            <div class="item {{ item.name|ifthen(selected.name,'active') }}" data-value="{{ item.name }}">             
+                {{ item.title }}
+            </div>   
+        {% endfor %}           
+    </div>  
+</div>

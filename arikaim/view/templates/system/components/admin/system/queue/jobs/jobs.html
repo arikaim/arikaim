@@ -1,0 +1,26 @@
+
+{% set queue = service('queue') %}
+{% set jobs = queue.getJobs({ recuring_interval: null, schedule_time: '*' }) %}
+<h4 class="header">
+    <i class="icon settings"></i>
+    {{ labels.jobs }}
+</h4>
+{% set jobs = jobs.get() %}
+
+{% if jobs is not empty %}
+    <div class="ui buttons basic icon mini ml-2">    
+        <button class="ui button" id="worker_delete_jobs">
+            <i class="icon trash orange"></i>
+        </button>
+        <button class="ui button" id="worker_update_jobs">
+            <i class="icon refresh"></i>
+        </button>
+    </div>
+{% else %}
+    <div>{{ labels.empty }}</div>
+{% endif %}
+<div class="ui accordion jobs-list ml-1">
+    {% for job in jobs %}    
+        {{ component("system:admin.jobs.job",{ job: job }) }}   
+    {% endfor %}
+</div>

@@ -1,0 +1,166 @@
+{
+    "access_tokens": {
+        "delete": "Access token was deleted successfully.",
+        "expired": "Expired access tokens was deleted successfully."
+    },
+    "token": {
+        "create": "Token was created successfully."
+    },
+    "install": "Arikaim CMS was installed successfully.",
+    "extension": {
+        "update": "Extension was updated successfully.",
+        "enable": "Extension was enabled successfully.",
+        "disable": "Extension was disabled successfully.",
+        "uninstall": "Extension was uninstalled successfully.",
+        "install": "Extension was installed successfully."
+    },
+    "language": {
+        "default": "Default language was changed successfully.",
+        "status": "Language status was changed successfully.",
+        "remove": "Language was removed successfully.",
+        "add": "Language was added successfully.",
+        "update": "Language was updated successfully."
+    },
+    "logs": {
+        "clear": "Logs was cleared successfully."
+    },
+    "library": {
+        "install": "UI Library was installed successfully.",
+        "params": "UI Library params was saved successfully."
+    },
+    "module": {
+        "config": "Module config was saved successfully.",
+        "uninstall": "Module was uninstalled successfully.",
+        "enable": "Module was enabled successfully.",
+        "disable": "Module was disabled successfully.",
+        "update": "Module was updated successfully.",
+        "install": "Module was installed successfully."
+    },
+    "drivers": {
+        "config": "Driver config was saved successfully.",
+        "enable": "Driver was enabled successfully.",
+        "disable": "Driver was disabled successfully."
+    },
+    "options": {
+        "save": "Options was saved successfully."
+    },
+    "mailer": {
+        "send": "Email was send successfully."
+    },    
+    "queue": {
+        "run": "Queue worker was started successfully."
+    },
+    "cron": {
+        "install": "Cron worker was installed successfully.",
+        "uninstall": "Cron worker was uninstalled successfully."
+    },
+    "settings": {
+        "save": "Settings was saved successfully."
+    },
+    "template": {
+        "current": "Template was set as current.",
+        "install": "Template was installed successfully.",
+        "update": "Template was updated successfully."
+    },
+    "core": {
+        "update": "Arikaim core was updated successfully."
+    },
+    "theme": {
+        "current": "Current theme was changed successfully."
+    },
+    "cache": {
+        "clear": "Cache was cleared successfully.",
+        "enabled": "Cache was enabled successfully.",
+        "disabled": "Cache was disabled successfully."
+    },
+    "orm": {
+        "relations": {
+            "delete": "Relation was deleted successfully.",
+            "add": "Relation was added successfully."           
+        },
+        "options": {
+            "save": "Options was saved successfully."            
+        },
+        "read": "Done."
+    },
+    "errors": {
+        "orm": {
+            "relations": {
+                "delete": "Can't delete relation.",
+                "add": "Can't add relation."           
+            },
+            "options": {
+                "save": "Can't save options."            
+            },
+            "read": "Can't read db model."
+        },
+        "access_tokens": {
+            "delete": "Can't delete access token."
+        },
+        "token": {
+            "create": "Can't create token."
+        },
+        "position": "Not valid model name or id",
+        "library": {
+            "install": "Can't install UI Library.",
+            "params": "Can't save library params."
+        },
+        "extension": {
+            "update": "Can't update extension.",
+            "enable": "Can't enable extension.",
+            "status": "Can't change extension status.",
+            "disable": "Can't disable extension.",
+            "uninstall": "Can't uninstall extension.",
+            "install": "Can't install extension."           
+        },
+        "language": {
+            "default": "Can't set default language.",
+            "status": "Can't change language status.",
+            "remove": "Can't remove language.",
+            "add": "Can't add language.",
+            "update": "Can't update language."
+        },
+        "logs": {
+            "clear": "Can't clear logs."
+        },
+        "module": {
+            "config": "Can't save module config.",
+            "uninstall": "Can't uninstall module",
+            "enable": "Can't enable module",
+            "disable": "Can't disable module",
+            "update": "Can't update module.",
+            "install": "Can't install module."
+        },
+        "drivers": {
+            "config": "Can't save driver.",
+            "enable": "Can't enabled driver.",
+            "disable": "Can't disable driver."
+        },
+        "options": {
+            "save": "Can't save options."
+        },
+        "queue": {
+            "run": "Can't start queue worker."
+        },
+        "cron": {
+            "install": "Can't install cron worker.",
+            "uninstall": "Can't uninstall cron worker."
+        },
+        "settings": {
+            "save": "Can't save settings."
+        },
+        "template": {
+            "current": "Can't set current template.",
+            "install": "Can't install template.",
+            "update": "Can't update template."
+        },
+        "mailer": {
+            "send": "Can't send email."
+        }, 
+        "core": {
+            "update": "Can't update Arikaim core."
+        },
+        "install": "Can't install Arikaim CMS.",
+        "db": "Database config not valid."
+    }
+}

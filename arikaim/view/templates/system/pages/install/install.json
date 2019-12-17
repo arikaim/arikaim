@@ -1,0 +1,15 @@
+{
+    "head": {
+        "title": "Arikaim CMS installation",
+        "description": "Arikaim CMS installation page",
+        "keywords": "Arikaim, Installation, CMS",
+        "viewport": {
+            "scale": "1.0"
+        },
+        "favicons": {
+            "mini": {
+                "src": "arikaim-icon-32x32.png"
+            }
+        }
+    }
+}

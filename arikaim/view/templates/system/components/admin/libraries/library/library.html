@@ -1,0 +1,69 @@
+{% set library = package('library').getPackageProperties(library_name) %}
+<div class="ui card">
+    <div class="content">    
+        <i class="ui left floated cube blue large icon"></i>   
+        <div class="right floated meta">
+            <div class="ui horizontal basic mini label">               
+                {{ labels.version }} 
+                <div class="detail">{{ library.version }}</div>
+            </div>
+            {% if library.help is not empty %}
+            <a class="ui horizontal basic mini label" href="{{ library.help }}" target="_blank">  
+                <i class="question circle outline icon"></i>                            
+                <span class="ui text blue">{{ labels.help }}</span>                          
+            </a>
+            {% endif %}
+        </div>            
+        <div class="font-bold">
+            {{ library.title|default(library.name) }}             
+        </div>     
+        <div class="ui divider"></div>   
+        <div class="mt-1">
+            {{ library.description }}         
+            <div class="font-bold mt-1">{{ labels.name }}</div>
+            <div>{{ library.name }}</div>       
+            <div class="font-bold mt-1">{{ labels.files }}</div>  
+            {{ component('system:admin.libraries.library.files',{ files: library.files }) }}
+            {% if library.themes|length > 0 %}              
+                <div class="font-bold mt-1">{{ labels.themes }}</div>
+                <div class="list">                  
+                {% for name,theme in library.themes %}
+                    <div class="item">
+                        <i class="file code outline icon"></i>
+                        {{ name }}
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>         
+        <div class="ui divider"></div>   
+        <div class="mt-1">
+            {{ component('system:admin.libraries.library.params',{ params: library.params }) }}          
+        </div>    
+        <div class="ui divider"></div>   
+        {% if library.framework == true %}                              
+        <div class="ui basic blue label horizontal mt-1">
+            {{ labels.framework }}
+            {% if currentFramework() == library.name %}                        
+                <span class="text-gray-800">{{ labels.current }}</span>                        
+            {% endif %}
+        </div>              
+        {% else %}
+        <div class="mt-2"> </div>
+        {% endif %}       
+        {% if library.async == true %}
+        <div class="ui basic horizontal blue label">Async</div>
+        {% endif %}
+        {% if library.crossorigin is not empty %}
+        <div class="ui basic blue horizontal label">
+            <span class=" text-gray-900">
+                {{ labels.crossorigin }}
+            </span>    
+            {{ library.crossorigin }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="extra content">
+        <button class="ui basic button details-button" library="{{ library.name }}">{{ labels.details }}</button>
+    </div>    
+</div>

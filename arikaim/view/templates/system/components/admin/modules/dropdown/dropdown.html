@@ -1,0 +1,12 @@
+{% set status = status|default(null) %}
+{% set category = category|default(null) %}
+{% set type = type|default(1) %}
+{% set drivers = package('module').getPackgesRegistry().getPackagesList({ status: status, type: stype, category: category }) %}
+<select class="ui dropdown {{ class }}" id="modules_dropdown" name="driver" value="{{ selected }}" placeholder="{{ label }}">  
+    <option value="">{{ label }}</option>
+    {% for item in drivers %}
+        <option value="{{ item.name }}">     
+            {{ item.title }}                     
+        </option>
+    {% endfor %}
+</select>

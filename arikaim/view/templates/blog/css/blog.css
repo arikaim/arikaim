@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans+Condensed:300&display=swap');
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14pt;
+    min-height: 100vh;
+    padding: 0px;
+}
+.page {
+    min-height: 100vh;
+    position: relative;
+    padding: 0px!important;
+    margin: 0px!important;   
+}
+.brand {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 300!important;
+    font-size: 40px;
+}
+.post-text {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16pt
+}
+.page-title {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    font-size: 24pt!important;
+}
+.panel-title {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    font-size: 20pt!important;
+}
+h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20pt
+}
+.navbar {
+    
+}
+.ui.vertical.menu .item > i.icon.left {
+    float: none;
+    margin: 0em 0.35714286em 0em 0em;
+}
+.masthead {
+  height: 10%;
+}

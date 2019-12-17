@@ -1,0 +1,13 @@
+{% set column_class = class|default('five wide computer sixteen wide tablet') %}
+{% set show_title = show_title|default(true) %}
+{% set panel_class = (panel_class is not defined) ? 'segment' : panel_class %}
+<div class="ui stackable grid">
+    <div class="ui {{ column_class }} column"> 
+        <div class="ui {{ panel_class }}">
+            {% if show_title == true and title is not empty %}
+            {{ component('components:segment-title',{ title: title.content, icon: title.icon }) }}
+            {% endif %}
+            {{ content }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{% set class = class|default('blue') %}
+{% set dimmer_class = dimmer_class|default('inverted') %}
+
+<div class="ui active dimmer {{ dimmer_class }}" id="loader">
+    <div class="ui active centered loader {{ class }}">{{ label }}</div>
+</div>

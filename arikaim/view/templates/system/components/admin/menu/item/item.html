@@ -1,0 +1,24 @@
+{% set main_link_class = (menu.items is iterable) ? '' : class %}
+<div class="item {{ main_link_class }}" component="{{ menu.component }}" {{ extension_name|attr('extension') }} page-icon="{{ menu['page-icon'] }}" page-title="{{ menu['page-title'] }}">
+    <div class="title menu-item-title">          
+        <i class="left icon blue {{ menu.icon }}"></i>      
+        {% if menu.items is iterable %}
+            <i class="dropdown icon"></i>
+        {% endif %}
+        <span class="sm:hidden lg:inline md:hidden">
+        {{ menu.title }}
+        </span>
+    </div>
+    {% if menu.items is iterable %}
+        <div class="content">             
+            <div class="verical menu">
+                {% for item in menu.items %}
+                <a class="item {{ class }}" component="{{ item.component }}" {{ extension_name|attr('extension') }} page-icon="{{ item['page-icon'] }}" page-title="{{ item['page-title'] }}">   
+                    <i class="left icon {{ item.icon }}"></i>
+                    <span class="small-text">{{ item.title }}</span>       
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %} 
+</div>

@@ -1,0 +1,10 @@
+{% set language = createModel('Language') %}
+{% set language = language.orderBy('position') %}
+{% set items = paginate(language) %}
+
+{{ component("system:position") }}
+<div class="ui stackable cards" id="languages_list">
+    {% for item in items.getItems() %}
+    {{ component("system:admin/languages/language",{ language: item }) }}
+    {% endfor %}
+</div>       

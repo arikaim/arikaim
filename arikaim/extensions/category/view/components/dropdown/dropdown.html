@@ -1,0 +1,24 @@
+{% set language = language|default(getLanguage()) %}
+{% set name = name|default('category') %}
+{% set data_type = data_type|default('id') %}
+{% set id = id|default('category_dropdown') %}
+{% set selected = selected|default(null) %}
+{% set exclude = exclude|default([]) %}
+
+
+{% set category = createModel('Category','category') %}
+{% set items = category.getList() %}
+<div class="ui clearable icon top left pointing dropdown {{ class }}" id="{{ id }}">
+    <input name="{{ name }}" id="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="list icon"></i>
+    <div class="text">{{ default }}</div>    
+    {{  component('category::dropdown.menu',{ 
+            language: language, 
+            selected: selected, 
+            items: items,
+            exclude: exclude,
+            data_type: data_type,
+            root: root
+        }) 
+    }}
+</div>

@@ -1,0 +1,9 @@
+{   
+    "labels": {
+        "params": "Params",          
+        "files": "Files",
+        "version": "Version",            
+        "framework": "Front-end Framework",
+        "crossorigin": "Crossorigin"
+    }
+}

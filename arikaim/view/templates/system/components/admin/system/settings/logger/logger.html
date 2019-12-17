@@ -1,0 +1,13 @@
+{% set logger = getOption("logger") %}
+
+{% component 'components:tabs.vertical.content' %}
+<div class="ui equal width form mt-8"> 
+    <div class="field">
+        <div class="ui slider checkbox change-option">
+            <input name="logger" type="checkbox" value="1" {{ logger|ifthen(true,'checked') }} >
+            <label class="font-bold">{{ fields.logger.label }}</label>
+        </div>
+        <div class="grey">{{ fields.logger.description }}</div>               
+    </div>     
+</div>
+{% endcomponent %}

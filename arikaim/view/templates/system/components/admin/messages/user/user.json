@@ -1,0 +1,11 @@
+{
+    "update": "User datails was saved successfully.",
+    "errors": {
+        "missing": "Missing control panel user.",
+        "update": "Can't save user details.",
+        "password": "New password and repeat password not mach.",
+        "invalid": "Not valid password.",
+        "username": "User name not valid.",
+        "login": "Not valid login details"
+    }
+}

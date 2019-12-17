@@ -1,0 +1,7 @@
+{% set id = id|default('popup_content') %}
+<div class="ui popup hidden {{ class }}" {{ id|attr('id') }}>
+    {{ content }}
+    {% if component is not empty %}
+    {{ component(component,params) }}
+    {% endif %}
+</div>

@@ -1,0 +1,9 @@
+{
+    "include": {
+        "js": "system:options"
+    },
+    "access": {
+        "auth": "session",
+        "permissions": "ControlPanel:full"           
+    }
+}

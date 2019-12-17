@@ -1,0 +1,8 @@
+{
+    "error": "Not valid model name or raltion type.",
+    "labels": {
+        "class": "Class",
+        "relation": "Relation Type",
+        "extension": "Extension"
+    }
+}

@@ -1,0 +1,12 @@
+{% set parent_id = parent_id|default(null) %}
+{% set model = createModel('Category','category') %}
+{% set model = model.getActive().where('parent_id','=',parent_id) %}
+{% set items = model.orderBy('position','asc').orderBy('id','asc').get()  %}
+
+{% set page_url = page_url|default('') %}
+
+<div class="ui {{ class }}">
+    {% for item in items %}       
+        {{ content }}
+    {% endfor %}
+</div>

@@ -1,0 +1,32 @@
+{% set queue = service('queue') %}
+{% set jobs = queue.getRecuringJobs() %}
+
+<h4 class="header">
+    <i class="icon repeat"></i>
+    {{ labels.recurring }}
+</h4>
+<div class="list">
+    {% if jobs is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    <div class="ui accordion jobs-list">
+    {% for job in jobs %}    
+       {{ component("system:admin.jobs.job",{ job: job }) }}   
+    {% endfor %}
+    </div>
+</div>
+{% set jobs = queue.getJobs({ schedule_time: '*' }) %}
+<h4 class="header">
+    <i class="icon wait"></i>
+    {{ labels.scheduled }}
+</h4>
+<div class="list">
+    {% if jobs is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    <div class="ui accordion jobs-list">
+    {% for job in jobs %}
+        {{ component("system:admin.jobs.job",{ job: job }) }}
+    {% endfor %}
+    </div>
+</div>

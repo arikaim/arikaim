@@ -1,0 +1,9 @@
+{
+    "include": {
+        "components": [
+            "components:modal",          
+            "components:paginator",
+            "system:user"
+        ]       
+    }   
+}

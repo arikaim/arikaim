@@ -1,0 +1,16 @@
+<table class="ui compact stackable striped very basic table">
+    <thead>
+        <tr class="borderless table-head">                
+            <th class="single line">{{ columns.date }}</th>
+            <th>{{ columns.type }}</th>
+            <th>{{ columns.message }}</th> 
+            <th>{{ columns.details }}</th>    
+        </tr>
+    </thead>
+    <tbody id="logs_rows">
+        {{ component("system:admin.system.logs.view.rows",{ rows: items.rows }) }}
+    </tbody>  
+</table>
+<div class="mt-1">
+    {{ component("components:paginator",{ namespace: 'logs' }) }}
+</div>

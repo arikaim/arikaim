@@ -1,0 +1,28 @@
+{
+    "name": "arikaim/logger",
+    "description": "Arikam CMS Logger package",
+    "keywords": ["cms", "Logger"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "arikaim/utils": "^1.0.0",
+        "monolog/monolog": "1.23.*"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Logger\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

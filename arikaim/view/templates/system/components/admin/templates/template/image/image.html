@@ -1,0 +1,9 @@
+{% if src is empty %}   
+    <div class="ui segment image fluid rounded opacity-25">
+        <div class="ui center aligned text-center bordered">
+            <i class="icon massive image outline fluid"></i> 
+        </div>  
+    </div>            
+{% else %}
+    <img class="ui image fluid rounded bordered" src="{{ system_template_url }}/images/{{ src }}">           
+{% endif %} 

@@ -1,0 +1,20 @@
+{% set id = id|default('branch') %}
+{% set model = createModel('Category','category') %}
+{% set items = model.selectRaw('distinct branch as branch').get() %}
+{% set selected_text = (selected is empty) ? labels.choose : selected %}
+
+<div class="ui clearable top left pointing dropdown {{ class }}" id="{{ id }}" title="{{ labels.branch }}">  
+    <i class="code branch icon"></i>
+    <div class="text">{{ selected_text }}</div>    
+    <div class="menu"> 
+        {% for item in items %}
+        <div class="item" data-value="{{ item.branch }}">
+            {% if item.branch is empty %}
+                {{ labels.all }}
+            {% else %}
+                {{ item.branch }}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>        
+</div>

@@ -1,0 +1,17 @@
+{
+    "title": "ReCaptcha",
+    "name": "recaptcha",
+    "version": "1.0.5",
+    "package-type": "module",
+    "class": "Recaptcha",
+    "description": "ReCaptcha is a free CAPTCHA service that protects websites from spam and abuse",
+    "type": "package",
+    "category": "captcha",
+    "repository":"composer:arikaim/recaptcha-module",
+    "requires": [
+        "google/recaptcha"
+    ],
+    "help": {
+        "url": "https://www.google.com/recaptcha"
+    }    
+}

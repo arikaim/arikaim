@@ -1,0 +1,21 @@
+{% set language = getLanguage() %}
+
+{% set items = [{ 
+        id: 'language_button',
+        icon: 'globe', 
+        active: true,
+        component: 'category::admin.menu',
+        params: { language: language },
+        content: { 
+            component: 'components:language.dropdown',
+            params: { name: 'language', id: 'choose_language', selected: language, class: 'inline search selection mini' } 
+        } 
+    }
+] %}
+
+{{  component('components:tabs',{ 
+        items: items,
+        menu: { component: 'system:admin.extensions.menu.actions', extension: 'category' },
+        content: { component: 'category::admin.menu', params: { language: language } } 
+    })
+}}

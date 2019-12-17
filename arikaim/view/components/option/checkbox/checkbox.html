@@ -1,0 +1,7 @@
+{% set value = value|default(0) %}
+{% set name = name|default('') %}
+{% set label = label|default(name) %}
+<div class="ui checkbox {{ class }} option-checkbox">
+    <input type="checkbox" {{ value|ifthen(1,'checked') }} name="{{ name }}" value="1">
+    <label class="{{ label_class }}">{{ label }}</label>                           
+</div>  

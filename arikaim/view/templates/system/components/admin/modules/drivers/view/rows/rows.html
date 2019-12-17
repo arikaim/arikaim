@@ -1,0 +1,27 @@
+{% component 'components:view.rows' %}
+    {% set list = service('driver').getList() %}
+    {% set paginator = paginate(list,'drivers')  %}
+       
+    {% for item in paginator.getItems() %}
+    <tr id="{{ item.uuid }}" class="row" name="{{ item.name }}" category="{{ item.category }}">        
+        <td>
+            <button class="ui icon mini basic button driver-config" name="{{ item.name }}" category="{{ item.category }}">
+                <i class="icon cogs"></i>
+            </button>           
+        </td>
+        <td>
+            {{ component('components:status.dropdown',{ status: item.status, uuid: item.uuid, skip: [2,3,4,5] }) }}  
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.class }}</td>
+        <td>{{ item.description|sliceLabel(30) }}</td>         
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="8">
+            {{ component("components:paginator",items.paginator) }}
+        </td> 
+    </tr>
+{% endcomponent %}

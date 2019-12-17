@@ -1,0 +1,8 @@
+{% component 'blog:layout.page' %}
+    {% set page = createModel('Pages','blog').findById(uuid) %}  
+    {% set posts = page.getPublishedPosts() %}
+    {% set title = page.name %}
+    {% for post in posts.get() %}           
+        {{ component('blog:post.preview',{ post: post }) }}
+    {% endfor %}           
+{% endcomponent %}

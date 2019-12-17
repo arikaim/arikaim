@@ -1,0 +1,16 @@
+{
+    "messages": {
+        "empty": "...",
+        "confirm": {
+            "delete": {
+                "title": "Confirm Delete",
+                "description": "Delete all system logs."
+            }
+        }
+    },
+    "buttons": {
+        "delete": {
+            "content": "Delete"
+        }
+    }
+}

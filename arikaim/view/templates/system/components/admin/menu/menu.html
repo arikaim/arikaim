@@ -1,0 +1,15 @@
+<div class="ui left fluid accordion vertical borderless inverted pointing menu admin-menu h-full min-h-full ml-1 dark-color" id="admin_menu">          
+    <div id="extensions_menu" class="mt-2">        
+        {{ component("system:admin.menu.extensions",{ status: 1,type: 0 }) }}
+    </div>
+    <div class="ui horizontal divider">
+        <h5 class="tiny header">
+            <button id="system_menu_button" class="ui olive icon basic button mini circular">
+                <i class="dropdown icon"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="system_menu">
+        {{ component("system:admin.menu.system") }}
+    </div>    
+</div>

@@ -1,0 +1,23 @@
+<div class="title">
+    <div class="item">            
+        <i class="dropdown icon" title="{{ labels.details }}"></i>
+        {{ component('components:status.icon',{ status: event.status }) }}       
+        <i class="calendar outline icon"></i>
+        {{ event.name }}
+    </div>
+</div>
+<div class="content">
+    <div class="ml-20">
+        {{ event.title }}
+        <div class="ui grid">
+            <div class="ui six wide column">
+                <div class="ui segment">
+                    <h5 class="ui header">
+                        {{ labels.subscribers }}
+                    </h5>
+                    {{ component('system:admin.extensions.extension.subscribers',{ items: event.subscribers() }) }}   
+                </div>   
+            </div>           
+        </div>
+    </div>
+</div>

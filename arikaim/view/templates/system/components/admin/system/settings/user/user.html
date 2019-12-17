@@ -1,0 +1,6 @@
+{% set user = access().getUser() %}
+{% if 'ControlPanel' is access %}
+    {% component 'components:tabs.vertical.content' %}
+        {{ component('system:admin.system.settings.user.form',{ user: user }) }}
+    {% endcomponent %}
+{% endif %}

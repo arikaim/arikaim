@@ -1,0 +1,48 @@
+{
+    "name": "arikaim/core",
+    "description": "Arikam CMS core component",
+    "keywords": ["CMS", "Content Management System"],
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "arikaim/installer": "^1.0.0",
+        "arikaim/container": "^1.0.0",
+        "arikaim/utils": "^1.0.0",
+        "arikaim/collection": "^1.0.0",
+        "arikaim/options": "^1.0.0",
+        "arikaim/http": "^1.0.0",
+        "arikaim/system": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
+        "arikaim/access": "^1.0.0",
+        "arikaim/cache": "^1.0.0",
+        "arikaim/storage": "^1.0.0",
+        "arikaim/events": "^1.0.0",
+        "arikaim/db": "^1.0.0",
+        "arikaim/validator": "^1.0.0",
+        "arikaim/paginator": "^1.0.0",
+        "arikaim/view": "^1.0.0",
+        "arikaim/controllers": "^1.0.0",
+        "arikaim/logger": "^1.0.0",
+        "arikaim/queue": "^1.0.0",
+        "arikaim/driver": "^1.0.0",
+        "arikaim/packages": "^1.0.0",
+        "arikaim/routes": "^1.0.0",
+        "arikaim/mail": "^1.0.0",
+        "arikaim/console": "^1.0.0",
+        "slim/slim": "4.3.*",
+        "guzzlehttp/guzzle": "6.3.*",      
+        "http-interop/http-factory-guzzle": "1.*"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\": ""
+        }
+    }   
+}

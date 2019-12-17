@@ -1,0 +1,15 @@
+<div class="ui accordion components-list">
+    {% if components is empty %}
+        <div class="text">..</div>
+    {% endif %}
+    {% for component in components %}
+    {% set count = count + 1 %}
+    <div class="title">
+        <i class="code icon"></i>
+        <i class="dropdown icon"></i>
+        {{ component.full_name }}
+    </div>
+    <div class="content" component-name="{{ component.full_name }}" id="component_{{ count }}" extension="{{ extension }}" template="{{ template }}">        
+    </div>
+    {% endfor %}
+</div>

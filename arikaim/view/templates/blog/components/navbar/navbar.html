@@ -1,0 +1,25 @@
+{% set version = system().getVersion() %}
+<div class="ui attached inverted menu navbar">
+    <div class='ui container'>
+        <div class="ui item mobile only column tablet only column grid">
+            {{ component('blog:menu') }}
+        </div>
+        <div href="#" title="{{ brand.title }}" class="item">     
+            <div class="brand">
+                {{ brand.title }}
+            </div>          
+        </div>   
+        <div class="ui inverted menu">
+            <a class="item" href="{{ url('/') }}" >
+                {{ links.home }}
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui equal width padded grid shadow">
+    <div class="olive column">
+        <div class="ui container padding-left-4 dark-color">
+            
+        </div>
+    </div>
+</div>

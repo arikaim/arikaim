@@ -1,0 +1,17 @@
+{% set items = service('event').dispatch('dashboard.get.items') %}
+{% set items = (items is iterable) ? items : [] %}
+<div class="mt-10">
+    
+</div>
+<div class="ui seven cards pl-4 mt-2">     
+    {{ component("dashboard::admin.dashboard.about") }}          
+    {% for item in items %}
+        {% if item is iterable %}   
+            {% for panel in item %}
+                {{ component(panel) }}
+            {% endfor %}
+        {% else %}
+            {{ component(item) }}
+        {% endif %}       
+    {% endfor %}
+</div>

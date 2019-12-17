@@ -1,0 +1,15 @@
+{% set params = { language: language, empty: labels.empty } %}
+{% set items = [ 
+    { title: labels.view, component: 'category::admin.view', icon: 'list', id: 'view_category', active: true, params: params },
+    { title: labels.edit, component: 'category::admin.edit', icon: 'edit', id: 'edit_category', params: params },
+    { title: labels.add, component: 'category::admin.add', icon: 'plus', id: 'add_category', params: params },
+    { title: labels.relations, component: 'category::admin.relations', icon: 'linkify', id: 'relations', params: params }
+] %}
+
+{{ component('components:tabs.vertical',{ 
+        items: items, 
+        menu: { id: 'category_menu' }, 
+        item_class: 'category-tab-item',
+        content: { id: 'category_content', component: 'category::admin.view', params: params } 
+   })
+}}

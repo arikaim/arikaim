@@ -1,0 +1,28 @@
+<div class="ui stackable centered grid">    
+    <div class="ui sixteen wide column">
+        <div class="ui stackable tabular menu {{ menu_class }}">      
+            {% for item in items %}     
+            <div {{ item.id|attr('id') }} class="item link {{ item.active|ifthen(true,'active') }} {{ item_class|default('tab-item') }}" {{ item.title|attr("title") }} component="{{ item.component }}" {{ item.params|attr }}>
+                {% if item.icon is not empty %}
+                <i class="icon blue {{ item.icon }}"></i>
+                {% endif %}
+                {{ item.title }}   
+                {% if item.content.component is not empty %}          
+                    {{ component(item.content.component,item.content.params) }}
+                {% endif %}
+            </div>  
+            {% endfor %}   
+            {% if menu is not empty %}     
+            <div class="item right floated link {{ item_class|default('tab-item') }}" title="{{ labels.extension }}" id="menu_tab" component="system:admin.extensions.extension.details" extension="{{ menu.extension }}" >
+                {# component(menu.component,{ extension: menu.extension }) #}
+                <i class="puzzle blue icon"></i>  
+            </div>                   
+            {% endif %}          
+        </div>
+        <div class="ui active tab segment {{ content.class|default('basic') }}" id="{{ content.id|default('tab_content') }}">
+            {% if content.component is not empty %}          
+                {{ component(content.component,content.params) }}
+            {% endif %}
+        </div>       
+    </div>
+</div>

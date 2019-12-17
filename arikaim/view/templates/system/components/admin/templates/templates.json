@@ -1,0 +1,13 @@
+{ 
+    "labels": {
+        "details": {
+            "content": "Details"
+        },            
+        "view": {
+            "content": "View"
+        },
+        "store": {
+            "content": "Store"
+        }
+    }               
+}

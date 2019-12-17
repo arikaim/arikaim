@@ -1,0 +1,44 @@
+{% set interval = getOption('session.recreation.interval',"0") %}
+
+{% component 'components:tabs.vertical.content' %}
+<form class="ui equal width form mt-8" id="session_settings_form"> 
+    <div class="ui segment mt-10">
+        <h4>{{ labels.details }}</h4>
+        <div class="field">
+            {% set session_info = sessionInfo() %}
+            {% set use_cookies = session.isUseCookies() %}
+            {% set label = (session_info.use_cookies == true) ? 'yes' : 'no' %}        
+            <table class="ui very basic table">
+                <tbody>
+                    <tr>
+                        <td class="collapsing">{{ labels.cookies }} </td>
+                        <td class="left aligned font-bold">{{ label }}</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">{{ labels.start }} </td>
+                        <td class="left aligned font-bold">{{ session_info.time_start|dateTimeFormat }}</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">{{ labels.end }} </td>
+                        <td class="left aligned font-bold">{{ session_info.time_end|dateTimeFormat }}</td>
+                    </tr>  
+                    <tr>
+                        <td class="collapsing">{{ labels.lifetime }} </td>
+                        <td class="left aligned font-bold">{{ session_info.lifetime|timeFormat }}</td>
+                    </tr>            
+                </tbody>               
+            </table>                                  
+        </div>       
+    </div>   
+    <div class="ui segment mt-10">
+        <div class="field">
+            <label>{{ fields.interval.label }}</label>
+            <div class="ui right labeled input">
+                <input value="{{ interval }}" name="recreation" id="interval" type="text" {{ fields.interval.placeholder|attr('placeholder') }}> 
+                <div class="ui basic label">{{ labels.min }}</div>
+            </div>              
+        </div> 
+        {{ component('components:form.footer') }}           
+    </div>          
+</form>
+{% endcomponent %}

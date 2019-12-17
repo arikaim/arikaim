@@ -1,0 +1,50 @@
+
+{% if uuid is not empty %}
+    {% set category = createModel('Category','category') %}
+    {% set category = category.findById(uuid) %}
+    {% set parent_id = category.parent_id|default(null) %}
+{% endif %}
+{% set parent_id = parent_id|default(null) %}
+{% set language = language|default(getLanguage()) %}  
+
+<form class="ui equal width form" id="category_form">  
+    <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">  
+    <input type="hidden" name="language" id="language" value="{{ language }}">  
+    <div class="field mt-4">
+        <label>{{ parent.label }}</label>
+        <span id="parent_category">
+        {{  component("category::dropdown",{ 
+                selected: parent_id,
+                language: language,
+                name: 'parent_id',              
+                class: 'basic',
+                root: { title: '/' }            
+            }) 
+        }}
+        </span>
+    </div>
+    <div class="field required">
+        <label>{{ title.label }}</label>
+        <input type="text" name="title" id="title" {{ title.placeholder|attr('placeholder') }} value="{{ category.translation(language).title }}">  
+    </div>
+    <div class="field">
+        <label>{{ description.label }}</label>
+        <textarea rows="4" cols="4" name="description" id="description" {{ description.placeholder|attr('placeholder') }}>{{ category.translation(language).description }}</textarea>
+    </div> 
+    <div class="field">
+        <label>{{ branch.label }}</label>
+        <input type="text" name="branch" id="branch" {{ branch.placeholder|attr('placeholder') }} value="{{ category.branch }}">  
+    </div>                   
+    <div class="field">
+        {{ component('components:language.label',{ language: language, class: 'basic' }) }}       
+        {% if uuid is not empty %}
+        <div class="ui basic label">
+            {{ labels.slug }}
+            <div class="detail">
+                {{ category.translation(language).slug }}
+            </div>           
+        </div>
+        {% endif %}
+    </div>
+    {{ component('components:form.footer') }}   
+</form>

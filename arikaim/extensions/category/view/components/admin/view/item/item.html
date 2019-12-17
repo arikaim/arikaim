@@ -1,0 +1,15 @@
+{% set has_child = category.hasChild() %}
+{% set title = category.translation(language).title %}
+
+<div class="title class-{{ category.uuid }} m-0">              
+    {{ component('category::admin.actions',{ category: category, language: language }) }} 
+    {{ component('components:status.icon',{ status: category.status }) }} 
+    <i class="dropdown icon"></i>           
+    <span class="font-bold">{{ title|emptyLabel(labels.empty) }}</span>    
+</div>     
+<div class="content {{ has_child|ifthen(1,'ml-4') }} class-{{ category.uuid }} m-0"> 
+    <span class="ui gray text">{{ category.translation(language).description }}</span>  
+    {% if has_child == true %}       
+        {{ component('category::admin.view.items',{ uuid: category.uuid, parent_id: category.id, language: language }) }}
+    {% endif %} 
+</div>

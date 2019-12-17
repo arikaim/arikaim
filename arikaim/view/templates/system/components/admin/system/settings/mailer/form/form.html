@@ -1,0 +1,80 @@
+{% set options = getOptions("mailer") %}
+{% set user = service('access').getUser() %}
+{% set use_sendmail = getOption("mailer.use.sendmail") %}
+
+<div class="ui mt-8"></div>
+<div class="field">              
+    <div class="ui slider checkbox change-option" id="use_sendmail">
+        <input name="mailer.use.sendmail" type="checkbox" value="1" id="use_sendmail_checkbox" {{ use_sendmail|ifthen(true,'checked') }} >
+        <label class="font-bold">{{ fields.use_sendmail.label }}</label>
+    </div>
+</div> 
+<div class="mt-5"></div>    
+<form class="ui equal width form" id="mailer_settings_form">    
+    <div class="ui segment {{ use_sendmail|ifthen(true,'hidden') }}" id="smtp_setings_form">
+        <h4 class="ui dividing header">{{ labels.smtp }}</h4>
+        <div class="field">
+            <label>{{ fields.smtp.host.label }}</label> 
+            <input id="host" name="mailer.smpt.host" value="{{ options.mailer.smpt.host }}" {{ fields.smtp.host.placeholder|attr('placeholder') }}>                   
+        </div>   
+        <div class="two fields">
+            <div class="field">
+                <label>{{ fields.smtp.port.label }}</label> 
+                <input id="port" name="mailer.smpt.port" value="{{ options.mailer.smpt.port }}" {{ fields.smtp.port.placeholder|attr('placeholder') }}>                   
+            </div> 
+            <div class="field">
+                <label>{{ fields.smtp.ssl.label }}</label> 
+                <div class="ui checkbox" id="use_ssl">
+                    <input id="ssl" name="mailer.smpt.ssl" value="1" type="checkbox" {{ options.mailer.smpt.ssl|attr('checked') }}> 
+                    <label>{{ fields.smtp.ssl.description }}</label>   
+                </div>                
+            </div> 
+        </div>          
+        <div class="two fields">
+            <div class="field">
+                <label>{{ fields.smtp.user_name.label }}</label> 
+                <input id="user_name" name="mailer.username" value="{{ options.mailer.username }}" {{ fields.smtp.user_name.placeholder|attr('placeholder') }}>                   
+            </div>
+            <div class="field">
+                <label>{{ fields.smtp.password.label }}</label> 
+                <div class="ui left icon right action input">
+                    <i class="icon lock"></i>
+                    <input id="password" type="password" name="mailer.password" value="{{ options.mailer.password }}" {{ fields.smtp.password.placeholder|attr('placeholder') }}>   
+                    <a class="ui icon basic link button view-password">               
+                        <i class="eye slash outline icon"></i>
+                    </a>
+                </div>                  
+            </div>
+        </div>
+        <div class="ui horizontal divider"></div>
+        {% if user.email is not empty %}
+            <div class="ui field segment" id="test_email">
+                <div class="header">
+                    {{ labels.test }}
+                    <div class='ui label basic text font-bold'>{{ user.email }}</div>
+                    <div class="ui mini right floated basic button" id="send_button">
+                        <i class="icon olive mail outline"></i>
+                        {{ buttons.send.content }}
+                    </div>
+                    <div class="ui positive hidden message" id="send_msg">
+                    </div>
+                </div>                                            
+            </div>
+            <div class="ui horizontal divider"></div>
+        {% endif %}
+    </div>
+    <div class="ui segment">
+        <h4 class="ui dividing header">{{ labels.from }}</h4>
+        <div class="two fields">
+            <div class="field">
+                <label>{{ fields.from.email.label }}</label> 
+                <input id="host" name="mailer.from.email" value="{{ options.mailer.from.email }}" {{ fields.from.email.placeholder|attr('placeholder') }}>                   
+            </div> 
+            <div class="field">
+                <label>{{ fields.from.name.label }}</label> 
+                <input id="host" name="mailer.from.name" value="{{ options.mailer.from.name }}" {{ fields.from.name.placeholder|attr('placeholder') }}>                   
+            </div>  
+        </div>
+    </div>
+    {{ component('components:form.footer') }}        
+</form>       

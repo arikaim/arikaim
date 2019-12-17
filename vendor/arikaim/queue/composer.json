@@ -1,0 +1,31 @@
+{
+    "name": "arikaim/queue",
+    "description": "Arikaim CMS Queue Package",
+    "keywords": ["cms", "queue"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "arikaim/utils": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
+        "arikaim/collection": "^1.0.0",
+        "arikaim/system": "^1.0.0",
+        "dragonmantank/cron-expression": "2.3.*"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Queue\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

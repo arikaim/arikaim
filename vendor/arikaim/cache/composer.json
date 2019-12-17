@@ -1,0 +1,29 @@
+{
+    "name": "arikaim/cache",
+    "description": "Arikam Cache package",
+    "keywords": ["cms", "cache"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "doctrine/cache": "1.8.*",      
+        "arikaim/utils": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Cache\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

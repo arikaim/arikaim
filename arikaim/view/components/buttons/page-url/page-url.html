@@ -1,0 +1,14 @@
+{% set target = target|default('_blank') %}
+<div class="ui left labeled button {{ class }}" tabindex="0">
+    {% if label is not empty %}
+    <div class="ui mini left horozontal label">
+        {{ label }}
+    </div>    
+    {% endif %}
+    <a class="ui basic label" href="{{ url(url,true) }}" target="{{ target }}">   
+        {{ url(url,true) }} 
+    </a>
+    <a class="ui icon blue button" href="{{ url(url,true) }}" target="{{ target }}">       
+        <i class="external alternate icon"></i>
+    </a>
+</div>

@@ -1,0 +1,6 @@
+{
+    "import": {
+        "js" : "system:admin.menu"
+    },
+    "mobile-only": "true"
+}

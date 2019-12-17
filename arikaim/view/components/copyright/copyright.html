@@ -1,0 +1,14 @@
+{% set current_year = currentYear() %}
+{% set show_label = show_label|default(true) %}
+{% set company = company|default('Your company') %}
+<i class="icon copyright"></i>
+{% if show_label == true %}
+<span class="text-gray-500">{{ label }}</span>
+{% endif %}
+<span class="ml-2 text-gray-500">
+{% if from_year is not empty and from_year < current_year %}
+{{ from_year }} -
+{% endif %}
+{{ current_year }}
+</span>
+<span class="ml-2">{{ company }}</span>

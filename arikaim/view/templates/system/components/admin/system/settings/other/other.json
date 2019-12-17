@@ -1,0 +1,11 @@
+{
+    "title": {
+        "content": "Other",
+        "icon": "code"
+    },
+    "fields": {
+        "debug": {
+            "label": "Development Mode"
+        }
+    }
+}

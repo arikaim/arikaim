@@ -1,0 +1,15 @@
+{
+    "labels": {
+        "jobs": "Jobs",
+        "running": "Running",
+        "disabled": "Disabled",
+        "worker": "Worker",
+        "command": "Command"   
+    },
+    "buttons": {
+        "start": "Start",
+        "stop": "Stop",
+        "delete": "Delete",
+        "update": "Update"
+    }
+}

@@ -1,0 +1,12 @@
+{% set parent_id = parent_id|default(null) %}
+{% set model = createModel('Category','category') %}
+{% set items = model.getActive().where('parent_id','=',parent_id).get()  %}
+{% set page_url = page_url|default('') %}
+
+<div class="ui menu {{ class }}">
+    {% for item in items %} 
+    <a class="item {{ item_class }}" href="{{ url(page_url ~ item.translation().slug,true) }}" >
+        {{ item.getTitle(null,language)|string }}
+    </a>
+    {% endfor %}
+</div>

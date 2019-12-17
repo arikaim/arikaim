@@ -1,0 +1,44 @@
+<div class="ui card raised {{ language.status|ifthen([1,2],"green") }}" {{ language.uuid|attr("id") }}>        
+    <div class="content item"> 
+        {% if language.default == 1 %}         
+        <div class="ui left corner olive mini label" {{ default_language_icon.title|attr("title") }}>
+            <i class="icon checkmark"></i>
+        </div>
+        {% endif %}
+        <i class="ui left floated large flag {{ language.country_code }} pt-1 ml-2"></i>       
+        <span class="font-bold">                          
+            {{ language.title }}                                        
+        </span>
+        <a class="edit-button" {{ buttons.edit.title|attr("title") }} {{ language.uuid|attr("uuid") }}>
+            <i class="right floated icon edit"></i>
+        </a>  
+        <div class="ui right floated slider checkbox change-status-button" {{ language.uuid|attr("uuid") }}>
+            <input name="status" {{ language.status|ifthen(1,"checked") }} type="checkbox">
+            <label></label>
+        </div>                   
+    </div>       
+    <div class="content">     
+        <div class="ui list">
+            <div class="item">
+                {{ labels.native_name }} <span class="font-bold">{{ language.native_title }}</span>
+            </div>
+            <div class="item">{{ labels.code }}
+                <div class="ui mini left pointing label"><span class="text-uppercase">{{ language.code }}</span></div>
+                <div class="ui mini left pointing label"><span class="text-uppercase">{{ language.code_3 }}</span></div>
+            </div>
+        </div>                                            
+    </div> 
+    <div class="p-2">
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ language.uuid }}"></div>
+    </div> 
+    <div class="extra content">
+        <div class="ui mini fluid buttons">   
+            <button class="ui button language-button set-default-button basic grey {{ buttons.default.class }} {{ language.default|ifthen(1,'disabled') }}" language-title="{{ language.title }}" {{ language.uuid|attr("uuid") }} {{ buttons.default.title|attr("title") }}>                   
+                {{ buttons.default.content }}    
+            </button>            
+            <button class="ui button language-button remove-button basic orange {{ buttons.remove.class }}" language-title="{{ language.title }}" {{ language.uuid|attr("uuid") }} {{ buttons.remove.title|attr("title") }}>                   
+                {{ buttons.remove.content }}    
+            </button>                    
+        </div> 
+    </div>       
+</div>

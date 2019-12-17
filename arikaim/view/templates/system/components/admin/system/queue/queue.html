@@ -1,0 +1,32 @@
+{% set info = service('queue').getQueueWorkerInfo() %}
+<h3 class="header">
+    {% if info.running == true %}
+        <i class="icon check olive" title="{{ labels.running }}"></i>
+    {% else %}
+        <i class="exclamation triangle orange icon" title="{{ labels.disabled }}"></i>
+    {% endif %}
+    <i class="icon server"></i>
+    {{ labels.worker }}
+</h3>
+{% if info.running == false %}
+    <button class="ui basic button queue-button" id="start_worker">
+        <i class="play circle outline icon olive"></i>
+        {{ buttons.start }}
+    </button>
+{% else %}
+    <div class="ui list">
+        <div class="item">
+            <strong>Pid</strong> 
+            {{ info.pid }}
+        </div>
+        <div class="item">
+            <strong>{{ labels.command }}</strong> 
+            {{ info.command }}
+        </div>     
+    </div>
+    <button class="ui basic button queue-button" id="stop_worker">
+        <i class="stop circle outline icon orange"></i>
+        {{ buttons.stop }}
+    </button>
+{% endif %}
+{{ component('system:admin.system.queue.jobs') }}

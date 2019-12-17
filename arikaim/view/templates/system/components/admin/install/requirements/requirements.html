@@ -1,0 +1,17 @@
+<div class="header">{{ labels.requirements }}</div>
+    <div class="description ml-2">
+        <div class="ui list">
+        {% for item in requirements.items %}
+            <div class="item">
+            {% if item.status == 1 %}
+                <i class="icon checkmark olive"></i>
+            {% elseif item.status == 0 %}
+                <i class="icon warning sign red"></i>
+            {% elseif item.status == 2 %}
+                <i class="icon warning circle orange"></i>
+            {% endif %}
+                {{ item.message }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

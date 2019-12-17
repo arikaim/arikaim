@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "user_name": {
+            "label": "Username"
+        },
+        "email": {
+            "label": "Email"
+        },
+        "password": {
+            "label": "Password"
+        },
+        "new_password": {
+            "label": "New Password"
+        },
+        "repeat_password": {
+            "label": "Repeat Password"
+        }
+    },
+    "labels": {
+        "change_password": "Change password"
+    }    
+}

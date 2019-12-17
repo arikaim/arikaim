@@ -1,0 +1,9 @@
+{% if access().hasControlPanelAccess() == true %}   
+    {{ component("system:admin.navbar") }}
+    {{ component("system:admin.layout") }}       
+{% else %}   
+    {% component "components:layout" %}
+        {{ component("system:navbar") }}
+        {{ component("system:user.login") }} 
+    {% endcomponent %}
+{% endif %}

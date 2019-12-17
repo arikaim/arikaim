@@ -1,0 +1,28 @@
+{
+    "name": "arikaim/console",
+    "description": "Arikam CMS Console package",
+    "keywords": ["cms", "console"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.1",
+        "arikaim/utils": "^1.0.0",        
+        "symfony/console": "4.1.*"      
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Console\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

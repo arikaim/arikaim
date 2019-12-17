@@ -1,0 +1,24 @@
+{% set time_zone = getOption("time.zone") %}
+{% set date_format = getOption("date.format") %}
+{% set time_format = getOption("time.format") %}
+
+{% component 'components:tabs.vertical.content' %}
+<div class="ui equal width form mt-8">   
+    <div class="field">
+        <label>{{ fields.time_zone.label }} </label>               
+        {{ component('components:timezone',{ selected: time_zone, class: "fluid" }) }}
+    </div>
+    <div class="field">
+        <label>{{ fields.date_format.label }}</label>                
+        {{ component('components:date.format',{ selected: date_format, class: "fluid" }) }}                  
+    </div>
+    <div class="field">
+        <label>{{ fields.time_format.label }}</label>   
+        {{ component('components:time.format',{ selected: time_format, class: "fluid" }) }}                    
+    </div>
+    <div class="field mt-2 ui segment">
+        <label>{{ fields.current_time.label }}</label>  
+        {{ today()|dateTimeFormat }}
+    </div>
+</div>
+{% endcomponent %}
