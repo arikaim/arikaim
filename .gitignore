@@ -1,5 +1,4 @@
-# Composer packages
-vendor/
+#vendor/
 node_modules
 composer.lock
 arikaim/cache/*
