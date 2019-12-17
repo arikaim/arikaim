@@ -9,12 +9,24 @@
             "message": "Database model class {{ class }} not exist.",
             "description": ""
         },
+        "INSTALL_ERROR": {
+            "message": "Can't install Arikaim CMS.",
+            "description": ""
+        },
         "DB_CONNECTION_ERROR": {
             "message": "Can't connect to database.Check database connection config.",
             "description": ""
         },
         "DB_DATABASE_ERROR": {
             "message": "Error Creating Database {{ database_name }}",
+            "description": ""
+        },
+        "NOT_INSTALLED_ERROR": {
+            "message": "Arikaim CMS not installed or wrong database config values.",
+            "description": ""
+        },
+        "INSTALL_PAGE_ERROR": {
+            "message": "Install page is disabled.",
             "description": ""
         },
         "TEMPLATE_COMPONENT_ERROR": {
