@@ -11,7 +11,7 @@
     }],
     "require": {
         "php": ">=7.1",
-        "arikaim/installer": "*",
+        "arikaim/installer": "^1.0.0",
         "arikaim/core": "^1.0.0",
         "arikaim/cors-module": "^1.0.0",
         "arikaim/recaptcha-module": "^1.0.0",
@@ -23,18 +23,14 @@
         "arikaim/blog-template": "^1.0.0",
         "arikaim/system-template": "^1.0.0",        
         "arikaim/ui-components": "^1.0.0",
-        "arikaim/arikaim-library": "*",
-        "arikaim/arikaim-ui-library": "*",
-        "arikaim/jquery-library": "*",
-        "arikaim/jquery-ui-library": "*",
-        "arikaim/filepond-library": "*",
-        "arikaim/foundation-emails-library": "*",
-        "arikaim/fomantic-library": "*",
-        "arikaim/tailwind-library": "*"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
+        "arikaim/arikaim-library": "^1.0.0",
+        "arikaim/arikaim-ui-library": "^1.0.0",
+        "arikaim/jquery-library": "^5.0.0",
+        "arikaim/jquery-ui-library": "^5.0.0",
+        "arikaim/filepond-library": "^5.0.0",
+        "arikaim/foundation-emails-library": "^5.0.0",
+        "arikaim/fomantic-library": "^3.0.0",
+        "arikaim/tailwind-library": "^1.0.0",
+        "arikaim/markdown-editor-library": "^1.0.0"
     }
 }
