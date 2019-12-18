@@ -12,6 +12,7 @@ return [
     "Arikaim\\Core\\App\\Commands\\Install\\EnableInstallCommand",
     "Arikaim\\Core\\App\\Commands\\Install\\DisableInstallCommand",
     "Arikaim\\Core\\App\\Commands\\Install\\RepairInstallCommand",
+    "Arikaim\\Core\\App\\Commands\\Install\\PrepareCommand",
     // update
     "Arikaim\\Core\\App\\Commands\\Update\\UpdateCommand",
     "Arikaim\\Core\\App\\Commands\\Update\\ControlPanelUpdateCommand",
