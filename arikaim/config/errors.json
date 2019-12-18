@@ -1,5 +1,4 @@
 {
-    "prefix": "",
     "errors": {
         "PDO_ERROR": {
             "message": "PDO php extensin or PDO driver {{ driver }} not installed.",
