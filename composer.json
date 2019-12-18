@@ -32,5 +32,10 @@
         "arikaim/fomantic-library": "^2.0.0",
         "arikaim/tailwind-library": "^1.0.0",
         "arikaim/markdown-editor-library": "^1.0.0"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php cli install:prepare"
+        ]
     }
 }
