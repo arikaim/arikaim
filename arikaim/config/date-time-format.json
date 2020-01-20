@@ -1,0 +1,15 @@
+{
+    "date": {
+        "numeric-us": "m-d-Y", 
+        "numeric": "Y/m/d",
+        "full": "F j, Y"    
+    },
+    "time": {
+        "12-long": "H:i:s",
+        "12-short": "H:i",
+        "12-long-a": "h:i:s A",
+        "24-long": "G:i:s",
+        "24-short": "g:i",
+        "24-long-a": "g:i:s A"
+    }
+}
