@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "errors": {
         "PDO_ERROR": {
             "message": "PDO php extensin or PDO driver {{ driver }} not installed.",
@@ -158,5 +159,204 @@
         "UNKNOWN_ERROR": {
             "message": "Unknown error."
         }
+=======
+    "DROP_DB_TABLE_ERROR": {
+        "message": "Drop db table error {{ class }}.",
+        "description": ""
+    },
+    "CREATE_DB_TABLE_ERROR": {
+        "message": "Create db table error {{ class }}.",
+        "description": ""
+    },
+    "REGISTER_ROUTE_ERROR": {
+        "message": "Register route error {{ pattern }}.",
+        "description": ""
+    },
+    "REGISTER_EVENT_ERROR": {
+        "message": "Register event error {{ name }}.",
+        "description": ""
+    },
+    "REGISTER_JOB_ERROR": {
+        "message": "Register job error {{ name }}.",
+        "description": ""
+    },
+    "NOT_VALID_CONSOLE_CLASS": {
+        "message": "Not valid console command class {{ class }}.",
+        "description": ""
+    },
+    "ERROR_INSTALL_DRIVER": {
+        "message": "Error install driver {{ name }}.",
+        "description": ""
+    },
+    "ERROR_CREATE_OPTION": {
+        "message": "Error create option {{ class }}.",
+        "description": ""
+    },
+    "REGISTER_RELATION_ERROR": {
+        "message": "Error register relation {{ class }}.",
+        "description": ""
+    },
+    "REGISTER_PERMISSION_ERROR": {
+        "message": "Error register permission {{ name }}.",
+        "description": ""
+    },
+    "PDO_ERROR": {
+        "message": "PDO php extensin or PDO driver {{ driver }} not installed.",
+        "description": ""
+    },
+    "DB_MODEL_CLASS_NOT_EXIST": {
+        "message": "Database model class {{ class }} not exist.",
+        "description": ""
+    },
+    "INSTALL_ERROR": {
+        "message": "Can't install Arikaim CMS.",
+        "description": ""
+    },
+    "DB_CONNECTION_ERROR": {
+        "message": "Can't connect to database.Check database connection config.",
+        "description": ""
+    },
+    "DB_DATABASE_ERROR": {
+        "message": "Error Creating Database {{ database_name }}",
+        "description": ""
+    },
+    "NOT_INSTALLED_ERROR": {
+        "message": "Arikaim CMS not installed or wrong database config values.",
+        "description": ""
+    },
+    "INSTALL_PAGE_ERROR": {
+        "message": "Install page is disabled.",
+        "description": ""
+    },
+    "TEMPLATE_COMPONENT_ERROR": {
+        "message": "Error loading component '{{ full_component_name }}'  {{ details }}",
+        "description": ""
+    },
+    "TEMPLATE_COMPONENT_NOT_FOUND": {
+        "message": "Can't find component with name '{{ full_component_name }}' ",
+        "description": ""
+    },
+    "TEMPLATE_PAGE_NOT_FOUND": {
+        "message": "Can't find page with name '{{ full_page_name }}' ",
+        "description": ""
+    },
+    "ACCESS_DENIED": {
+        "message": "Access Denied",
+        "description": ""
+    },
+    "AUTH_FAILED": {
+        "message": "Authentication failed",
+        "description": ""
+    },
+    "EXTENSION_CLASS_NOT_VALID": {
+        "message": "Extension class name not valid",
+        "description": ""
+    },
+    "EXTENSION_NOT_EXISTS": {
+        "message": "Extension {{ extension_name }} not exists",
+        "description": ""
+    },
+    "TEMPLATE_NOT_EXISTS": {
+        "message": "Template {{ template_name }} not exists",
+        "description": ""
+    },
+    "INT_NOT_VALID_ERROR": {
+        "message": "Not valid integer value",
+        "description": ""
+    },
+    "FLOAT_NOT_VALID_ERROR": {
+        "message": "Not valid float value",
+        "description": ""
+    },
+    "NUMBER_NOT_VALID_ERROR": {
+        "message": "Not valid number",
+        "description": ""
+    },
+    "NUMBER_MAX_VALUE_ERROR": {
+        "message": "Not valid value maximum {{ max }}",
+        "description": ""
+    },
+    "NUMBER_MIN_VALUE_ERROR": {
+        "message": "Not valid value minimum {{ min }}",
+        "description": ""
+    },
+    "EMAIL_NOT_VALID_ERROR": {
+        "message": "Not valid email.",
+        "description": ""
+    },       
+    "TEXT_NOT_VALID_ERROR": {
+        "message": "Required text value",
+        "description": ""
+    },
+    "TEXT_MIN_LENGHT_ERROR": {
+        "message": "Required minimum {{ min }} chars",
+        "description": ""
+    },
+    "TEXT_MAX_LENGHT_ERROR": {
+        "message": "Required maximum {{ min }} chars",
+        "description": ""
+    },
+    "REGEXP_NOT_VALID_ERROR": {
+        "message": "Regexp not valid",
+        "description": ""
+    },
+    "URL_NOT_VALID_ERROR": {
+        "message": "Not valid URL",
+        "description": ""
+    },
+    "UUID_NOT_VALID_ERROR": {
+        "message": "Not valid UUID",
+        "description": ""
+    },
+    "NOT_VALID_VALUE_ERROR": {
+        "message": "Not valid value",
+        "description": ""
+    },
+    "VALUE_EXIST_ERROR": {
+        "message": "Not unique value",
+        "description": ""
+    },
+    "UPLOAD_ERR_INI_SIZE": {
+        "message": "The uploaded file exceeds the upload_max_filesize directive in php.ini",
+        "description": ""
+    },
+    "UPLOAD_ERR_FORM_SIZE": {
+        "message": "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form",
+        "description": ""
+    },
+    "UPLOAD_ERR_PARTIAL": {
+        "message": "The uploaded file was only partially uploaded",
+        "description": ""
+    },
+    "UPLOAD_ERR_NO_FILE": {
+        "message": "No file was uploaded",
+        "description": ""
+    },
+    "UPLOAD_ERR_NO_TMP_DIR": {
+        "message": "Missing a temporary folder",
+        "description": ""
+    },
+    "UPLOAD_ERR_CANT_WRITE": {
+        "message": "Failed to write file to disk",
+        "description": ""
+    },
+    "UPLOAD_ERR_EXTENSION": {
+        "message": "File upload stopped by extension",
+        "description": ""
+    },
+    "CONFIG_FILE_ERROR": {
+        "message": "Not valid config file.",
+        "description": ""
+    },
+    "PHP_VERSION_ERROR": {
+        "message": "PHP version 7.1 or above is required.",
+        "description": ""
+    },
+    "INSTALLED_ERROR": {
+        "message": "Arikaim is already installed."
+    },
+    "UNKNOWN_ERROR": {
+        "message": "Unknown error."
+>>>>>>> eb731af9637a042c1d8abfcd213117ea5fca4420
     }
 }

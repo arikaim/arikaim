@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 #vendor/
 node_modules
 composer.lock
 arikaim/cache/*
 arikaim/logs/*
+=======
+# Composer packages
+vendor/
+arikaim/extensions/*
+node_modules
+composer.lock
+arikaim/cache/*
+arikaim/logs/*
+>>>>>>> eb731af9637a042c1d8abfcd213117ea5fca4420
 !*.gitkeep
