@@ -1,0 +1,9 @@
+<div class="field">
+    <label>{{ option.type.title }}</label>
+    <select class="ui dropdown option-dropdown option-field" name="options[{{ option.key }}]" data-content="{{ option.type.description }}">
+        {% for key,value in option.type.items %}              
+        <option value="{{ key }}" {{ option.val|ifthen(key,'selected') }} >{{ value }}</option>
+        {% endfor %}
+    </select>
+    {{ component('system:admin.orm.options.form.fields.type',{ option: option }) }} 
+</div>

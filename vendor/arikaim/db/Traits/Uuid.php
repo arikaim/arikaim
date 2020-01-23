@@ -25,7 +25,8 @@ trait Uuid
     public static function bootUuid()
     {
         static::creating(function($model) {   
-            if (empty($model->attributes[$model->getUuidAttributeName()]) == true) {  
+            $columnName = $model->getUuidAttributeName();
+            if (empty($model->$columnName) == true) {  
                 $model->attributes[$model->getUuidAttributeName()] = UuidFactory::create();
             }
         });

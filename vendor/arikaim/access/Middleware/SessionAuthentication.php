@@ -31,7 +31,7 @@ class SessionAuthentication extends AuthMiddleware implements MiddlewareInterfac
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if (empty($this->getAuthProvider()->getId()) == true) {
-            return $this->resolveAuthError($request);            
+            return $this->handleError($request,$handler);                 
         }      
 
         return $handler->handle($request); 

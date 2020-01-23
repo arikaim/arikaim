@@ -9,12 +9,10 @@
 */
 namespace Arikaim\Core\Routes;
 
-use FastRoute\RouteParser\Std;
-
 use Arikaim\Core\Routes\RoutesStorageInterface;
 use Arikaim\Core\Interfaces\RoutesInterface;
 use Arikaim\Core\Interfaces\CacheInterface;
-use Exception;
+use Arikaim\Core\Routes\Route;
 
 /**
  * Routes storage
@@ -24,8 +22,9 @@ class Routes implements RoutesInterface
     /**
      *  Route type constant
      */
-    const PAGE   = 1;
-    const API    = 2;
+    const PAGE      = 1;
+    const API       = 2;
+    const HOME_PAGE = 3;
 
     /**
      * Routes storage adapter
@@ -72,23 +71,59 @@ class Routes implements RoutesInterface
      * @param string $templateName
      * @param string $pageName
      * @param integer $auth
+     * @param boolean $replace 
+     * @param string|null $redirectUrl 
+     * @param integer $type
      * @return bool
      */
-    public function saveTemplateRoute($pattern, $handlerClass, $handlerMethod, $templateName, $pageName, $auth = null)
+    public function saveTemplateRoute($pattern, $handlerClass, $handlerMethod, $templateName, $pageName, $auth = null, $replace = false, $redirectUrl = null, $type = Self::PAGE)
     {
-        $handlerMethod = ($handlerMethod == null) ? "loadPage" : $handlerMethod;
+        $handlerMethod = ($handlerMethod == null) ? "pageLoad" : $handlerMethod;
+
         $route = [
             'method'         => "GET",
-            'pattern'        => $pattern . $this->getLanguagePattern($pattern),
+            'pattern'        => $pattern,
             'handler_class'  => $handlerClass,
             'handler_method' => $handlerMethod,
             'auth'           => $auth,
-            'type'           => Self::PAGE,
+            'type'           => $type,
             'page_name'      => $pageName,
-            'template_name'  => $templateName
+            'template_name'  => $templateName,
+            'redirect_url'   => $redirectUrl
         ];
         
+        if ($replace == true) {
+            $this->delete('GET',$pattern);
+            if ($type == Self::HOME_PAGE) {
+                $this->deleteHomePage();
+            }
+        }
+
+        $this->cache->delete('routes.list');
+
+        if (Route::validate("GET",$pattern,$this->getAllRoutes()) == false) {
+            return false;
+        }
+     
         return $this->adapter->addRoute($route);
+    }
+
+    /**
+     * Add home page route
+     *
+     * @param string $pattern
+     * @param string $handlerClass
+     * @param string $handlerMethod
+     * @param string $extension
+     * @param string $pageName
+     * @param integer $auth  
+     * @param string|null $name
+     * @param boolean $withLanguage
+     * @return bool
+     */
+    public function addHomePageRoute($pattern, $handlerClass, $handlerMethod, $extension, $pageName, $auth = null, $name = null, $withLanguage = true)
+    {
+        return $this->addPageRoute($pattern,$handlerClass,$handlerMethod,$extension,$pageName,$auth,$name,$withLanguage,Self::HOME_PAGE);
     }
 
     /**
@@ -102,24 +137,51 @@ class Routes implements RoutesInterface
      * @param integer $auth  
      * @param string|null $name
      * @param boolean $withLanguage
+     * @param integer $type
      * @return bool
      */
-    public function addPageRoute($pattern, $handlerClass, $handlerMethod, $extension, $pageName, $auth = null, $name = null, $withLanguage = true)
+    public function addPageRoute($pattern, $handlerClass, $handlerMethod, $extension, $pageName, $auth = null, $name = null, $withLanguage = true, $type = Self::PAGE)
     {
-        $languagePattern = ($withLanguage == true) ? $this->getLanguagePattern($pattern) : '';
+        if (Route::isValidPattern($pattern) == false) {           
+            return false;
+        }
+
+        $languagePattern = Route::getLanguagePattern($pattern);
+        if ($this->has('GET',$pattern . $languagePattern) == true) {
+            return false;
+        }
+        $pattern = ($withLanguage == true) ? $pattern . $languagePattern : $pattern;
+
         $route = [
             'method'            => "GET",
-            'pattern'           => $pattern . $languagePattern,
+            'pattern'           => $pattern,
             'handler_class'     => $handlerClass,
             'handler_method'    => $handlerMethod,
             'auth'              => $auth,
-            'type'              => Self::PAGE,
+            'type'              => $type,
             'extension_name'    => $extension,
             'page_name'         => $pageName,
             'name'              => $name,
         ];
 
+        $this->cache->delete('routes.list');
+        
+        if (Route::validate("GET",$pattern,$this->getAllRoutes()) == false) {
+            return false;
+        }
+
         return $this->adapter->addRoute($route);    
+    }
+
+    /**
+     * Get language pattern
+     *
+     * @param string $pattern
+     * @return string
+     */
+    public function getLanguagePattern($pattern)
+    {
+        return Route::getLanguagePattern($pattern);
     }
 
     /**
@@ -135,6 +197,10 @@ class Routes implements RoutesInterface
      */
     public function addApiRoute($method, $pattern, $handlerClass, $handlerMethod, $extension, $auth = null)
     {
+        if (Route::isValidPattern($pattern) == false) {           
+            return false;
+        }
+
         $route = [
             'method'         => $method,
             'pattern'        => $pattern,
@@ -144,6 +210,12 @@ class Routes implements RoutesInterface
             'type'           => Self::API,
             'extension_name' => $extension
         ];
+        
+        $this->cache->delete('routes.list');
+
+        if (Route::validate($method,$pattern,$this->getAllRoutes()) == false) {
+            return false;
+        }
 
         return $this->adapter->addRoute($route);    
     }
@@ -170,6 +242,29 @@ class Routes implements RoutesInterface
     public function delete($method, $pattern)
     {
         return $this->adapter->deleteRoute($method,$pattern);
+    }
+
+    /**
+     * Save route options
+     *
+     * @param string $method
+     * @param string $pattern
+     * @param array $options
+     * @return boolean
+     */
+    public function saveRouteOptions($method, $pattern, $options)
+    {
+        return $this->adapter->saveRouteOptions($method,$pattern,$options);
+    }
+
+    /**
+     * Delete home page route
+     *
+     * @return boolean
+     */
+    public function deleteHomePage()
+    {
+        return $this->adapter->deleteRoutes(['type' => Self::HOME_PAGE]);
     }
 
     /**
@@ -207,81 +302,6 @@ class Routes implements RoutesInterface
     }
 
     /**
-     * Return true if route pattern have placeholder
-     *
-     * @return boolean
-     */
-    public function hasPlaceholder($pattern)
-    {
-        return preg_match("/\{(.*?)\}/",$pattern);
-    }
-
-    /**
-     * Get language route path  
-     *
-     * @param string $path
-     * @return string
-     */
-    public function getLanguagePattern($path)
-    {        
-        return (substr($path,-1) == "/") ? "[{language:[a-z]{2}}/]" : "[/{language:[a-z]{2}}/]";
-    }
-
-    /**
-     * Get route url
-     *
-     * @param string $pattern
-     * @param array  $data
-     * @param array  $queryParams
-     * @return string
-     */
-    public function getRouteUrl($pattern, array $data = [], array $queryParams = [])
-    {      
-        if ($this->hasPlaceholder($pattern) == false) {           
-            return $pattern;
-        }
-
-        $segments = [];      
-        $parser = new Std();
-        
-        try {
-            $expressions = array_reverse($parser->parse($pattern));
-        } catch (Exception $e) {
-        }
-       
-        foreach ($expressions as $expression) {
-
-            foreach ($expression as $segment) {               
-                if (is_string($segment)) {
-                    $segments[] = $segment;
-                    continue;
-                }
-                if (!array_key_exists($segment[0], $data)) {
-                    $segments = [];
-                    $segmentName = $segment[0];
-                    break;
-                }
-                $segments[] = $data[$segment[0]];
-            }            
-            
-            if (!empty($segments)) {
-                break;
-            }
-        }
-
-        if (empty($segments) == true) {
-            return $pattern;
-        }
-
-        $url = implode('',$segments);
-        if ($queryParams) {
-            $url .= '?' . http_build_query($queryParams);
-        }
-
-        return $url;
-    }
-
-    /**
      * Get all actve routes from storage
      *
      * @return array
@@ -296,24 +316,4 @@ class Routes implements RoutesInterface
 
         return $routes;
     }
-
-    /**
-     * Return true if route pattern is valid
-     *
-     * @param string $pattern
-     * @return boolean
-     */
-    public function isValidPattern($pattern)
-    {
-        $parser = new Std();
-        try {
-            $parser->parse($pattern);
-        } catch (Exception $e) {
-            return false;
-        }
-
-        return true;
-    }
-
-    
 }

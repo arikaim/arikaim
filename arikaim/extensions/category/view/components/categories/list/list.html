@@ -13,14 +13,14 @@
 {% set index = 1 %}
 <div class="ui list {{ class }}">
     {% for item in items %} 
-        {% if index <= max_items %}
-            {% set url = page_url|renderText({ slug: item.translation().slug }) %}
-            <div class="item {{ item_class }}">      
-                <a href="{{ url(url,true) }}" >        
+        {%- if index <= max_items %}
+            {%- set url = page_url|renderText({ slug: item.translation().slug }) -%}
+            <div class="item {{- item_class -}}">      
+                <a href="{{ url(url,true) }}">        
                     <span class="{{ item_text_class }}">{{ item.getTitle(null,language)|string }}</span>
                 </a>           
             </div>
-            {% set index = index + 1 %}
+            {%- set index = index + 1 -%}
         {% endif %}
     {% endfor %}    
 </div>

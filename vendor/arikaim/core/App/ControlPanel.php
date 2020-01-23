@@ -26,6 +26,6 @@ class ControlPanel extends Controller
     */
     public function loadControlPanel($request, $response, $data) 
     {          
-        return $this->loadPage($request,$response,['page_name' => 'system:admin']);       
+        return $this->pageLoad($request,$response,['page_name' => 'system:admin']);       
     }
 }

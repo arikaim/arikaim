@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use Arikaim\Core\Interfaces\Events\EventRegistryInterface;
 use Arikaim\Core\Db\Model as DbModel;
+use Arikaim\Core\Utils\Uuid as UuidFactory;
+
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Status;
 use Arikaim\Core\Db\Traits\Find;
@@ -32,6 +34,7 @@ class Events extends Model implements EventRegistryInterface
      * @var array
      */
     protected $fillable = [
+        'uuid',
         'name',
         'title',
         'extension_name',
@@ -122,6 +125,7 @@ class Events extends Model implements EventRegistryInterface
             return false;
         } 
         $info = [
+            'uuid'           => UuidFactory::create(),
             'name'           => $name,
             'extension_name' => $extension,
             'title'          => $title,

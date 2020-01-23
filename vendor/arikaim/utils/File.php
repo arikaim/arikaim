@@ -64,7 +64,7 @@ class File
      */
     public static function exists($fileName) 
     {
-        return file_exists($fileName);           
+        return \file_exists($fileName);           
     }
 
     /**
@@ -89,7 +89,8 @@ class File
         if (Self::exists($fileName) == false) return false;
         if (Self::isWritable($fileName) == true) return true;
 
-        chmod($fileName, 0755);
+        \chmod($fileName, 0777);
+
         return Self::isWritable($fileName);
     }
 
@@ -145,7 +146,7 @@ class File
         $data = explode(',',$file['data']);
         $result = Self::writeEncoded($fileName,$data[1],$flags);
         if ($result != false && $mode != null) {
-            chmod($fileName,$mode);
+            \chmod($fileName,$mode);
         }
 
         return $result;
@@ -161,7 +162,8 @@ class File
      */
     public static function writeEncoded($fileName, $encodedData, $flags = 0)
     {
-        $data = base64_decode($encodedData);
+        $data = \base64_decode($encodedData);
+
         return Self::write($fileName,$data,$flags);
     }
 
@@ -175,7 +177,7 @@ class File
      */
     public static function write($fileName, $data, $flags = 0)
     {
-        return file_put_contents($fileName,$data,$flags);
+        return \file_put_contents($fileName,$data,$flags);
     }
 
     /**
@@ -200,6 +202,7 @@ class File
         if (Self::exists($fileName) == true) {
             return (is_dir($fileName) == true) ? Self::deleteDirectory($fileName) : unlink($fileName);          
         }
+
         return false;
     }
 
@@ -229,14 +232,22 @@ class File
         $dir = new \RecursiveDirectoryIterator($path,\RecursiveDirectoryIterator::SKIP_DOTS);
         $iterator = new \RecursiveIteratorIterator($dir,\RecursiveIteratorIterator::CHILD_FIRST);
 
+        $result = true;
         foreach ($iterator as $file) {
+            Self::setWritable($file->getRealPath());
+          
             if ($file->isDir() == true) {
-                rmdir($file->getRealPath());
-            } else {
-                $result = unlink($file->getRealPath());
+                if (rmdir($file->getRealPath()) == false) {
+                    $result = false;
+                };               
+            } else {                            
+                if (unlink($file->getRealPath()) == false) {
+                    $result = false;
+                };
             }
         }
-        return true;
+
+        return $result;
     }
 
     /**

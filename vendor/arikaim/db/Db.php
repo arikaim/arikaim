@@ -269,7 +269,7 @@ class Db
      */
     public function getInfo() 
     {        
-        $pdo = (Self::hasPhpExtension('PDO') == true) ? $this->capsule->connection()->getPdo() : null;
+        $pdo = $this->capsule->connection()->getPdo();
 
         return [
             'driver'      => is_object($pdo) ? $pdo->getAttribute(\PDO::ATTR_DRIVER_NAME) : "",

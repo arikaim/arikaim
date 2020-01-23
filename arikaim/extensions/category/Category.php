@@ -19,7 +19,7 @@ class Category extends Extension
     /**
      * Install extension routes, events, jobs ..
      *
-     * @return boolean
+     * @return void
     */
     public function install()
     {
@@ -43,7 +43,14 @@ class Category extends Extension
         $this->createDbTable('CategoryRelationsSchema');
         // console
         $this->registerConsoleCommand('CategoryDelete');
-        
-        return true;
-    }   
+    } 
+    
+    /**
+     * UnInstall extension
+     *
+     * @return void
+     */
+    public function unInstall()
+    {  
+    }
 }

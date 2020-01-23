@@ -5,50 +5,50 @@
                 "component": "system:admin.extensions",
                 "icon": "puzzle",
                 "title": "Extensions",
-                "page_icon": "puzzle",
-                "page_title": "Extensions"
+                "page-icon": "puzzle",
+                "page-title": "Extensions"
             },
             "templates": {
                 "component": "system:admin.templates",
                 "icon": "browser",
                 "title": "Themes",
-                "page_icon": "browser",
-                "page_title": "Themes"
+                "page-icon": "browser",
+                "page-title": "Themes"
             },
             "libraries": {
                 "component": "system:admin.libraries",
                 "icon": "cubes",
                 "title": "UI Libraries",
-                "page_icon": "cubes",
-                "page_title": "UI Libraries"
+                "page-icon": "cubes",
+                "page-title": "UI Libraries"
             },
             "modules": {
                 "component": "system:admin.modules",
                 "icon": "plug",
                 "title": "Modules",
-                "page_icon": "plug",
-                "page_title": "Modules"
+                "page-icon": "plug",
+                "page-title": "Modules"
             },
             "languages": {
                 "component": "system:admin.languages",
                 "icon": "globe",
                 "title": "Languages",
-                "page_title": "Languages", 
-                "page_icon": "globe"
+                "page-title": "Languages", 
+                "page-icon": "globe"
             },
             "system": { 
                 "component": "system:admin.system",
                 "icon": "setting",
                 "title": "System",
-                "page_icon": "setting",
-                "page_title": "System"
+                "page-icon": "setting",
+                "page-title": "System"
             },
             "logout": { 
                 "component": "system:admin.logout",
                 "icon": "sign out",
                 "title": "Log out",
-                "page_icon": "sign out",
-                "page_title": "Log out"
+                "page-icon": "sign out",
+                "page-title": "Log out"
             }   
         }
     }

@@ -84,4 +84,19 @@ interface ComponentDataInterface
      * @return void
      */
     public function getUrl();
+
+    /**
+     * Return true if component has parent component 
+     *
+     * @return boolean
+     */
+    public function hasParent();
+
+    /**
+     * Create component
+     *
+     * @param string|null $name If name is null parent component name is used
+     * @return ComponentDataInterface|false
+    */
+    public function createComponent($name = null);
 }

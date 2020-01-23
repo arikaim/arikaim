@@ -22,6 +22,7 @@ function isEmptyElement(selector) {
  * @class Text
  */
 function Text() {
+    
     this.createSlug = function(string) {
         return string
             .toString()
@@ -143,8 +144,9 @@ function Form() {
             var submitButton = this.findSubmitButton(selector);
         }
 
-        $(selector).off();
-        $(selector).submit(function(event) {
+        $(selector).off();     
+        $(selector).unbind();
+        $(selector).on('submit',function(event) {
             self.clearErrors(selector);
             event.preventDefault();   
             self.disable(selector);
@@ -276,25 +278,27 @@ function Form() {
     this.showErrors = function(errors, selector, component) {
         if (isEmpty(selector) == true) {
             selector = $('form').find('.errors');
-        }      
-        var message = '';
+        }       
+        var message = ''; 
         if (isArray(errors) == true) {
             for (var index = 0; index < errors.length; index++) {
-                var error = errors[index];              
+                var error = errors[index];
+              
                 if (isObject(error) == true) {
                     var errorLabel = '';
                     if (isObject(component) == true) {                     
                         errorLabel = component.getProperty(error.field_name + '.label');
                     }
-                    error = '<span>' + errorLabel + '</span> ' + error.message;
+                    error = '<span>' + errorLabel + '</span> ' + error.message;                 
                 }
-                message += '<li>' + error + '</li>';
+                if (isString(error) == true) {
+                    message += '<li>' + error + '</li>';
+                }
             }
-        } 
-        if (isString(errors) == true) {
-            message = '<li>' + errors + '</li>';
+        } else {
+            message = '<li>' + errors + '</li>';           
         }
-    
+      
         this.showMessage({
             selector: selector,
             message: message,
@@ -365,6 +369,16 @@ function ArikaimUI() {
     this.getAttr = function(selector, name, defaultValue) {
         var value = $(selector).attr(name);
         return (isEmpty(value) == true) ? defaultValue : value;
+    };
+
+    this.menu = function(itemSelector,cssClass) {
+        itemSelector = getDefaultValue(itemSelector,'.menu .item');
+        cssClass = getDefaultValue(cssClass,'active');
+        
+        $(itemSelector).on('click',function() {
+            $(itemSelector).removeClass(cssClass);
+            $(this).addClass(cssClass);
+        }); 
     };
 
     this.tab = function(selector, contentSelector, paramsList) {
@@ -480,9 +494,10 @@ function Page() {
     var properties = {};  
     var name = null;
     var onContentReady = null;
-    var loader = '';
     var defaultLoader = '<div class="ui active blue centered loader"></div>';  
     var language;
+
+    this.loader = '';
 
     this.toastMessage = function(message) {
         if (isObject(message) == false) {
@@ -500,8 +515,10 @@ function Page() {
         loader = loaderHtml
     };
 
-    this.getLoader = function() {     
-        return (isEmpty(loader) == true) ? defaultLoader : loader;
+    this.getLoader = function(code) {     
+        var code = ((isEmpty(code) == true) && (isEmpty(this.loader) == true)) ? defaultLoader : this.loader;
+
+        return $(code);
     };
 
     this.onContentReady = function(callback) {
@@ -542,10 +559,16 @@ function Page() {
         $(selector).remove();
     };
 
-    this.showLoader = function(element, loader, append) {
+    this.showLoader = function(selector, loader, append) {
         append = getDefaultValue(append,false);
-        loader = getDefaultValue(loader,this.getLoader());     
-        $(element).append(loader);
+        loader = getDefaultValue(loader,this.getLoader());   
+    
+        if (append == true) {
+            $(selector).append(loader);
+        } else {
+            $(selector).html(loader);
+        }
+      
         $('#loader').dimmer({});
     };
 
@@ -576,7 +599,8 @@ function Page() {
         var componentParams = getValue('params',params,'');
         var elementId = getValue('id',params);
         var element = getValue('element',params);
-        var loader = getValue('loader',params,null);
+        var loaderCode = getValue('loader',params,null);
+        var loaderClass = getValue('loaderClass',params,'');
         var replace = getValue('replace',params,false);
         var useHeader = getValue('useHeader',params,false);
         var includeFiles = getValue('includeFiles',params,true);
@@ -584,7 +608,10 @@ function Page() {
         if (isEmpty(elementId) == false) {
             element = '#' + elementId;
         }
-          
+        var loader = this.getLoader(loaderCode);
+        if (isEmpty(loaderClass) == false) {
+            loader.attr('class',loaderClass);
+        }
         this.showLoader(element,loader);
     
         arikaim.component.load(componentName,function(result) { 

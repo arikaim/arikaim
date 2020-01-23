@@ -9,6 +9,8 @@
 */
 namespace Arikaim\Core\Db\Traits;
 
+use Arikaim\Core\Utils\Uuid;
+
 /**
  *  Polymorphic Relations (Many To Many) trait      
 */
@@ -61,7 +63,7 @@ trait PolymorphicRelations
      * @param string|null $type
      * @return Builder
      */
-    public function getRows($id, $type = null) 
+    public function getItemsQuery($id, $type = null) 
     {
         $relationField = $this->getRelationAttributeName();
         $query = (empty($id) == false) ? $this->where($relationField,'=',$id) : $this;
@@ -71,6 +73,21 @@ trait PolymorphicRelations
         }
 
         return $query;
+    }
+
+    /**
+     * Get relations items
+     *
+     * @param integer $relationId
+     * @param string $type
+     * @return Collection|null
+     */
+    public function getRelatedItems($relationId, $type = null)
+    {
+        $relationField = $this->getRelationAttributeName();
+        $query = $this->getRelationsQuery($relationId,$type);
+        
+        return $query->get($relationField)->pluck($relationField);
     }
 
     /**
@@ -100,7 +117,7 @@ trait PolymorphicRelations
     {
         $model = (empty($id) == true) ? $this->findByid($id) : $this;
 
-        return (is_obejct($model) == true) ? $model->delete() : false;
+        return (is_object($model) == true) ? $model->delete() : false;
     }
 
     /**
@@ -109,21 +126,21 @@ trait PolymorphicRelations
      * @param integer $id
      * @param string|null $type
      * @param integer|null $relationId
-     * @return void
+     * @return boolean
      */
     public function deleteRelations($id, $type = null, $relationId = null)
     {
         $relationField = $this->getRelationAttributeName();
         $model = $this->where($relationField,'=',$id);
-
+        
         if (empty($type) == false) {
             $model = $model->where('relation_type','=',$type);
         }
         if (empty($relationId) == false) {
             $model = $model->where('relation_id','=',$relationId);
         }
-    
-        return $model->delete();
+               
+        return (bool)$model->delete();
     }
 
     /**
@@ -138,9 +155,10 @@ trait PolymorphicRelations
     {
         $relationField = $this->getRelationAttributeName();
         $data = [
+            'uuid'          => Uuid::create(),
             $relationField  => $id,
             'relation_id'   => $relationId,
-            'relation_type' => "$type",
+            'relation_type' => $type,
         ];    
 
         return ($this->hasRelation($id,$type,$relationId) == false) ? $this->create($data) : false;       

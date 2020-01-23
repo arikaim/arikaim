@@ -9,7 +9,6 @@
 */
 namespace Arikaim\Core\View;
 
-use Arikaim\Core\View\Template\Template;
 use Arikaim\Core\Http\Session;
 
 /**
@@ -29,10 +28,8 @@ class Theme
      * @param string $defaultTheme
      * @return string
      */
-    public static function getCurrentTheme($templateName = null, $defaultTheme = Self::DEFAULT_THEME_NAME)
+    public static function getCurrentTheme($templateName, $defaultTheme = Self::DEFAULT_THEME_NAME)
     {   
-        $templateName = ($templateName == null) ? Template::getTemplateName() : $templateName;         
-    
         return Session::get("current.theme.$templateName",$defaultTheme);
     }
 
@@ -43,10 +40,8 @@ class Theme
      * @param string $templateName
      * @return void
      */
-    public static function setCurrentTheme($theme, $templateName = null)
+    public static function setCurrentTheme($theme, $templateName)
     {
-        $templateName = (empty($templateName) == true) ? Template::getTemplateName() : $templateName; 
-
         return Session::set("current.theme.$templateName",$theme);     
     }
 }

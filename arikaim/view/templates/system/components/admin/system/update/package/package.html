@@ -1,10 +1,8 @@
+{% set package = package|default('arikaim/core') %}
 <span id="version_info">
     {{ component('system:admin.system.info.version',{ package: package }) }}   
 </span>          
 <div class="ui hidden divider"></div>  
-package: {{ package }}
-last ver: {{ getLastVersion(package) }}
-current ver:  {{ getVersion(package) }}
 {% if getLastVersion(package) is versionCompare(getVersion(package))  %}   
 <div class="mt-4">                
     <div class="ui message" id="new_message">
@@ -13,7 +11,7 @@ current ver:  {{ getVersion(package) }}
     <div class="ui message hidden" id="install_message">
         {{ messages.install }}
     </div> 
-    <button class="ui button green update-button" id="update_button" version="{{ package.version }}">
+    <button class="ui button green update-button" id="update_button" version="{{ package.version }}" package="{{ package }}">
         <i class="icon download"></i>
         {{ buttons.update.content }}
     </button>   

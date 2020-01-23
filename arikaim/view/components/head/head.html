@@ -1,4 +1,3 @@
-{% import systemMacro("head.html") as macro %}
 {% set head = head|merge(items) %}
 {% set charset = head.charset|default('utf-8') %}
 {% set exclude = ['viewport','favicons','og','twitter'] %}
@@ -7,24 +6,78 @@
     <meta charset="{{ charset }}">  
     <base href="{{ base_url }}"/>
     <meta name="language" content="{{ getLanguage() }}">
-    {%- for key,value in head -%}      
-    {% if value is not empty and key not in exclude %}
-    <meta name="{{ key }}" content="{{ value }}"/>
-    {% endif %}
-    {%- endfor %}
-    {% for item in head.og %}
-    <meta property="og:{{ item.name }}" content="{{ item.value }}"/>
+    {% for key,value in head %}      
+    {%- if value is not empty and key not in exclude -%}
+        <meta name="{{ key }}" content="{{ value }}"/>
+    {% endif -%}
+    {% endfor %}
+    {%- for item in head.og -%}
+        <meta property="og:{{ item.name }}" content="{{ item.value }}"/>
     {% for key, value in item.options %}
-    <meta property="og:{{ item.name }}:{{ key }}" content="{{ value }}"/>
-    {% endfor %}
-    {% endfor %}
+        <meta property="og:{{ item.name }}:{{ key }}" content="{{ value }}"/>
+    {%- endfor -%}
+    {%- endfor -%}
     {% for item in head.twitter %}
-    <meta name="twitter:{{ item.name }}" content="{{ item.value }}"/>
+        <meta name="twitter:{{ item.name }}" content="{{ item.value }}"/>
+    {%- endfor -%}
+    {%- if favicon.href is defined -%}
+        <link rel="icon" type="image/png" href="{{ favicon.href }}">
+    {%- endif -%}
+    {%- if favicon.micro is defined -%}
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ favicon.micro }}">
+    {%- endif -%}
+    {%- if favicon.mini is defined -%}
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ favicon.mini }}">
+    {%- endif -%}
+    {%- if favicon.small is defined -%}
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ favicon.small }}">
+    {%- endif -%}   
+        <meta name="viewport" content="width=device-width, initial-scale={{ viewport.initial|default("1.0") }}, minimum-scale={{ viewport.minimum|default("1.0") }}, maximum-scale={{ viewport.maximum|default("1.0") }}"/>
+    <!-- library files -->
+    {%- for file in getLibraryFiles() -%}        
+    {%- if file.params is iterable -%}
+        {%- set params_attributes = '' -%}
+        {%- for name,value in file.params -%}
+            {%- set params_attributes = params_attributes ~ name ~ '="' ~ value ~ '"' -%}
+        {%- endfor -%}
+        {%- set params_attributes = ' ' ~ params_attributes -%}  
+    {%- endif -%}      
+    {%- set async = (file.async == true) ? ' async' : '' -%}  
+    {%- if file.type == "js" -%} 
+        <script id="library_{{ file.library }}" type="text/javascript" src="{{ file.file }}" {{- params_attributes|raw -}} {{- async -}} {{- file.crossorigin|attr('crossorigin') -}}></script>
+    {% endif %}
+    {%- if file.type == "css" -%} 
+        <link rel="stylesheet" type="text/css" href="{{ file.file }}">
+    {% endif -%}
+    {%- endfor -%}
+    <!-- theme files -->
+    {%- for file in getThemeFiles() -%}
+        <link rel="stylesheet" type="text/css" href="{{ file }}"> 
+    {%- endfor %}      
+    <!-- template files -->
+    {% for file in getTemplateFiles()['js'] -%}
+        <script src="{{ file }}" type="text/javascript"></script>
     {% endfor %}
-    {{ macro.favicon(favicons) }}
-    {{- macro.viewport(viewport.initial,viewport.minimum,viewport.maximum) }}
-    {{ macro.includeLibraries() -}}   
-    {{ macro.includeTemplateFiles() -}}
-    {{ macro.includeComponentFiles() -}}
-    {{ macro.includePageFiles() }}
+    {%- for file in getTemplateFiles()['css'] -%}
+        <link rel="stylesheet" type="text/css" href="{{ file }}">      
+    {% endfor -%}
+    <!-- component files -->
+    {% for file in getComponentsFiles()['js'] -%}            
+    {%- set async = ('async' in file.params) ? 'async' : '' -%}
+    {%- set crossorigin = ('crossorigin' in file.params) ? 'crossorigin="anonymous"' : '' -%}
+        <script src="{{ file.url }}" type="text/javascript" {{- async -}} {{- crossorigin -}}></script>
+    {% endfor -%}
+    {% for file in getComponentsFiles()['css'] -%}
+        <link rel="stylesheet" type="text/css" href="{{ file.url }}">
+    {% endfor -%}
+    {%- set pageFiles = getPageFiles() -%}
+    {%- if pageFiles is not empty -%}
+    <!-- page files -->
+    {% for file in pageFiles['js'] -%}        
+        <script src="{{ file.url }}" type="text/javascript"></script>
+    {%- endfor -%}
+    {%- for file in pageFiles['css'] %}
+        <link rel="stylesheet" type="text/css" href="{{ file.url }}">      
+    {%- endfor %}  
+    {%- endif -%} 
 </head>

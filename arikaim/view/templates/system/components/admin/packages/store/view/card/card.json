@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "version": "Version",
+        "install": "Install",
+        "free": "Free",
+        "installed": "Installed",
+        "update": "Update",
+        "current": "Current Version"        
+    }
+}

@@ -9,6 +9,8 @@
 */
 namespace Arikaim\Core\Db\Traits;
 
+use Arikaim\Core\Models\Users;
+
 /**
  * User Relation trait
  *      
@@ -49,5 +51,15 @@ trait UserRelation
     public function getUserIdAttributeName()
     {
         return (isset($this->userIdColumn) == true) ? $this->userIdColumn : 'user_id';
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return mixed
+     */
+    public function user()
+    {      
+        return $this->belongsTo(Users::class,$this->getUserIdAttributeName());
     }
 }

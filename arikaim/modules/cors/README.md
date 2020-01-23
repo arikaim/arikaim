@@ -3,7 +3,7 @@
 ![GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 
-Arikaim CMS CORS middleware module
+Arikaim CMS CORS (Cross origin resource sharing) middleware module.
 
 
 #### Requirements 
@@ -13,6 +13,7 @@ Arikaim CMS CORS middleware module
 
 
 #### Install
+
 ```bash
 
 composer require arikaim/cors-module

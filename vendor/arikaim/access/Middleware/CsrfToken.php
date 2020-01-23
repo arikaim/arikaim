@@ -37,7 +37,7 @@ class CsrfToken extends AuthMiddleware implements MiddlewareInterface
             if (Csrf::validateToken($token) == false) {   
                 $request = $this->generateToken($request);  
                 // token error
-                return $this->resolveAuthError($request);                                                  
+                return $this->handleError($request,$handler);                                                 
             }
         }
         $request = $this->generateToken($request);     

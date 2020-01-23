@@ -13,6 +13,7 @@ use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Builder;
 
 use Arikaim\Core\Utils\Factory;
+use Arikaim\Core\Db\Seed;
 use Arikaim\Core\Db\TableBlueprint;
 use PDOException;
 
@@ -54,10 +55,10 @@ abstract class Schema
     /**
      * Insert or update rows in table
      *
-     * @param Builder $query
+     * @param Seed $seed
      * @return void
      */
-    public function seeds($query)
+    public function seeds($seed)
     {
     }
 
@@ -112,7 +113,8 @@ abstract class Schema
                 $blueprint->engine = $this->storageEngine;               
             };
             $call(); 
-            $this->build($blueprint, Manager::schema());           
+
+            $this->build($blueprint,Manager::schema());           
         }
     } 
 
@@ -126,11 +128,14 @@ abstract class Schema
         if ($this->tableExists() == true) {                           
             $blueprint = new TableBlueprint($this->tableName,null);
             
-            $callback = function() use($blueprint) {
-                $this->update($blueprint);                                 
+            $call = function() use($blueprint) {
+                
+                $this->update($blueprint);
+                $blueprint->engine = $this->storageEngine;     
             };
-            $callback(); 
-            $this->build($blueprint, Manager::schema());           
+            $call(); 
+            
+            $this->build($blueprint,Manager::schema());           
         }       
     } 
     
@@ -142,8 +147,9 @@ abstract class Schema
     public function runSeeds()
     {
         if ($this->tableExists() == true) {  
-            $query = Manager::table($this->tableName);          
-            return $this->seeds($query);
+            $seed = new Seed($this->tableName);                  
+            $this->seeds($seed);
+            return true;
         }
 
         return false;
@@ -268,10 +274,10 @@ abstract class Schema
               
                 $instance->updateTable();
                 $instance->runSeeds();
-
+                
                 return $instance->tableExists();
                 
-            } catch(\Exception $e) {
+            } catch(\Exception $e) {              
             }
         }
         

@@ -21,7 +21,7 @@ class HtmlErrorRenderer implements ErrorRendererInterface
      * Render error
      *
      * @param array $errorDetails
-     * @return void
+     * @return string
      */
     public function render($errorDetails)
     {       
@@ -39,7 +39,7 @@ class HtmlErrorRenderer implements ErrorRendererInterface
             $output = $this->renderSimplePage($errorDetails);        
         }
         
-        echo $output;
+        return $output;
     }
 
     /**
@@ -71,7 +71,7 @@ class HtmlErrorRenderer implements ErrorRendererInterface
         Html::endBody();    
         Html::endHtml();
 
-        echo Html::getDocument();
+        return Html::getDocument();
     }
 
     /**

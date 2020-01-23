@@ -1,0 +1,32 @@
+{% component 'system:admin.packages.store' %}
+    {% set package_manager = package(type) %}
+    {% set result = arikaimStore().fetchPackages(type) %}
+    {% set data = result|jsonDecode %}
+    <div class="ui stackable grid">
+        <div class="sixteen wide column mt-2">                       
+        </div>
+    </div>
+    <div class="ui stackable text menu">
+        <div class="item right floated">       
+            {{ component('components:paginator.dropdown',{ namespace: 'packages' }) }}
+        </div>
+    </div>
+    <div class="ui stackable cards mt-1" id="packages_list"> 
+        {% for item in data.result.items %}           
+            {% set installed = package_manager.hasPackage(item.options_list['package-name']) %}      
+            {% if installed == true %}
+            {% set current_version = package_manager.createPackage(item.options_list['package-name']).getVersion() %}
+            {% endif %}          
+            {{  component('system:admin.packages.store.view.card',{ 
+                    item: item, 
+                    type: type,
+                    current_version: current_version,
+                    installed: package_manager.hasPackage(item.options_list['package-name']) 
+                }) 
+            }}
+        {% endfor %}
+    </div>
+    <div id="paginator" class="mt-1">
+
+    </div>
+{% endcomponent %}

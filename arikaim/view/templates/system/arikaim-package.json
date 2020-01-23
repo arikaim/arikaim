@@ -4,7 +4,8 @@
     "package-type": "template",
     "description": "Arikaim CMS Control Panel",
     "repository": "https://github.com/arikaim/system-template.git",
-    "version": "1.0.18",
+    "version": "1.0.20",
+    "icon": "sliders horizontals",
     "image": {
         "src": "",
         "alt": ""

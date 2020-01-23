@@ -1,0 +1,16 @@
+{% component 'blog:layout.page' %}
+    {% set posts = createModel('Posts','blog') %}   
+    {% set title = categoryTitle %}
+
+    {% for post in paginator.getItems() %}
+        {{ component('blog:post.preview',{ post: post }) }}
+    {% endfor %}
+    <div id="paginator" class="paginator mt-10">
+        {{  component('components:paginator.page',{ 
+                page_url: page_url,
+                data: paginator.getPaginatorData(),
+                simple_mode: true 
+            }) 
+        }}
+    </div>
+{% endcomponent %}

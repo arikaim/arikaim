@@ -133,6 +133,20 @@ class Composer
     }
 
     /**
+     * Get package data
+     *
+     * @param string $vendor
+     * @param string $package
+     * @return array
+     */
+    public static function getPackageData($vendor, $package)
+    {
+        $info = Curl::get("http://repo.packagist.org/p/$vendor/$package.json");
+
+        return (empty($info) == true) ? null : json_decode($info,true);
+    }
+
+    /**
      * Get package info
      *
      * @param string $vendor Package vendor name
@@ -140,7 +154,7 @@ class Composer
      * @return array
      */
     public static function getPackageInfo($vendor, $package)
-    {       
+    {             
         $info = Curl::get("http://packagist.org/packages/$vendor/$package.json");
 
         return (empty($info) == true) ? null : json_decode($info,true);
@@ -155,11 +169,14 @@ class Composer
      */
     public static function getLastVersion($vendor, $package)
     {
-        $info = Self::getPackageInfo($vendor,$package);
+        $info = Self::getPackageData($vendor,$package);
 
         if (is_array($info) == true) {
-            $versions = array_keys($info['package']['versions']);
-            return (isset($versions[1]) == true) ? $versions[1] : $versions[0];
+            $package = $info['packages']["$vendor/$package"];
+            $count = (is_array($package) == true) ? (count($package) - 2) : 0;           
+            $versions = array_keys($package);
+        
+            return (isset($versions[$count]) == true) ? $versions[$count] : false;
         }
 
         return false;

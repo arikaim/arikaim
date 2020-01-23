@@ -3,6 +3,7 @@
 {% set site = site|default(url('',true)) %}
 {% set item_text_class = item_text_class|default('text-lg text-gray-500') %}
 {% set item_title_class = item_title_class|default('text-gray-300') %}
+{% set show_title = (show_title is not defined) ? true : show_title %}
 
 {% set params = {
         'company': company,
@@ -12,10 +13,13 @@
         'site': site
     }
 %}
+{% if show_title == true %}
 <h2 class="text-center p-4 w-full text-center {{ class }}">
     {{ title }}
 </h2>
-<div class="mt-10">&nbsp;</div>
+<div class="mt-10"></div>
+{% endif %}
+
 {% for item in items %}
     {% if item.hide != true %}
         <div class="mt-2">

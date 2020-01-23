@@ -113,7 +113,13 @@ trait Status
      */
     public function getActive()
     {
-        return parent::where($this->getStatusColumn(),'=',Self::$ACTIVE);
+        $model = parent::where($this->getStatusColumn(),'=',Self::$ACTIVE);
+
+        if (method_exists($model,'getNotDeletedQuery') == true) {
+            $model = $model->getNotDeletedQuery();
+        }
+        
+        return $model;        
     }
     
     /**
@@ -123,7 +129,7 @@ trait Status
      */
     public function getDisabled()
     {
-        return parent::where($this->getStatusColumn(),'=',Self::$DISABLED);
+        return $this->where($this->getStatusColumn(),'=',Self::$DISABLED);
     }
 
     /**

@@ -21,11 +21,10 @@ arikaim.page.onReady(function () {
     });
     
     arikaim.ui.form.onSubmit('#login_form',function() {
-        return user.login('#login_form',function(result) {
-            arikaim.page.showLoader('#content');
+        return user.login('#login_form',function(result) {              
+            arikaim.ui.form.disable('#login_form');
+            arikaim.ui.disableButton('.login-button');
             arikaim.page.reload();   
         });
-    }).done(function() {
-
     });
 });

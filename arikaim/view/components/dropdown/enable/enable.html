@@ -1,25 +1,34 @@
+{% set show_label = (show_label is null) ? true : show_label %}
 {% set with_dropdown = with_dropdown|default(false) %}
 <div class="ui dropdown icon basic button enable-dropdown {{ class }}" {{ title|attr('title') }} {{ id|attr('id') }} {{ attributes|attr }}>
     {% if with_dropdown == true %}
     <i class="icon dropdown"></i>
     {% endif %}
-    <div class="text">
+    {% if show_label == true %}
+        <div class="text">
+            {% if selected == 0 or selected == false %}
+                <i class="icon close orange"></i>
+                {{ labels.disabled }}
+            {% else %}
+                <i class="icon check olive"></i>
+                {{ labels.enabled }}
+            {% endif %}  
+        </div>  
+    {% else %}
         {% if selected == 0 or selected == false %}
-            <i class="icon close orange"></i>
-            {{ labels.disabled }}
+        <i class="icon close orange"></i>
         {% else %}
-            <i class="icon check olive"></i>
-            {{ labels.enabled }}
+        <i class="icon check olive"></i>
         {% endif %}  
-    </div>  
+    {% endif %}
     <div class="menu">
         <div class="item" data-value="1">
-            <i class="icon check olive"></i>
-            {{ labels.enabled }}
+            <i class="icon check olive"></i>          
+            {{ labels.enabled }}            
         </div>   
         <div class="item" data-value="0">
-            <i class="icon close orange"></i>
-            {{ labels.disabled }}
+            <i class="icon close orange"></i>           
+            {{ labels.disabled }}         
         </div>    
     </div>
 </div>

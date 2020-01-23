@@ -56,6 +56,9 @@ class EnableCommand extends ConsoleCommand
             return;
         }
         $result = $manager->enablePackage($name);
+
+        Arikaim::cache()->clear();
+        
         if ($result == false) {
             $this->showError("Can't enable extension!");
             return;

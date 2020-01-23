@@ -52,6 +52,8 @@ class InstallCommand extends ConsoleCommand
 
         $result = $package->install();
      
+        Arikaim::cache()->clear();
+        
         if ($result == false) {
             $this->showError("Can't install theme!");
             return;

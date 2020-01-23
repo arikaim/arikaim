@@ -39,10 +39,10 @@ class HtmlPageErrorRenderer implements ErrorRendererInterface
      * Render error
      *
      * @param array $errorDetails
-     * @return void
+     * @return string
      */
     public function render($errorDetails)
-    {           
+    {                  
         try {   
             switch($errorDetails['base_class']) {
                 case 'HttpNotFoundException': {                   
@@ -50,13 +50,13 @@ class HtmlPageErrorRenderer implements ErrorRendererInterface
                     break;
                 }
                 default: {                   
-                    $output = $this->error->renderApplicationError(['error' => $errorDetails])->getHtmlCode();                       
+                    $output = $this->error->renderApplicationError(['error' => $errorDetails])->getHtmlCode();            
                 }
             }
-        } catch(\Exception $exception) {  
+        } catch(\Exception $exception) {           
             $output = $this->error->renderApplicationError(['error' => $errorDetails])->getHtmlCode();  
         }
 
-        echo $output;
+        return $output;        
     }
 }

@@ -38,6 +38,7 @@ class Routes extends Model implements RoutesStorageInterface
         'handler_class',
         'handler_method',
         'extension_name',
+        'redirect_url',
         'auth',
         'type',
         'status',
@@ -107,6 +108,7 @@ class Routes extends Model implements RoutesStorageInterface
     public function deleteRoutes($filter = [])
     {
         $model = $this;
+
         foreach ($filter as $key => $value) {
             $model = ($value == '*') ? $model->whereNotNull($key) : $model->where($key,'=',$value);                          
         }
@@ -162,6 +164,26 @@ class Routes extends Model implements RoutesStorageInterface
         $model = $this->where('method','=',$method)->where('pattern','=',$pattern)->first();
 
         return (is_object($model) == false) ? false : $model->toArray();          
+    }
+
+    /**
+     * Save route options
+     *
+     * @param string $method
+     * @param string $pattern
+     * @param array $options
+     * @return boolean
+     */
+    public function saveRouteOptions($method, $pattern, array $options)
+    {
+        $model = $this->where('method','=',$method)->where('pattern','=',$pattern)->first();
+        if (is_object($model) == true) {
+            $model->options = $options; 
+            
+            return (bool)$model->save();
+        }
+
+        return false;
     }
 
     /**

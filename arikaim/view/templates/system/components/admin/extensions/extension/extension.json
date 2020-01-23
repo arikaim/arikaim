@@ -2,7 +2,8 @@
     "labels": {
         "version": "Version",          
         "enabled": "Enabled",
-        "system": "System Extension"
+        "primary": "Primary", 
+        "system": "System"
     },
     "buttons": {
         "install": {
@@ -14,7 +15,11 @@
         "update": {
             "content": "Update"
         },
+        "primary": {
+            "content": "Set Primary"
+        },
         "details": {
+            "title": "Show extension details",
             "content": "Details"
         }
     },

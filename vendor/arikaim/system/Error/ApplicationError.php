@@ -47,7 +47,7 @@ class ApplicationError extends PhpError implements ErrorHandlerInterface
      * Invoke error handler
      *
      * @param ServerRequestInterface $request   The most recent Request object
-     * @param \Exception             $exception  
+     * @param Exception              $exception  
      * @param bool                   $displayDetails
      * @param bool                   $logErrors
      * @param bool                   $logErrorDetails

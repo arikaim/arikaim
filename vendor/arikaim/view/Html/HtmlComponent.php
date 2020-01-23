@@ -80,7 +80,8 @@ class HtmlComponent extends Component implements HtmlComponentInterface
         
         // default params      
         $params['component_url'] = $component->getUrl();
-
+        $params['template_url'] = $component->getTemplateUrl(); 
+        
         $params = Arrays::merge($component->getProperties(),$params);
         $component->setHtmlCode("");  
         if ($component->getOption('render') !== false) {      

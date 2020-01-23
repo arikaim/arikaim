@@ -48,6 +48,16 @@ interface RoutesStorageInterface
     public function addRoute(array $details);
 
     /**
+     * Save route options
+     *
+     * @param string $method
+     * @param string $pattern
+     * @param array $options
+     * @return boolean
+     */
+    public function saveRouteOptions($method, $pattern, array $options);
+
+    /**
      * Return true if reoute exists
      *
      * @param string $method

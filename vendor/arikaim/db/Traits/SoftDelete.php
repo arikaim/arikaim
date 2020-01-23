@@ -108,7 +108,7 @@ trait SoftDelete
      */
     public function getNotDeletedQuery()
     {
-        return $this->whereNull($this->getDeletedColumn());
+        return parent::whereNull($this->getDeletedColumn());
     }
 
     /**

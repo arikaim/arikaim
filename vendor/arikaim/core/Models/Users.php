@@ -22,6 +22,7 @@ use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\Status;
 use Arikaim\Core\Db\Traits\DateCreated;
+use Arikaim\Core\Db\Traits\SoftDelete;
 use Arikaim\Core\Access\Traits\Auth;
 use Arikaim\Core\Access\Traits\Password;
 
@@ -34,6 +35,7 @@ class Users extends Model implements UserProviderInterface
         Find,
         Status,
         DateCreated,
+        SoftDelete,
         Auth,
         Password;     
 
@@ -46,6 +48,7 @@ class Users extends Model implements UserProviderInterface
         'uuid',
         'user_name',
         'email',
+        'status',
         'password',      
         'date_login',
         'date_created',       
@@ -85,11 +88,11 @@ class Users extends Model implements UserProviderInterface
     }
 
     /**
-     * Verify user naem
+     * Verify username
      *
      * @param string $userName
      * @param integer $id
-     * @return array|false
+     * @return boolean
      */
     public function verifyUserName($userName, $id) 
     {
@@ -103,6 +106,32 @@ class Users extends Model implements UserProviderInterface
     }
 
     /**
+     * Return true if username exist
+     *
+     * @param string $userName    
+     * @return boolean
+     */
+    public function hasUserName($userName) 
+    {
+        $model = $this->where("user_name","=",trim($userName))->first();
+
+        return is_object($model);       
+    }
+
+    /**
+     * Return true if email exist
+     *
+     * @param string $email    
+     * @return boolean
+     */
+    public function hasUserEmail($email) 
+    {
+        $model = $this->where("email","=",trim($email))->first();
+
+        return is_object($model);       
+    }
+
+    /**
      * Get user by email
      *
      * @param string $email
@@ -112,7 +141,6 @@ class Users extends Model implements UserProviderInterface
     public function verifyEmail($email, $id) 
     {
         $model = $this->where("email","=",trim($email))->first();
-
         if (is_object($model) == true) {
             return ($model->id == $id);
         } 
@@ -143,13 +171,14 @@ class Users extends Model implements UserProviderInterface
         $user = $this->where('status','=',$this->ACTIVE());
 
         if (isset($credentials['user_name']) == true) {
-            $user = $user->where('user_name','=',$credentials['user_name']);        
-            if (isset($credentials['email']) == true) {
-                $user = $user->orWhere('email','=',$credentials['email']);           
-            }   
+            $user = $user->where('user_name','=',$credentials['user_name'])->whereNotNull('user_name');    
+            if (is_object($user->first()) == false) {
+                // try with email
+                $user = $user->where('email','=',$credentials['user_name'])->whereNotNull('email');
+            }               
         }
         if (isset($credentials['email']) == true) {
-            $user = $user->where('email','=',$credentials['email']);           
+            $user = $user->where('email','=',$credentials['email'])->whereNotNull('email');           
         }
         // by id or uuid
         if (isset($credentials['id']) == true) {
@@ -232,14 +261,26 @@ class Users extends Model implements UserProviderInterface
     /**
      * Find user by user name or email
      *
-     * @param string $userName
+     * @param string|null $userName
+     * @param string|null $email
      * @return Model|false
      */
-    private function getUser($userName)
-    {
-        $model = $this->where('user_name','=',$userName)->orWhere('email','=',$userName)->first();
-
-        return (is_object($model) == false) ? false : $model;
+    private function getUser($userName, $email = null)
+    {       
+        if (empty($userName) == false) {
+            $model = $this->where('user_name','=',$userName)->first();
+            if (is_object($model) == true) {
+                return $model;
+            }
+        }
+        if (empty($email) == false) {
+            $model = $this->where('email','=',$email)->first();
+            if (is_object($model) == true) {
+                return $model;
+            }
+        }
+        
+        return false;
     }
 
     /**
@@ -248,18 +289,19 @@ class Users extends Model implements UserProviderInterface
      * @param string $userName
      * @param string $password
      * @param string|null $email
-     * @return void
+     * @return Model|false
      */
     public function createUser($userName, $password, $email = null)
     {
-        $user = $this->getUser($userName);
-        if (is_object($user) == true) {
-            return $user;
+        $user = $this->getUser($userName,$email);
+        if (is_object($user) == true) {           
+            return false;
         }
         $data = [
             'uuid'          => UuidCreate::create(),
             'date_created'  => DateTime::getTimestamp(),
             'user_name'     => $userName,
+            'status'        => 1,
             'password'      => $this->EncryptPassword($password),
             'email'         => $email
         ];

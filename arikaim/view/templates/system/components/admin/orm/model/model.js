@@ -7,11 +7,7 @@
 
 function Orm() {
     var self = this;
-
-    this.read = function(name, extension, uuid, onSuccess, onError) {       
-        return arikaim.get('/core/api/orm/model/' + name + '/' + extension + '/' + uuid,data,onSuccess,onError);          
-    };
-
+    
     this.loadModel = function(selector, name, extension, uuid) {
         return arikaim.page.loadContent({
             id: selector,

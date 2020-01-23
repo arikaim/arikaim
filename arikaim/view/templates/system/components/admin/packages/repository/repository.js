@@ -11,21 +11,32 @@ function PackageRepository() {
     this.onInstalled;
     this.onError;
 
-    this.install = function(name, type, onSuccess, onError) {
+    this.update = function(name, type, onSuccess, onError) {
         var params = { 
             package: name,
             type: type           
         };
+        
+        return arikaim.put('/core/api/packages/repository/update',params,onSuccess,onError);
+    };
+
+    this.install = function(name, type, repositoryType, onSuccess, onError) {
+        var params = { 
+            package: name,
+            repository_type: repositoryType,
+            type: type           
+        };
+        
         return arikaim.put('/core/api/packages/repository/install',params,onSuccess,onError);
     };
 
-    this.installButton = function(selector, onSuccess, onError) {
-        selector = getDefaultValue(selector,'.install-repository-button');
+    this.updateButton = function(selector, onSuccess, onError) {
+        selector = getDefaultValue(selector,'.update-repository-button');
 
         arikaim.ui.button(selector,function(element) {
             var type = $(element).attr('package-type');
             var name = $(element).attr('package-name');
-            return packageRepository.install(name,type,function(result) {
+            return packageRepository.update(name,type,function(result) {
                 // show message
                 arikaim.ui.form.showMessage({
                     selector: '#message',

@@ -1,0 +1,13 @@
+{% set type = type|default('github') %}
+{% set raw_code = raw_code|default(false) %}
+{% if type == 'github' %}
+    {% set url = 'http://raw.githubusercontent.com/' ~ package ~ '/master/README.md' %}
+{% endif %}
+
+{% set readme = service('cache').fetch('repository.' ~ package ~ '.readme') %}
+{% if readme is empty %} 
+    {% set readme = fetch(url) %}
+    {% set saved = service('cache').save('repository.' ~ package ~ '.readme',readme,10) %}   
+{% endif %}
+ 
+{{ (raw_code == true) ? readme : readme|md  }}

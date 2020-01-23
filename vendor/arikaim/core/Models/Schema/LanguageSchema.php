@@ -10,6 +10,7 @@
 namespace Arikaim\Core\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
+use Arikaim\Core\Utils\Uuid;
 
 /**
  * Language database table schema definition.
@@ -62,21 +63,21 @@ class LanguageSchema extends Schema
     /**
      * Seeds
      *
-     * @param Builder $query
+     * @param Seed $seed
      * @return void
      */
-    public function seeds($query) 
+    public function seeds($seed) 
     {
-        $result = $query->updateOrInsert(['code' => 'en'],
-        [
-            "title"        => "English",
-            "native_title" => "English",
-            "code"         => "en",
-            "code_3"       => "eng",
-            "default"      => "1",
-            "country_code" => "us"   
-        ]);
-
-        return $result;
+        $seed->create(['code' => 'en'],
+            [
+                "uuid"         => Uuid::create(),
+                "title"        => "English",
+                "native_title" => "English",
+                "code"         => "en",
+                "code_3"       => "eng",
+                "default"      => "1",
+                "country_code" => "us"   
+            ]
+        );        
     }
 }

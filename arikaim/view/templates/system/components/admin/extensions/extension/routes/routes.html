@@ -3,11 +3,11 @@
         <div class="item">{{ labels.empty }}</div>
     {% endif %}
     {% for route in routes %}
-    <div class="item">
-        {% set title = (route.auth > 0) ? service("auth").getAuthName(route.auth) : "" %}
-        <div class="right floated content" title="Authentication">
+    <div class="item">     
+        {% set title = (route.auth > 0) ? service('access').getAuthName(route.auth) : "" %}
+        <div class="right floated content" title="{{ labels.auth }}">
             {% if title != "" %}
-            <div class="ui tiny left pointing olive label">{{ title }}</div>
+            <div class="ui tiny left pointing primary basic label">{{ title }}</div>
             {% endif %}  
             {{ component('components:labels.route-type',{ type: route.type }) }}                            
         </div>          
@@ -21,11 +21,11 @@
                 <div class="ui tiny label">{{ method }}</div>
             {% endfor %}
             {{ base_url }}{{ route.path }}{{ route.pattern }}                  
-            {% if route.page is not empty %}
+            {% if route.page_name is not empty %}
             <div class="ui basic horizontal label">
                 {{ labels.page }}
                 <i class="icon angle right"></i>
-                <span class="bold text">{{ route.page }}</span>               
+                <span class="bold text">{{ route.page_name }}</span>               
             </div>
             {% endif %}         
         </div>                    

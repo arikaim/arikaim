@@ -1,9 +1,8 @@
 {% set class = class|default('pb-40') %}
 <div class="page">            
     <div id="content_wrap" class="{{ class }}">       
+        {{ navbar }}
         {{ content }}
     </div>
-    {% if footer is not empty %}
-        {{ component(footer,footer_params) }}   
-    {% endif %}
+    {{ footer }}   
 </div>

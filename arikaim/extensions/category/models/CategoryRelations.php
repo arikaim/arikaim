@@ -34,12 +34,22 @@ class CategoryRelations extends Model
      */
     protected $table = "category_relations";
 
+    /**
+     * Fillable columns
+     *
+     * @var array
+     */
     protected $fillable = [
         'category_id',
         'relation_id',
         'relation_type'       
     ];
-   
+    
+    /**
+     * Disable timestamps
+     *
+     * @var boolean
+     */
     public $timestamps = false;
 
     /**

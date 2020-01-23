@@ -118,4 +118,36 @@ trait PackageRegistry
 
         return $model->get()->keyBy('name');
     }
+
+    /**
+     * Set package as primary
+     *
+     * @param string $name
+     * @return boolean
+    */
+    public function setPrimary($name)
+    {
+        $model = $this->findByColumn($name,'name');
+        if (is_object($model) == false) {          
+            return false;
+        }
+      
+        return $model->setDefault();
+    }
+
+    /**
+     * Return true if package is primary.
+     *  
+     * @param string $name
+     * @return boolean|null
+    */
+    public function isPrimary($name)
+    {
+        $model = $this->findByColumn($name,'name');
+        if (is_object($model) == false) {          
+            return null;
+        }
+
+        return ($model->primary == 1);
+    }
 }

@@ -1,0 +1,11 @@
+{% set type = type|default('github') %}
+{% if type == 'github' %}
+    {% set url = 'https://github.com/' ~ package %}
+    {% set icon = icon|default('github') %}
+{% endif %}
+<a {{ class|attr('class') }} href="{{ url }}" {{ target|attr('target') }}>
+    {% if icon is not empty %}
+    <i class="icon {{ icon }} {{ icon_class }}"></i>
+    {% endif %}
+    {{ title }}
+</a>

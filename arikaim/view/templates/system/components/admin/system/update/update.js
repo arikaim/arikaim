@@ -13,12 +13,12 @@ function Update() {
     };
 
     this.getLastVersion = function(packageName, onSuccess, onError) {
-        packageName = getDefaultVaue(packageName,'');
+        packageName = getDefaultValue(packageName,'');
         return arikaim.get('/core/api/update/last/version/' + packageName,onSuccess,onError);
     };
 
     this.update = function(packageName,onSuccess, onError) {
-        packageName = getDefaultVaue(packageName,'');
+        packageName = getDefaultValue(packageName,'');
         var data = {
             package: packageName
         };

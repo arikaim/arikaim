@@ -24,13 +24,14 @@ trait Status
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function setStatus($request, $response, $data)
+    public function setStatusController($request, $response, $data)
     {
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) {
             $status = $data->get('status',1);                
             $uuid = $data->get('uuid');
+          
             $model = Model::create($this->getModelClass(),$this->getExtensionName())->findById($uuid);
             $result = (is_object($model) == true) ? $model->setStatus($status) : false; 
         
@@ -42,9 +43,7 @@ trait Status
             },'errors.status');
         });
         $data
-            ->addRule('checkList:items=0,1,toggle','status')
+            ->addRule('checkList:items=0,1,2,3,4,5,6,7,8,9,10,toggle','status')
             ->validate(); 
-
-        return $this->getResponse();
     }
 }

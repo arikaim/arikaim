@@ -46,8 +46,8 @@ class Install extends ApiController
                 $this->setResponse($result,function() {                  
                     $this->message('Arikaim CMS was installed successfully.');                                          
                 },'INSTALL_ERROR');
-            } else {
-                $this->error('DB_CONNECTION_ERROR');
+            } else {              
+                $this->addErrors($install->getErrors());
             }         
         });
         $data
@@ -73,10 +73,10 @@ class Install extends ApiController
             
             $install = new SystemInstall();
             $result = $install->install();   
+            
             $this->setResponse($result,function() {                  
                 $this->message('Arikaim CMS was installed successfully.');                                          
             },'INSTALL_ERROR');
-
         });
         $data->validate();  
     }

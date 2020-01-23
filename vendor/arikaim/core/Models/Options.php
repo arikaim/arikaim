@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Arikaim\Core\Collection\Arrays;
 use Arikaim\Core\Interfaces\OptionsStorageInterface;
+use Exception;
 
 /**
  * Options database model
@@ -50,12 +51,15 @@ class Options extends Model implements OptionsStorageInterface
      *
      * @param string $key
      * @param mixed $default
-     * @return mixed
+     * @return mixed|null
      */
     public function read($key, $default = null) 
     {
-        $model = $this->where('key','=',$key)->first();
-
+        try {
+            $model = $this->where('key','=',$key)->first();
+        } catch (Exception $e) {
+            return null;
+        }
         return (is_object($model) == false) ? $default : $model->value;  
     }
 
@@ -81,7 +85,11 @@ class Options extends Model implements OptionsStorageInterface
      */
     public function hasOption($key)
     {
-        $model = $this->where('key','=',$key)->first();
+        try {
+            $model = $this->where('key','=',$key)->first();
+        } catch (Exception $e) {
+            return false;
+        }
 
         return is_object($model);
     }
@@ -129,16 +137,21 @@ class Options extends Model implements OptionsStorageInterface
      * @return array
      */
     public function loadOptions()
-    {        
-        $model = $this->where('auto_load','=','1')->select('key','value')->get();
-        if (is_object($model) == true) {
-            $options = $model->mapWithKeys(function ($item) {
-                return [$item['key'] => $item['value']];
-            })->toArray();
-            
-            return $options;
-        }               
-    
+    {             
+        try {
+            $model = $this->where('auto_load','=','1')->select('key','value')->get();
+            if (is_object($model) == true) {
+                $options = $model->mapWithKeys(function ($item) {
+                    return [$item['key'] => $item['value']];
+                })->toArray(); 
+
+                return $options;
+            }               
+        
+        } catch (Exception $e) {
+            return [];
+        }
+      
         return [];
     }
 

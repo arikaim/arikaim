@@ -1,7 +1,14 @@
 {% if hasExtension('category') == true %}
     {% component 'blog:panel' %}
-    <div class="ui segment">
-        {{ component('category::categories.list',{ branch: 'blog', page_url: 'category/{{ slug }}' }) }}
+    {% set page_url = createModel('Pages','blog').getCategotyPageUrl() %}
+    <div class="mt-4 p-4 pt-6 bg-gray-100 rounded segment shadow">
+        {{ component('category::categories.list',{ 
+            class: 'middle aligned selection',                  
+            item_class: 'p-2 category-item',
+            item_text_class: 'text-2xl p-1',
+            branch: 'blog',
+            page_url: page_url })
+        }}
     </div>
     {% endcomponent %}
 {% endif %}

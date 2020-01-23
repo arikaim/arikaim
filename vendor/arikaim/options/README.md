@@ -10,6 +10,7 @@ Persistent key-value map
 
 
 #### Install
+
 ```bash
 
 composer require arikaim/options

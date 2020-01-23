@@ -148,38 +148,71 @@ class Component
     }
 
     /**
+     * Check auth and permissions access
+     *
+     * @param ComponentDataInterface $component       
+     * @return boolean
+     */
+    public function checkAuthOption(ComponentDataInterface $component)
+    {
+        $auth = $component->getOption('access/auth',null);      
+        if (strtolower($auth) == 'none') {
+            return true;
+        }
+        $access = (empty($auth) == false) ? $this->view->getExtension("Arikaim\\Core\\View\\Template\\Extension")->isLogged() : null;
+
+        return $access;
+    }
+
+    /**
+     * Check auth and permissions access
+     *
+     * @param ComponentDataInterface $component   
+     * @return boolean|null
+     */
+    public function checkPermissionOption(ComponentDataInterface $component)
+    {
+        $permission = $component->getOption('access/permission',null);
+        if (strtolower($permission) == 'none') {
+            return true;
+        }
+        $access = (empty($permission) == false) ? $this->view->getExtension("Arikaim\\Core\\View\\Template\\Extension")->hasAccess($permission) : null;
+        
+        return $access;
+    }
+
+    /**
      * Procss component options
      *
      * @param ComponentDataInterface $component
      * @return Arikaim\Core\View\Interfaces\ComponentDataInterface
      */
     public function processOptions(ComponentDataInterface $component)
-    {        
-        $error = false;       
+    {         
         // check auth access 
-        $auth = $component->getOption('access/auth');
-        if (empty($auth) == false && strtolower($auth) != 'none') {
-            $access = $this->view->getExtension("Arikaim\\Core\\View\\Template\\Extension")->isLogged();
-            if ($access == false) {
-                $component->setError("ACCESS_DENIED",["name" => $component->getName()]);
-            }
-        } else {
-            // check root component auth access option
-            
+        $authAccess = $this->checkAuthOption($component);
+        if ($authAccess == null) {
+            // check root component
+            $rootComponent = $component->createComponent($component->getRootName());
+            $authAccess = (is_object($rootComponent) == true) ? $this->checkAuthOption($rootComponent) : true;               
+        }
+        if ($authAccess === false) {
+            $component->setError("ACCESS_DENIED",["name" => $component->getName()]);             
+            return $component;
         }
 
         // check permissions
-        $permission = $component->getOption('access/permission');       
-        if (empty($permission) == false) {
-            $access = $this->view->getExtension("Arikaim\\Core\\View\\Template\\Extension")->hasAccess($permission);
-            if ($access == false) {              
-                $component->setError("ACCESS_DENIED",["name" => $component->getName()]);
-            }          
-        } else {
-            // check root component permissions
-
-        }    
-        
+        $permissionsAccess = $this->checkPermissionOption($component);
+        if ($permissionsAccess == null) {
+            // check root component
+            $rootComponent = $component->createComponent($component->getRootName());
+            $permissionsAccess = (is_object($rootComponent) == true) ? $this->checkPermissionOption($rootComponent) : true;
+        }
+        if ($permissionsAccess === false) {
+            $component->setError("ACCESS_DENIED",["name" => $component->getName()]);  
+            return $component;
+        }
+       
         $component = Self::applyIncludeOption($component,'include/js','js');
         $component = Self::applyIncludeOption($component,'include/css','css');
 

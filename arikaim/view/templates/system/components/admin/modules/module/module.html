@@ -33,10 +33,7 @@
     <div class="content">
         <div class="ui list">
             <div class="item mt-1">
-                {{ labels.packages }}
-                <div class="ml-1">                      
-                    {{ component('components:list.items',{ items:module.requires,icon:'archive' }) }}
-                </div>
+                {{ component('system:admin.packages.requirements',{ items: module.requires }) }}
             </div>           
             <div class="item mt-1">
                 {% if module.type == 'service' %}

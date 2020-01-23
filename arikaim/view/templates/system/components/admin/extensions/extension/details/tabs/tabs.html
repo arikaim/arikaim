@@ -12,6 +12,11 @@
                             {{ extension.version }}
                         </div>
                     </div>
+                    {% if extension.primary == 1 %}     
+                    <div class="ui right floated green mini label primary-label">               
+                        {{ labels.primary }}            
+                    </div>  
+                    {% endif %}
                     <div class="sub header">{{ extension.description }}</div>
                 </div> 
             </div>

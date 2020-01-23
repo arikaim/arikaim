@@ -13,10 +13,7 @@
         "php": ">=7.1",
         "arikaim/installer": "*"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
+    "extra": {        
         "path": "blog"
     }
 }

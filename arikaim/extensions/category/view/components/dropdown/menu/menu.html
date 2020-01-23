@@ -12,10 +12,9 @@
         <div class="ui item {{ disabled }} {{ value|ifthen(selected,'active') }}" data-value="{{ value }}" title="{{ title|string(' / ') }}" language="{{ language }}">                        
             {{ item.translation(language).title|emptyLabel(item.translation('en').title) }}                         
             {% if has_child == true %}
-            <i class="dropdown icon"></i>     
+                <i class="dropdown icon"></i>     
                 {% set category = createModel('Category','category') %}
-                {% set items = category.getList(item.id) %}
-                
+                {% set items = category.getList(item.id) %}                
                 {{  component('category::dropdown.menu',{ 
                         language: language, 
                         selected: selected, 

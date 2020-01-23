@@ -35,7 +35,7 @@ class Users extends ApiController
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function adminLogin($request, $response, $data) 
+    public function adminLoginController($request, $response, $data) 
     {
         $this->onDataValid(function($data) {  
             $credentials = [
@@ -43,7 +43,7 @@ class Users extends ApiController
                     'password' => $data->get('password')
             ];
             $result = $this->get('access')->authenticate($credentials);
-      
+                 
             if ($result === false) {           
                 $this->error('errors.login');   
             } else {        
@@ -56,9 +56,7 @@ class Users extends ApiController
         $data
             ->addRule("text:min=2","user_name")   
             ->addRule("text:min=2","password") 
-            ->validate();
-    
-        return $this->getResponse();   
+            ->validate();       
     }
 
     /**
@@ -82,7 +80,7 @@ class Users extends ApiController
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
     */
-    public function changeDetails($request, $response, $data)
+    public function changeDetailsController($request, $response, $data)
     {
         // access from contorl panel only 
         $this->requireControlPanelPermission();
@@ -141,8 +139,6 @@ class Users extends ApiController
             ->addRule("text:min=5","old_password")
             ->addRule("text:min=5","new_password")
             ->addRule("text:min=5","repeat_password")
-            ->validate();
-
-        return $this->getResponse();    
+            ->validate();      
     }
 }

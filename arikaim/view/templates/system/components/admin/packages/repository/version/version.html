@@ -14,7 +14,7 @@
 </span>
 <div class="mt-2">    
     {% if repository.getLastVersion() is versionCompare(package.getVersion())  %}     
-        <div class="ui green button install-repository-button" package-name="{{ name }}" package-type="{{ type }}">
+        <div class="ui green button update-repository-button" package-name="{{ name }}" package-type="{{ type }}">
             <i class="icon download"></i>
             {{ labels.install }}
         </div>

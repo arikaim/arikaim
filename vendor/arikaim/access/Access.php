@@ -98,6 +98,7 @@ class Access implements AccessInterface
     /**
      * Check if current loged user have control panel access
      *
+     * @param string|integer $authId
      * @return boolean
      */
     public function hasControlPanelAccess($authId = null)
@@ -110,14 +111,14 @@ class Access implements AccessInterface
      *
      * @param string $name Permission name
      * @param string|array $type PermissionType (read,write,execute,delete)   
-     * @param mixed $authId 
+     * @param string|integer $authId 
      * @return boolean
      */
     public function hasAccess($name, $type = null, $authId = null)
     {       
         list($name, $permissionType) = $this->resolvePermissionName($name);
        
-        if (is_array($permissionType) == false) {
+        if (is_array($permissionType) == false) {           
             $permissionType = $this->resolvePermissionType($type);
         }
     
@@ -135,7 +136,7 @@ class Access implements AccessInterface
      */
     public function addPermission($name, $title = null, $description = null, $extension = null)
     {
-        $this->adapter->addPermission($name,$title,$description,$extension);
+        return $this->adapter->addPermission($name,$title,$description,$extension);
     }
 
     /**

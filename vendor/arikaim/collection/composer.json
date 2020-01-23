@@ -12,16 +12,11 @@
     "homepage": "http://arikaim.com",
     "require": {
         "php": ">=7.1",
-        "arikaim/utils": "*"
+        "arikaim/utils": "^1.0.0"
     },
     "autoload": {       
         "psr-4": {
             "Arikaim\\Core\\Collection\\": ""
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     }
 }

@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    packageRepository.installButton();
+    packageRepository.updateButton();
 });

@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans+Condensed:300&display=swap');
 
-body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 14pt;
+body {     
     min-height: 100vh;
-    padding: 0px;
+    padding: 0px;   
 }
 .page {
     min-height: 100vh;
     position: relative;
     padding: 0px!important;
     margin: 0px!important;   
+    background: rgb(43,108,176);
+    background: linear-gradient(180deg, rgba(43,108,176,1) 0%, rgba(0,212,255,0.0472921590511205) 15%); 
+}
+.title-icon {
+    opacity: 0.9!important;
+    color: #c05621!important;
+}
+.category-item {    
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    font-size: 18pt!important;
+    padding-bottom: 10px;
+}
+.category-item a:hover {
+    color:#ed8936!important;
 }
 .brand {
     font-family: 'Fjalla One', sans-serif;
@@ -18,7 +30,7 @@ body {
     font-size: 40px;
 }
 .post-text {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif!important;
     font-size: 16pt
 }
 .page-title {
@@ -33,13 +45,21 @@ h4 {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20pt
 }
-.navbar {
-    
-}
 .ui.vertical.menu .item > i.icon.left {
     float: none;
     margin: 0em 0.35714286em 0em 0em;
 }
-.masthead {
-  height: 10%;
+.category-item {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    font-size: 16pt!important;
+}
+.title-bg {
+    background: rgb(190,227,248);
+    background: linear-gradient(120deg, rgba(190,227,248,1) 0%, rgba(239,246,250,1) 100%); 
+}
+.footer {
+    border-top:2px dotted #bee3f8;
+}
+.red-line {
+    border-top:2px dotted #e53e3e;
 }

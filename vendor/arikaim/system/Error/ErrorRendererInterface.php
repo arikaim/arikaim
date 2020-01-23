@@ -18,7 +18,7 @@ interface ErrorRendererInterface
      * Render error
      *
      * @param array $errorDetails
-     * @return void
+     * @return string
      */
     public function render($errorDetails);
 }

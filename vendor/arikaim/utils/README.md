@@ -9,6 +9,7 @@
 
 
 #### Install
+
 ```bash
 
 composer require arikaim/utils

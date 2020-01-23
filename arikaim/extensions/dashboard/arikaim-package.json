@@ -6,7 +6,7 @@
     "type": "user",
     "description": "Control Panel Dashboard",
     "short-description": "Dashboard",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "position": "1",
     "repository": "https://github.com/arikaim/dashboard-extension.git",
     "admin-menu": {        

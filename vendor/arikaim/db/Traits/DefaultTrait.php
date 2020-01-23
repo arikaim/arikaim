@@ -15,13 +15,25 @@ namespace Arikaim\Core\Db\Traits;
 trait DefaultTrait 
 {        
     /**
+     * Get default column name
+     *
+     * @return string
+     */
+    public function getDefaultColumnName()
+    {
+        return (isset($this->defaultColumnName) == true) ? $this->defaultColumnName : 'default';
+    }
+
+    /**
      * Mutator (get) for default attribute.
      *
      * @return array
      */
     public function getDefaultAttribute()
     {       
-        return ($this->attributes['default'] == 1);
+        $column = $this->getDefaultColumnName();
+
+        return ($this->attributes[$column] == 1);
     }
 
     /**
@@ -32,13 +44,15 @@ trait DefaultTrait
      */
     public function setDefault($id = null)
     {
+        $column = $this->getDefaultColumnName();
+
         $id = (empty($id) == true) ? $this->id : $id;
         $models = $this->where('id','<>',$id);    
-        $models->update(['default' => null]);
-
+       
+        $models->update([$column => null]);
         $model = $this->findById($id);
-        $model->default = 1;
-
+        $model->$column = 1;
+       
         return $model->save();               
     }
 
@@ -49,7 +63,8 @@ trait DefaultTrait
      */
     public function getDefault()
     {
-        $model = $this->where('default','=','1')->first();
+        $column = $this->getDefaultColumnName();
+        $model = $this->where($column,'=','1')->first();
 
         return (is_object($model) == true) ? $model : null; 
     }

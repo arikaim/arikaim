@@ -25,7 +25,9 @@ class DefaultColumn implements BlueprintPrototypeInterface
      */
     public function build($table,...$options)
     {
-        $table->integer('default')->nullable(true)->default(null); 
-        $table->unique('default');   
+        $name = (isset($options[0]) == true) ? $options[0] : 'default';
+        
+        $table->integer($name)->nullable(true)->default(null); 
+        $table->unique($name);   
     }
 }

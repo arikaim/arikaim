@@ -24,19 +24,15 @@ trait SoftDelete
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function softDelete($request, $response, $data)
+    public function softDeleteController($request, $response, $data)
     {
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) {                  
             $uuid = $data->get('uuid');
             $model = Model::create($this->getModelClass(),$this->getExtensionName());
-            
-            if (is_object($model) == true) {
-                $result = $model->softDelete($uuid);
-            }
-            $result = ($result !== false);
-        
+            $result = (is_object($model) == false) ? false : $model->softDelete();
+              
             $this->setResponse($result,function() use($uuid) {              
                 $this
                     ->message('delete')
@@ -45,9 +41,7 @@ trait SoftDelete
         });
         $data
             ->addRule('text:min=2|required','uuid')           
-            ->validate(); 
-
-        return $this->getResponse();
+            ->validate();       
     }
 
     /**
@@ -58,19 +52,15 @@ trait SoftDelete
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function restore($request, $response, $data)
+    public function restoreController($request, $response, $data)
     {
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) {                  
             $uuid = $data->get('uuid');
             $model = Model::create($this->getModelClass(),$this->getExtensionName());
+            $result = (is_object($model) == false) ? false : $model->restore();
             
-            if (is_object($model) == true) {
-                $result = $model->restore($uuid);
-            }
-            $result = ($result !== false);
-        
             $this->setResponse($result,function() use($uuid) {              
                 $this
                     ->message('restore')
@@ -79,8 +69,6 @@ trait SoftDelete
         });
         $data
             ->addRule('text:min=2|required','uuid')           
-            ->validate(); 
-
-        return $this->getResponse();
+            ->validate();       
     }
 }

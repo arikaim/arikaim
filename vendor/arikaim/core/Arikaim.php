@@ -12,7 +12,6 @@ namespace Arikaim\Core;
 use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 use Slim\Routing\RouteContext;
-use FastRoute\BadRouteException;
 use Exception;
 
 use Arikaim\Container\Container;
@@ -31,6 +30,7 @@ use Arikaim\Core\System\Error\Renderer\HtmlPageErrorRenderer;
 use Arikaim\Core\Extension\Modules;
 use Arikaim\Core\System\Composer;
 use Arikaim\Core\App\Install;
+use Arikaim\Core\View\Template\Template;
 
 /**
  * Arikaim core class
@@ -121,8 +121,8 @@ class Arikaim
     */
     public static function init() 
     {        
-        ini_set('display_errors',1);
-        ini_set('display_startup_errors',1);
+        ini_set('display_errors',0);
+        ini_set('display_startup_errors',0);
         error_reporting(E_ALL); 
 
         set_error_handler(function () {
@@ -131,7 +131,7 @@ class Arikaim
 
         Self::resolveEnvironment($_SERVER);
 
-        // init constants   
+        // Init constants   
         if (defined('ROOT_PATH') == false) {
             define('ROOT_PATH',Self::getRootPath());
         }
@@ -149,41 +149,46 @@ class Arikaim
         Path::setAppPath('arikaim');
         Factory::setCoreNamespace("Arikaim\\Core");
 
-        // load global functions
+        // Load global functions
         $loader->LoadClassFile('\\Arikaim\\Core\\App\\Globals');
          
         register_shutdown_function("\Arikaim\Core\Arikaim::end");
        
-        // create service container            
+        // Create service container            
         AppFactory::setContainer(ServiceContainer::init(new Container()));
         
-        // create app 
+        // Create app 
         Self::$app = AppFactory::create();
         Self::$app->setBasePath(BASE_PATH);
             
         if (Arikaim::isConsole() == false) {   
             Session::start();
-
-            // set router 
+        
+            // Set router 
             $validatorStrategy = new ValidatorStrategy(Self::get('event'),Self::get('errors'));
             Self::$app->getRouteCollector()->setDefaultInvocationStrategy($validatorStrategy);
         
             Self::$app->getRouteCollector()->setCacheFile(Path::CACHE_PATH . "/routes.cache.php");     
-            // map routes                       
+            // Map routes                       
             SystemRoutes::mapSystemRoutes(); 
-            // boot db
+            // Boot db
             Self::get('db');  
             // Add modules service
             Modules::init(Self::getContainer()->get('cache'));
-            // add default middleware
+            // Add default middleware
             MiddlewareManager::init(); 
             
             Self::mapRoutes();   
             
+            // Set primary template
+            Template::setPrimary(Self::options()->get('primary.template'));
             // DatTime and numbers format
-            Number::setFormats(Self::options()->get('number.format.items'));
+            Number::setFormats(Self::options()->get('number.format.items',[]),Self::options()->get('number.format',null));
+            // Set time zone
             DateTime::setTimeZone(Arikaim::options()->get('time.zone'));
-            DateTime::setFormats(Arikaim::options()->get('date.format.items'),Arikaim::options()->get('time.format.items'));   
+            // Set date and time formats
+            DateTime::setDateFormats(Arikaim::options()->get('date.format.items',[]),Arikaim::options()->get('date.format',null));   
+            DateTime::setTimeFormats(Arikaim::options()->get('date.format.items',[]),Arikaim::options()->get('time.format',null));                  
         }      
     }
     
@@ -207,22 +212,20 @@ class Arikaim
         $routes = Self::routes()->getAllRoutes();
 
         foreach($routes as $item) {
-            // controller params
-            Self::getContainer()['contoller.extension'] = $item['extension_name'];
-
             $methods = explode(',',$item['method']);
             $handler = $item['handler_class'] . ":" . $item['handler_method'];   
 
             $route = Self::$app->map($methods,$item['pattern'],$handler);
-           
             // auth middleware
             if ($item['auth'] > 0) {
-                $middleware = Self::access()->middleware($item['auth']);    
+                $options['redirect'] = (empty($item['redirect_url']) == false) ? Url::BASE_URL . $item['redirect_url'] : null;                     
+                $middleware = Self::access()->middleware($item['auth'],$options);    
+
                 if ($middleware != null && is_object($route) == true) {
                     $route->add($middleware);
                 }
-            }                                
-        }    
+            }                                                   
+        }   
     }
  
     /**
@@ -295,15 +298,19 @@ class Arikaim
                 Self::get('cache')->clear();
                 $renderer = new HtmlPageErrorRenderer(Self::errors());
                 $applicationError = new ApplicationError(Self::response(),$renderer);  
-
-                if (Install::isInstalled() == false) {
-                    if (Install::isInstallPage() == true) {                                                  
-                        Self::$app->run(); 
-                        return;                     
-                    }
-                    $error = new Exception(Self::get('errors')->getError('NOT_INSTALLED_ERROR'));
+                if (Install::isInstalled() == false) {       
+                    if (Install::isInstallPage() == true) {                          
+                        $output = Self::get('page')->getHtmlCode('system:install');  
+                        echo $output;
+                        exit();             
+                    }                   
+                    if (Install::isApiInstallRequest() == true) {
+                        return Self::$app->run();
+                    } 
+                    $error = new Exception(Self::get('errors')->getError('NOT_INSTALLED_ERROR'));       
                 } 
-                $applicationError->renderError(Self::createRequest(),$error);                                                   
+                $applicationError->renderError(Self::createRequest(),$error); 
+                exit();                                                  
             }          
         }
     }

@@ -34,7 +34,7 @@ class TokenAuthentication extends AuthMiddleware implements MiddlewareInterface
         $token = $this->readToken($request);
 
         if ($this->getAuthProvider()->authenticate(['token' => $token]) === false) {          
-            return $this->resolveAuthError($request);      
+            return $this->handleError($request,$handler);
         }
 
         return $handler->handle($request);  

@@ -1,0 +1,7 @@
+{% set rows = option.rows|default(7) %}
+{% set cols = option.cols|default(7) %}
+<div class="field">
+    <label>{{ option.type.title }}</label>    
+    <textarea rows="{{ rows }}" cols="{{ cols }}" class="option-field" name="options[{{ option.key }}]" id="{{ option.key }}" data-content="{{ option.type.description }}">{{ option.val }}</textarea>  
+    {{ component('system:admin.orm.options.form.fields.type',{ option: option }) }} 
+</div> 

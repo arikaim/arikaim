@@ -1,0 +1,38 @@
+{% set page_links = page_links|default(4) %}
+{% set from_page = data.current_page - page_links %}
+{% set from_page = (from_page < 1) ? 1 : from_page  %}
+{% set to_page = (from_page + page_links) %}
+{% set to_page = (to_page > data.last_page) ? data.last_page : to_page %}
+{% set prev_page = data.current_page - 1 %}
+{% set prev_page = (prev_page < 1) ? 1 : prev_page  %}
+{% set next_page = data.current_page + 1 %}
+{% set next_page = (next_page > data.last_page) ? data.last_page : next_page  %}
+{% set class = class|default('ui pagination menu') %}
+
+{% if data.last_page > 1 %}
+    <div class="paginator {{ class }}" from-page="{{ from_page }}" to-page="{{ to_page }}" last-page="{{ paginator.last_page }}">       
+        {% if data.current_page > 1 and simple_mode != true %}
+        <a class="item first-page page-link link {{ item_class }} {{ data.current_page|ifthen(1,'disabled') }}" href="{{ paginatorUrl(page_url,1) }}">
+            <i class="ui icon angle double left"></i>
+        </a>      
+        <a class="item prev-page page-link link {{ item_class }} {{ data.current_page|ifthen(1,'disabled') }}" href="{{ paginatorUrl(page_url,prev_page) }}">
+            <i class="ui icon angle left"></i>
+        </a> 
+        {% endif %}
+        <span id="pages_list">
+            {% for index in from_page..to_page %}
+            <a class="item page-{{ index }} page-link link {{ item_class }} {{ index|ifthen(data.current_page,'active') }}" href="{{ paginatorUrl(page_url,index) }}">
+                {{ index }}     
+            </a>
+        </span>      
+        {% endfor %}
+        {% if data.last_page > data.current_page and simple_mode != true %}
+        <a class="item next-page page-link link {{ item_class }}" href="{{ paginatorUrl(page_url,next_page) }}">
+            <i class="ui icon angle right"></i>
+        </a>
+        <a class="item last-page page-link link {{ item_class }}" href="{{ paginatorUrl(page_url,data.last_page) }}">
+            <i class="ui icon angle double right"></i>
+        </a>
+        {% endif %}  
+    </div>
+{% endif %}

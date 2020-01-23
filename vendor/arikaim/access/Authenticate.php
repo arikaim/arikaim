@@ -95,7 +95,7 @@ class Authenticate implements AuthInterface, AccessInterface
      */
     public function addPermission($name, $title = null, $description = null, $extension = null)
     {
-        $this->access->addPermission($name,$title,$description,$extension);
+        return $this->access->addPermission($name,$title,$description,$extension);
     }
 
     /**
@@ -215,15 +215,15 @@ class Authenticate implements AuthInterface, AccessInterface
      * Create auth middleware
      *
      * @param string $authName
-     * @param array $args
+     * @param array $options
      * @return object|null
      */
-    public function middleware($authName, $args = null)
+    public function middleware($authName, $options = [])
     {       
         $className = (class_exists($authName) == true) ? $authName : $this->getAuthMiddlewareClass($this->resolveAuthType($authName));
         $fullClassName = Self::ACCESS_NAMESPACE . "Middleware\\" . $className;
         
-        return (class_exists($fullClassName) == true) ? new $fullClassName($this->provider, $this->errorRenderer) : null;
+        return (class_exists($fullClassName) == true) ? new $fullClassName($this->provider,$this->errorRenderer,$options) : null;
     }
 
     /**

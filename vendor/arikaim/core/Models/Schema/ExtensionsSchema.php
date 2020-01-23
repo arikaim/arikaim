@@ -43,7 +43,8 @@ class ExtensionsSchema extends Schema
         $table->string('version')->nullable(false);
         $table->string('class')->nullable(false);  
         $table->position();
-        $table->type();           
+        $table->type();     
+        $table->prototype('defaultColumn','primary');     
         $table->text('admin_menu')->nullable(true);
         $table->text('console_commands')->nullable(true);
         $table->string('license_key')->nullable(true);

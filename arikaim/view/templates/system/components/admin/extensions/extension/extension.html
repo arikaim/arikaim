@@ -1,13 +1,8 @@
 {% set extension = package('extension').getPackageProperties(extension_name) %}
-<div class="ui raised card min-h-full {{ error|ifthen(1,'red') }}" id="{{ extension.name }}">     
-    <div class="content item">    
-        {% if extension.type == 1 %}
-            <div class="ui right corner blue mini label" title="{{ labels.system }}">
-                <i class="icon exclamation"></i>
-            </div>      
-        {% endif %} 
-        <i class="left floated big blue icon {{ extension.get('admin-menu').icon }}"></i>  
-        
+{% set primary_style = (extension.primary == 1) ? 'green' : '' %}
+<div class="ui raised card min-h-full {{ error|ifthen(1,'red') }} {{ primary_style }}" id="{{ extension.name }}">     
+    <div class="content item">           
+        <i class="left floated big blue icon {{ extension.get('admin-menu').icon }}"></i>          
         {% if extension.status == 1 %}
         <div class="ui left corner mini olive label" {{ labels.enabled|attr('title') }} >
             <i class="icon checkmark {{ error|ifthen(1,'hidden') }}"></i>
@@ -17,6 +12,16 @@
             {{ labels.version }} 
             <div class="detail">{{ extension.version }}</div>
         </div>        
+        {% if extension.primary == 1 %}     
+        <div class="ui horizontal right floated green mini label primary-label">               
+            {{ labels.primary }}            
+        </div>  
+        {% endif %}
+        {% if extension.type == 1 %}
+        <div class="ui horizontal right floated blue mini label">
+            {{ labels.system }}      
+        </div>      
+        {% endif %} 
         <div class="font-bold mt-1 pl-4">{{ extension.title }}</div>    
     </div>
     <div class="content">     
@@ -24,16 +29,19 @@
         {% if error == 1 %}
         <div class="ui meta mt-1">
             <div class="ui mini error message">
+                <i class="close icon"></i>
                 {{ messages.error }}
             </div>
         </div>
         {% endif %}
     </div>
     <div class="p-2">
-        <div class="ui success mini message opacity-0 m-2" id="message_{{ extension.name }}"></div>
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ extension.name }}">
+            <i class="close icon"></i>
+        </div>
     </div>   
     <div class="extra content">
-        <div class="ui mini fluid basic buttons"> 
+        <div class="ui mini fluid buttons"> 
             {% if extension.installed == true %}        
                 {% if error != 1 %}  
                 <button class="ui button basic olive update-button" extension="{{ extension.name }}">
@@ -44,20 +52,30 @@
                 <button class="ui icon basic button orange un-install-button {{ error|ifthen(1,'fluid') }}" extension="{{ extension.name }}">
                     <i class="icon trash"></i>
                     {{ buttons.uninstall.content }}
-                </button> 
+                </button>   
+                {% set disabled = (extension.primary == 1) ? 'disabled' : '' %}             
+                <button class="ui basic mini button set-primary {{ disabled }}" extension="{{ extension.name }}">
+                    <i class="icon angle double up"></i>                    
+                    {{ buttons.primary.content }}
+                </button>              
                 {% if extension.type != 1 %}
-                {{ component('components:dropdown.enable',{ class: '', selected: extension.status, attributes: { extension: extension.name } }) }}
-                {% endif %}
+                {{  component('components:dropdown.enable',{ 
+                        class: '',
+                        selected: extension.status,
+                        attributes: { extension: extension.name },
+                        show_label: false
+                    }) 
+                }}
+                {% endif %} 
+                <button class="ui basic icon button details-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}" title="{{ buttons.detail.title }}">
+                    <i class="icon list layout"></i>                                  
+                </button>  
             {% else %}
-            <button class="ui button basic olive install-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}">
+            <button class="ui basic button basic olive install-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}">
                 <i class="icon download"></i>                    
                 {{ buttons.install.content }}
             </button> 
             {% endif %}           
-            <button class="ui toggle mini button details-button {{ error|ifthen(1,'hidden') }}" extension="{{ extension.name }}">
-                <i class="icon list layout"></i>                    
-                {{ buttons.details.content }}
-            </button>  
         </div>
     </div>
 </div>

@@ -12,14 +12,14 @@
 
     this.init = function() {       
     
-        arikaim.ui.button('.set-current-button',function(element) {  
+        arikaim.ui.button('.set-primary',function(element) {  
             var name = $(element).attr('template');
                     
-            return packages.setCurrent(name,'template',function(result) {
+            return packages.setPrimary(name,'template',function(result) {
                 var message = result.message;
-                $('.current-template').remove();
-                $(this).addClass('disabled grey').removeClass('olive');
-                $('.set-current-button').removeClass('disabled grey').addClass('olive');
+                $('.primary-label').remove();
+                $(this).addClass('disabled grey');
+                $('.set-primary').removeClass('disabled grey');
 
                 arikaim.page.loadContent({
                     id: name,

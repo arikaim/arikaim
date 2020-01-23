@@ -1,16 +1,19 @@
 {% component 'blog:layout' %}
     <div class="ui container">
         <div class="ui very basic segment">   
-            <div class="ui left dividing rail">
+            <div class="ui left rail">
                 {{ component('blog:panel.left') }}
             </div>
-            <div class="bg-indigo-100 mt-8">
-                <h2 class="p-2 pl-4 page-title">{{ title }}</h2>               
+            <div class="mt-8 shadow rounded title-bg">               
+                <h2 class="p-2 pl-0 page-title">
+                    <i class="ellipsis vertical icon title-icon"></i>                   
+                    {{ title }}
+                </h2>               
             </div>
-            <div class="mt-10">
+            <div class="mt-16">
                 {{ content }}
             </div>
-            <div class="ui right dividing rail">
+            <div class="ui right rail">
                 <div class="mt-12">
                     {{ component('blog:panel.right',{ title: labels.categories }) }}
                 </div>               

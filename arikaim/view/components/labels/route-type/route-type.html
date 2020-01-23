@@ -1,5 +1,10 @@
 {% if type == 1 %}
-    <div class="ui tiny left pointing label" {{ labels.title|attr('title') }}>Page</div>
+    <div class="ui tiny left pointing blue label" {{ labels.title|attr('title') }}>{{ labels.page }}</div>
 {% elseif type == 2 %}
-    <div class="ui tiny left pointing label" {{ labels.title|attr('title') }}>Api</div>
+    <div class="ui tiny left pointing label" {{ labels.title|attr('title') }}>{{ labels.api }}</div>
+{% elseif type == 3 %}
+    <div class="ui tiny left pointing green label" {{ labels.title|attr('title') }}>
+        <i class="icon home"></i>
+        {{ labels.home }}
+    </div>
 {% endif %}

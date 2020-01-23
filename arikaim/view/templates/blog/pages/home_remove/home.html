@@ -1,0 +1,7 @@
+{% component 'blog:layout.page' %}
+    {% set posts = createModel('Posts','blog').getActive() %}  
+    
+    {% for post in posts.get() %}           
+        {{ component('blog:post.preview',{ post: post }) }}
+    {% endfor %}           
+{% endcomponent %}

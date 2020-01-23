@@ -15,12 +15,11 @@ use Arikaim\Core\Access\Interfaces\UserProviderInterface;
 use Arikaim\Core\Utils\Utils;
 use Arikaim\Core\Utils\Uuid as UuidFactory;
 use Arikaim\Core\Utils\DateTime;
+use Arikaim\Core\Models\Users;
 
 use Arikaim\Core\Db\Traits\Uuid;
-
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\DateCreated;
-use Arikaim\Core\Db\Traits\UserRelation;
 use Arikaim\Core\Access\Traits\Auth;
 
 /**
@@ -38,7 +37,6 @@ class AccessTokens extends Model implements UserProviderInterface
     use Uuid,
         Find,
         Auth,
-        UserRelation,
         DateCreated;
 
     /**
@@ -68,6 +66,16 @@ class AccessTokens extends Model implements UserProviderInterface
     public $timestamps = false;
 
     /**
+     * User relation
+     *
+     * @return Model
+     */
+    public function user()
+    {
+        return $this->belongsTo(Users::class,'user_id');
+    }
+
+    /**
      * Get user credentials
      *
      * @param array $credential
@@ -87,6 +95,22 @@ class AccessTokens extends Model implements UserProviderInterface
         $model = $this->findByColumn($token,'token');
 
         return is_object($model) ? $model->user() : false;
+    }
+
+    /**
+     * Return user details by auth id
+     *
+     * @param string|integer $id
+     * @return array|false
+     */
+    public function getUserById($id)
+    {
+        $model = $this->findById($id);
+        if (is_object($model) == false) {
+            return false;
+        }
+
+        return $model->user()->toArray();
     }
 
     /**
@@ -230,7 +254,8 @@ class AccessTokens extends Model implements UserProviderInterface
      */
     public function deleteExpired($userId, $type = AccessTokens::PAGE_ACCESS_TOKEN)
     {
-        $model = $this->where('date_expired','<',DateTime::getTimestamp())
+        $model = $this
+            ->where('date_expired','<',DateTime::getTimestamp())
             ->where('date_expired','<>',-1)
             ->where('user_id','=', $userId);
         

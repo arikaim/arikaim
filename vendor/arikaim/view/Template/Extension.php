@@ -21,8 +21,7 @@ use Arikaim\Core\Interfaces\Access\AccessInterface;
 use Arikaim\Core\Interfaces\View\HtmlPageInterface;
 use Arikaim\Core\View\Template\Tags\ComponentTagParser;
 use Arikaim\Core\View\Template\Tags\MdTagParser;
-use Arikaim\Core\View\Template\Template;
-use Arikaim\Core\Http\Url;
+use Arikaim\Core\Utils\File;
 
 /**
  *  Template engine functions, filters and tests.
@@ -51,11 +50,11 @@ class Extension extends AbstractExtension implements GlobalsInterface
     protected $access;
 
     /**
-     * Extensions path
+     * View path
      *
      * @var string
      */
-    protected $extensionsPath;
+    protected $viewPath;
 
     /**
      * Constructor
@@ -63,18 +62,15 @@ class Extension extends AbstractExtension implements GlobalsInterface
      * @param CacheInterface $cache
      * @param string $basePath
      * @param string $viewPath
-     * @param string $libraryPath
      * @param string $extensionsPath
      * @param HtmlPageInterface $page
      * @param AccessInterface $access
      */
-    public function __construct(CacheInterface $cache, $basePath, $viewPath, $libraryPath, $extensionsPath, HtmlPageInterface $page, AccessInterface $access)
+    public function __construct(CacheInterface $cache, $basePath, $viewPath, HtmlPageInterface $page, AccessInterface $access)
     {
         $this->cache = $cache;
         $this->basePath = $basePath;
         $this->viewPath = $viewPath;
-        $this->libraryPath = $libraryPath;
-        $this->extensionsPath = $extensionsPath;
         $this->page = $page;
         $this->access = $access;
     }
@@ -85,21 +81,10 @@ class Extension extends AbstractExtension implements GlobalsInterface
      * @return array
      */
     public function getGlobals() 
-    {
-        $templateName = Template::getTemplateName();
-        $templateUrl = Url::getTemplateUrl($templateName);
-        $systemTemplateUrl = Url::getTemplateUrl(Template::SYSTEM_TEMPLATE_NAME);
-        
+    {       
         return [
-            'base_path'             => $this->basePath,
-            'base_url'              => Url::BASE_URL,
-            'template_url'          => $templateUrl,
-            'current_template_name' => $templateName,
-            'ui_path'               => $this->basePath . $this->viewPath,
-            'system_template_url'   => $systemTemplateUrl,
-            'system_template_name'  => Template::SYSTEM_TEMPLATE_NAME,
-            'ui_library_path'       => $this->libraryPath,
-            'ui_library_url'        => Url::LIBRARY_URL      
+            'base_path' => $this->basePath,                
+            'ui_path'   => $this->basePath . $this->viewPath,         
         ];
     }
 
@@ -137,6 +122,10 @@ class Extension extends AbstractExtension implements GlobalsInterface
             new TwigFunction('getLanguage',["Arikaim\\Core\\View\\Html\\Page","getLanguage"]),
             new TwigFunction('sessionInfo',["Arikaim\\Core\\Http\\Session","getParams"]),
 
+            // global vars
+            new TwigFunction('setVar',[$this,'setVar']),   
+            new TwigFunction('getVar',[$this,'getVar']),   
+
             // macros
             new TwigFunction('macro',["Arikaim\\Core\\View\\Template\\Template","getMacroPath"]),         
             new TwigFunction('systemMacro',["Arikaim\\Core\\View\\Template\\Template","getSystemMacroPath"])
@@ -171,16 +160,7 @@ class Extension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('string',["Arikaim\\Core\\View\\Template\\Filters",'convertToString']),
             new TwigFilter('emptyLabel',["Arikaim\\Core\\View\\Template\\Filters",'emptyLabel']),
             new TwigFilter('sliceLabel',["Arikaim\\Core\\View\\Template\\Filters",'sliceLabel']),
-            new TwigFilter('jsonDecode',["Arikaim\\Core\\Utils\\Utils",'jsonDecode']),
-            new TwigFilter('baseClass',["Arikaim\\Core\\Utils\\Utils",'getBaseClassName']),            
-            // date time
-            new TwigFilter('dateFormat',["Arikaim\\Core\\Utils\\DateTime",'dateFormat']),
-            new TwigFilter('dateTimeFormat',["Arikaim\\Core\\Utils\\DateTime",'dateTimeFormat']),
-            new TwigFilter('timeFormat',["Arikaim\\Core\\Utils\\DateTime",'timeFormat']),
-            // numbers
-            new TwigFilter('numberFormat',["Arikaim\\Core\\Utils\\Number",'format']),
-            // files
-            new TwigFilter('fileSize',["Arikaim\\Core\\Utils\\File",'getSizeText']),
+            new TwigFilter('baseClass',["Arikaim\\Core\\Utils\\Utils",'getBaseClassName']),                        
             // text
             new TwigFilter('renderText',["Arikaim\\Core\\Utils\\Text",'render']),
             new TwigFilter('sliceText',["Arikaim\\Core\\Utils\\Text",'sliceText']),
@@ -227,6 +207,34 @@ class Extension extends AbstractExtension implements GlobalsInterface
             new ComponentTagParser(),
             new MdTagParser()
         ];
+    }
+
+    /**
+     * Set global variable
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     */
+    public function setVar($name, $value)
+    {
+        $name = 'template.var.' . $name;
+        $GLOBALS[$name] = $value;
+    }
+
+    /**
+     * Get global var
+     *
+     * @param string $name
+     * @param mixed|null $default
+     * @return mixed
+     */
+    public function getVar($name, $default = null)
+    {
+        $name = 'template.var.' . $name;
+        $value = (isset($GLOBALS[$name]) == true) ? $GLOBALS[$name] : $default;
+
+        return $value;
     }
 
     /**

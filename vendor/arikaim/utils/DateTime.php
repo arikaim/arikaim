@@ -49,6 +49,20 @@ class DateTime
     private static $timeFormats = [];
 
     /**
+     * Default date format value
+     *
+     * @var string
+    */
+    private static $defaultDateFormat;
+
+    /**
+     * Default time format value
+     *
+     * @var string
+     */
+    private static $defaultTimeFormat;
+
+    /**
      * Set date adn time formats
      *
      * @param array $dateFormats
@@ -59,6 +73,54 @@ class DateTime
     {
         Self::$dateFormats = $dateFormats;
         Self::$timeFormats = $timeFormats;
+    }
+
+    /**
+     * Set date formats
+     *
+     * @param array $dateFormats
+     * @param string|null $defultFormat
+     * @return void
+     */
+    public static function setDateFormats(array $dateFormats, $defultFormat = null)
+    {
+        Self::$dateFormats = $dateFormats;
+        Self::setDefaultDateFormat($defultFormat);
+    }
+
+    /**
+     * Set time formats
+     *
+     * @param array $dateFormats
+     * @param string|null $defultFormat
+     * @return void
+     */
+    public static function setTimeFormats(array $timeFormats, $defultFormat = null)
+    {
+        Self::$timeFormats = $timeFormats;
+        Self::setDefaultTimeFormat($defultFormat);
+    }
+
+    /**
+     * Set default date format
+     *
+     * @param string $format
+     * @return void
+     */
+    public static function setDefaultDateFormat($format)
+    {
+        Self::$defaultDateFormat = $format;
+    }
+
+    /**
+     * Set default time format
+     *
+     * @param string $format
+     * @return void
+     */
+    public static function setDefaultTimeFormat($format)
+    {
+        Self::$defaultTimeFormat = $format;
     }
 
     /**
@@ -135,11 +197,11 @@ class DateTime
      */
     public static function getDateFormat($name = null) 
     {      
-        if ($name == null) { 
-            return Self::DEFAULT_DATE_FORMAT;                  
+        if (empty($name) == true) {
+            return (empty(Self::$defaultDateFormat) == false) ? Self::$defaultDateFormat : Self::DEFAULT_DATE_FORMAT;
         }
 
-        return (isset(Self::$dateFormats[$name]) == true) ? Self::$dateFormats[$name] : Self::DEFAULT_DATE_FORMAT;
+        return (isset(Self::$dateFormats[$name]) == true) ? Self::$dateFormats[$name] : $name;
     }
 
     /*
@@ -288,10 +350,10 @@ class DateTime
     public static function getTimeFormat($name = null) 
     {       
         if ($name == null) {
-            return Self::DEFAULT_TIME_FORMAT;           
+            return (empty(Self::$defaultTimeFormat) == false) ? Self::$defaultTimeFormat : Self::DEFAULT_TIME_FORMAT;    
         }
 
-        return (isset(Self::$timeFormats[$name]) == true) ? Self::$timeFormats[$name] : Self::DEFAULT_TIME_FORMAT; 
+        return (isset(Self::$timeFormats[$name]) == true) ? Self::$timeFormats[$name] : $name; 
     }
 
     /**

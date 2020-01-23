@@ -24,7 +24,7 @@ trait FileUpload
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function upload($request, $response, $data)
+    public function uploadController($request, $response, $data)
     {
         $this->requireControlPanelPermission();
 
@@ -34,8 +34,8 @@ trait FileUpload
             if (isset($files['file']) == true) {
                 $file = $files['file'];
             } else {
-                $this->setError("Upload file error");
-                return $this->getResponse();
+                $this->error('errors.upload');
+                return;
             }
 
             $result = false;
@@ -53,7 +53,5 @@ trait FileUpload
             },'errors.upload');           
         });
         $data->validate();          
-        
-        return $this->getResponse();
     }
 }

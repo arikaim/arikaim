@@ -24,29 +24,37 @@ class Options implements BlueprintPrototypeInterface
      * @return void
      */
     public function build($table,...$options)
-    {                           
+    {              
+        $optionTypeTable = (isset($options[0]) == true) ? $options[0] : null;     
+        $referenceTable = (isset($options[1]) == true) ? $options[1] : null; 
+        $callback = (isset($options[2]) == true) ? $options[2] : null;
+
         // columns
         $table->id();
         $table->prototype('uuid');              
-        $table->status();
-        $table->position();
-        $table->type();
-        $table->relation('reference_id',$options[0],false);     
         $table->string('key')->nullable(false);
+
+        if (empty($optionTypeTable) == true) {
+            $table->bigInteger('type_id')->unsigned()->nullable(false);  
+            $table->index(['type_id']);
+        } else {
+            $table->relation('type_id',$optionTypeTable);
+        }
+
+        if (empty($referenceTable) == true) {
+            $table->bigInteger('reference_id')->unsigned()->nullable(true);  
+            $table->index(['reference_id']);
+        } else {
+            $table->relation('reference_id',$referenceTable);
+        }
+              
         $table->text('value')->nullable(true);
-        $table->string('title')->nullable(true);
-        $table->text('description')->nullable(true);
-        $table->integer('hidden')->nullable(false)->default(0);
-        $table->integer('readonly')->nullable(false)->default(0);
-        $table->string('default')->nullable(true);
-        $table->text('items')->nullable(true);
-        $table->integer('items_reference_id')->nullable(true);
-        $table->string('items_type')->nullable(true);
+     
         // index
+        $table->unique(['reference_id','type_id']);
         $table->unique(['reference_id','key']);
 
-        $callback = (isset($options[1]) == true) ? $options[1] : null;
-        if (is_callable($callback) == true) {         
+        if (\is_callable($callback) == true) {         
             $call = function() use($callback,$table) {
                 $callback($table);                                 
             };

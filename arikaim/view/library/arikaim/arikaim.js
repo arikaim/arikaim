@@ -475,7 +475,7 @@ function Arikaim() {
 
     this.loadUrl = function(url, relative) { 
         relative = getDefaultValue(relative,false);
-        url = (relative == true) ? arikaim.getBaseUrl() + url : url;
+        url = (relative == true) ? this.getBaseUrl() + url : url;
         document.location.href = url;
     };
 

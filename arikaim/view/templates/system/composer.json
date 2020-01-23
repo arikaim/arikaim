@@ -10,20 +10,17 @@
         "homepage": "http://arikaim.com"
     }],
     "require": {
-        "arikaim/installer": "*",
-        "arikaim/arikaim-library": "*",
-        "arikaim/arikaim-ui-library": "*",
-        "arikaim/jquery-library": "*",
-        "arikaim/jquery-ui-library": "*",
-        "arikaim/filepond-library": "*",
-        "arikaim/foundation-emails-library": "*",
-        "arikaim/fomantic-library": "*",
-        "arikaim/tailwind-library": "*"
+        "arikaim/installer": "^1.0.0",
+        "arikaim/arikaim-library": "^1.0.0",
+        "arikaim/arikaim-ui-library": "^1.0.0",
+        "arikaim/jquery-library": "^3.0.0",
+        "arikaim/jquery-ui-library": "^1.0.0",
+        "arikaim/filepond-library": "^4.0.0",
+        "arikaim/foundation-emails-library": "^2.0.0",
+        "arikaim/fomantic-library": "^2.0.0",
+        "arikaim/tailwind-library": "^1.0.0"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
         "path": "system"
     }
 }

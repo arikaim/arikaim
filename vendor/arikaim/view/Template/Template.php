@@ -30,6 +30,27 @@ class Template
     }
 
     /**
+     * Get primary template
+     *
+     * @return void
+     */
+    public static function getPrimary($default = Self::DEFAULT_TEMPLATE_NAME)
+    {       
+        return Session::get("primary.template",$default);
+    }
+
+    /**
+     * Set primary template
+     *
+     * @param string $templateName
+     * @return void
+     */
+    public static function setPrimary($templateName)
+    {       
+        return Session::set("primary.template",$templateName);
+    }
+
+    /**
      * Get template loader component name
      *
      * @return string|null
@@ -47,26 +68,6 @@ class Template
     public static function getFrameworks()    
     {
         return Session::get("ui.included.frameworks");
-    }
-
-    /**
-     * Return current template name
-     *
-     * @return void
-     */
-    public static function getTemplateName()     
-    {                            
-        return Session::get('current.template',Self::DEFAULT_TEMPLATE_NAME);               
-    }
-
-    /**
-     * Set current template name
-     *
-     * @return void
-     */
-    public static function setTemplateName($name)     
-    {                            
-        return Session::set('current.template',$name);               
     }
 
     /**
@@ -105,10 +106,8 @@ class Template
      * @param string $template
      * @return string
      */
-    public static function getMacroPath($macroName, $template = null)
+    public static function getMacroPath($macroName, $template)
     {
-        $template = (empty($template) == true) ? Self::getTemplateName() : $template; 
-
         return DIRECTORY_SEPARATOR . $template . DIRECTORY_SEPARATOR . "macros" . DIRECTORY_SEPARATOR . $macroName;
     }
 

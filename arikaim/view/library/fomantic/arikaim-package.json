@@ -1,6 +1,6 @@
 {   
     "title": "Fomantic UI",
-    "version": "2.7.8",
+    "version": "2.8.3",
     "name": "fomantic",
     "package-type": "library",
     "repository": "https://github.com/arikaim/fomantic-library.git",

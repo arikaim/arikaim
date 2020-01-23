@@ -2,11 +2,10 @@
     "title": "Captcha Service",
     "name": "captcha",
     "package-type": "extension",
-    "class": "Captcha",
     "type": "system",
     "description": "Captcha service.",
     "short-description": "Captcha service.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "repository": "https://github.com/arikaim/captcha-extension.git",
     "position": "2",
     "admin-menu": {        

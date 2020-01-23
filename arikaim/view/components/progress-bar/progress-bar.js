@@ -29,6 +29,7 @@ function ProgressBar() {
 
     this.show = function() {
         $(selector).css('opacity','1');
+        $(selector).css({'visibility': 'visible'});
         $(selector).removeClass('hidden');        
         $(selector).show();
     };

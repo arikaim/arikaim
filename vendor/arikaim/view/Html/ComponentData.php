@@ -22,10 +22,11 @@ use Arikaim\Core\Http\Url;
  */
 class ComponentData implements ComponentDataInterface
 {
-    const TEMPLATE_COMPONENT    = 1; 
-    const EXTENSION_COMPONENT   = 2;
-    const GLOBAL_COMPONENT      = 3; 
-    const RESOLVE_LOCATION      = 4;
+    const UNKNOWN_COMPONENT   = 0;
+    const TEMPLATE_COMPONENT  = 1; 
+    const EXTENSION_COMPONENT = 2;
+    const GLOBAL_COMPONENT    = 3; 
+    const RESOLVE_LOCATION    = 4;
     
     /**
      * Component name
@@ -154,6 +155,13 @@ class ComponentData implements ComponentDataInterface
     protected $defaultFramework;
 
     /**
+     * Component name selector type
+     *
+     * @var string|null
+     */
+    protected $selectorType;
+
+    /**
      * Constructor
      *
      * @param string $name
@@ -163,6 +171,7 @@ class ComponentData implements ComponentDataInterface
      */
     public function __construct($name, $basePath, $language, $optionsFile, $viewPath, $extensionsPath, $defaultFramework = 'fomantic') 
     {
+        $this->selectorType = null;
         $this->language = $language;
         $this->optionsFile = $optionsFile;
         $this->basePath = $basePath;
@@ -184,6 +193,64 @@ class ComponentData implements ComponentDataInterface
 
         $this->properties = $this->loadProperties()->toArray();
         $this->options = $this->loadOptions()->toArray(); 
+    }
+
+    /**
+     * Return true if component has child 
+     *
+     * @return boolean
+     */
+    public function hasParent()
+    {
+        if (empty($this->path) == true) {
+            return false;
+        }
+        $tokens = explode('/',$this->path);
+
+        return (count($tokens) > 0);
+    }
+
+    /**
+     * Get parent component name
+     *
+     * @return string
+     */
+    public function getParentName()
+    {
+        $tokens = explode('/',$this->path);
+        $count = count($tokens) - 1;
+        $path = $tokens[$count];
+
+        return $this->templateName . $this->selectorType . $path;
+    }
+
+    /**
+     * Gte root component name
+     *
+     * @return string
+     */
+    public function getRootName()
+    {
+        $tokens = explode('/',$this->path);
+
+        return $this->templateName . $this->selectorType . "." . $tokens[0];
+    }
+
+    /**
+     * Create component
+     *
+     * @param string|null $name If name is null parent component name is used
+     * @return ComponentDataInterface|false
+     */
+    public function createComponent($name = null)
+    {
+        if ($this->hasParent() == false) {
+            return false;
+        }
+        $name = (empty($name) == true) ? $this->getParentName() : $name;
+        $child = new Self($name,$this->basePath,$this->language,$this->optionsFile,$this->viewPath,$this->extensionsPath,$this->defaultFramework);
+
+        return (is_object($child) == true) ? $child : false;
     }
 
     /**
@@ -223,6 +290,8 @@ class ComponentData implements ComponentDataInterface
             case Self::GLOBAL_COMPONENT: 
                 $path = "";
                 break;
+            case Self::UNKNOWN_COMPONENT: 
+                return false;
         }  
         if (isset($this->files['html'][0]['file_name']) == true) {
             return $path . $this->filePath . $this->files['html'][0]['file_name'];
@@ -540,12 +609,15 @@ class ComponentData implements ComponentDataInterface
             // extension component
             $tokens = explode('::',$name);     
             $type = Self::EXTENSION_COMPONENT;
+            $this->selectorType = '::';
         } elseif (stripos($name,'>') !== false) {
             // resolve location
             $tokens = explode('>',$name);
             $type = Self::RESOLVE_LOCATION;
+            $this->selectorType = '>';
         } else {
             // template component
+            $this->selectorType = ':';
             $tokens = explode(':',$name);  
             $type = ($tokens[0] == 'components') ? Self::GLOBAL_COMPONENT : Self::TEMPLATE_COMPONENT;    
         }
@@ -553,15 +625,29 @@ class ComponentData implements ComponentDataInterface
         if (isset($tokens[1]) == false) {    
             // component location not set                     
             $this->path = str_replace('.','/',$tokens[0]);            
-            $this->templateName = Template::getTemplateName(); 
-            $type = Self::TEMPLATE_COMPONENT;        
+            $this->templateName = null;
+            $type = Self::UNKNOWN_COMPONENT;        
         } else {
             $this->path = str_replace('.','/',$tokens[1]);
             $this->templateName = $tokens[0];          
         }
 
         if ($type == Self::RESOLVE_LOCATION) {
-            $type = (File::exists($this->getComponentFullPath(Self::TEMPLATE_COMPONENT)) == true) ? Self::TEMPLATE_COMPONENT : Self::EXTENSION_COMPONENT;
+            $this->path = str_replace('.','/',$tokens[1]);
+            $this->templateName = $tokens[0]; 
+
+            // resolve component location (template or extension)
+            $templateName = Template::getPrimary($this->templateName);
+            $componentPath = $this->getComponentFullPath(Self::TEMPLATE_COMPONENT,$templateName);
+            if (File::exists($componentPath) == true) {
+                // found in template
+                $type = Self::TEMPLATE_COMPONENT;
+                $this->templateName = $templateName;     
+            } else {
+                // set extension component
+                $type = Self::EXTENSION_COMPONENT;
+                $this->templateName = $tokens[0];
+            }            
         }
 
         $this->type = $type;
@@ -630,25 +716,35 @@ class ComponentData implements ComponentDataInterface
     }
 
     /**
+     * Get template url
+     *
+     * @return string|false
+     */
+    public function getTemplateUrl()
+    {
+        switch ($this->type) {
+            case Self::TEMPLATE_COMPONENT:
+                return Url::getTemplateUrl($this->templateName);
+                
+            case Self::EXTENSION_COMPONENT:
+                return Url::getExtensionViewUrl($this->templateName);
+               
+            case Self::GLOBAL_COMPONENT:
+                return Url::VIEW_URL;
+
+            default: 
+                return false;            
+        }       
+    }
+
+    /**
      * Get url
      *
      * @return string
      */
     public function getUrl()
     {
-        switch ($this->type) {
-            case Self::TEMPLATE_COMPONENT:
-                $url = Url::getTemplateUrl($this->templateName);
-                break;
-            case Self::EXTENSION_COMPONENT:
-                $url = Url::getExtensionViewUrl($this->templateName);
-                break;   
-            case Self::GLOBAL_COMPONENT:
-                $url = Url::VIEW_URL;
-                break;                    
-        }
-
-        return $url . "/" . $this->basePath . "/" . $this->path . "/";
+        return $this->getTemplateUrl() . "/" . $this->basePath . "/" . $this->path . "/";
     }
 
     /**
@@ -757,9 +853,11 @@ class ComponentData implements ComponentDataInterface
      * @param integer $type
      * @return string
      */
-    public function getComponentFullPath($type)
+    public function getComponentFullPath($type, $templateName = null)
     {
-        $templateFullPath = Self::getTemplatePath($this->templateName,$type,$this->viewPath,$this->extensionsPath); 
+        $templateName = (empty($templateName) == true) ? $this->templateName : $templateName;
+
+        $templateFullPath = Self::getTemplatePath($templateName,$type,$this->viewPath,$this->extensionsPath); 
         $basePath = (empty($this->basePath) == false) ? $this->basePath : '';
         $path = $basePath . DIRECTORY_SEPARATOR . $this->path . DIRECTORY_SEPARATOR;   
         

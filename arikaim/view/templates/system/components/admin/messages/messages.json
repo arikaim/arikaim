@@ -12,7 +12,8 @@
         "enable": "Extension was enabled successfully.",
         "disable": "Extension was disabled successfully.",
         "uninstall": "Extension was uninstalled successfully.",
-        "install": "Extension was installed successfully."
+        "install": "Extension was installed successfully.",
+        "primary": "Extension was set primary successfully."
     },
     "language": {
         "default": "Default language was changed successfully.",
@@ -57,10 +58,10 @@
     "settings": {
         "save": "Settings was saved successfully."
     },
-    "template": {
-        "current": "Template was set as current.",
+    "template": {        
         "install": "Template was installed successfully.",
-        "update": "Template was updated successfully."
+        "update": "Template was updated successfully.",
+        "primary": "Template was set primary successfully."
     },
     "core": {
         "update": "Arikaim core was updated successfully."
@@ -111,7 +112,8 @@
             "status": "Can't change extension status.",
             "disable": "Can't disable extension.",
             "uninstall": "Can't uninstall extension.",
-            "install": "Can't install extension."           
+            "install": "Can't install extension.",
+            "primary": "Can't set primary extension."           
         },
         "language": {
             "default": "Can't set default language.",
@@ -150,7 +152,7 @@
             "save": "Can't save settings."
         },
         "template": {
-            "current": "Can't set current template.",
+            "primary": "Can't set primary template.",
             "install": "Can't install template.",
             "update": "Can't update template."
         },

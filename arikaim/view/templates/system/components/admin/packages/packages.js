@@ -69,13 +69,13 @@ function Packages() {
         return arikaim.put('/core/api/packages/status',data,onSuccess,onError);           
     };
 
-    this.setCurrent = function(name, packageType, onSuccess, onError) {
+    this.setPrimary = function(name, packageType, onSuccess, onError) {
         var data = {
             name: name,
             type: packageType
         };
         
-        return arikaim.put('/core/api/packages/current',data,onSuccess,onError);         
+        return arikaim.put('/core/api/packages/primary',data,onSuccess,onError);         
     };
 
     this.saveLibraryParams = function(name, params, onSuccess, onError) {

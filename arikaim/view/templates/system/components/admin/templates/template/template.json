@@ -1,6 +1,6 @@
 {
     "labels": {
-        "current": "Current",
+        "primary": "Primary",
         "system": "System",
         "version": "Version"       
     },
@@ -8,8 +8,8 @@
         "details": {
             "content": "Details"
         },
-        "current": {
-            "content": "Set Current"
+        "primary": {
+            "content": "Primary"
         },
         "update": {
             "content": "Update"

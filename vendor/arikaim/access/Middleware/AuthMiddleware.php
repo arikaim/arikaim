@@ -29,16 +29,25 @@ class AuthMiddleware
      *
      * @var SystemErrorInterface
      */
-    private $errorRenderer;
+    protected $errorRenderer;
+
+    /**
+     * Options
+     *
+     * @var array
+     */
+    protected $options;
 
     /**
      * Constructor
      *
      * @param array $params
      */
-    public function __construct(AuthProviderInterface $auth, SystemErrorInterface $errorRenderer)
+    public function __construct(AuthProviderInterface $auth, SystemErrorInterface $errorRenderer, $options = [])
     {
        $this->auth = $auth;
+       $this->errorRenderer = $errorRenderer;
+       $this->options = $options;
     }
     
     /**
@@ -52,13 +61,22 @@ class AuthMiddleware
     }
 
     /**
-     * Undocumented function
+     * Show auth error
      *
-     * @param Request $request
+     * @param ServerRequestInterface  $request
+     * @param RequestHandlerInterface $handler
      * @return string
      */
-    protected function resolveAuthError($request)
+    protected function handleError($request, $handler)
     {
-        return $this->errorRenderer->renderSystemErrors($request,"AUTH_FAILED");       
+        $redirect = (isset($this->options['redirect']) == true) ? $this->options['redirect'] : null;
+        if (empty($redirect) == false) {
+            $response = $handler->handle($request);
+
+            return $response->withHeader('Location',$redirect)->withStatus(302);                   
+        }
+
+        $this->errorRenderer->renderSystemErrors($request,"AUTH_FAILED"); 
+        exit();      
     }
 }

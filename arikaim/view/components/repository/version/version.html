@@ -1,0 +1,13 @@
+{% set type = type|default('github') %}
+{% if type == 'github' %}
+    {% set url = 'http://api.github.com/repos/' ~ package ~ '/releases/latest' %}
+{% endif %}
+{% set version = service('cache').fetch('repository.' ~ package ~ '.version') %}
+{% if version is empty %}
+    {% set data = fetch(url)|jsonDecode %}
+    {% set version = data['tag_name'] %}
+    {% set saved = service('cache').save('repository.' ~ package ~ '.version',version,10) %}
+{% endif %}
+<span {{ class|attr('class') }} id="version_value">
+    {{ version }}
+</span>

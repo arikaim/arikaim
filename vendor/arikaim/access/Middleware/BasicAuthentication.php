@@ -46,7 +46,7 @@ class BasicAuthentication extends AuthMiddleware implements MiddlewareInterface
         // auth
         $credentials = $this->getCredentials($request);
         if ($this->getAuthProvider()->authenticate($credentials) == false) {            
-            return $this->resolveAuthError($request);
+            return $this->handleError($request,$handler);          
         }
 
         return $handler->handle($request);

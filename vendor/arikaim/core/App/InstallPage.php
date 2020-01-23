@@ -25,7 +25,7 @@ class InstallPage extends Controller
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
     */
-    public function loadInstallPage($request, $response, $data)
+    public function loadInstall($request, $response, $data)
     {
         $this->get('cache')->clear();   
 
@@ -35,7 +35,7 @@ class InstallPage extends Controller
         }
 
         if (Install::isInstalled() == false) { 
-            return $this->loadPage($request,$response,['page_name' => 'system:install']);                   
+            return $this->pageLoad($request,$response,['page_name' => 'system:install']);                   
         }
         $this->get('errors')->addError('INSTALLED_ERROR');
         

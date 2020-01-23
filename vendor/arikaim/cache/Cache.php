@@ -198,6 +198,7 @@ class Cache implements CacheInterface
     public function clear()
     {
         $this->driver->deleteAll();
+     
         return File::deleteDirectory($this->cacheDir);
     }
 

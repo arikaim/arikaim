@@ -32,7 +32,8 @@ class Component extends ApiController
             return $this->withError('Not valid component nane.')->getResponse();  
         }
         if ($component->hasError() == true) {
-            return $this->withError($component->getError())->getResponse();  
+            $error = $component->getError();           
+            return $this->withError($this->get('errors')->getError($error['code'],$error['params']))->getResponse();  
         }
         // deny requets 
         if ($component->getOption('access/deny-request') == true) {
@@ -105,7 +106,7 @@ class Component extends ApiController
         }
         
         if ($component->hasError() == true) {
-            $error = $component->getError();          
+            $error = $component->getError();                               
             return $this->withError($this->get('errors')->getError($error['code'],$error['params']))->getResponse();          
         }
       

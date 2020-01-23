@@ -1,6 +1,6 @@
 {
     "include": {
-        "js": "system:admin.install"
+        "js": "system:install"
     },
     "access": {
         "auth": "session",

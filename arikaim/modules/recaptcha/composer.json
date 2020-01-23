@@ -15,9 +15,6 @@
         "google/recaptcha": "1.2.*"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
         "path": "recaptcha"
     }
 }

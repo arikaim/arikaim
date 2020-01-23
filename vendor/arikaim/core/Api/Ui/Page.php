@@ -29,7 +29,7 @@ class Page extends ApiController
      * @param stringnull $pageName
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function loadPage($request, $response, $data, $pageName = null) 
+    public function loadPageHtml($request, $response, $data, $pageName = null) 
     {        
         $pageName = (empty($pageName) == true) ? $this->resolvePageName($request,$data) : $pageName;
 

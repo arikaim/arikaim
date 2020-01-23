@@ -3,7 +3,6 @@
         "active": "Active",
         "version": "Version",
         "bootable": "Bootable",
-        "packages": "Composer packages",
         "update": "Update",
         "install": "Install",
         "help": "Help",

@@ -4,6 +4,7 @@
     "package-type": "template",
     "version": "1.0.6",
     "repository": "https://github.com/arikaim/blog-template.git",
+    "icon": "blog",
     "include": {            
         "css": [
             "blog.css"
@@ -19,17 +20,11 @@
             "tailwind"
         ]
     },
-    "current": true,
     "default-theme": "default",
     "themes": {           
         "default": {
             "title": "Default",
-            "librayr": "fomantic"                        
+            "library": "fomantic"                        
         }
-    },
-    "routes": [{
-            "path": "/",
-            "page": "page",
-            "name": "Home page"
-    }]
+    }
 }

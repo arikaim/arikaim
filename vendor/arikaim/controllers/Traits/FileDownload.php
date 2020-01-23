@@ -25,15 +25,15 @@ trait FileDownload
     public function downloadFileHeaders($response, $fileName, $stream)
     {
         return $response
-            ->withHeader('Content-Type', 'application/force-download')
-            ->withHeader('Content-Type', 'application/octet-stream')
-            ->withHeader('Content-Type', 'application/download')
-            ->withHeader('Content-Description', 'File Transfer')
-            ->withHeader('Content-Transfer-Encoding', 'binary')
-            ->withHeader('Content-Disposition', 'attachment; filename="' . basename($fileName) . '"')
-            ->withHeader('Expires', '0')
-            ->withHeader('Cache-Control', 'must-revalidate, post-check=0, pre-check=0')
-            ->withHeader('Pragma', 'public')
+            ->withHeader('Content-Type','application/force-download')
+            ->withHeader('Content-Type','application/octet-stream')
+            ->withHeader('Content-Type','application/download')
+            ->withHeader('Content-Description','File Transfer')
+            ->withHeader('Content-Transfer-Encoding','binary')
+            ->withHeader('Content-Disposition','attachment; filename="' . basename($fileName) . '"')
+            ->withHeader('Expires','0')
+            ->withHeader('Cache-Control','must-revalidate, post-check=0, pre-check=0')
+            ->withHeader('Pragma','public')
             ->withBody($stream); 
     }    
 }

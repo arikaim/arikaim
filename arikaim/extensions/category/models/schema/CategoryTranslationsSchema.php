@@ -10,6 +10,7 @@
 namespace Arikaim\Extensions\Category\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
+use Arikaim\Core\Db\Model;
 
 /**
  * Category translations table
@@ -46,5 +47,20 @@ class CategoryTranslationsSchema extends Schema
      */
     public function update($table) 
     {               
+    }
+
+    /**
+     * Insert or update rows in table
+     *
+     * @param Seed $seed
+     * @return void
+     */
+    public function seeds($seed)
+    { 
+        // create blog categories
+        Model::Category('category',function($model) {
+            $items = ['News','Travel','Lifestyle'];                
+            return $model->createFromArray($items,null,'en','blog');           
+        });
     }
 }

@@ -1,17 +1,23 @@
 {% set example_number = example_number|default(100000.254) %}
 {% set id = id|default('number_format') %}
 {% set items = getOption('number.format.items') %}
+
 <div class="ui mini search selection dropdown {{ class }}" id="{{ id }}">   
     <i class="icon table"></i>
     <i class="icon dropdown"></i>   
     {% if selected == "" %}      
     <div class="default text">{{ labels.default }}</div>
     {% else %}
-    <div class="text">{{ example_number|numberFormat(selected) }}  ({{ selected }})</div>
+    <div class="text">{{ example_number|numberFormat(selected) }}</div>
     {% endif %}   
     <div class="menu">   
-        {% for item in items %}
-            <div class="item {{ item.name|ifthen(selected,'active') }}" data-value="{{ item.name }}">{{ example_number|numberFormat(item.name) }}  ({{ item.name }})</div>      
+        {% for key, item in items %}
+            <div class="item {{ item.name|ifthen(selected,'active') }}" data-value="{{ key }}">
+                {{ example_number|numberFormat(key) }}
+                <div class="description">
+                    {{ key }}            
+                </div>
+            </div>      
         {% endfor %}
     </div>
 </div>

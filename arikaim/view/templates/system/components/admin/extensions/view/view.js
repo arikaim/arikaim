@@ -68,7 +68,7 @@ function ExtensionsView() {
                     menu.loadExtensionsMenu();
                     arikaim.ui.form.showMessage({
                         selector: '#message_' + name,
-                        message: message
+                        message: message                       
                     });
                 });               
             },function(error) {
@@ -76,6 +76,7 @@ function ExtensionsView() {
                     selector: '#message_' + name,
                     message: error,
                     class: 'error',
+                    hide: 0,
                     removeClass: 'success'
                 });
             });        
@@ -103,7 +104,13 @@ function ExtensionsView() {
                         menu.loadExtensionsMenu();
                     });                  
                 }).fail(function(error) {
-                    console.log(error);
+                    arikaim.ui.form.showMessage({
+                        selector: '#message_' + name,
+                        message: error,
+                        class: 'error',
+                        hide: 0,
+                        removeClass: 'success'
+                    });
                 });
             });
         });
@@ -124,10 +131,44 @@ function ExtensionsView() {
                     menu.loadExtensionsMenu();
                     arikaim.ui.form.showMessage({
                         selector: '#message_' + name,
-                        message: message
+                        message: message,
+                        class: 'success',
+                        removeClass: 'error',
                     });
                 });
             }).fail(function(error) {
+                arikaim.ui.form.showMessage({
+                    selector: '#message_' + name,
+                    message: error,
+                    class: 'error',
+                    removeClass: 'success',
+                    hide: 0
+                });
+            });
+        });
+
+        arikaim.ui.button('.set-primary',function(element) {  
+            var name = $(element).attr('extension');
+                    
+            return packages.setPrimary(name,'extension',function(result) {
+                var message = result.message;
+                $('.primary-label').remove();
+                $(this).addClass('disabled grey');
+                $('.set-primary').removeClass('disabled grey');
+
+                arikaim.page.loadContent({
+                    id: name,
+                    params: { extension_name: name },
+                    component: 'system:admin.extensions.extension',
+                    replace: true
+                },function(result) {
+                    self.init();
+                    arikaim.ui.form.showMessage({
+                        selector: '#message_' + name,
+                        message: message
+                    });
+                });  
+            },function(error) {
                 arikaim.ui.form.showMessage({
                     selector: '#message_' + name,
                     message: error

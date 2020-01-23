@@ -3,10 +3,14 @@
 ![license: GPL3](https://img.shields.io/badge/License-GPLv3-blue.svg)
    
 
-### Requirements 
+
+#### Requirements 
   * PHP 7.1
 
-### Install
+
+
+#### Install
+
 ```bash
 
 composer require arikaim/logger

@@ -1,10 +1,10 @@
-## Recaptcha Module
+## Arikaim CMS Google Recaptcha Module
 ![1.0.0](https://img.shields.io/github/release/arikaim/recaptcha-module.svg)
 ![GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 
 
-Arikaim CMS recaptcha module
+Arikaim CMS Google recaptcha module
 
 
 
@@ -15,6 +15,7 @@ Arikaim CMS recaptcha module
 
 
 #### Install
+
 ```bash
 
 composer require arikaim/recaptcha-module

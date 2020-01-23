@@ -13,6 +13,7 @@ use Symfony\Component\Console\Application as ConsoleApplication;
 
 use Arikaim\Core\Utils\Factory;
 use Arikaim\Core\Console\ShellCommand;
+use Exception;
 
 /**
  * Console application

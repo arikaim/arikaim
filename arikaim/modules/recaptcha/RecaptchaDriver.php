@@ -95,6 +95,10 @@ class RecaptchaDriver implements DriverInterface,CaptchaInterface
             return false;
         }
         $this->verifyErrors = [];
+        
+        if (empty($captchaResponse) == true) {
+            return false;
+        }
         $response = $this->instance->verify($captchaResponse,$remoteIp);
         if ($response->isSuccess() == true) {
             return true;

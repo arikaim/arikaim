@@ -13,12 +13,10 @@ use Arikaim\Core\Interfaces\SystemErrorInterface;
 use Arikaim\Core\Interfaces\View\HtmlPageInterface;
 use Arikaim\Core\Utils\Text;
 use Arikaim\Core\Collection\Collection;
-use Arikaim\Core\System\Config;
 use Arikaim\Core\System\System;
 use Arikaim\Core\Http\Request;
 use Arikaim\Core\System\Error\PhpError;
 use Arikaim\Core\System\Error\Renderer\ConsoleErrorRenderer;
-use Arikaim\Core\System\Error\Renderer\HtmlPageErrorRenderer;
 use Arikaim\Core\System\Error\Renderer\JsonErrorRenderer;
 
 /**
@@ -32,13 +30,6 @@ class Errors extends Collection implements SystemErrorInterface
     const PAGE_NOT_FOUND         = 'page-not-found';
     const SYSTEM_ERROR_PAGE      = 'system-error';
     const APPLICATION_ERROR_PAGE = 'application-error';
-
-    /**
-     * Prefix
-     *
-     * @var string
-     */
-    private $prefix;
 
     /**
      * Errors
@@ -56,12 +47,15 @@ class Errors extends Collection implements SystemErrorInterface
 
     /**
      * Constructor
+     * 
+     * @param HtmlPageInterface $page
+     * @param array $systemErrors
      */
-    public function __construct(HtmlPageInterface $page) 
+    public function __construct(HtmlPageInterface $page, array $systemErrors) 
     {
         $this->errors = [];
+        $this->data = $systemErrors;
         $this->page = $page;
-        $this->loadErrorsConfig();
     }
 
     /**
@@ -86,13 +80,14 @@ class Errors extends Collection implements SystemErrorInterface
            
         if (System::isConsole() == true) {
             $render = new ConsoleErrorRenderer();
+            return $render->render($errors);  
         } elseif (Request::isJsonContentType($request) == true) {
             $render = new JsonErrorRenderer();
-        } else {
-            $render = new HtmlPageErrorRenderer($this->page);
-        }
+            return $render->render($errors);  
+        } 
 
-        return $render->render($errors);      
+        $output = $this->renderSystemError($errors)->getHtmlCode();   
+        echo $output;        
     }
 
     /**
@@ -164,7 +159,7 @@ class Errors extends Collection implements SystemErrorInterface
         $error = $this->get($errorCode,null);
         $error = (empty($error) == true) ? $this->get($default,null) : $error;
 
-        return (empty($error) == true) ? null : Text::render($this->prefix . $error['message'], $params);      
+        return (empty($error) == true) ? null : Text::render($error['message'], $params);      
     }
 
     /**
@@ -197,18 +192,6 @@ class Errors extends Collection implements SystemErrorInterface
         return "";
     }
     
-    /**
-     * Load error messages file.
-     *
-     * @return void
-     */
-    private function loadErrorsConfig() 
-    {
-        $list = Config::loadJsonConfigFile('errors.json');         
-        $this->data = $list['errors'];
-        $this->prefix = $list['prefix'];   
-    }
-
     /**
      * Resolve error page name
      *
@@ -287,7 +270,22 @@ class Errors extends Collection implements SystemErrorInterface
     public function renderApplicationError($data = [], $language = null, $extension = null)
     {
         $name = $this->resoveErrorPageName(Self::APPLICATION_ERROR_PAGE,$extension);
-      
+        
         return $this->page->render($name,$data,$language);
+    }
+
+    /**
+     * Render system error(s)
+     *
+     * @param array $data
+     * @param string|null $language
+     * @param string|null $extension
+     * @return Component
+     */
+    public function renderSystemError($data = [], $language = null, $extension = null)
+    {
+        $name = $this->resoveErrorPageName(Self::SYSTEM_ERROR_PAGE,$extension);
+            
+        return $this->page->render($name,['errors' => $data],$language);      
     }
 }

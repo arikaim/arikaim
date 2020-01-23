@@ -36,6 +36,17 @@ class Collection implements CollectionInterface, \Countable, \ArrayAccess, \Iter
     }
 
     /**
+     * Create colleciton
+     *
+     * @param array $data
+     * @return Collection
+     */
+    public static function create(array $data)
+    {
+        return new Self($data);
+    } 
+
+    /**
      * Create colection form json file
      *
      * @param string $fileName
@@ -345,6 +356,17 @@ class Collection implements CollectionInterface, \Countable, \ArrayAccess, \Iter
     public function isEmpty($key)
     {
         return (isset($this->data[$key]) == false) ? true : empty($this->data[$key]);      
+    }
+
+    /**
+     * Get collection item
+     *
+     * @param string $key
+     * @return Collection
+     */
+    public function getCollection($key)
+    {
+        return new Self($this->get($key,[]));
     }
 
     /**

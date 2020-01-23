@@ -51,7 +51,7 @@ class Options extends Collection implements OptionsInterface
         $this->adapter = $adapter;
         $this->needReload = true;
         
-        parent::__construct([]);       
+        parent::__construct([]);             
     }
 
     /**
@@ -66,6 +66,7 @@ class Options extends Collection implements OptionsInterface
             $options = $this->adapter->loadOptions();
             is_object($this->cache) ?? $this->cache->save('options',$options,2);
         }
+    
         $this->data = $options;
         $this->needReload = false;
     }
@@ -135,10 +136,12 @@ class Options extends Collection implements OptionsInterface
         if ($this->needReload == true) {
             $this->load();
         }
-
-        $value = (isset($this->data[$key]) == true) ? $this->data[$key] : $this->adapter->read($key,$default);
-
-        return (Utils::isJson($value) == true) ? json_decode($value,true) : $value;       
+        if (isset($this->data[$key]) == false) {
+            $value = $this->adapter->read($key,$default);
+            $this->data[$key] = $value;
+        }
+    
+        return (Utils::isJson($this->data[$key]) == true) ? json_decode($this->data[$key],true) : $this->data[$key];       
     }
 
     /**

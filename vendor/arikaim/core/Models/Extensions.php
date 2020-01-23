@@ -18,6 +18,7 @@ use Arikaim\Core\Db\Traits\Position;
 use Arikaim\Core\Db\Traits\Status;
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\PackageRegistry;
+use Arikaim\Core\Db\Traits\DefaultTrait;
 
 /**
  * Extensions database model
@@ -28,6 +29,7 @@ class Extensions extends Model implements PackageRegistryInterface
         Find,
         Position,
         PackageRegistry,
+        DefaultTrait,
         Status;
 
     /**
@@ -49,6 +51,13 @@ class Extensions extends Model implements PackageRegistryInterface
         'license_key'
     ];
     
+    /**
+     * Primary attribute
+     *
+     * @var string
+     */
+    protected $defaultColumnName = 'primary';
+
     /**
      * Db table name
      *

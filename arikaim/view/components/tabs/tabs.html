@@ -13,8 +13,7 @@
             </div>  
             {% endfor %}   
             {% if menu is not empty %}     
-            <div class="item right floated link {{ item_class|default('tab-item') }}" title="{{ labels.extension }}" id="menu_tab" component="system:admin.extensions.extension.details" extension="{{ menu.extension }}" >
-                {# component(menu.component,{ extension: menu.extension }) #}
+            <div class="item right floated link {{ item_class|default('tab-item') }}" title="{{ labels.extension }}" id="menu_tab" component="system:admin.extensions.extension.details" extension="{{ menu.extension }}" >               
                 <i class="puzzle blue icon"></i>  
             </div>                   
             {% endif %}          

@@ -10,6 +10,7 @@
 namespace Arikaim\Extensions\Category\Models;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Arikaim\Core\Db\Model as DbModel;
 use Arikaim\Extensions\Category\Models\CategoryTranslations;
 
@@ -32,6 +33,7 @@ class Category extends Model
         Position,
         Find,
         Status,
+        UserRelation,
         Translations,
         Tree;
     
@@ -55,6 +57,40 @@ class Category extends Model
      * @var string
      */
     protected $translationModelClass = CategoryTranslations::class;
+
+    /**
+     * Append attributes to serialization
+     *
+     * @var array
+     */
+    protected $appends = [
+        'title'
+    ];
+
+    /**
+     * With relations
+     *
+     * @var array
+     */
+    protected $with = [
+        'translations',
+        'user'
+    ];
+
+    /**
+     * Visible columns
+     *
+     * @var array
+     */
+    protected $visible = [
+        'position',       
+        'status',
+        'parent_id',
+        'branch',
+        'user',
+        'uuid',       
+        'title'
+    ];
 
     /**
      * Fillable attributes
@@ -201,11 +237,11 @@ class Category extends Model
     /**
      * Get translation title
      *
-     * @param string $language
+     * @param string|null $language
      * @param string|null $default
      * @return string|null
      */
-    public function getTranslationTitle($language, $default = null)
+    public function getTranslationTitle($language = null, $default = null)
     {
         $model = $this->translation($language);     
         if ($model == false) {
@@ -213,6 +249,16 @@ class Category extends Model
         } 
         
         return (isset($model->title) == true) ? $model->title : null;
+    }
+
+    /**
+     * Title attribute
+     *
+     * @return string|null
+     */
+    public function getTitleAttribute()
+    {
+        return $this->getTranslationTitle();        
     }
 
     /**
@@ -256,11 +302,11 @@ class Category extends Model
      *
      * @param array $items
      * @param integer|null $parentId
-     * @param string $language
+     * @param string|null $language
      * @param string|null $branch
      * @return array
      */
-    public function createFromArray(array $items, $parentId = null, $language = 'en', $branch = null)
+    public function createFromArray(array $items, $parentId = null, $language = null, $branch = null)
     {
         $result = [];
         foreach ($items as $key => $value) {       
@@ -274,6 +320,31 @@ class Category extends Model
             }
             $result[] = $model->id;            
         }      
+
         return $result;
+    }
+
+    /**
+     * Build category relations query
+     *
+     * @param Model $filterModel
+     * @param string $categorySlug
+     * @return Model
+     */
+    public function relationsQuery($filterModel, $categorySlug)
+    {
+        if (empty($categorySlug) == false) {
+            $categoryTranslations = DbModel::create($this->translationModelClass,'category',function($model) use($categorySlug) {                
+                return $model->findBySlug($categorySlug);           
+            });
+
+            $filterModel = $filterModel->whereHas('categories',function($query) use($categoryTranslations) {
+                $query->where('category_id','=',$categoryTranslations->id);
+            });
+
+            return $filterModel;
+        }
+
+        return $filterModel;
     }
 }

@@ -1,0 +1,20 @@
+<div class="pr-2">
+    <div class="ui stackable divided compact grid">
+        <div class="row bg-gray-200">
+            <div class="fourteen wide column">               
+                <h3 class="pt-1"> 
+                    <i class="icon store blue"></i>                  
+                    {{ labels.title }}
+                </h3>
+            </div>
+            <div class="two wide column right aligned">
+                {# component('system:admin.packages.store.user.menu') #}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="column" id="store_content">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>

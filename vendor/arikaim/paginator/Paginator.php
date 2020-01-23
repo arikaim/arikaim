@@ -176,13 +176,23 @@ class Paginator implements PaginatorInterface
     public function toArray()
     {
         return [
-            'paginator' => [
-                'current_page' => $this->getCurrentPage(),            
-                'last_page'    => $this->getLastPage(),          
-                'per_page'     => $this->getPerPage(),                
-                'total'        => $this->getTotalItems() 
-            ],
-            'rows' => $this->getItems()        
+            'paginator' => $this->getPaginatorData(),
+            'rows'      => $this->getItems()        
+        ];
+    }
+
+    /**
+     * Get paginator data
+     *
+     * @return array
+     */
+    public function getPaginatorData()
+    {
+        return [
+            'current_page' => $this->getCurrentPage(),            
+            'last_page'    => $this->getLastPage(),          
+            'per_page'     => $this->getPerPage(),                
+            'total'        => $this->getTotalItems()                         
         ];
     }
 
@@ -194,7 +204,7 @@ class Paginator implements PaginatorInterface
      * @param integer|null $perPage                         
      * @return PaginatorInterface
      */
-    public static function create($source, $page = 1, $perPage = null)
+    public static function create($source, $page = 1, $perPage = Self::DEFAULT_PER_PAGE)
     {       
         if (is_null($source) == true || empty($source) == true) {
             return new Self();

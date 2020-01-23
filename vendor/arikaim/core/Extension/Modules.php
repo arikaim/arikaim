@@ -14,6 +14,8 @@ use Arikaim\Core\Interfaces\CacheInterface;
 use Arikaim\Core\Utils\Factory;
 use Arikaim\Core\Packages\ModulePackage;
 use Arikaim\Core\Db\Model;
+use Arikaim\Core\Utils\Arrays;
+use Arikaim\Core\Collection\Interfaces\CollectionInterface;
 
 /**
  * Modules service locator

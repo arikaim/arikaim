@@ -1,0 +1,15 @@
+{% component 'components:layout' %}
+    <div class="ui container" id="page_content">
+        <div class="ui very basic segment">   
+            <div class="ui left rail">
+                {{ left_content }}
+            </div>            
+            <div class="mt-10">
+                {{ content }}
+            </div>
+            <div class="ui right rail"> 
+                {{ right_content }}                          
+            </div>
+        </div> 
+    </div>
+{% endcomponent %}

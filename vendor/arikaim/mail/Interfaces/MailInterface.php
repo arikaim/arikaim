@@ -7,7 +7,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-namespace Arikaim\Core\Interfaces\Mail;
+namespace Arikaim\Core\Mail\Interfaces;
 
 /**
  * Mail interface

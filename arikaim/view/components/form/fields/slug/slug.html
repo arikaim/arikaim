@@ -1,0 +1,15 @@
+{% set label = label|default(labels.url) %}
+{% set slug_source = slug_source|default('title') %}
+{% set field_class = field_class|default('basic large label') %}
+{% set show_url = (show_url is not defined) ? true : show_url %}
+{% set url_path = url_path|default('') %}
+{% set slug = slug|default('&nbsp;') %}
+<div class="field {{ class }}">
+    <label>{{ label }}</label>   
+    <div class="ui {{ field_class }}">   
+        {% if show_url == true %}         
+        {{ url(url_path,true) }}   
+        {% endif %}
+        <span id="slug" slug-source="{{ slug_source }}">{{ slug }}</span>                           
+    </div>  
+</div>

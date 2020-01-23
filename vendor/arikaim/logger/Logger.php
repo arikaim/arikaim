@@ -188,7 +188,7 @@ class Logger
      * @param array $context
      * @return boolean
      */
-    public function error($message,$context = [])
+    public function error($message, $context = [])
     {      
         return ($this->enabled == true) ? $this->logger->error($message,$context) : false;      
     }

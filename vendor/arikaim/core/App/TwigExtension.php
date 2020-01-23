@@ -10,9 +10,11 @@
 namespace Arikaim\Core\App;
 
 use Twig\TwigFunction;
+use Twig\TwigFilter;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 
+use Arikaim\Core\View\Html\Page;
 use Arikaim\Core\Interfaces\CacheInterface;
 use Arikaim\Core\Interfaces\Access\AccessInterface;
 use Arikaim\Core\Interfaces\OptionsInterface;
@@ -26,6 +28,9 @@ use Arikaim\Core\System\Composer;
 use Arikaim\Core\System\Update;
 use Arikaim\Core\App\Install;
 use Arikaim\Core\Arikaim;
+use Arikaim\Core\View\Template\Template;
+use Arikaim\Core\Http\Url;
+use Arikaim\Core\App\ArikaimStore;
 
 /**
  *  Template engine functions, filters and tests.
@@ -100,7 +105,11 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
      */
     public function getGlobals() 
     {
-        return [];
+        return [
+            'system_template_name'  => Template::SYSTEM_TEMPLATE_NAME,
+            'domain'                => (defined('DOMAIN') == true) ? DOMAIN : null,
+            'base_url'              => Url::BASE_URL     
+        ];
     }
 
     /**
@@ -119,6 +128,7 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
             new TwigFunction('isMobile',[$this,'isMobile']),
             // paginator
             new TwigFunction('paginate',['Arikaim\\Core\\Paginator\\SessionPaginator','create']),
+            new TwigFunction('paginatorUrl',[$this,'getPaginatorUrl']),
             new TwigFunction('clearPaginator',['Arikaim\\Core\\Paginator\\SessionPaginator','clearPaginator']),            
             new TwigFunction('getPaginator',['Arikaim\\Core\\Paginator\\SessionPaginator','getPaginator']),
             new TwigFunction('getRowsPerPage',['Arikaim\\Core\\Paginator\\SessionPaginator','getRowsPerPage']),
@@ -149,9 +159,10 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
             new TwigFunction('getOption',[$this,'getOption']),
             new TwigFunction('getOptions',[$this,'getOptions']),
             new TwigFunction('csrfToken',[$this,'csrfToken']),                
-            new TwigFunction('fetch',["Arikaim\\Core\\App\\Url",'fetch']),
+            new TwigFunction('fetch',[$this,'fetch']),
             new TwigFunction('extractArray',[$this,'extractArray'],['needs_context' => true]),
-           
+            new TwigFunction('arikaimStore',[$this,'arikaimStore']),
+
             // date and time
             new TwigFunction('getTimeZonesList',["Arikaim\\Core\\Utils\\DateTime",'getTimeZonesList']),
             new TwigFunction('timeInterval',['Arikaim\\Core\\Utils\\TimeInterval','getInterval']),
@@ -165,13 +176,39 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     }
 
     /**
+     * Get paginator url
+     *
+     * @param string $pageUrl
+     * @param integer $page
+     * @param boolean $full
+     * @param boolean $withLanguagePath
+     * @return string
+     */
+    public function getPaginatorUrl($pageUrl, $page, $full = true, $withLanguagePath = false)
+    {
+        $path = (empty($pageUrl) == true) ? $page : $pageUrl . "/$page";
+        
+        return Page::getUrl($path,$full,$withLanguagePath);
+    }
+
+    /**
      * Template engine filters
      *
      * @return array
      */
     public function getFilters() 
     {       
-        return [];
+        return [
+            new TwigFilter('jsonDecode',["Arikaim\\Core\\Utils\\Utils",'jsonDecode']),
+            // date time
+            new TwigFilter('dateFormat',["Arikaim\\Core\\Utils\\DateTime",'dateFormat']),
+            new TwigFilter('dateTimeFormat',["Arikaim\\Core\\Utils\\DateTime",'dateTimeFormat']),
+            new TwigFilter('timeFormat',["Arikaim\\Core\\Utils\\DateTime",'timeFormat']),
+            // numbers
+            new TwigFilter('numberFormat',["Arikaim\\Core\\Utils\\Number",'format']),
+            // files
+            new TwigFilter('fileSize',["Arikaim\\Core\\Utils\\File",'getSizeText'])
+        ];
     }
 
     /**
@@ -192,10 +229,10 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     public function getTokenParsers()
     {
         return [];
-    }
+    }   
 
     /**
-     * Gte accesss
+     * Get accesss
      *
      * @return AccessInterface
      */
@@ -214,6 +251,16 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         $mobile = new Mobile();
 
         return $mobile->isMobile();
+    }
+
+    /**
+     * Create arikaim store instance
+     *
+     * @return ArikaimStore
+     */
+    public function arikaimStore()
+    {
+        return new ArikaimStore();
     }
 
     /**

@@ -13,7 +13,7 @@ use Arikaim\Core\Controllers\ApiController;
 use Arikaim\Core\Utils\Utils;
 
 /**
- * Mailer controller (TOOD message)
+ * Mailer controller
 */
 class Mailer extends ApiController
 {
@@ -42,18 +42,24 @@ class Mailer extends ApiController
         $this->onDataValid(function($data) { 
             
             $user = $this->get('access')->getUser();
-            if (Utils::isEmail($user->email) == false) {
+          
+            if (Utils::isEmail($user['email']) == false) {
                 $this->setError('Control panel user email not valid!');
-                return $this->getResponse();
+                return;
             }       
     
             $result = $this->get('mailer')->create()
-                ->to($user->email,'Admin User')
-                ->from($user->email,'Arikaim CMS')
+                ->to($user['email'],'Admin User')
+                ->from($user['email'],'Arikaim CMS')
                 ->loadComponent('system:admin.emails.test')
                 ->send();
             
-            $this->setResponse($result,'mailer.send','errors.mailer.test');           
+            $this->setResponse($result,'mailer.send',function() {
+                $error = $this->get('mailer')->getErrorMessage();
+                $error = (empty($error) == true) ? 'errors.mailer.send' : $error;
+
+                $this->error($error);
+            });           
         });
         $data->validate();
     }

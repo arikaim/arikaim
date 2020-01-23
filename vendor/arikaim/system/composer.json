@@ -16,16 +16,12 @@
         "psr/http-message": "1.0.*",
         "arikaim/utils": "^1.0.0",
         "arikaim/collection": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
         "arikaim/http": "^1.0.0"
     },
     "autoload": {       
         "psr-4": {
             "Arikaim\\Core\\System\\": ""
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     }
 }

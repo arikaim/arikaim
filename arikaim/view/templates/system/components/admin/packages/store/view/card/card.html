@@ -1,0 +1,71 @@
+{% if type == 'extensions' %}
+    {% set icon = 'puzzle piece' %}
+{% elseif type == 'modules' %}
+    {% set icon = 'plug' %}
+{% elseif type == 'library' %}
+    {% set icon = 'cube' %}
+{% elseif type == 'themes' %}
+    {% set icon = 'browser' %}
+{% endif %}
+<div class="ui raised card min-h-full">
+    <div class="content item"> 
+        <i class="blue icon {{ icon }}"></i>
+        {{ item.title }} 
+        <div class="ui horizontal labels right floated">     
+            {% if item.is_free == true %}   
+            <div class="ui mini basic green label">
+                {{ labels.free }}
+            </div>
+            {% endif %}          
+            {% if item.options_list['private-repository'] != true %}
+                <div class="ui mini basic label">
+                    {{ labels.version }}
+                    <div class="detail package-version" uuid="{{ item.uuid }}" id="version_{{ item.uuid }}" package="{{ item.options_list.repository }}">
+                        {{ item.version }}
+                    </div>
+                </div> 
+                {{  component('components:repository.link',{ 
+                        package: item.options_list.repository,
+                        target: 'repository',
+                        class: 'ui basic right floated icon mini button' 
+                    }) 
+                }}    
+            {% endif %}                             
+        </div>
+    </div>
+    <div class="content">
+        {{ item.options_list.description }}
+    </div>
+    <div class="content">
+        <div class="ui basic label blue {{ installed|ifthen(false,'hidden') }}" id="installed_{{ item.uuid  }}">
+            {{ labels.installed }}
+        </div>    
+        <div class="ui basic label {{ installed|ifthen(false,'hidden') }}">
+            {{ labels.current }}
+            <div class="detail" id="current_{{ item.uuid  }}">
+                {{ current_version }}
+            </div>
+        </div>    
+    </div>
+    <div class="extra content">                       
+        {% if installed == false %}
+        <button 
+            class="ui primary button install-package" 
+            uuid="{{ item.uuid  }}" 
+            package-type="{{ type }}" 
+            package-name="{{ item.options_list.repository }}" 
+            repository-type="{{ item.options_list['repository-type'] }}">
+            {{ labels.install }}
+        </button> 
+        {% else %}      
+        <button 
+            class="ui primary button update-package" 
+            uuid="{{ item.uuid  }}" 
+            package-type="{{ type }}" 
+            package-name="{{ item.options_list['package-name'] }}" 
+            repository-type="{{ item.options_list['repository-type'] }}">
+            {{ labels.update }}
+        </button> 
+        {% endif %}
+    </div>      
+</div>

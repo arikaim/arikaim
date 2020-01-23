@@ -44,7 +44,7 @@ class RoutesSchema extends Schema
         $table->string('template_name')->nullable(true);
         $table->string('page_name')->nullable(true);
         $table->integer('auth')->nullable(true);
-        $table->integer('type')->nullable(false)->default(0);      
+        $table->integer('type')->nullable(false)->default(0);               
         $table->text('options')->nullable(true);
         $table->string('redirect_url')->nullable(true);     
         // indexes           

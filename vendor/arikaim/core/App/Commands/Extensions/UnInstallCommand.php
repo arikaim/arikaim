@@ -51,7 +51,9 @@ class UnInstallCommand extends ConsoleCommand
         }
 
         $result = $package->unInstall();
-     
+        
+        Arikaim::cache()->clear();
+        
         if ($result == false) {
             $this->showError("Can't uninstall extension!");
             return;

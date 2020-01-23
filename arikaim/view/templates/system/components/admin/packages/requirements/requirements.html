@@ -1,0 +1,9 @@
+<div class="{{ class }}">   
+    <h5>{{ labels.title }}</h5> 
+    {% if items.composer is not empty %}       
+    <div class="ml-3">
+        <b>{{ labels.composer }}</b>
+        {{ component('components:list.items',{ items: items.composer, icon:'archive' }) }}
+    </div>           
+    {% endif %}
+</div>

@@ -10,8 +10,9 @@
 namespace Arikaim\Core\System;
 
 use Arikaim\Core\Utils\File;
-use Arikaim\Core\Collection\Collection;
 use Arikaim\Core\Utils\Utils;
+use Arikaim\Core\Collection\Collection;
+use Arikaim\Core\Interfaces\CacheInterface;
 
 /**
  * Config file loader and writer
@@ -35,8 +36,8 @@ class Config extends Collection
     /**
      * Cache
      *
-     * @var array|null
-     */
+     * @var CacheInterface|null
+    */
     private $cache;
 
     /**
@@ -44,7 +45,7 @@ class Config extends Collection
      *
      * @var string
      */
-    private static $configDir;
+    private $configDir;
 
     /**
      * Constructor
@@ -52,19 +53,29 @@ class Config extends Collection
      * @param string $fileName
      * @param array|null $cache
      */
-    public function __construct($fileName = null, $cache = null, $dir) 
+    public function __construct($fileName = null, CacheInterface $cache = null, $dir) 
     {       
         $this->cache = $cache;
         $this->fileName = (empty($fileName) == true) ? 'config.php' : $fileName;
+        $this->configDir = $dir;
         $data = $this->load($this->fileName);   
-        Self::$configDir = $dir;
-
+        
         parent::__construct($data);   
 
         $this->setComment('database settings','db');
         $this->setComment('application settings','settings');
     }
     
+    /**
+     * Get config file name
+     *
+     * @return string
+     */
+    public function getConfigFile()
+    {
+        return $this->configDir . $this->fileName;
+    }
+
     /**
      * Reload config file
      *
@@ -85,22 +96,21 @@ class Config extends Collection
      * @param string $dir
      * @return void
      */
-    public static function setConfigDir($dir) 
+    public function setConfigDir($dir) 
     {
-        Self::$configDir = $dir;
+        $this->configDir = $dir;
     }
 
     /**
      * Read config file
      *
      * @param string $fileName
-     * @return array
+     * @param string $configDir
+     * @return Collection
      */
-    public static function read($fileName) 
+    public static function read($fileName, $configDir) 
     {
-        $instance = new Self(null,null,Self::$configDir);
-
-        return $instance->load($fileName);
+        return new Self($fileName,null,$configDir);      
     }
 
     /**
@@ -119,7 +129,7 @@ class Config extends Collection
             }
         }
       
-        $fullFileName = Self::$configDir . $fileName;
+        $fullFileName = $this->configDir . $fileName;
        
         $result = (File::exists($fullFileName) == true) ? include($fullFileName) : [];    
         if (is_null($this->cache) == false && (empty($result) == false)) {
@@ -258,7 +268,7 @@ class Config extends Collection
             $this->cache->delete(strtolower($fileName));
         }
        
-        $fileName = Self::$configDir . $fileName;
+        $fileName = $this->configDir . $fileName;
 
         if (File::isWritable($fileName) == false) {
             File::setWritable($fileName);
@@ -272,21 +282,13 @@ class Config extends Collection
      * Load json config file
      *
      * @param string $fileName
-     * @param string|null $dir
      * @return array
      */
-    public static function loadJsonConfigFile($fileName = null, $dir = null)
+    public function loadJsonConfigFile($fileName)
     {
-        $dir = (empty($dir) == true) ? Self::$configDir : $dir;
-        $data = File::readJsonFile($dir . $fileName);
-        $data = (is_array($data) == true) ? $data : [];
-
-        $items = new Collection($data);
-        $items->addField("status",1);
-        $items->addField("order",0);
-        $items->addField("default",0);
-
-        return $items->toArray();
+        $data = File::readJsonFile($this->configDir . $fileName);
+        
+        return (is_array($data) == true) ? $data : [];
     }
 
     /**

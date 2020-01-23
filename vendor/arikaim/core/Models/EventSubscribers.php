@@ -12,10 +12,12 @@ namespace Arikaim\Core\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use Arikaim\Core\Interfaces\Events\SubscriberRegistryInterface;
+use Arikaim\Core\Utils\Factory;
+use Arikaim\Core\Utils\Uuid as UuidFactory;
+
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\Status;
-use Arikaim\Core\Utils\Factory;
 
 /**
  * EventSubscribers database model
@@ -32,6 +34,7 @@ class EventSubscribers extends Model implements SubscriberRegistryInterface
      * @var array
      */
     protected $fillable = [
+        'uuid',
         'name',
         'handler_class',
         'handler_method',
@@ -130,6 +133,7 @@ class EventSubscribers extends Model implements SubscriberRegistryInterface
             return false;
         }
         $subscriber = [
+            'uuid'           => UuidFactory::create(),
             'name'           => $eventName,
             'priority'       => (empty($priority) == true) ? 0 : $priority, 
             'extension_name' => $extension,

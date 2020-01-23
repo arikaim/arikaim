@@ -56,7 +56,11 @@ class DisableCommand extends ConsoleCommand
             $this->showError("Extension $name not installed!");
             return;
         }
+        
         $result = $manager->disablePackage($name);
+        
+        Arikaim::cache()->clear();
+
         if ($result == false) {
             $this->showError("Can't disable extension!");
             return;

@@ -28,6 +28,6 @@ class JsonErrorRenderer implements ErrorRendererInterface
         $response = new ApiResponse();
         $response->setError($errorDetails['message']);
         
-        echo $response->getResponseJson();
+        return $response->getResponseJson();
     }
 }

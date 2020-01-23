@@ -16,6 +16,7 @@ use Arikaim\Core\Db\Schema;
 use Arikaim\Core\Db\Model as DbModel;
 use Arikaim\Core\Arikaim;
 use Arikaim\Core\Models\Permissions;
+use Arikaim\Core\Utils\Uuid as UuidFactory;
 
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
@@ -125,29 +126,33 @@ class PermissionRelations extends Model implements PermissionsInterface
      * Get user permission
      *
      * @param string $name
-     * @param integer|null $id
+     * @param integer|string $userId
      * @return Model|false
      */
-    public function getUserPermission($name, $id = null)
+    public function getUserPermission($name, $userId)
     {
-        if (is_string($id) == true) {
-            $model = DbModel::Users()->findById($id);
-            $id = (is_object($model) == true) ? $model->id : null; 
+        if (is_string($userId) == true) {
+            $model = DbModel::Users()->findById($userId);
+            $userId = (is_object($model) == true) ? $model->id : null; 
+        }
+        if (empty($userId) == true) {
+            return false;
         }
         // check for user permiission
-        $permission = $this->getPermission($name,$id,Self::USER);
+        $permission = $this->getPermission($name,$userId,Self::USER);
         if (is_object($permission) == true) {
             return $permission;
         }
 
         // check groups
-        $groupList = DbModel::UserGroups()->getUserGroups($id);
+        $groupList = DbModel::UserGroups()->getUserGroups($userId);
         foreach ($groupList as $group) {
             $permission = $this->getGroupPermission($name,$group->id);
             if (is_object($permission) == true) {
                 return $permission;
             }
         }
+
         return false;
     }
 
@@ -172,19 +177,24 @@ class PermissionRelations extends Model implements PermissionsInterface
      * Return permission for user or group
      *
      * @param string|integer $name
-     * @param integer|null $id
+     * @param integer|string $id
      * @param integer $type
      * @return Model|bool
      */
-    public function getPermission($name, $id = null, $type = Self::USER)
+    public function getPermission($name, $id, $type = Self::USER)
     {
         if (Schema::hasTable($this) == false) {          
             return false;
         }
-        $id = ($id == null && $type == Self::USER) ? Arikaim::access()->getId() : $id;
+        if (empty($id) == true) {
+            return false;
+        }
+       
         $permissionId = (is_string($name) == true) ? DbModel::Permissions()->getId($name) : $name;
 
-        $query = $this->getRelationsQuery($permissionId,$type);
+        $query = $this->getRelationsQuery($id,$type);
+        $query = $query->where('permission_id','=',$permissionId);
+
         $model = $query->first();
 
         return (is_object($model) == true) ? $model : false;           
@@ -207,7 +217,8 @@ class PermissionRelations extends Model implements PermissionsInterface
         if (empty($relationId) == true) {
             return false;
         }
-        $model = $this->saveRelation($id, $type, $relationId);
+        $model = $this->saveRelation($id,$type,$relationId);
+        
         $result = (is_object($model) == true) ? $model->update($permissions) : false;        
 
         return $result;
@@ -242,11 +253,12 @@ class PermissionRelations extends Model implements PermissionsInterface
         if (is_array($permissions) == false || count($permissions) == 0) {
             return false;
         } 
+      
         $model = $this->getUserPermission($name,$id);       
         if (is_object($model) == false) {
             return false;
         }
-    
+        
         foreach ($permissions as $permission) {               
             if ($model->hasPermission($permission) == false) {              
                 return false;
@@ -273,6 +285,7 @@ class PermissionRelations extends Model implements PermissionsInterface
             return false;
         }
         $item = [
+            'uuid'           => UuidFactory::create(),
             'name'           => $name,
             'extension_name' => $extension,
             'title'          => $title,

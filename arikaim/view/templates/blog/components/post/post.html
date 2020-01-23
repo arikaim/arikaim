@@ -3,8 +3,8 @@
         <div class="content">                 
             {{ post.title }}
             <div class="sub header">
-                <span class="ui text small">{{ labels.published }}</span>
-                <span class="ui text small bold">{{ post.date_created|dateTimeFormat }}</span>
+                <span class="ui text small">{{ labels.published }}</span>    
+                <span class="ui text small bold">{{ post.date_created|dateFormat('full') }}</span>             
             </div>
         </div>
     </h2>

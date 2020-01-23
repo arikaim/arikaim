@@ -13,7 +13,6 @@ use Arikaim\Core\Controllers\ApiController;
 use Arikaim\Core\Packages\PackageManager;
 use Arikaim\Core\Db\Model;
 use Arikaim\Core\View\Theme;
-use Arikaim\Core\View\Template\Template;
 
 /**
  * Packages controller
@@ -37,12 +36,51 @@ class Packages extends ApiController
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
-     */
+    */
     public function repositoryInstallController($request, $response, $data)
     {
         $this->requireControlPanelPermission();
+        
+        $this->onDataValid(function($data) {  
+            $this->get('cache')->clear();
+            $type = $data->get('type',null);
+            $package = $data->get('package',null);
+            $reposioryType = $data->get('repository_type',null);
 
-        $this->onDataValid(function($data) {            
+            $packageManager = $this->get('packages')->create($type);
+            $repositoryUrl = PackageManager::createRepositoryUrl($package,$reposioryType);
+            $repository = $packageManager->createRepository($repositoryUrl);
+
+            $this->get('cache')->clear();
+
+            $result = (is_object($repository) == true) ? $repository->install() : false;
+
+            $this->setResponse($result,function() use($package,$type) {            
+                $this
+                    ->message($type . '.install')
+                    ->field('type',$type)   
+                    ->field('name',$package);                  
+            },'errors.' . $type . '.install');
+
+        });
+        $data->validate();       
+    }
+
+    /**
+     * Dowload and update package from repository
+     *
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
+     * @param Validator $data
+     * @return Psr\Http\Message\ResponseInterface
+     */
+    public function repositoryUpdateController($request, $response, $data)
+    {
+        $this->requireControlPanelPermission();
+
+        $this->onDataValid(function($data) {  
+            $this->get('cache')->clear();
+
             $type = $data->get('type',null);
             $name = $data->get('package',null);
             $packageManager = $this->get('packages')->create($type);
@@ -55,14 +93,18 @@ class Packages extends ApiController
             $repository = $packageManager->getRepository($name);
             $result = (is_object($repository) == true) ? $repository->install() : false;
             
-            $this->setResponse($result,function() use($name,$type) {  
-                // clear cache    
-                $this->get('cache')->clear();            
+            $package = $packageManager->createPackage($name);
+            $version = (is_object($package) == true) ? $package->getVersion() : null;
+
+            $this->get('cache')->clear();
+            
+            $this->setResponse($result,function() use($name,$type,$version) {            
                 $this
-                    ->message($type . '.install')
-                    ->field('type',$type)   
+                    ->message($type . '.update')
+                    ->field('type',$type) 
+                    ->field('type',$version)   
                     ->field('name',$name);                  
-            },'errors.' . $type . '.install');
+            },'errors.' . $type . '.update');
         });
         $data->validate();       
     }
@@ -80,11 +122,18 @@ class Packages extends ApiController
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) { 
+            $this->get('cache')->clear();
+
             $type = $data->get('type',null);
             $name = $data->get('name',null);
 
             $packageManager = $this->get('packages')->create($type);
             $result = $packageManager->unInstallPackage($name);
+
+            if (is_array($result) == true) {
+                $this->addErrors($result);
+                return;
+            }
 
             $this->setResponse($result,function() use($name,$type) {                  
                 $this
@@ -109,11 +158,18 @@ class Packages extends ApiController
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) { 
+            $this->get('cache')->clear();
+          
             $type = $data->get('type',null);
             $name = $data->get('name',null);
 
             $packageManager = $this->get('packages')->create($type);
             $result = $packageManager->installPackage($name);
+
+            if (is_array($result) == true) {
+                $this->addErrors($result);
+                return;
+            }
 
             $this->setResponse($result,function() use($name,$type) {                  
                 $this
@@ -138,15 +194,30 @@ class Packages extends ApiController
         $this->requireControlPanelPermission();
 
         $this->onDataValid(function($data) {  
+            $this->get('cache')->clear();
+
             $type = $data->get('type',null);
             $name = $data->get('name',null);
 
             $packageManager = $this->get('packages')->create($type);            
             $package = $packageManager->createPackage($name);
+            $properties = $package->getProperties();
+            $primary = $properties->get('primary',false);
 
-            $package->unInstall();
-            $result = $package->install();
-
+            $package->unInstall();    
+            
+            $this->get('cache')->clear();
+           
+            $result = $package->install($primary);
+            if ($primary == true) { 
+                $package->setPrimary($primary);
+            }
+            
+            if (is_array($result) == true) {
+                $this->addErrors($result);
+                return;
+            }
+        
             $this->setResponse($result,function() use($name,$type) {
                 $this
                     ->message($type . '.update')
@@ -169,7 +240,9 @@ class Packages extends ApiController
     {
         $this->requireControlPanelPermission();
         
-        $this->onDataValid(function($data) {     
+        $this->onDataValid(function($data) {   
+            $this->get('cache')->clear();
+
             $type = $data->get('type',null);
             $name = $data->get('name',null);
             $status = $data->get('status',1);
@@ -202,11 +275,13 @@ class Packages extends ApiController
     {
         $this->requireControlPanelPermission();
 
-        $this->onDataValid(function($data) {            
+        $this->onDataValid(function($data) {    
+            $this->get('cache')->clear();
+
             $module = Model::Modules()->FindByColumn('name',$data['name']);
             $module->config = $data->toArray();
             $result = $module->save();
-
+            
             $this->setResponse($result,'module.config','errors.module.config');
         });
         $data->validate();       
@@ -227,7 +302,7 @@ class Packages extends ApiController
             
         $this->onDataValid(function($data) {
             $themeName = $data->get('theme_name');
-            $templateName = $data->get('template_name',Template::getTemplateName());          
+            $templateName = $data->get('template_name',null);          
             Theme::setCurrentTheme($themeName,$templateName);
          
             $this
@@ -235,41 +310,40 @@ class Packages extends ApiController
                 ->field('theme',$themeName)
                 ->field('template',$templateName);
         });
-        $data->validate();
+        $data
+            ->addRule("text:min=2|required","template_name")
+            ->validate();
     }
 
     /**
-     * Set current template
+     * Set primary package
      *
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param Validator $data
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function setCurrentController($request, $response, $data)
+    public function setPrimaryController($request, $response, $data)
     {       
         // access from contorl panel only 
         $this->requireControlPanelPermission();
         
         $this->onDataValid(function($data) { 
+            $this->get('cache')->clear();
+
             $name = $data['name'];
-            $current = Template::getTemplateName();
-            $packageManager = $this->get('packages')->create('template');            
+            $type = $data->get('type','template');
 
-            // uninstall current template routes 
-            $package = $packageManager->createPackage($current);
-            $result = $package->unInstall();
+            $packageManager = $this->get('packages')->create($type);            
           
-            // install new template routes
             $package = $packageManager->createPackage($name);
-            $result = $package->install($name);
+            $result = $package->setPrimary($name);
 
-            $this->setResponse($result,function() use($name) {         
-                Template::setTemplateName($name);      
+            $this->setResponse($result,function() use($name,$type) {         
                 $this
-                    ->message('template.current')
+                    ->message($type . '.primary')
                     ->field('name',$name);         
-            },'errors.template.current'); 
+            },'errors.' . $type . '.primary'); 
         });
         $data->validate();            
     }
@@ -307,6 +381,5 @@ class Packages extends ApiController
             },'errors.library.params'); 
         });
         $data->validate();            
-        
     }
 }

@@ -41,6 +41,7 @@ class Language extends Model
      * @var array
     */
     protected $fillable = [
+        'uuid',
         'code',
         'title',
         'native_title',

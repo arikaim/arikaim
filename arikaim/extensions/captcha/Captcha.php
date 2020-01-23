@@ -19,13 +19,11 @@ class Captcha extends Extension
     /**
      * Install extension routes, events, jobs
      *
-     * @return boolean
+     * @return void
     */
     public function install()
     {        
         // current captcha driver
-        $this->createOption('captcha.current','recaptcha');
-
-        return true;
+        $this->createOption('captcha.current','recaptcha');      
     }   
 }

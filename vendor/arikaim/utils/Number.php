@@ -23,15 +23,20 @@ class Number
 
     /**
      * Default format values
-     *
-     * @var array
+     *   
      */
-    protected static $defaultFormat = [
-        'title'               => 'Default',
+    const DEFAULT_FORMAT = [      
         'decimals'            => 2,
         'decimals_separator'  => ".",
         'thousands_separator' => ","
     ]; 
+
+    /**
+     * Number format
+     *
+     * @var array
+     */
+    private static $format;
 
     /**
      * Format number
@@ -42,7 +47,7 @@ class Number
      */
     public static function format($number, $formatName = null)
     {
-        $format = Self::resolveFormat($formatName);
+        $format = Self::getFormat($formatName);
 
         return number_format($number,$format['decimals'],$format['decimals_separator'],$format['thousands_separator']);
     }
@@ -78,8 +83,19 @@ class Number
         Self::$formats = $items;
 
         if (empty($default) == false) {
-            Self::$defaultFormat = $default;
+            Self::setFormat($default);
         }
+    }
+
+    /**
+     * Set number format
+     *
+     * @param mixed $format
+     * @return void
+     */
+    public static function setFormat($format)
+    {      
+        Self::$format = Self::resolveFormat($format);
     }
 
     /**
@@ -91,7 +107,7 @@ class Number
     public static function getFormat($name = null)
     {
         if (empty($name) == true) {
-            return Self::$defaultFormat;
+            return (empty(Self::$format) == true) ? Self::DEFAULT_FORMAT : Self::$format;
         } 
 
         return (isset(Self::$formats[$name]) == true) ? Self::$formats[$name] : Self::$defaultFormat;          

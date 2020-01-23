@@ -3,30 +3,37 @@
 {% endif %}
 {% set show_requires = show_requires|default(false) %}
 {% set show_buttons = show_buttons|default(true) %}
-
+{% set primary_template = getOption('primary.template') %}
 <div class="ui card raised {{ class }} " id="{{ template_name }}">    
-    <div class="content">  
-        <h4 class="header divider">
-            {% if template.name == current_template_name %}
-            <div class="ui left corner olive mini label current-template" title="{{ labels.current }}" >
-                <i class="icon checkmark"></i>
-            </div>     
-            {% endif %} 
+    <div class="content item">              
+        <div class="font-bold mt-1 pl-1">
+            {% if template.icon is not empty %}
+            <i class="icon blue {{ template.icon }}"></i>
+            {% endif %}   
+            {{ template.title }}           
             {% if template.name == system_template_name %}
-                <div class="ui left ribbon blue mini label">{{ labels.system }}</div>                
+            <div class="ui horizontal right floated mini label blue">  
+                {{ labels.system }}  
+            </div>
             {% endif %}
-            <span class="ml-1">{{ template.title }}</span>
+            {% if template.name == primary_template %}
+            <div class="ui horizontal right floated mini label green primary-label">  
+                {{ labels.primary }}  
+            </div>
+            {% endif %}
             <div class="ui horizontal basic right floated mini label">               
                 {{ labels.version }} 
                 <div class="detail">{{ template.version }}</div>
-            </div>    
-        </h4>      
+            </div>               
+        </div>
     </div>
     <div class="content">      
         {{ component('system:admin.templates.template.image',{ src: template.image.src }) }}                            
     </div>                   
-    <div class="extra content">&nbsp;
-        {{ template.description }}
+    <div class="extra content">
+        <p class="text-black">
+            {{ template.description }}
+        </p>                
     </div>
     <div class="p-2">
         <div class="ui success mini message opacity-0 m-2" id="message_{{ template.name }}"></div>
@@ -40,11 +47,20 @@
     <div class="extra content">
         <div class="ui mini fluid buttons">                              
             {% if template.name != system_template_name %}
-                {% set hide_current = (template.name != current_template_name) ? 'olive' : 'disabled grey' %}  
-                <button class="ui button basic set-current-button {{ hide_current }}" template="{{ template.name }}">{{ buttons.current.content }}</button>             
-                <button class="ui button basic update-button" template="{{ template.name }}">{{ buttons.update.content }}</button>
+                <button class="ui button basic olive update-button" template="{{ template.name }}">
+                    <i class="icon refresh"></i>
+                    {{ buttons.update.content }}
+                </button>
+                {% set disabled = (template.name == primary_template) ? 'disabled' : '' %}                 
+                <button class="ui button basic set-primary {{ disabled }}" template="{{ template.name }}">
+                    <i class="icon angle double up"></i>      
+                    {{ buttons.primary.content }}
+                </button>                                     
             {% endif %}    
-            <button class="ui button basic details-button" template="{{ template.name }}">{{ buttons.details.content }}</button>
+            <button class="ui button basic details-button" template="{{ template.name }}">
+                <i class="icon list layout"></i>
+                {{ buttons.details.content }}
+            </button>
         </div>
     </div>
     {% endif %}

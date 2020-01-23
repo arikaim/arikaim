@@ -17,6 +17,7 @@ use Arikaim\Core\Collection\Collection;
 use Arikaim\Core\Collection\Arrays;
 use Arikaim\Core\View\Html\PageHead;
 use Arikaim\Core\View\Theme;
+use Arikaim\Core\View\Html\ResourceLocator;
 use Arikaim\Core\Utils\File;
 use Arikaim\Core\Utils\Utils;
 use Arikaim\Core\Utils\Text;
@@ -94,19 +95,32 @@ class Page extends Component implements HtmlPageInterface
      */
     public function load($response, $name, $params = [], $language = null)
     {
-        if (empty($name) == true || $this->has($name) == false) {         
+        $html = $this->getHtmlCode($name,$params,$language);
+        $response->getBody()->write($html);
+
+        return $response;
+    }
+
+    /**
+     * Get page html code
+     *
+     * @param string $name
+     * @param array $params
+     * @param string|null $language
+     * @return string
+     */
+    public function getHtmlCode($name, $params = [], $language = null)
+    {
+        if (empty($name) == true) {         
             return false;     
         }
         if (is_object($params) == true) {
             $params = $params->toArray();
         }
-      
-        $component = $this->render($name,$params,$language);  
-        $html = $component->getHtmlCode();
-        $response->getBody()->write($html);
-
-        return $response;
-    }
+        $component = $this->render($name,$params,$language);
+           
+        return $component->getHtmlCode();
+    }   
 
     /**
      * Render page
@@ -117,7 +131,7 @@ class Page extends Component implements HtmlPageInterface
      * @return ComponentDataInterface
     */
     public function render($name, $params = [], $language = null)
-    {
+    { 
         $this->setCurrent($name);
         $component = $this->createComponentData($name,$language);
         $params['component_url'] = $component->getUrl();
@@ -147,12 +161,7 @@ class Page extends Component implements HtmlPageInterface
             } 
             return $component->getTemplateName() . DIRECTORY_SEPARATOR . $component->getBasePath() . DIRECTORY_SEPARATOR . "index.html";            
         }
-        // get from current template  
-        $fullPath = ComponentData::getTemplatePath(Template::getTemplateName(),ComponentData::TEMPLATE_COMPONENT,$this->view->getViewPath(),$this->view->getExtensionsPath()) . $component->getBasePath() . DIRECTORY_SEPARATOR . "index.html";      
-        if (file_exists($fullPath) == true) {          
-            return Template::getTemplateName() . DIRECTORY_SEPARATOR . $component->getBasePath() . DIRECTORY_SEPARATOR . "index.html";
-        }
-
+    
         // get from system template
         return Template::SYSTEM_TEMPLATE_NAME . DIRECTORY_SEPARATOR . $component->getBasePath() . DIRECTORY_SEPARATOR . "index.html";          
     }
@@ -330,10 +339,12 @@ class Page extends Component implements HtmlPageInterface
         $this->view->properties()->set('template.files',$files);
         // include ui lib files                
         $this->includeLibraryFiles($files['library']);  
-        // include theme files         
-        $templateName = (empty($files['template']) == true) ? Template::getTemplateName() : $files['template'];
-        $this->includeThemeFiles($templateName);  
       
+        // include template files               
+        if (empty($files['template']) == false) {
+            $this->includeThemeFiles($files['template']);  
+        }
+       
         return true;
     }
 
@@ -372,7 +383,7 @@ class Page extends Component implements HtmlPageInterface
      *
      * @param Component $component
      * @return array
-     */
+    */
     public function getPageIncludeOptions($component)
     {
         // from cache 
@@ -391,13 +402,13 @@ class Page extends Component implements HtmlPageInterface
             $options = Arrays::setDefault($options,'css',[]);   
 
             $url = Url::getExtensionViewUrl($component->getTemplateName());
-
-            $options['js'] = array_map(function($value) use($url) {
+           
+            $options['js'] = array_map(function($value) use($url) {              
                 return $url . "/js/" . $value; 
             },$options['js']);
     
             $options['css'] = array_map(function($value) use($url) {
-                return $url . "/css/" . $value; 
+                return $url . "/css/" . $value;
             },$options['css']);
 
             if (empty($options['template']) == false) {
@@ -413,8 +424,8 @@ class Page extends Component implements HtmlPageInterface
             return $options;
         }
 
-        // from current template 
-        return $this->getTemplateIncludeOptions();
+        // from component template 
+        return $this->getTemplateIncludeOptions($component->getTemplateName());
     }
 
     /**
@@ -442,28 +453,26 @@ class Page extends Component implements HtmlPageInterface
     /**
      * Get template include options
      *
-     * @param string $name
+     * @param string $templateName
      * @return array
      */
-    public function getTemplateIncludeOptions($name = null)
+    public function getTemplateIncludeOptions($templateName)
     {
-        $name = ($name == null) ? Template::getTemplateName() : $name;
-    
-        $templateOptions = $this->packageFactroy->createPackage('template',$name)->getProperties();
+        $templateOptions = $this->packageFactroy->createPackage('template',$templateName)->getProperties();
 
         $options = $templateOptions->getByPath("include",[]);
     
         $options = Arrays::setDefault($options,'js',[]);  
         $options = Arrays::setDefault($options,'css',[]);   
 
-        $url = Url::getTemplateUrl($name);    
+        $url = Url::getTemplateUrl($templateName);    
       
         $options['js'] = array_map(function($value) use($url) {
             return $url . "/js/" . $value; 
         },$options['js']);
 
         $options['css'] = array_map(function($value) use($url) {
-            return $url . "/css/" . $value; 
+            return ResourceLocator::getResourceUrl($value,$url . "/css/" . $value);         
         },$options['css']);
       
         return $options;
@@ -483,7 +492,7 @@ class Page extends Component implements HtmlPageInterface
         foreach ($libraryList as $libraryName) {
             $library = $this->packageFactroy->createPackage('library',$libraryName);
             $files = $library->getFiles();       
-            $params = $this->resolveLibraryParams($library->getParams());
+            $params = $library->resolveParams();
 
             foreach($files as $file) {
                 $libraryFile = $this->view->getViewPath() . 'library' . DIRECTORY_SEPARATOR . $libraryName . DIRECTORY_SEPARATOR . $file;
@@ -507,22 +516,6 @@ class Page extends Component implements HtmlPageInterface
         Session::set("ui.included.frameworks",json_encode($frameworks));
 
         return true;
-    }
-
-    /**
-     * Resolev library params
-     *
-     * @param array $params
-     * @return array
-     */
-    protected function resolveLibraryParams(array $params)
-    {      
-        $vars = [
-            'domian'    => DOMAIN,
-            'base_url'  => Url::BASE_URL
-        ];
-
-        return Text::renderMultiple($params,$vars);    
     }
 
     /**

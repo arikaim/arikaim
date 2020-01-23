@@ -7,8 +7,7 @@
             "jquery",
             "arikaim",
             "arikaim-ui",
-            "fomantic",
-            "filepond",
+            "fomantic",            
             "tailwind"
         ],
         "loader": "components:loader.dimmer"

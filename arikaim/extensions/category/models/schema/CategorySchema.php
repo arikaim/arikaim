@@ -23,7 +23,7 @@ class CategorySchema extends Schema
      */
     protected $tableName = "category";
 
-   /**
+    /**
      * Create table
      *
      * @param \Arikaim\Core\Db\TableBlueprint $table
@@ -33,14 +33,12 @@ class CategorySchema extends Schema
     {            
         // columns    
         $table->id();
-        $table->bigInteger('parent_id')->unsigned()->nullable(true);  
+        $table->parentId();
         $table->prototype('uuid');       
-        $table->status();
-        $table->position();
         $table->string('branch')->nullable(true);
-        $table->userId();
-        // foreign keys
-        $table->foreign('parent_id')->references('id')->on('category')->onDelete('cascade');  
+        $table->status();
+        $table->position();      
+        $table->userId();       
         // index
         $table->index('branch');
     }
@@ -52,8 +50,6 @@ class CategorySchema extends Schema
      * @return void
      */
     public function update($table) 
-    {   
-        $table->string('branch')->nullable(true);   
-        $table->index('branch');        
+    {       
     }
 }
