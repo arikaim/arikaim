@@ -1,9 +1,0 @@
-{% set button_title = button_title|default(buttons.save.content) %}
-{% set button_hint = button_title|default(buttons.save.title) %}
-{% set button_class = button_class|default('button green') %}
-{% set class = class|default('mt-8') %}
-<div class="{{ class }}">
-    <button class="ui submit-button {{ button_class }}" title="{{ button_hint }}">{{ button_title }}</button>    
-    <div class="ui error message errors hidden mt-2"></div> 
-    <div class="ui success message hidden mt-2" id="message"></div>  
-</div>
