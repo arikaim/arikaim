@@ -310,9 +310,16 @@ class Extension extends AbstractExtension implements GlobalsInterface
         return $this->page->getComponentsFiles();        
     }
 
+    /**
+     * Get component properties
+     *
+     * @param string $name
+     * @param string|null $language
+     * @return array
+     */
     public function getProperties($name, $language = null)
     {
-        return $this->page->createHtmlComponent($name,null,$language)->getProperties();
+        return $this->page->createHtmlComponent($name,null,$language)->getProperties()->toArray();
     }
 
     /**

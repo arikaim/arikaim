@@ -115,7 +115,7 @@ class HtmlComponent extends Component implements HtmlComponentInterface
     /**
      * Get properties
      *    
-     * @return Properties|null
+     * @return Collection|null
      */
     public function getProperties()
     {             

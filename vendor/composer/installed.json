@@ -1828,28 +1828,28 @@
     },
     {
         "name": "arikaim/ui-components",
-        "version": "1.0.10",
-        "version_normalized": "1.0.10.0",
+        "version": "1.0.11",
+        "version_normalized": "1.0.11.0",
         "source": {
             "type": "git",
             "url": "https://github.com/arikaim/ui-components.git",
-            "reference": "500ba8d399599048e2f65b9a252c8bc893c7c188"
+            "reference": "49830438987b2a7799c1d71f0a3da1118517aaea"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/arikaim/ui-components/zipball/500ba8d399599048e2f65b9a252c8bc893c7c188",
-            "reference": "500ba8d399599048e2f65b9a252c8bc893c7c188",
+            "url": "https://api.github.com/repos/arikaim/ui-components/zipball/49830438987b2a7799c1d71f0a3da1118517aaea",
+            "reference": "49830438987b2a7799c1d71f0a3da1118517aaea",
             "shasum": ""
         },
         "require": {
             "arikaim/installer": "*"
         },
-        "time": "2020-01-22T11:15:44+00:00",
+        "time": "2020-01-27T14:35:49+00:00",
         "type": "arikaim-component",
         "extra": {
             "path": ""
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "GPL-3.0-or-later"
@@ -1962,17 +1962,17 @@
     },
     {
         "name": "arikaim/view",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/arikaim/view.git",
-            "reference": "8f123cb0beb76558cd82d3cb1066d9c9f7d496c2"
+            "reference": "c64c5f8e5265c2cc71284daf9a47c117f55480e7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/arikaim/view/zipball/8f123cb0beb76558cd82d3cb1066d9c9f7d496c2",
-            "reference": "8f123cb0beb76558cd82d3cb1066d9c9f7d496c2",
+            "url": "https://api.github.com/repos/arikaim/view/zipball/c64c5f8e5265c2cc71284daf9a47c117f55480e7",
+            "reference": "c64c5f8e5265c2cc71284daf9a47c117f55480e7",
             "shasum": ""
         },
         "require": {
@@ -1984,7 +1984,7 @@
             "php": ">=7.1",
             "twig/twig": "2.7.*"
         },
-        "time": "2020-01-22T15:05:49+00:00",
+        "time": "2020-01-26T10:58:13+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
