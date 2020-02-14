@@ -8,8 +8,7 @@
  * @license     http://www.arikaim.com/license
  * 
 */
-
-define('ARIKAIM_ROOT_PATH',__DIR__);
+define('ROOT_PATH',__DIR__);
 
 include_once "vendor/autoload.php";
 
