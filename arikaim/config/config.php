@@ -13,7 +13,7 @@ return [
 		'debugTrace'		=> true,
 		'jwt_key'			=> "jwt_key_1",
 		'defaultLanguage'	=> "en",
-		'cache'				=> true
+		'cache'				=> false
 	],
 	// database settings
 	'db' => [
