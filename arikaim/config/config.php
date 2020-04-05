@@ -24,6 +24,7 @@ return [
 		'host'			=> "localhost",
 		'charset'		=> "utf8",
 		'collation'		=> "utf8_bin",
-		'prefix'		=> ""
+        'prefix'		=> "",
+        'engine'        => "InnoDB ROW_FORMAT=DYNAMIC"
 	] 
 ];
