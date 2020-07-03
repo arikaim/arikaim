@@ -13,7 +13,8 @@ return [
 		'debugTrace'		=> true,
 		'jwt_key'			=> "jwt_key_1",
 		'defaultLanguage'	=> "en",
-		'cache'				=> false
+        'cache'				=> false,
+        'CacheControl'      => 'max-age=3600,public'
 	],
 	// database settings
 	'db' => [
