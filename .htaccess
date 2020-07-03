@@ -20,7 +20,7 @@ RewriteRule \.php$ - [F]
 php_value upload_max_filesize 50M
 php_value post_max_size 50M
 
-# Cache header for js and css files
+# Cache header for js,css,ico,jpg,jpeg,png,gif files
 <IfModule mod_headers.c>
     <FilesMatch ".(css|js)$">
         Header set Cache-Control "max-age=86400, public"
