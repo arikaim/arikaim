@@ -7,6 +7,6 @@
 */
 
 return [
- 	'user'		=> "Arikaim\Core\Models\Users",
-	'group'		=> "Arikaim\Core\Models\UserGroups"
+ 	'user'		=> 'Arikaim\Core\Models\Users',
+	'group'		=> 'Arikaim\Core\Models\UserGroups'
 ];

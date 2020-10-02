@@ -1,0 +1,26 @@
+{
+    "ARGUMENT_ERROR": {
+        "message": "Argument {{ name }} required.",
+        "description": ""
+    },
+    "CACHE_DISABLE_ERROR": {
+        "message": "Can't disable cache.",
+        "description": ""
+    },
+    "CACHE_ENABLE_ERROR": {
+        "message": "Can't enable cache.",
+        "description": ""
+    },
+    "DRIVER_NOT_EXISTS_ERROR": {
+        "message": "Driver {{ name }} not exists.",
+        "description": ""
+    },
+    "DRIVER_DISABLE_ERROR": {
+        "message": "Can't disable driver.",
+        "description": ""
+    },
+    "DRIVER_ENABLE_ERROR": {
+        "message": "Can't enable driver.",
+        "description": ""
+    }
+}
