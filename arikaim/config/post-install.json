@@ -1,0 +1,10 @@
+[
+    {
+        "command": "set-primary",
+        "extension": "blog"
+    },
+    {
+        "command": "set-primary",
+        "theme": "blog"
+    }
+]
