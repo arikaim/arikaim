@@ -1,0 +1,58 @@
+{
+    "INT_NOT_VALID_ERROR": {
+        "message": "Not valid integer value",
+        "description": ""
+    },
+    "FLOAT_NOT_VALID_ERROR": {
+        "message": "Not valid float value",
+        "description": ""
+    },
+    "NUMBER_NOT_VALID_ERROR": {
+        "message": "Not valid number",
+        "description": ""
+    },
+    "NUMBER_MAX_VALUE_ERROR": {
+        "message": "Not valid value maximum {{ max }}",
+        "description": ""
+    },
+    "NUMBER_MIN_VALUE_ERROR": {
+        "message": "Not valid value minimum {{ min }}",
+        "description": ""
+    },
+    "EMAIL_NOT_VALID_ERROR": {
+        "message": "Not valid email.",
+        "description": ""
+    },       
+    "TEXT_NOT_VALID_ERROR": {
+        "message": "Required text value",
+        "description": ""
+    },
+    "TEXT_MIN_LENGHT_ERROR": {
+        "message": "Required minimum {{ min }} chars",
+        "description": ""
+    },
+    "TEXT_MAX_LENGHT_ERROR": {
+        "message": "Required maximum {{ min }} chars",
+        "description": ""
+    },
+    "REGEXP_NOT_VALID_ERROR": {
+        "message": "Regexp not valid",
+        "description": ""
+    },
+    "URL_NOT_VALID_ERROR": {
+        "message": "Not valid URL",
+        "description": ""
+    },
+    "UUID_NOT_VALID_ERROR": {
+        "message": "Not valid UUID",
+        "description": ""
+    },
+    "NOT_VALID_VALUE_ERROR": {
+        "message": "Not valid value",
+        "description": ""
+    },
+    "VALUE_EXIST_ERROR": {
+        "message": "Not unique value",
+        "description": ""
+    }
+}
