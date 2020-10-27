@@ -16,9 +16,11 @@ RewriteRule ^arikaim/storage/(.*)$ - [F,NC]
 RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ]
 RewriteRule \.php$ - [F]
 
-# PHP config vars
-php_value upload_max_filesize 50M
-php_value post_max_size 50M
+<IfModule mod_php7.c>
+    # PHP config vars
+    php_value upload_max_filesize 50M
+    php_value post_max_size 50M
+</IfModule>
 
 # Cache header for js,css,ico,jpg,jpeg,png,gif files
 <IfModule mod_headers.c>   
