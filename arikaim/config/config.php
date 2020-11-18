@@ -15,7 +15,9 @@ return [
 		'defaultLanguage'	=> 'en',
         'cache'				=> false,
         'cacheDriver'       => 'filesystem',
-        'CacheControl'      => 'max-age=3600,public'
+        'headers'           => [
+            'CacheControl' => 'max-age=3600,public'
+        ]	        
 	],
 	// database settings
 	'db' => [
