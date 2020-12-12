@@ -27,8 +27,6 @@ return [
     'Arikaim\\Core\\App\\Commands\\Session\\InfoCommand',
     // queue
     'Arikaim\\Core\\App\\Commands\\Queue\\JobsCommand',
-    'Arikaim\\Core\\App\\Commands\\Queue\\WorkerCommand',
-    'Arikaim\\Core\\App\\Commands\\Queue\\StopCommand',
     'Arikaim\\Core\\App\\Commands\\Queue\\CronCommand',
     // job
     'Arikaim\\Core\\App\\Commands\\Job\\RunJobCommand',

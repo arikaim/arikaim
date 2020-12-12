@@ -1,5 +1,9 @@
 RewriteEngine On
 
+Header always set Access-Control-Allow-Origin *
+Header always unset Content-Security-Policy
+Header always unset X-Content-Security-Policy
+
 Options -Indexes
 
 RewriteCond %{REQUEST_FILENAME} !-f
