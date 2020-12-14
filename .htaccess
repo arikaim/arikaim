@@ -1,9 +1,5 @@
 RewriteEngine On
 
-Header always set Access-Control-Allow-Origin *
-Header always unset Content-Security-Policy
-Header always unset X-Content-Security-Policy
-
 Options -Indexes
 
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -28,6 +24,10 @@ RewriteRule \.php$ - [F]
 
 # Cache header for js,css,ico,jpg,jpeg,png,gif files
 <IfModule mod_headers.c>   
+    Header set Access-Control-Allow-Origin "*"
+    Header always unset Content-Security-Policy
+    Header always unset X-Content-Security-Policy
+
     <FilesMatch ".(ico|jpg|jpeg|png|gif|woff2|woff|svg|css|js)$">
         Header set Cache-Control "max-age=86400, public"
     </FilesMatch>
