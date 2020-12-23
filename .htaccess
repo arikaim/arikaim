@@ -22,12 +22,13 @@ RewriteRule \.php$ - [F]
     php_value post_max_size 50M
 </IfModule>
 
-# Cache header for js,css,ico,jpg,jpeg,png,gif files
-<IfModule mod_headers.c>   
+<IfModule mod_headers.c>  
+    # CORS header
     Header set Access-Control-Allow-Origin "*"
     Header always unset Content-Security-Policy
     Header always unset X-Content-Security-Policy
 
+    # Cache header for js,css,ico,jpg,jpeg,png,gif files
     <FilesMatch ".(ico|jpg|jpeg|png|gif|woff2|woff|svg|css|js)$">
         Header set Cache-Control "max-age=86400, public"
     </FilesMatch>
