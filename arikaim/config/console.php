@@ -13,10 +13,6 @@ return [
     'Arikaim\\Core\\App\\Commands\\Install\\DisableInstallCommand',
     'Arikaim\\Core\\App\\Commands\\Install\\RepairInstallCommand',
     'Arikaim\\Core\\App\\Commands\\Install\\PrepareCommand',
-    // update
-    'Arikaim\\Core\\App\\Commands\\Update\\UpdateCommand',
-    'Arikaim\\Core\\App\\Commands\\Update\\ControlPanelUpdateCommand',
-    'Arikaim\\Core\\App\\Commands\\Update\\UiComponentsUpdateCommand',
     // cache
     'Arikaim\\Core\\App\\Commands\\Cache\\ClearCommand',
     'Arikaim\\Core\\App\\Commands\\Cache\\DriverCommand',
@@ -26,10 +22,10 @@ return [
     'Arikaim\\Core\\App\\Commands\\Session\\RestartCommand',
     'Arikaim\\Core\\App\\Commands\\Session\\InfoCommand',
     // queue
-    'Arikaim\\Core\\App\\Commands\\Queue\\JobsCommand',
+    'Arikaim\\Core\\App\\Commands\\Queue\\JobsCommand',      
     'Arikaim\\Core\\App\\Commands\\Queue\\CronCommand',
-    // job
-    'Arikaim\\Core\\App\\Commands\\Job\\RunJobCommand',
+    'Arikaim\\Core\\App\\Commands\\Queue\\RunJobCommand',
+    'Arikaim\\Core\\App\\Commands\\Queue\\JobDetailsCommand',    
     // extensions
     'Arikaim\\Core\\App\\Commands\\Extensions\\InfoCommand',
     'Arikaim\\Core\\App\\Commands\\Extensions\\ListCommand',  
@@ -48,5 +44,7 @@ return [
     'Arikaim\\Core\\App\\Commands\\Library\\ListCommand',
     // templates
     'Arikaim\\Core\\App\\Commands\\Template\\ListCommand',
-    'Arikaim\\Core\\App\\Commands\\Template\\InstallCommand'
+    'Arikaim\\Core\\App\\Commands\\Template\\InstallCommand',
+    // events
+    'Arikaim\\Core\\App\\Commands\\Events\\EventDetailsCommand'
 ];
