@@ -34,8 +34,12 @@
         "arikaim/markdown-editor-library": "^1.0.0"
     },
     "scripts": {
-        "post-create-project-cmd": [
-            "php cli install:prepare"
-        ]
+        "scripts": {
+            "pre-update-cmd": "Arikaim\\Installer\\ComposerEvents::preUpdate",        
+            "post-update-cmd": "Arikaim\\Installer\\ComposerEvents::postUpdate",
+            "post-package-install": "Arikaim\\Installer\\ComposerEvents::postPackageInstall",
+            "post-package-update": "Arikaim\\Installer\\ComposerEvents::postPackageUpdate",
+            "post-create-project-cmd": "php cli install:prepare"
+        }       
     }
 }
