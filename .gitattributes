@@ -1,4 +1,5 @@
 .gitkeep        export-ignore
+.github/ export-ignore
 composer.lock   export-ignore
 .gitattributes  export-ignore
 tests/  export-ignore
