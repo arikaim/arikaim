@@ -13,6 +13,7 @@ return [
     'Arikaim\\Core\\App\\Commands\\Install\\DisableInstallCommand',
     'Arikaim\\Core\\App\\Commands\\Install\\RepairInstallCommand',
     'Arikaim\\Core\\App\\Commands\\Install\\PrepareCommand',
+    'Arikaim\\Core\\App\\Commands\\Install\\InstallComposerCommand',
     // cache
     'Arikaim\\Core\\App\\Commands\\Cache\\ClearCommand',
     'Arikaim\\Core\\App\\Commands\\Cache\\DriverCommand',

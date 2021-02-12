@@ -5,3 +5,4 @@ composer.lock   export-ignore
 tests/  export-ignore
 docs/   export-ignore
 arikaim/logs/errors.log export-ignore
+.gitignore  export-ignore

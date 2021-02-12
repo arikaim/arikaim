@@ -11,9 +11,11 @@ return [
 	'settings' => [
 		'debug'				=> true,
 		'debugTrace'		=> true,
-		'jwt_key'			=> 'jwt_key_1',
+		'jwtKey'			=> '49ec7df6-ea4f-4364-bd59-1c6609b1840a',
 		'defaultLanguage'	=> 'en',
         'cache'				=> false,
+        'logEvents'         => false,
+        'primaryTemplate'	=> 'system',
         'cacheDriver'       => 'filesystem',
         'headers'           => [
             'CacheControl' => 'max-age=3600,public'
