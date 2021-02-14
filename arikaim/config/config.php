@@ -16,7 +16,7 @@ return [
         'cache'				=> false,
         'logEvents'         => false,
         'primaryTemplate'	=> 'system',
-        'cacheDriver'       => 'filesystem',
+        'cacheDriver'       => 'void',
         'headers'           => [
             'CacheControl' => 'max-age=3600,public'
         ]	        
