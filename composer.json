@@ -1,7 +1,7 @@
 {
     "name": "arikaim/arikaim",
     "description": "Arikam CMS",
-    "keywords": ["CMS", "Content Management System"],
+    "keywords": ["CMS","Content Management System","Arikaim"],
     "type": "project",
     "license": "GPL-3.0-or-later",
     "authors": [{
@@ -40,7 +40,9 @@
             "post-update-cmd": "Arikaim\\Installer\\ComposerEvents::postUpdate",
             "post-package-install": "Arikaim\\Installer\\ComposerEvents::postPackageInstall",
             "post-package-update": "Arikaim\\Installer\\ComposerEvents::postPackageUpdate",
-            "post-create-project-cmd": "php cli install:prepare"
+            "post-create-project-cmd": [
+                "php cli install:prepare"
+            ]
         }       
     }
 }
