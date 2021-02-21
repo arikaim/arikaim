@@ -15,7 +15,6 @@
         "arikaim/core": "^1.0.0",
         "arikaim/cors-module": "^1.0.0",
         "arikaim/captcha-module": "^1.0.0",
-        "arikaim/stats-module": "^1.0.0",
         "arikaim/dashboard-extension": "^1.0.0",
         "arikaim/category-extension": "^1.0.0",
         "arikaim/captcha-extension": "^1.0.0",

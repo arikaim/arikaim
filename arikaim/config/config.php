@@ -17,6 +17,13 @@ return [
         'logEvents'         => false,
         'primaryTemplate'	=> 'system',
         'cacheDriver'       => 'void',
+        'logEvents'			=> false,
+        'console'           => [
+            'log'		=> false,
+            'logErrors'	=> false
+        ],
+        'logger'			=> true,
+        'loggerHandler'		=> 'file',
         'headers'           => [
             'CacheControl' => 'max-age=3600,public'
         ]	        
