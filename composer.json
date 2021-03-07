@@ -10,7 +10,7 @@
         "homepage": "http://arikaim.com"
     }],
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.2.5",
         "arikaim/installer": "^1.0.0",
         "arikaim/core": "^1.0.0",
         "arikaim/cors-module": "^1.0.0",
@@ -25,6 +25,7 @@
         "arikaim/ui-components": "^1.0.0",
         "arikaim/arikaim-library": "^1.0.0",
         "arikaim/arikaim-ui-library": "^1.0.0",
+        "arikaim/highlight-library": "^1.0.0",
         "arikaim/jquery-library": "^3.0.0",
         "arikaim/jquery-ui-library": "^1.0.0",
         "arikaim/filepond-library": "^4.0.0",
