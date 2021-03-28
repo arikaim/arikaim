@@ -9,7 +9,7 @@
 return [
  	// application settings
 	'settings' => [
-		'debug'				=> true,
+		'debug'				=> false,
 		'debugTrace'		=> true,
 		'jwtKey'			=> '49ec7df6-ea4f-4364-bd59-1c6609b1840a',
 		'defaultLanguage'	=> 'en',
@@ -22,11 +22,12 @@ return [
             'log'		=> false,
             'logErrors'	=> false
         ],
+        'timeZone'			=> 'UTC',
+        'dateFormat'		=> 'F j, Y',
+		'timeFormat'		=> 'g:i:s A',
+		'numberFormat'		=> 'accounting',
         'logger'			=> true,
-        'loggerHandler'		=> 'file',
-        'headers'           => [
-            'CacheControl' => 'max-age=3600,public'
-        ]	        
+        'loggerHandler'		=> 'file'             
 	],
 	// database settings
 	'db' => [
@@ -42,5 +43,7 @@ return [
     ],
     // middlewares
     'middleware' => [     
-    ] 
+    ],
+    'headers' => [       
+    ]	   
 ];
