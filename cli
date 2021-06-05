@@ -20,7 +20,7 @@ Arikaim::systemInit(0,true);
 
 $application = new Application(
     'Arikaim Cli',
-    Arikaim::getVersion(),
+    '',
     Arikaim::get('config')->getByPath('settings/console',[]),
     Arikaim::logger()
 );

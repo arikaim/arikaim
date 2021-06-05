@@ -27,6 +27,7 @@ return [
 		'timeFormat'		=> 'g:i:s A',
 		'numberFormat'		=> 'accounting',
         'logger'			=> true,
+        'sessionInterval'	=> '2',
         'loggerHandler'		=> 'file'             
 	],
 	// database settings
@@ -45,5 +46,7 @@ return [
     'middleware' => [     
     ],
     'headers' => [       
+    ],
+    'environment' => [ 
     ]	   
 ];

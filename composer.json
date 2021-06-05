@@ -18,6 +18,7 @@
         "arikaim/dashboard-extension": "^1.0.0",
         "arikaim/category-extension": "^1.0.0",
         "arikaim/captcha-extension": "^1.0.0",
+        "arikaim/content-providers-extension": "^1.0.0",
         "arikaim/mailers-module": "^1.0.0",
         "arikaim/blog-extension": "^1.0.0",
         "arikaim/blog-template": "^1.0.0",
