@@ -1,4 +1,3 @@
-# Composer packages
 vendor/
 arikaim/extensions/*
 arikaim/view/components/*
