@@ -37,6 +37,11 @@
         "arikaim/code-mirror-library": "*",
         "arikaim/markdown-editor-library": "^1.0.0"
     },
+    "config": {
+        "allow-plugins": {
+            "arikaim/installer": true
+        }
+    },
     "scripts": {
         "scripts": {
             "pre-update-cmd": "Arikaim\\Installer\\ComposerEvents::preUpdate",        
