@@ -11,6 +11,8 @@ RewriteRule ^arikaim/.*(?:htm|html|json|zip|phar|txt|yml|yaml|jsm|py)$ - [F,NC]
 
 # Deny access for all fils in /storage/
 RewriteRule ^arikaim/storage/(.*)$ - [F,NC]
+# Deny access for all fils in /config/
+RewriteRule ^arikaim/config/(.*)$ - [F,NC]
 
 # Deny access fro cli and README.md
 <FilesMatch "(cli|README.md|LICENSE|server)">
