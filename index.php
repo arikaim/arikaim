@@ -8,9 +8,6 @@
  * 
 */
 
-// set start time
-define('APP_START_TIME',microtime(true));
-
 include_once "vendor/autoload.php";
 // load config file
 $config = include_once "arikaim/config/config.php";
