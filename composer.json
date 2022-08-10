@@ -10,7 +10,7 @@
         "homepage": "http://arikaim.com"
     }],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0",
         "arikaim/installer": "^1.0.0",
         "arikaim/core": "^1.0.0",
         "arikaim/cors-module": "^1.0.0",
