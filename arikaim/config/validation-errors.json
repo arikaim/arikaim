@@ -32,7 +32,7 @@
         "description": ""
     },
     "TEXT_MAX_LENGHT_ERROR": {
-        "message": "Required maximum {{ min }} chars",
+        "message": "Required maximum {{ max }} chars",
         "description": ""
     },
     "REGEXP_NOT_VALID_ERROR": {

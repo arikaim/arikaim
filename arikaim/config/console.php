@@ -48,5 +48,8 @@ return [
     'Arikaim\\Core\\App\\Commands\\Template\\ListCommand',
     'Arikaim\\Core\\App\\Commands\\Template\\InstallCommand',
     // events
-    'Arikaim\\Core\\App\\Commands\\Events\\EventDetailsCommand'
+    'Arikaim\\Core\\App\\Commands\\Events\\EventDetailsCommand',
+    // environment
+    'Arikaim\\Core\\App\\Commands\\SaveEnvCommand',
+    'Arikaim\\Core\\App\\Commands\\ClearEnvCommand'
 ];

@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
 # Deny access to html, json, zip, jsm, py, phar, txt and yml files
-RewriteRule ^arikaim/.*(?:htm|html|json|zip|phar|txt|yml|yaml|jsm|py|md)$ - [F,NC]
+RewriteRule ^arikaim/.*(?:htm|html|json|zip|phar|txt|yml|yaml|jsm|py|md|mjs)$ - [F,NC]
 
 # Deny access for all files in /storage/
 RewriteRule ^arikaim/storage/(.*)$ - [F,NC]
@@ -49,11 +49,11 @@ RewriteRule \.php$ - [F]
     Header always unset X-Content-Security-Policy
     # Cache header for css|js
     <FilesMatch ".(css|js)$">
-        Header set Cache-Control "max-age=86400, public"       
+        Header set Cache-Control "max-age=2592000, public"       
     </FilesMatch>
     # Cache header for js,css,ico,jpg,jpeg,png,gif files
     <FilesMatch ".(ico|jpg|jpeg|png|gif|woff2|woff|svg|css|js)$">
-        Header set Cache-Control "max-age=86400, public"
+        Header set Cache-Control "max-age=2592000, public"
     </FilesMatch>
     # Service worker header
     <FilesMatch ".(js)$">
