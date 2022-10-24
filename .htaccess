@@ -21,7 +21,7 @@ RewriteRule ^arikaim/cache/(.*)$ - [F,NC]
 RewriteRule ^arikaim/services/(.*)$ - [F,NC]
 
 # Deny access fro cli and README.md
-<FilesMatch "(cli|README.md|LICENSE|server)">
+<FilesMatch "(cli.php|README.md|LICENSE|server)">
     Order allow,deny
     Deny from all
 </FilesMatch>
