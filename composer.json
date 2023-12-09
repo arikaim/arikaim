@@ -10,12 +10,13 @@
         "homepage": "http://arikaim.com"
     }],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "arikaim/installer": "^1.0.0",
         "arikaim/core": "^1.0.0",
         "arikaim/cors-module": "^1.0.0",
         "arikaim/captcha-module": "^1.0.0",
         "arikaim/dashboard-extension": "^1.0.0",
+        "arikaim/image-extension": "^1.0.0",
         "arikaim/category-extension": "^1.0.0",
         "arikaim/captcha-extension": "^1.0.0",
         "arikaim/content-providers-extension": "^1.0.0",
