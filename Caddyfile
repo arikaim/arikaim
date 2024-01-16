@@ -1,0 +1,18 @@
+# 
+#   config file for caddy server
+#   Requires: php8.1-fpm  installed
+#
+
+:3000 {  
+    @blocked {
+        path *.htm *.html *.json *.txt *.yml /storage
+    }
+	reverse_proxy /status unix//run/php/php8.1-fpm.sock {
+		transport fastcgi {
+				capture_stderr
+		}
+	}
+	php_fastcgi unix//run/php/php8.1-fpm.sock
+    encode gzip   
+    file_server		
+}
