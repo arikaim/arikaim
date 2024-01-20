@@ -37,7 +37,8 @@
         "arikaim/chart-library": "*",
         "arikaim/code-mirror-library": "*",
         "arikaim/markdown-editor-library": "^1.0.0",
-        "arikaim/editors-library": "*"
+        "arikaim/editors-library": "*",
+        "arikaim/icons-components": "*"
     },
     "config": {
         "allow-plugins": {

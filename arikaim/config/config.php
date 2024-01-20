@@ -14,7 +14,7 @@ return [
 		'jwtKey'			=> '49ec7df6-ea4f-4364-bd59-1c6609b1840a',
 		'defaultLanguage'	=> 'en',
         'cache'				=> false,     
-        'primaryTemplate'	=> 'system',
+        'primaryTemplate'	=> 'blog',
         'cacheDriver'       => 'void',
         'logEvents'			=> false,
         'console'           => [
