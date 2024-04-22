@@ -1,0 +1,23 @@
+{
+    "title": "Settings",
+    "fields": {       
+        "from": {
+            "email": {
+                "label": "From Email",
+                "placeholder": "Enter email"
+            },
+            "name": {
+                "label": "From Name",
+                "placeholder": "Enter name"
+            }
+        }
+    },
+    "labels": {
+        "logs": "Logs",
+        "info": "Log message for each email send.",
+        "error": "Log email send errors."
+    },
+    "messages": {
+        "demo": "Disabled in demo mode"
+    }  
+}

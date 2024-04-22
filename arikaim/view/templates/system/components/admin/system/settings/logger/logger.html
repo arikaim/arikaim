@@ -1,0 +1,39 @@
+{% component 'semantic~tabs.vertical.content' %}
+{% set logger = getConfigOption('settings/logger',false) %}
+{% set console_log = getConfigOption('settings/console/log',false) %}
+{% set console_log_errors = getConfigOption('settings/console/logErrors',false) %}
+
+<div class="ui equal width form mt-8"> 
+    <div class="field">
+        <div class="ui slider checkbox change-option">
+            <input name="settings/logger" type="checkbox" value="1" {{ logger|ifthen(true,'checked') }}>
+            <label class="font-bold">{{ labels.logger.label }}</label>
+        </div>
+    </div>     
+    <div id="logger_type_settings" class="mt-4 {{ (logger != true) ? 'hidden' : '' }}">       
+        <div class="ui horizontal divider">{{ labels.settings }}</div>
+        <span class="font-bold p-1">{{ labels.type }}</span>
+        {{ component('system:admin.system.settings.logger.type') }}          
+        <div class="mt-8">
+            <h5 class="ui horizontal left aligned divider header">
+                <i class="icon code small"></i>
+                {{ labels.console }}
+            </h5>
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="ui toggle checkbox log-settings">
+                        <input name="settings/console/log" type="checkbox" value="1" {{ console_log|ifthen(true,'checked') }}>
+                        <label>{{ labels.console_log }}</label>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui toggle checkbox log-settings">
+                        <input name="settings/console/logErrors" type="checkbox" value="1" {{ console_log_errors|ifthen(true,'checked') }}>
+                        <label>{{ labels.console_errors }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+{% endcomponent %}

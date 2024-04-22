@@ -1,0 +1,12 @@
+{% if emails is iterable %} 
+    <div class="ui list">
+        {% for item in emails %}
+        <div class="item">
+            <i class="icon envelope outline email"></i>
+           {{ item.name }}
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div>..</div>
+{% endif %}

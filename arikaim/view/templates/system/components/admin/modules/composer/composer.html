@@ -1,0 +1,26 @@
+<div class="ui streched two column grid">
+    <div class="column">
+        <div class="ui segment">
+            <div class="ui two column grid">
+                <div class="column">
+                    <h4 class="p-2">
+                        {{ labels.title }}
+                    </h4>            
+                </div>
+                <div class="right aligned column">
+                    {{ component('semantic~paginator.dropdown',{ namespace: 'composer' }) }}
+                </div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <div class="ui big list" id="composer_rows" component="system:admin.modules.composer.rows" namespace="composer">
+                {{ component('system:admin.modules.composer.rows') }}
+            </div>
+            <div class="mt-8" id="paginator">
+                {{ component("semantic~paginator",{ namespace: 'composer' }) }}
+            </div>
+        </div>
+    </div>
+    <div class="column" id="package_details">
+    </div>
+</div>

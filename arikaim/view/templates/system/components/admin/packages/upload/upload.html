@@ -1,0 +1,23 @@
+<div class="ui grid">
+    <div class="six wide column">
+        {% component 'semantic~panel' %}    
+            {% set close_button = false %}
+            <div class="mt-4">   
+                <div class="ui success message hidden" id="message">            
+                </div>
+                <div class="mt-4" id="upload_panel">
+                    <form class="ui form" id="package_upload_form" enctype="multipart/form-data">                       
+                        <div class="field">                    
+                            <label>{{ labels.file }}</label>
+                            <input name="file" id="file" type="file" accept="application/zip, application/x-zip-compressed, application/octet-stream">                                          
+                        </div>             
+                        {{ component('semantic~form.footer',{ button_title: labels.upload }) }}
+                    </form>
+                </div>     
+                <div class="ui hidden" id="package_info">
+                    {{ component('system:admin.packages.upload.info') }}
+                </div>      
+            </div>   
+        {% endcomponent %}
+    </div>
+</div>

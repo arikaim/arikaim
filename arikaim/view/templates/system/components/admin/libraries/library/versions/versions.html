@@ -1,0 +1,14 @@
+{% if items is iterable %}
+<div class="list">                  
+    {% for key, item in items %}
+    <div class="item">        
+        <div class="ui horizontal basic mini label">{{ key }}</div>
+        <div class="content pl-4">
+            {{ component('system:admin.libraries.library.files',{ files: item.files }) }}     
+        </div>          
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div>..</div>
+{% endif %}

@@ -1,0 +1,19 @@
+{
+    "title": "Log in",
+    "buttons": {
+        "login": {
+            "title": "Log in"
+        }
+    },
+    "user_name":{
+        "label": "Username",
+        "placeholder": "Enter Username"            
+    },
+    "password":{
+        "placeholder": "Enter Password",
+        "label": "Password"
+    },
+    "links": {
+        "forgotten" :"Forgotten password"
+    }
+}

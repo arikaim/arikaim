@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "details": {
+            "content": "Details"
+        },            
+        "view": {
+            "content": "View"
+        },      
+        "repository": {
+            "content": "Repository"
+        }
+    },
+    "messages": {
+        "uninstall": {
+            "title": "Confirm",
+            "description": "Uninstall extension '<b><% title %></b>' "
+        }  
+    }
+}

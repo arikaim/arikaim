@@ -1,0 +1,59 @@
+{% set php_extensions = system().getPhpExtensions() %}
+{% set php_stream_wrappers = system().getStreamWrappers() %}
+{% set pdo_drivers = system().getPdoDrivers() %}
+{% set opcache = system().getOpcache() %}
+<h4>
+    {{ labels.cache }}
+</h4>
+<div>
+    <div>       
+        {{ labels.enabled }} 
+        {{ component('semantic~status.icon',{ status: opcache.config.directives['opcache.enable'] }) }}      
+    </div>   
+    <div>       
+        {{ labels.memory }}  
+        <span class="font-bold">
+            {{ opcache.config.directives['opcache.memory_consumption'] }}
+        </span>       
+    </div>       
+    <div>
+        {{ labels.scripts }}
+        <span class="font-bold">
+        {{ opcache.status['opcache_statistics']['num_cached_scripts'] }}
+        </span>
+    </div>    
+</div>
+<div class="ui horizontal divider"></div>
+<h4>
+    {{ labels.pdo }}
+</h4>
+{% for item in pdo_drivers %}
+    <div class="ui left pointing label">{{ item }}</div>
+{% endfor %}
+<div class="ui horizontal divider"></div>
+<h4>
+    {{ labels.stream }}
+</h4>
+{% for item in php_stream_wrappers %}
+    <div class="ui left pointing label">{{ item }}</div>
+{% endfor %}
+<div class="ui horizontal divider"></div>
+<h4>
+    {{ labels.extensions }}
+</h4>
+<div class="ui mini list">
+    {% for item in php_extensions %}
+        <div class="item">
+            <i class="icon puzzle grey"></i>
+            <div class="content">
+                <div class="header">{{ item.name }}
+                {% if item.version != "" %}
+                    <span class="small text">
+                        <div class="ui mini label">{{ version_label.content }} {{ item.version }}</div>
+                    </span>
+                {% endif %}
+                </div>         
+            </div>
+        </div>
+    {% endfor %}
+</div>   

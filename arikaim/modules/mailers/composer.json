@@ -1,0 +1,28 @@
+{
+    "name": "arikaim/mailers-module",
+    "description": "Arikam CMS mailer drivers.",
+    "keywords": ["Module","Arikaim CMS mailer drivers module"],
+    "type": "arikaim-module",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {      
+        "arikaim/installer": "*",
+        "symfony/amazon-mailer": "^5.4",
+        "symfony/google-mailer": "^5.4",
+        "symfony/mailchimp-mailer": "^5.4",
+        "symfony/mailgun-mailer": "^5.4",
+        "symfony/mailjet-mailer": "^5.4",
+        "symfony/postmark-mailer": "^5.4",
+        "symfony/sendgrid-mailer": "^5.4",
+        "symfony/sendinblue-mailer": "^5.4",
+        "symfony/oh-my-smtp-mailer": "^5.4",  
+        "arikaim/mail": "*"
+    },
+    "extra": {
+        "path": "mailers"
+    }
+}

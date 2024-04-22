@@ -1,0 +1,9 @@
+{
+    "title": "Package Details",
+    "labels": {
+        "free": "Free",
+        "premium": "Premium",
+        "version": "Version",
+        "repository": "Repository"     
+    }
+}

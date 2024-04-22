@@ -1,0 +1,20 @@
+{% set single = (single is null) ? false : true %}
+{% if type == 'extensions' %}
+    {% set icon = 'puzzle piece' %}
+    {% set title = (single == true) ? labels.extension : labels.extensions %}
+{% elseif type == 'library' %}
+    {% set icon = 'cube' %}
+    {% set title = (single == true) ? labels.lib : labels.library %}
+{% elseif type == 'themes' %}
+    {% set icon = 'browser' %}
+    {% set title = (single == true) ? labels.theme : labels.themes %}
+{% elseif type == 'modules' %}
+    {% set icon = 'plug' %}
+    {% set title = (single == true) ? labels.module : labels.modules %}
+{% endif %}
+{% if hide_icon != true %}
+    <i class="icon {{ icon }} {{ class }}"></i>
+{% endif %}
+{% if show_title == true %}
+    <span>{{ title }}</span>
+{% endif %}

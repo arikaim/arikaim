@@ -1,0 +1,25 @@
+{
+    "labels": {
+        "settings": {
+            "content": "Settings"
+        },
+        "update": {
+            "content": "Update"
+        },
+        "logs": {
+            "content": "Logs"
+        },     
+        "events": {
+            "content": "Events"
+        },
+        "cron": {
+            "content": "Cron"
+        },
+        "info": {
+            "content": "System Info"
+        },       
+        "libraries": {
+            "content": "UI Libraries"
+        }
+    }
+}

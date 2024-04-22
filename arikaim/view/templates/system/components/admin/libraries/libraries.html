@@ -1,0 +1,10 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'view_button', title: labels.view.content, component: 'system:admin.libraries.view', icon: 'grid layout', active: true },
+            { id: 'details_button', title: labels.details.content, component: 'system:admin.libraries.library.details', icon: 'info' },   
+            { id: 'repository_button', title: labels.repository.content, component: 'system:admin.libraries.repository', icon: 'open box' },
+            { id: 'components_button', title: labels.components.content, component: 'system:admin.libraries.components', icon: 'cubes blue' }
+        ],
+        content: { component: 'system:admin.libraries.view' } 
+    })
+}}

@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "home": "Home"
+    },
+    "head": {
+        "favicon": "images/arikaim-favicon.png",    
+        "title": "Arikaim CMS",
+        "description": "Arikaim CMS"
+    }    
+}

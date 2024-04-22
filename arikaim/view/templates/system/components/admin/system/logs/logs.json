@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "empty": "...",
+        "confirm": {
+            "delete": {
+                "title": "Confirm Delete",
+                "description": "Delete all system logs."
+            }
+        }
+    },
+    "labels": {
+        "handler": "Handler Type"
+    }
+}

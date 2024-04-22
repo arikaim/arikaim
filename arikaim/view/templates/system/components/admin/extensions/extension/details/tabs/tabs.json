@@ -1,0 +1,47 @@
+{
+    "tabs": {
+        "routes": {
+            "content": "Routes"     
+        },
+        "database": {
+            "content": "Database"
+        },
+        "events": {
+            "content": "Events"
+        },
+        "subscribers": {
+            "content": "Subscribers"
+        },
+        "view": {
+            "content": "View"
+        },
+        "components": {
+            "content": "Components"
+        },
+        "pages": {
+            "content": "Pages"
+        },
+        "emails": {
+            "content": "Emails"
+        },
+        "jobs": {
+            "content": "Jobs"
+        },
+        "actions": {
+            "content": "Actions"
+        },
+        "macros": {
+            "content": "Macros"
+        },       
+        "console": {
+            "content": "Console",
+            "title": "Console Commands"
+        }
+    },
+    "labels": {
+        "version": "Version",
+        "primary": "Primary",
+        "recuring": "Recuring",
+        "scheduled": "Scheduled"
+    }
+}

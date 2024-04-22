@@ -1,0 +1,16 @@
+<div class="field">   
+    <label>{{ option.type.title }}</label>
+    <div class="ui checkbox {{ option.val|ifthen(1,'checked') }}">
+        <input type="checkbox" {{ option.val|ifthen(1,'checked') }} >
+        <input 
+            class="option-field" 
+            type="hidden" 
+            name="options[{{ option.key }}]" 
+            value="{{ option.val|default(0) }}" 
+            id="{{ option.key }}" 
+            data-content="{{ option.type.description }}"
+            placeholder="{{ option.type.placeholder }}">
+        <label></label>
+    </div>
+    {{ component('system:admin.orm.options.form.fields.type',{ option: option }) }} 
+</div>

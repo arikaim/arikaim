@@ -1,0 +1,17 @@
+{
+    "name": "arikaim/foundation-emails-library",
+    "description": "Foundation for Emails UI library for Arikaim CMS",
+    "keywords": ["UI", "Foundation for Emails UI library for Arikaim CMS","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {        
+    },
+    "extra": {        
+        "path": "foundation-emails"
+    }
+}

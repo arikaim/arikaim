@@ -1,0 +1,17 @@
+{
+    "name": "arikaim/chart-library",
+    "description": "ChartJs library for Arikaim CMS",
+    "keywords": ["UI", "ChartJs library for Arikaim CMS","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {       
+    },
+    "extra": {
+        "path": "chart"
+    }
+}

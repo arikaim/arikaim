@@ -1,0 +1,14 @@
+{
+    "title": "Details",
+    "fields": {
+        "user_name": {
+            "label": "Username"
+        },
+        "email": {
+            "label": "Email"
+        }  
+    },
+    "labels": {
+        "demo": "Disabled in demo mode."
+    }
+}

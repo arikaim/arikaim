@@ -1,0 +1,8 @@
+{% set items = package('components').getPackages() %}
+<div class="ui stackable cards">
+{% for library in items %}  
+    <div class="ui card" id="library_{{ library }}">  
+        {{ component('system:admin.libraries.components.item',{ library_name : library }) }}  
+    </div>
+{% endfor %}
+</div>

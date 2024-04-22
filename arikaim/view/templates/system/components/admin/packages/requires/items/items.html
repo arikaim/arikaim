@@ -1,0 +1,41 @@
+{% if items|length > 0 %}
+    {% set icon = icon|default('cube') %}
+    <h5>{{ title }}</h5>  
+    <div class="ui list">
+        {% for item in items %}
+        <div class="item">         
+            {% set valid_icon = (item.valid == true) ? 'checkmark olive' : 'times red' %}    
+            {% set valid_icon = (item.valid == false and item.optional == true) ? 'checkmark orange' : valid_icon %}    
+            {% set valid_icon = (item.warning == true) ? 'angle right orange' : valid_icon %}        
+            <i class="icon {{ valid_icon }}"></i>      
+            <i class="icon {{ icon }}"></i>
+            <div class="content">
+                {{ item.name }}
+                {% if item.optional == true %}
+                    <div class="ui label horizontal basic mini">
+                        <span class="ui text blue">{{ labels.optional }}</span>
+                    </div>
+                {% endif %}   
+                <div class="ui basic horizontal mini labels right floated">                
+                    {% if item.version is not empty %}
+                        <div class="ui label {{ (item.warning == true) ? 'orange' : 'olive' }}">   
+                            {{ labels.version }}                           
+                            <div class="detail">
+                                {{ item.version }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if item.package_version is not empty %}
+                    <div class="ui label">   
+                        {{ labels.package_version }}                           
+                        <div class="detail">
+                            {{ item.package_version }}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>            
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}

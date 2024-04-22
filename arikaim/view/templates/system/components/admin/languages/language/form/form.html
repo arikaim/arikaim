@@ -1,0 +1,30 @@
+{% set language = createModel('Language') %}
+{% if uuid is defined %}
+    {% set language = language.findById(uuid) %}
+{% endif %}
+<form class="ui equal width form" id="language_form" method="POST">  
+    <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">  
+    <div class="field">
+        <label>{{ title.label }}</label>
+        <input rule="empty" type="text" name="title" id="title" {{ title.placeholder|attr('placeholder') }} value="{{ language.title }}">  
+    </div>
+    <div class="fields">
+        <div class="field">
+            <label>{{ code.label }}</label>
+            <input rule="exactLength[2]" type="text" name="code" id="code" {{ code.placeholder|attr('placeholder') }} value="{{ language.code }}">  
+        </div>    
+        <div class="field">
+            <label>{{ code_3.label }}</label>
+            <input rule="exactLength[3]" type="text" name="code_3" id="code_3" {{ code_3.placeholder|attr('placeholder') }} value="{{ language.code_3 }}">  
+        </div>             
+    </div>   
+    <div class="field">
+        <label>{{ native_title.label }}</label>
+        <input type="text" name="native_title" id="native_title" {{ native_title.placeholder|attr('placeholder') }} value="{{ language.native_title }}">  
+    </div>                   
+    <div class="field">
+        <label>{{ country.label }}</label>
+        {{ component('semantic~countries.dropdown',{ selected: language.country_code, name: "country_code" }) }}
+    </div>
+    {{ component('semantic~form.footer') }}   
+</form>

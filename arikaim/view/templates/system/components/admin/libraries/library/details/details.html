@@ -1,0 +1,15 @@
+<div class="ui column grid segment">   
+    <div class="four wide column">
+        <div class="flex">
+            <div class="font-bold p-2">
+                {{ labels.library }}
+            </div>
+            {{ component("system:admin.libraries.dropdown",{ selected : library_name, class: 'fluid' }) }}  
+        </div>        
+    </div>                
+</div>    
+<div id="library_details" class="mt-8">   
+{% if library_name is not empty %}  
+    {{ component("system:admin.libraries.library.details.tabs",{ library_name : library_name }) }}
+{% endif %}
+</div>

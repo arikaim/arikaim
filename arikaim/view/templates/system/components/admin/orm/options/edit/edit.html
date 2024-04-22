@@ -1,0 +1,11 @@
+{% set hide_class = (hide == true) ? 'hidden' : '' %}
+<div class="ui segment {{ hide_class }} {{ class }}" id="options_content">  
+    {% if model_id is not empty %}
+        {{  component('system:admin.orm.options.form',{ 
+                model: model,
+                extension: extension, 
+                model_id: model_id 
+            }) 
+        }}
+    {% endif %}
+</div>

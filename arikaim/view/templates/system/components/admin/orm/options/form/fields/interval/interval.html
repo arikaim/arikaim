@@ -1,0 +1,28 @@
+{% set selected_title = labels.empty %}
+{% if selected is not empty %}
+    {% for item in items %}       
+        {% if (item.interval == selected) %}      
+            {% set selected_title = item.title %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<div class="field">   
+    <label>{{ option.type.title }}</label>
+    <div class="ui dropdown multiple selection interval-dropdown five column {{ class }}" multiple="" input-filed-id="{{ option.key }}">
+        <input type="hidden" name="options[{{ option.key }}]" value="{{ option.val }}" id="{{ option.key }}">
+        <div class="text">
+            {{ selected_title }}     
+        </div>
+        <i class="dropdown icon"></i>              
+        <div class="ui menu">
+            {% for item in items %}
+                {% if item.interval not in skip %}          
+                    <div class="item" data-value="{{ item.interval }}">                        
+                        {{ item.title }}
+                    </div>   
+                {% endif %} 
+            {% endfor %}                  
+        </div>                                        
+    </div>
+</div>

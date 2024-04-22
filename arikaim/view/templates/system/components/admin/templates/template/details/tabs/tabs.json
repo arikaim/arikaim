@@ -1,0 +1,40 @@
+{
+    "tabs": {
+        "themes": {
+            "content": "Themes"
+        },
+        "styles": {
+            "content": "Styles"
+        },
+        "components": {
+            "content": "Components"
+        },
+        "macros": {
+            "content": "Macros"
+        },
+        "pages": {
+            "content": "Pages"
+        },
+        "routes": {
+            "content": "Routes"
+        },
+        "emails": {
+            "content": "Emails"
+        },
+        "css": {
+            "content": "Css Files"
+        },
+        "js": {
+            "content": "Js Files"
+        },
+        "languages": {
+            "content": "Languages"
+        }
+    },
+    "labels": {
+        "current": "Current",
+        "system": "System",
+        "version": "Version",
+        "library": "UI Library"
+    }         
+}

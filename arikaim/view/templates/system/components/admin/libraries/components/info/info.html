@@ -1,0 +1,74 @@
+{% set library = package('components').getPackageProperties(library_name,true) %}
+{% set library_params = (params[library_name] is empty) ? library.params : params[library_name] %}
+
+<div class="ui stackable grid">
+    <div class="stretched row">
+        <div class="ui four wide column">
+            <div class="ui segment">
+                <div class="ui header">
+                    <i class="left floated rounded big bordered cubes blue icon"></i>  
+                    <div class="content">
+                        {{ library.title|default(library.name) }} 
+                        <div class="ui basic mini label">
+                            {{ labels.version }}
+                            <div class="detail">
+                                {{ library.version }}
+                            </div>
+                        </div>
+                        <div class="sub header">{{ library.description }}</div>    
+                        {% if library.framework == true %}                              
+                        <div class="ui mini basic blue label">
+                            {{ labels.framework }}
+                            {% if current_framework == library.name %}                        
+                                <span class="text-gray-800">{{ labels.current }}</span>                        
+                            {% endif %}
+                        </div>              
+                        {% endif %}   
+                        {% if library.async == true %}
+                        <div class="ui basic horizontal blue label">Async</div>
+                        {% endif %}
+                        {% if library.crossorigin is not empty %}
+                        <div class="ui basic blue horizontal label">
+                            <span class="text-gray-900">
+                                {{ labels.crossorigin }}
+                            </span>    
+                            {{ library.crossorigin }}
+                        </div>
+                        {% endif %}                       
+                    </div>                        
+                </div>
+
+                {% set package = package('components').createPackage(library_name) %}
+                {% set items = package.validator.validate() %}  
+                {% if items.count > 0 %}
+                    <div class="mt-1">                   
+                        <div class="ui segment">
+                            {{ component('system:admin.packages.requires',{ items: items }) }}     
+                        </div>                                                        
+                    </div> 
+                {% endif %}    
+            </div>
+        </div>
+        <div class="ui twelve wide column">
+            <div class="ui segment">
+                {{  component('system:admin.packages.repository',{ 
+                        type: 'components', 
+                        package_name: library.name, 
+                        repository_name: library.get('repository'),
+                        repository_type: library.get('repository-type',null),
+                        installed_version: library.version   
+                    }) 
+                }}                                          
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui segment">  
+    {% if library.get('type') == 'icons' %} 
+        {{ component('system:admin.libraries.components.icons',{ items: library.components, package_name: library_name }) }} 
+    {% else %}
+        <h4>{{ labels.components }}</h4> 
+        {{ component('system:admin.component',{ components: library.components, extension: '' }) }} 
+    {% endif %}
+</div>
+

@@ -1,0 +1,63 @@
+{% if template is empty %}
+    {% set template = package('template').getPackageProperties(template_name,false) %}
+{% endif %}
+{% set show_requires = show_requires|default(false) %}
+{% set show_buttons = show_buttons|default(true) %}
+{% set primary_template = service('view').getPrimaryTemplate() %}
+<div class="ui card raised {{ class }}" id="{{ template_name }}">    
+    <div class="content item">              
+        <div class="font-bold pl-1">
+            {% if template.icon is not empty %}
+            <i class="icon blue {{ template.icon }}"></i>
+            {% endif %}   
+            {{ template.title }}           
+            {% if template.name == system_template_name %}
+            <div class="ui horizontal right floated mini label blue">  
+                {{ labels.system }}  
+            </div>
+            {% endif %}
+            {% if template.name == primary_template %}
+            <div class="ui horizontal right floated mini label green primary-label">  
+                {{ labels.primary }}  
+            </div>
+            {% endif %}                       
+        </div>
+    </div>
+    <div>      
+        {% set src = (template.thumbnail is not empty) ? getTemplateUrl(template_name) ~ '/images/' ~ template.thumbnail : null %}     
+        {{ component('system:admin.templates.template.image',{ src: src }) }}                            
+    </div>              
+    <div class="p-2">
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ template.name }}"></div>
+    </div> 
+    {% if show_requires == true %}
+    <div class="content">       
+        {% set package = package('template').createPackage(template_name) %}
+        {% set items = package.validator.validate() %}       
+        {{ component('system:admin.packages.requires',{ items: items }) }}               
+    </div> 
+    {% endif %}
+    {% if show_buttons == true %}  
+    <div class="extra content">
+        <div class="flex flex-row items-center px-1">                             
+            {% if template.name != system_template_name %}
+                <button class="ui mini basic button olive update-button {{ (demo_mode == true) ? 'disabled' : '' }}" template="{{ template.name }}">
+                    <i class="icon green refresh"></i>
+                    {{ buttons.update.content }}
+                </button>
+                {% set disabled = (template.name == primary_template) ? 'disabled' : '' %}                 
+                <button class="ui mini basic button set-primary {{ disabled }} {{ (demo_mode == true) ? 'disabled' : '' }}" template="{{ template.name }}">
+                    <i class="icon blue angle double up"></i>      
+                    {{ buttons.primary.content }}
+                </button>                                     
+            {% endif %}    
+            <button 
+                class="ui icon mini basic button details-button" 
+                template="{{ template.name }}" 
+                title="{{ buttons.details.content }}">
+                <i class="icon list blue layout"></i>                
+            </button>
+        </div>
+    </div>
+    {% endif %}
+</div>      

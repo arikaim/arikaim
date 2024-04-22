@@ -1,0 +1,65 @@
+{% if uuid is not empty %}
+    {% set route = service('routes').getRouteDetails(uuid) %}
+{% endif %}
+{% if method is not empty and path is not empty %}
+    {% set route = service('routes').getRoute(method,path) %}
+{% endif %}
+<div class="{{ class|default('mt-4') }}">
+    <h4>{{ title }}</h4>
+    <table class="ui very basic definition table">
+        <thead>
+            <tr>
+                <th class="two wide"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr>
+                <td class="right aligned">{{ labels.method }}</td>
+                <td>{{ route.method }}</td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.path }}</td>
+                <td>{{ route.pattern }}</td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.name }}</td>
+                <td>{{ route.name }}</td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.status }}</td>
+                <td>
+                    {{ component('semantic~status.icon',{ status: route.status }) }}            
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.controller }}</td>
+                <td>
+                    <div class="ui basic label right pointing">
+                        {{ route.handler_class }}
+                    </div>                
+                    <div class="ui basic label">
+                        {{ route.handler_method }}
+                    </div>
+                </td>
+            </tr>     
+            <tr>
+                <td class="right aligned">{{ labels.middlewares }}</td>
+                <td>        
+                    {% set middlewares = route.middlewares|jsonDecode(false) %}
+                    {% if middlewares|length > 0 %}
+                    <div class="ui list">
+                        {% for item in middlewares %}
+                        <div class="item">
+                            {{ item }}
+                        </div>
+                        {% endfor %}
+                    </div>      
+                    {% else %} 
+                        {{ labels.empty }}
+                    {% endif %}          
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+</div>

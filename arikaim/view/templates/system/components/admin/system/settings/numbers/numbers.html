@@ -1,0 +1,11 @@
+{% set number_format = getConfigOption('settings/numberFormat') %}
+
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'five wide' %}
+<div class="ui equal width form mt-8"> 
+    <div class="field">
+        <label>{{ fields.number_format.label }}</label>
+        {{ component('system:admin.system.settings.numbers.dropdown',{ selected: number_format }) }}
+    </div>                
+</div>
+{% endcomponent %}

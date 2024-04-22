@@ -1,0 +1,8 @@
+{
+    "title": "Upload",
+    "icon": "upload",
+    "labels": {
+        "upload": "Upload",
+        "file": "Package .zip file"
+    }
+}

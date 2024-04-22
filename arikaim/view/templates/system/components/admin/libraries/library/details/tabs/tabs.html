@@ -1,0 +1,92 @@
+{% set library = package('library').getPackageProperties(library_name,true) %}
+{% set package = package('library').createPackage(library_name) %}
+{% set params = package.getLibraryParams() %}
+{% set disabled = (params.disabled is empty) ? false : params.disabled %}
+<div class="ui stackable grid">
+    <div class="stretched row">
+        <div class="ui four wide column">
+            <div class="ui segment">
+                <div class="ui header">
+                    <i class="left floated rounded big bordered cube blue icon"></i>  
+                    <div class="content">
+                        {{ library.title|default(library.name) }} 
+                        <div class="ui basic mini label">
+                            {{ labels.version }}
+                            <div class="detail">
+                                {{ library.version }}
+                            </div>
+                        </div>
+                        <div class="sub header">{{ library.description }}</div>                          
+                        {% if library.async == true %}
+                        <div class="ui basic horizontal blue label">Async</div>
+                        {% endif %}
+                        {% if library.crossorigin is not empty %}
+                        <div class="ui basic blue horizontal label">
+                            <span class="text-gray-900">
+                                {{ labels.crossorigin }}
+                            </span>    
+                            {{ library.crossorigin }}
+                        </div>
+                        {% endif %}
+                        {% if disabled == true %} 
+                        <div class="ui basic orange horizontal label">
+                            {{ labels.disabled }}
+                        </div>
+                        {% endif %}
+                    </div>    
+                    
+                </div>
+            </div>
+        </div>
+        <div class="ui twelve wide column">
+            <div class="ui segment">
+                {{  component('system:admin.packages.repository',{ 
+                        type: 'library', 
+                        package_name: library.name, 
+                        repository_name: library.get('repository'),
+                        repository_type: library.get('repository-type',null),
+                        installed_version: library.version   
+                    }) 
+                }}                             
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui stackable top attached tabular menu" id="library_details_tab">
+    <a class="item active" data-tab="params_tab">
+        <i class="icon blue cogs"></i>
+        {{ labels.params }}
+    </a> 
+    <a class="item" data-tab="files_tab">
+        <i class="icon blue outline file"></i>
+        {{ labels.files }}
+    </a>  
+    <a class="item" data-tab="versions_tab">
+        <i class="icon blue code branch"></i>
+        {{ labels.verisons }}
+    </a>     
+</div>
+<div class="ui bottom attached tab segment active" data-tab="params_tab">
+    <div class="ui grid">
+        <div class="four wide column">
+            {% if library.get('params-readonly',false) != true %}        
+                {{  component('system:admin.libraries.library.params.form',{ 
+                        library: library_name, 
+                        params_config: params.params,
+                        params: library.params,
+                        show_label: true, 
+                        show_value: true 
+                    }) 
+                }}
+            {% else %}
+                {{ component('system:admin.libraries.library.params',{ library: library_name, params: params.params }) }}
+            {% endif %}
+        </div>
+    </div>    
+</div>
+<div class="ui bottom attached tab segment" data-tab="files_tab">
+    {{ component('system:admin.libraries.library.files',{ files: library.files }) }}
+</div>
+<div class="ui bottom attached tab segment" data-tab="versions_tab">
+    {{ component('system:admin.libraries.library.versions',{ items: library.versions }) }}
+</div>

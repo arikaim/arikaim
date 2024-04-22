@@ -1,0 +1,16 @@
+{
+    "labels": {
+        "version": "Version",
+        "type": "Type",
+        "name": "Package Name",
+        "destination": "Destination Directory",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+    },
+    "messages": {
+        "alert": {
+            "title": "Package exists",
+            "description": "Updating package will overwrite all existing files!"
+        }
+    }
+}

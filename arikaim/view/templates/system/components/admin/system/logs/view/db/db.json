@@ -1,0 +1,24 @@
+{
+    "columns": {
+        "action": "Action",
+        "date": "Date",
+        "type": "Type",
+        "message": "Message",
+        "details": "Details"
+    },
+    "page_size_menu": {
+        "title": "Rows per page",
+        "label": ""
+    },
+    "messages": {
+        "empty": "..."
+    },
+    "buttons": {
+        "delete": {
+            "content": "Delete"
+        }
+    },
+    "labels": {
+        "type": "Db storage"
+    }
+}

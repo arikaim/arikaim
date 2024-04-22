@@ -1,0 +1,46 @@
+{% set routes = service('routes').getRoutes({ extension_name: extension_name, type: 2 }) %}
+{% set items = paginate(routes,'routes.api') %}
+{% for route in items.getItems() %}
+    {% set docs = service('docs').getControllerInfo(route.handler_class,route.handler_method) %}     
+    {% set auth = (route.auth is empty) ? null : route.auth|split(',') %}   
+   
+    <div class="item">
+        <div class="content ui segment">
+            <p class="p-4">              
+                {{ docs.api.description }}
+            </p>
+            <div class="flex bg-gray-100 p-2 w-full">
+                <div class="p-1">
+                    <div class="ui blue label">
+                        {{ route.method }}
+                    </div>
+                </div>                
+                <div class="p-2 pl-8 flex-grow">
+                    <h4>{{ route.pattern }}</h4>
+                </div>
+                <div class="p-2 pl-8 self-end">
+                    <span class="p-1 font-bold">
+                        {{ labels.auth }}
+                    </span>                  
+                    {% if auth is iterable %}
+                        {% for item in auth %}
+                        <div class="ui label basic green">
+                            {{ item }}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="ui label">
+                            {{ labels.none }}
+                        </div>
+                    {% endif %}                      
+                </div>                
+            </div>
+            <div class="mt-4 w-full">
+                <button class="ui basic icon labeled mini button view-api-details" uuid="{{ route.uuid }}">
+                    <i class="icon info blue"></i>
+                    {{ labels.details }}
+                </button>
+            </div>          
+        </div>         
+    </div>   
+{% endfor %}

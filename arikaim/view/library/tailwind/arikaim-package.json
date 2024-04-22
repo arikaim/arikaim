@@ -1,0 +1,80 @@
+{   
+    "title": "Tailwindcss",
+    "version": "1.4.17",
+    "name": "tailwind",
+    "package-type": "library",
+    "help": "https://tailwindcss.com/docs/installation/",
+    "repository": "https://github.com/arikaim/tailwind-library.git",
+    "description": "A utility-first CSS framework for rapidly building custom designs.",
+    "framework": false,   
+    "files": [
+        "tailwind-utility-slim.min.css"       
+    ],
+    "versions": {
+        "interactive": {
+            "files": [
+                "tailwind-interactive.min.css"   
+            ]
+        },    
+        "effects": {
+            "files": [
+                "tailwind-effects.min.css"   
+            ]
+        },
+        "text": {
+            "files": [
+                "tailwind-text.min.css"   
+            ]
+        },
+        "space": {
+            "files": [
+                "tailwind-space.min.css"   
+            ]
+        },
+        "border": {
+            "files": [
+                "tailwind-border.min.css"   
+            ]
+        },
+        "animation": {
+            "files": [
+                "tailwind-animation.min.css"   
+            ]
+        },
+        "colors": {
+            "files": [
+                "tailwind-colors.min.css"   
+            ]
+        }, 
+        "grid": {
+            "files": [
+                "tailwind-grid.min.css"   
+            ]
+        },        
+        "1.4.6": {
+            "files": [
+                "tailwind-1.4.6.min.css"   
+            ]
+        },
+        "utility": {
+            "files": [
+                "tailwind-utility-full.min.css"   
+            ]
+        },
+        "layout": {
+            "files": [
+                "tailwind-layout.min.css"   
+            ]
+        },
+        "size": {
+            "files": [
+                "tailwind-size.min.css"   
+            ]
+        },
+        "align": {
+            "files": [
+                "tailwind-align.min.css"   
+            ]            
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{% component 'semantic~tabs.vertical.content' %}
+    {% set class = 'five wide' %}
+    <div class="mt-4">
+        <div class="field">
+            <h4>
+                {{ labels.path }}
+            </h4>
+            <div class="ui basic label">
+                ..{{ service('storage').getStorageRelativePath() }}
+            </div>
+            <h4>
+                {{ labels.public }}
+            </h4>
+            <div class="ui basic label">
+                ..{{ service('storage').getStorageRelativePath(true) }}
+            </div>
+        </div>  
+        <div class="mt-8">
+            <h4>{{ labels.init }}</h4>
+            <button class="ui button olive init-storage mt-8">
+                {{ buttons.init }}
+            </button>
+            <div id="message" class="hidden my-2">
+                <div class="ui success message">               
+                </div>
+            </div>            
+        </div>
+    </div>
+{% endcomponent %}

@@ -1,0 +1,19 @@
+{% set items = service('cache').getSupportedDrivers() %}
+{% set driver_name = getConfigOption('settings/cacheDriver') %}
+{% set selected = items[driver_name]|split('\\')|last %}
+{% set empty_label = empty_label|default(text.status) %}
+{% set class = class|default('inline') %}
+<div class="ui dropdown {{ class }}" uuid="{{ uuid }}" id="cache_driver_dropdown">
+    <i class="icon code blue"></i>
+    <div class="text">
+        {{ (selected is empty) ? empty_label : selected }}
+    </div>
+    <i class="dropdown icon"></i>   
+    <div class="ui menu">       
+        {% for name, class in items %}              
+            <div class="item {{ name|ifthen(selected,'active') }}" data-value="{{ name }}">                        
+                {{ class|split('\\')|last }}
+            </div>             
+        {% endfor %}           
+    </div>
+</div>

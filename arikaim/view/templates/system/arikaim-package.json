@@ -1,0 +1,56 @@
+{    
+    "title": "Control Panel",
+    "name": "system",
+    "package-type": "template",
+    "description": "Arikaim CMS Control Panel",
+    "repository": "https://github.com/arikaim/system-template.git",
+    "version": "1.11.3",
+    "icon": "sliders horizontals",
+    "image": {
+        "src": "",
+        "alt": ""
+    },
+    "languages": [
+        "en"       
+    ],
+    "require": {
+        "library": [
+            "arikaim",
+            "arikaim-ui",
+            "jquery",
+            "highlight",
+            "jquery-ui",
+            "fomantic",
+            "tailwind",
+            "filepond"
+        ],
+        "extensions": [
+            "dashboard"
+        ]
+    },
+    "include": {            
+        "css": [
+            "admin.css"
+        ],
+        "js": [
+            "control-panel.js"
+        ],
+        "components": [
+            "semantic~language.translate",
+            "semantic~modal"    
+        ],
+        "library": [
+            "jquery",
+            "jquery-ui",   
+            "arikaim:admin",
+            "arikaim-ui:source",
+            "fomantic:source",
+            "highlight:github",
+            "filepond",
+            "markdown-editor",
+            "tailwind",
+            "tailwind:colors",
+            "tailwind:size"             
+        ]
+    }
+}

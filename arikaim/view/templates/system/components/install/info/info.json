@@ -1,0 +1,8 @@
+{
+    "labels": {        
+        "os": "Server",  
+        "user": "User",
+        "info": "Server Info",
+        "id": "User Id"               
+    }
+}

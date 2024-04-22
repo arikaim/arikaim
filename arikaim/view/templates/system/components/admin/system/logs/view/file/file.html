@@ -1,0 +1,36 @@
+<div class="ui segment">
+    <div class="ui stackable grid">
+        <div class="ten wide column">
+            <div class="ui basic blue label">
+                {{ labels.type }}
+            </div>
+        </div>
+        <div class="six wide column right aligned">
+            <button class="ui aligned basic button delete-logs">
+                <i class="icon orange trash"></i>
+                {{ buttons.delete.content }}
+            </button>
+            <span class="pl-2">
+                {{ component('semantic~paginator.dropdown',{ namespace: 'logs.file' }) }}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="ui segment">
+    <table class="ui compact stackable striped very basic table">
+        <thead>
+            <tr class="borderless table-head">                
+                <th class="single line">{{ columns.date }}</th>
+                <th>{{ columns.type }}</th>
+                <th>{{ columns.message }}</th> 
+                <th>{{ columns.details }}</th>    
+            </tr>
+        </thead>
+        <tbody id="logs_rows" component="system:admin.system.logs.view.file.rows" namespace="logs.file">
+            {{ component("system:admin.system.logs.view.file.rows") }}
+        </tbody>  
+    </table>
+</div>
+<div class="mt-1" id="paginator">
+    {{ component("semantic~paginator",{ namespace: 'logs.file' }) }}
+</div>

@@ -1,0 +1,48 @@
+<div class="bg-gray-100 p-2 rounded-lg mb-2">
+    <div class="p-2">
+        <i class="icon box open blue"></i>            
+        <span class="font-bold text-lg">{{ title }}</span>
+    </div>    
+</div>
+{% if arikaimStore().hasCurl() == false %}
+    <div class="ui five column grid">
+        <div class="column">
+            {{ component('semantic~message.error',{ message: message }) }}
+        </div>        
+    </div>    
+{% else %}
+    <div class="ui two column grid">
+        <div class="column">
+            <div class="p-1">
+                <div class="ui breadcrumb" id="links_path">
+                    <div class="section">
+                        <button class="ui basic icon mini button store-settings">
+                            <i class="icon blue cog"></i>
+                        </button>                       
+                    </div>
+                    <div class="divider"> / </div>
+                    <div class="ui section button tertiary" id="packages_type" type="{{ type }}"> 
+                        {{ component('system:admin.packages.store.details.type',{ type: type, show_title: true }) }}
+                    </div>
+                    <div class="divider"> / </div>
+                </div>
+            </div>            
+        </div>
+        <div class="column right aligned">       
+            <button class="ui basic icon mini button store-settings">
+                <i class="icon user blue"></i>
+            </button>
+            {{ component('semantic~paginator.dropdown',{ class:'mini', namespace: 'packages' }) }}
+        </div>
+    </div> 
+    <div id="packages_content">
+        <div class="ui stackable six cards mt-1" id="packages_list"> 
+            {{ component('system:admin.packages.store.view.rows',{ type: type }) }}
+        </div>
+        <div id="paginator" class="mt-1">
+            {{ component('semantic~paginator',{ namespace: 'packages' }) }}
+        </div>
+    </div>   
+    <div id="arikaim_store_settings">
+    </div>
+{% endif %}

@@ -1,0 +1,11 @@
+{
+    "messages": {
+        "install": {
+            "core": "Installing core",
+            "extensions": "Installing extensions",
+            "modules": "Installing modules",
+            "post": "Executing post install actions"
+        }, 
+        "done": "Arikaim was installed successfully."  
+    }
+}

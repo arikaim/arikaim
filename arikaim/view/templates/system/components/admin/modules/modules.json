@@ -1,0 +1,25 @@
+{   
+    "labels": {
+        "view": {
+            "content": "View"
+        },       
+        "download": {
+            "content": "Download"
+        },
+        "repository": {
+            "content": "Repository"
+        },
+        "middleware": {
+            "content": "Middleware"
+        },
+        "package": {
+            "content": "Packages"
+        },
+        "drivers": {
+            "content": "Drivers"
+        },
+        "composer": {
+            "content": "Composer"
+        }
+    }
+}

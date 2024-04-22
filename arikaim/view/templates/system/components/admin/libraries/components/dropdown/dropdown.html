@@ -1,0 +1,15 @@
+{% set items = package('components').getPackages(true) %}
+{% set selected_text = (selected is empty) ? labels.select : selected %}
+<div class="ui floated dropdown labeled search icon basic button {{ class }}" id='libraries_dropdown'>
+    <input name="libraries_dropdown" type="hidden" value="{{ selected }}">
+    <i class="cubes icon"></i>
+    <span class="text">{{ selected_text }}</span>
+    <div class="menu">
+    {% for item in items %}
+        {% set package = package('components').createPackage(item).getProperties() %}
+        <div class="item" data-value="{{ package.name }}">           
+            {{ package.title|default(package.name) }}
+        </div>
+    {% endfor %}
+    </div>
+</div>

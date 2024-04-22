@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Monoton';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/monoton/v15/5h1aiZUrOngCibe4TkHLRw.ttf) format('truetype');
+}
+
+.monoton-font {
+    font-family: 'Monoton', sans-serif;  
+}
+
+.field.error input {
+  border:1px solid #EF4444!important;
+}

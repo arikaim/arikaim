@@ -1,0 +1,9 @@
+{
+    "handlers": {
+        "file": "File Storage",
+        "db": "Database Storage"
+    },
+    "labels": {
+        "empty": "Select handeler type"
+    }
+}

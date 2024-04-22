@@ -1,0 +1,32 @@
+{% set user = service('access').getUser() %}
+<div class="ui raised card fluid">   
+    <div class="content">
+        <h3 class="ui dividing header">
+        {{ title }}
+        </h3>
+        <form class="ui form" id="login_form" method="post">
+            <div class="field">
+                <label>{{ user_name.label }}</label>
+                <div class="ui left icon input">
+                    <i class="icon user"></i>
+                    <input rule="empty" type="text" name="user_name" id="user_name" {{ user_name.placeholder|attr("placeholder") }}>    
+                </div>
+            </div>
+            <div class="field">
+                <label>{{ password.label }}</label>
+                <div class="ui left icon right action input">
+                    <i class="icon lock"></i>
+                    <input rule="empty" type="password" name="password" id="password" {{ password.placeholder|attr("placeholder") }}>  
+                    <a class="ui icon basic link button view-password">               
+                        <i class="eye slash outline icon"></i>
+                    </a>    
+                </div>
+            </div>                  
+            {{  component('semantic~form.footer',{ 
+                    button_title: buttons.login.title,                   
+                    button_class: 'button large primary fluid login-button'
+                })
+            }}                   
+        </form>
+    </div>    
+</div>

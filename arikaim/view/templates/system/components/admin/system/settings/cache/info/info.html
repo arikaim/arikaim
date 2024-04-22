@@ -1,0 +1,35 @@
+{% set cache = service('cache') %}
+{% set stats = cache.getStats() %}
+{% set driver_name = getConfigOption('settings/cacheDriver') %}
+
+{% component 'semantic~panel' %}
+    {% set id = 'cache_info_panel' %}
+    <h4>
+        {{ labels.driver }}
+    </h4>
+    <div class="ui blue basic label">
+       {{ driver_name }}
+    </div>
+    <table class="ui very basic padded table">
+        <tbody>
+            {% for key, value in stats %}
+            <tr>
+                <td class="collapsing font-bold">{{ key }}</td>
+                <td>   
+                    {% if value is iterable %}   
+                        <ul>
+                        {% for key, item_value in value %}
+                            <li>
+                                {{ key }} : <b>{{ item_value }}</b>
+                            </li>
+                        {% endfor %}    
+                        </ul>  
+                    {% else %}  
+                        <b>{{ value }}</b>
+                    {% endif %}             
+                </td>
+            </tr>
+            {% endfor %}        
+        </tbody>    
+    </table>   
+{% endcomponent %}

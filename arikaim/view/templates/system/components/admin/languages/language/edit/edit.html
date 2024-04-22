@@ -1,0 +1,23 @@
+{% if uuid is not empty %}
+    {% set language = createModel('Language').findById(uuid) %}
+{% endif %}
+{% component 'semantic~tabs.vertical.content' %}
+    {% set class = 'six wide' %}
+    {% if uuid is empty %}
+        <div class="mt-4">
+        {{  component('semantic~language.dropdown',{ 
+                selected: language, 
+                name: 'language',
+                id: 'choose_language',
+                class: 'fluid search selection', 
+                data_type: 'uuid' 
+            }) 
+        }}    
+        </div>
+    {% endif %}          
+    <div class="mt-8" id="form_content">
+    {% if uuid is defined %}
+        {{ component('system:admin.languages.language.form',{ uuid: uuid }) }}
+    {% endif %}
+    </div>
+{% endcomponent %}

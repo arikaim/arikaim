@@ -1,0 +1,18 @@
+<div class="ui list">
+    {% if packages|length == 0 %}
+        <div class="item">..</div>
+    {% else %}
+        {% for package in packages %}
+        <div class="item">
+            <div class="content">
+                <i class="icon box"></i>
+                {{ package.title }}
+                <div class="ui basic label">
+                    <span>{{ labels.version }}</span>
+                    {{ package.version }}
+                </div>
+            </div>                           
+        </div>
+        {% endfor %}
+    {% endif %}                    
+</div>

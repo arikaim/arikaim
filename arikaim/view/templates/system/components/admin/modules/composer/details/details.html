@@ -1,0 +1,57 @@
+{% set package = package('composer').createPackage(package_name) %}
+{% set details = package.getDetails() %}
+<div class="ui segment">
+    <div class="ui header">
+        {{ title }}
+    </div>
+    <div class="mt-4">
+        <table class="ui table very basic definition">
+            <thead>
+                <tr>
+                    <th class="two wide"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="right aligned">{{ labels.name }}</td>
+                    <td>{{ details.name }}</td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.version }}</td>
+                    <td>{{ details.version }}</td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.source }}</td>
+                    <td>
+                        {{  details.source.url }}                 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.requires }}</td>
+                    <td>
+                        <ul class="ui list">
+                            {% for name, version in details.require %}
+                            <li cass="item">
+                                {{ name }} {{ version }}
+                            </li>
+                            {% endfor %}
+                        </ul>          
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>
+            {{ labels.description }}
+        </h4>
+        <p class="p-2 mt-4">
+            {{ details.description }}
+        </p>   
+        <div class="mt-4">
+            <button class="ui mini button icon labeled green update-composer-package" package-name="{{ details.name }}">
+                <i class="icon download"></i>
+                {{ labels.update }}
+            </button>
+        </div>
+    </div>
+</div>

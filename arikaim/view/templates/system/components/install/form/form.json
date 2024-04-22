@@ -1,0 +1,26 @@
+{                
+    "fields": {
+        "database": {
+            "label": "Database Name"
+        },
+        "user": {
+            "label": "Username"
+        },
+        "password": {
+            "label": "Password"
+        },
+        "host": {
+            "label": "Host"
+        },
+        "type": {
+            "label": "Type"
+        }
+    },
+    "labels": {
+        "core": "Installing core",
+        "disabled": "Install page is disabled!"
+    },
+    "buttons": {
+        "install": "Install"                   
+    }
+}

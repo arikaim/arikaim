@@ -1,0 +1,12 @@
+{
+    "title": "Cache Info",
+    "icon": "info",
+    "labels": {
+        "driver": "Driver",
+        "usage": "Memory Usage",
+        "available": "Memory Available",
+        "misses": "Misses",
+        "hits": "Hits",
+        "uptime": "Uptime"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "arikaim/captcha-module",
+    "description": "Arikam CMS captcha module",
+    "keywords": ["Module", "Arikaim CMS captcha module"],
+    "type": "arikaim-module",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "php": ">=7.1",
+        "arikaim/installer": "*",
+        "google/recaptcha": "1.2.*"
+    },
+    "extra": {
+        "path": "captcha"
+    }
+}

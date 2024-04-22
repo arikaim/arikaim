@@ -1,0 +1,16 @@
+{% set package = package('template').createPackage(template_name) %}
+{% set files = package.getCssFiles() %}
+
+<div class="ui list">
+    {% if files is not iterable or files|length == 0 %}
+        <div class="item">..</div>
+    {% endif %}
+    {% for file in files %}
+    <div class="item">
+        <div class="content">
+            <i class="icon outline file"></i>
+            {{ file }}
+        </div>       
+    </div>
+    {% endfor %}
+</div>

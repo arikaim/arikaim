@@ -1,0 +1,14 @@
+{% set config = service('driver').getConfig(driver_name) %}
+<div class="pb-4 flex flex-row items-center">
+    <div class="font-bold pr-2">
+        {{ labels.name }}
+    </div>
+    <div class="ui basic label">
+        {{ driver_name }}
+    </div>
+</div>
+<form class="ui equal width form" id="driver_config_form">
+    <input type="hidden" name="name" id="driver_name" value="{{ driver_name }}">  
+    {{ component('semantic~properties.fields',{ properties: config, update: update }) }}
+    {{ component('semantic~form.footer') }}   
+</form>

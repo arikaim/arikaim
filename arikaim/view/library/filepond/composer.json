@@ -1,0 +1,17 @@
+{
+    "name": "arikaim/filepond-library",
+    "description": "Arikaim CMS Filepond UI library",
+    "keywords": ["UI", "Arikam CMS Filepond UI library","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {       
+    },
+    "extra": {
+        "path": "filepond"
+    }
+}

@@ -1,0 +1,64 @@
+
+{% set disabled = getConfigOption('settings/disableInstallPage',false) %}
+{% set db_host = getConfigOption('db/host') %}
+{% set db_name = getConfigOption('db/database') %}
+{% set db_driver = getConfigOption('db/driver') %}
+
+{% if disabled == false %}
+    <form class="ui segment form" id='install_form'>
+        <div class="two fields">
+            <div class="field">
+                <label>{{ fields.host.label }}</label>
+                <div class="ui action input disabled" id="host_input">
+                    <input type="text" id="host" name="host" value="{{ db_host }}">
+                    <a class="ui basic right icon button edit-host-button">
+                        <i class="edit blue icon"></i>                 
+                    </a>
+                </div>          
+            </div>
+            <div class="field">
+                <label>{{ fields.type.label }}</label>
+                <div class="ui basic big label">
+                    {{ db_driver }}
+                </div>
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="required field">
+                <label>{{ fields.database.label }}</label>
+                <input type="text" name="database" id="database" value="{{ db_name }}">
+            </div>        
+        </div>  
+        <div class="two fields">
+            <div class="required field">
+                <label>{{ fields.user.label }}</label>
+                <input type="text" name="username" id="username" value="">
+            </div>
+            <div class="required field">
+                <label>{{ fields.password.label }}</label>
+                <input type="text" name="password" id="password" value="">
+            </div>
+        </div>      
+        {{  component('semantic~form.footer',{ 
+                button_class: 'blue large button install-button',
+                button_title: buttons.install 
+            }) 
+        }}
+    </form>    
+    <div class="mt-1 hidden" id="progress_content">
+        <div class="ui progress install-progress" data-value="0" id="main_progress">
+            <div class="blue bar">
+                <div class="progress"></div>
+            </div>
+            <div class="label">{{ labels.core }}</div>
+        </div>
+        <div class="ui progress indicating active install-progress mini" id="install_progress">
+            <div class="bar"></div>       
+            <div class="label"></div>
+        </div> 
+    </div>
+{% else %}
+    <div class="ui warning message">
+        {{ labels.disabled }}
+    </div>
+{% endif %}

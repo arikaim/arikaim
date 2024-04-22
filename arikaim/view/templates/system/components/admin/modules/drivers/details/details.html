@@ -1,0 +1,62 @@
+{% if driver_name is not empty %}
+    {% set driver = service('driver').getDriver(driver_name) %}
+{% endif %}
+{% component 'semantic~panel' %}
+    <table class="ui very basic definition table">
+        <tbody>
+            <tr>
+                <td class="right aligned">{{ labels.uuid }}</td>
+                <td>
+                    <div class="ui basic label">{{ driver.id }}</div>
+                    {{ driver.uuid }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.status }}</td>
+                <td>
+                    {{ component('semantic~status.label',{ status: driver.status }) }}
+                </td>
+            </tr>    
+            <tr>
+                <td class="right aligned">{{ labels.name }}</td>
+                <td>{{ driver.name }}</td>
+            </tr>   
+            <tr>
+                <td class="right aligned">{{ labels.title }}</td>
+                <td>{{ driver.title }}</td>
+            </tr>   
+            <tr>
+                <td class="right aligned">{{ labels.description }}</td>
+                <td>{{ driver.description }}</td>
+            </tr>  
+            <tr>
+                <td class="right aligned">{{ labels.version }}</td>
+                <td>{{ driver.version }}</td>
+            </tr>  
+            <tr>
+                <td class="right aligned">{{ labels.class }}</td>
+                <td>{{ driver.class }}</td>
+            </tr>   
+            {% if driver.module_name is not empty %} 
+            <tr>
+                <td class="right aligned">{{ labels.module }}</td>
+                <td>{{ driver.module_name }}</td>
+            </tr>   
+            {% endif %}  
+            {% if driver.extension_name is not empty %} 
+            <tr>
+                <td class="right aligned">{{ labels.extension }}</td>
+                <td>{{ driver.extension_name }}</td>
+            </tr>   
+            {% endif %}    
+            <tr>
+                <td class="right aligned">{{ labels.category }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ driver.category }}
+                    </div>
+                </td>
+            </tr>                                             
+        </tbody>
+    </table>          
+{% endcomponent%}

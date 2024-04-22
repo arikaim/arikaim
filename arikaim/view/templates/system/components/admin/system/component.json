@@ -1,0 +1,13 @@
+{
+    "include": {
+        "js": [
+            "system:options",
+            "system:admin.system.settings.mailer"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "redirect": "/admin",
+        "permission": "ControlPanel:full"
+    }
+}

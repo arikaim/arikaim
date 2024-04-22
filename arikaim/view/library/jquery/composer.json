@@ -1,0 +1,17 @@
+{
+    "name": "arikaim/jquery-library",
+    "description": "jQuery library for Arikaim CMS",
+    "keywords": ["UI", "jQuery library for Arikaim CMS","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {       
+    },
+    "extra": {
+        "path": "jquery"
+    }
+}

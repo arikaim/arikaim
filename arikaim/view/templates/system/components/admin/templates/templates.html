@@ -1,0 +1,16 @@
+{# 
+    id: 'repository_button', 
+    title: labels.repository.content, 
+    component: 'system:admin.templates.repository', 
+    icon: 'box open' 
+#},
+
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'view_button', title: labels.view.content, component: 'system:admin.templates.view', icon: 'grid layout', active: true },
+            { id: 'details_button', title: labels.details.content, component: 'system:admin.templates.template.details', icon: 'info' },           
+            { id: 'upload_button', title: labels.upload.content, component: 'system:admin.packages.upload', icon: 'upload', params: { title: labels.upload } }
+        ],
+        content: { component: 'system:admin.templates.view' } 
+    })
+}}

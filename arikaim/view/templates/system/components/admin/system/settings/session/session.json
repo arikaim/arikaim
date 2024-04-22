@@ -1,0 +1,19 @@
+{
+    "title": {
+        "content": "Session",
+        "icon": "server"
+    },
+    "fields": {
+        "interval": {
+            "label": "Session Recreation Interval"
+        }
+    },
+    "labels": {
+        "min": "minutes",
+        "details": "Details",
+        "cookies": "Use cookies",
+        "start": "Time Start",
+        "end": "Time End",
+        "lifetime": "Lifetime"
+    }
+}

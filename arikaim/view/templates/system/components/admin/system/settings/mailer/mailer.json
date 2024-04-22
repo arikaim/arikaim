@@ -1,0 +1,19 @@
+{
+    "title": {
+        "content": "Mailer",
+        "icon": "mail outline"
+    },
+    "labels": {
+        "transports": "Socket transports",
+        "current": "Use driver",
+        "settings": "Settings",
+        "test": "Send test email to ",
+        "from": "From Email",
+        "drivers": "Drivers"
+    }, 
+    "buttons": {
+        "send": {
+            "content": "Send"
+        }
+    }
+}

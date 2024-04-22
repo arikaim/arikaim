@@ -1,0 +1,12 @@
+{{  component('semantic~tabs.vertical',{ 
+        items: [
+            { id: 'components_view',icon: 'list',active: true,component: 'system:admin.libraries.components.view',title: labels.view },
+            { id: 'components_details',icon: 'info',component: 'system:admin.libraries.components.details',title: labels.details }
+        ],    
+        item_class: 'components-tab-item', 
+        content: { 
+            id: 'components_content',
+            component: 'system:admin.libraries.components.view' 
+        } 
+    })
+}}

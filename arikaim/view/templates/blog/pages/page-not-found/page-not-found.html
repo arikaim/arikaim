@@ -1,0 +1,12 @@
+{% component 'current>layout' %}
+<div class="flex h-full w-full justify-center">
+    <div class="p-4 flex-shrink-0 self-center w-1/2 bg-slate-100 rounded-lg shadow">                    
+        <h3 class="pl-8 flex flex-row justify-start items-center h-full w-full">
+            {{ component('icons~warning',{ size: 'h-12 w-12', width: 1, color: 'text-red-300' },'svg') }}  
+            <div class="pl-3 font-bold">              
+                {{ message }}
+            </div>                
+        </h3>       
+    </div>
+</div>           
+{% endcomponent %}

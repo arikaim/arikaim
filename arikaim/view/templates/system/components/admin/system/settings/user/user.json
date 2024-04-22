@@ -1,0 +1,10 @@
+{
+    "title": {
+        "content": "User",
+        "icon": "user"
+    },
+    "links": {
+        "details": "Details",
+        "password": "Password"
+    }
+}

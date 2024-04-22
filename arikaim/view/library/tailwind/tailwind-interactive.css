@@ -1,0 +1,252 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal
+}
+
+.pointer-events-none {
+  pointer-events: none
+}
+
+.pointer-events-auto {
+  pointer-events: auto
+}
+
+.hover\:pointer-events-none:hover {
+  pointer-events: none
+}
+
+.hover\:pointer-events-auto:hover {
+  pointer-events: auto
+}
+
+.focus\:pointer-events-none:focus {
+  pointer-events: none
+}
+
+.focus\:pointer-events-auto:focus {
+  pointer-events: auto
+}
+
+.cursor-auto {
+  cursor: auto
+}
+
+.cursor-default {
+  cursor: default
+}
+
+.cursor-pointer {
+  cursor: pointer
+}
+
+.cursor-wait {
+  cursor: wait
+}
+
+.cursor-text {
+  cursor: text
+}
+
+.cursor-move {
+  cursor: move
+}
+
+.cursor-help {
+  cursor: help
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed
+}
+
+.hover\:cursor-auto:hover {
+  cursor: auto
+}
+
+.hover\:cursor-default:hover {
+  cursor: default
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer
+}
+
+.hover\:cursor-wait:hover {
+  cursor: wait
+}
+
+.hover\:cursor-text:hover {
+  cursor: text
+}
+
+.hover\:cursor-move:hover {
+  cursor: move
+}
+
+.hover\:cursor-help:hover {
+  cursor: help
+}
+
+.hover\:cursor-not-allowed:hover {
+  cursor: not-allowed
+}
+
+.focus\:cursor-auto:focus {
+  cursor: auto
+}
+
+.focus\:cursor-default:focus {
+  cursor: default
+}
+
+.focus\:cursor-pointer:focus {
+  cursor: pointer
+}
+
+.focus\:cursor-wait:focus {
+  cursor: wait
+}
+
+.focus\:cursor-text:focus {
+  cursor: text
+}
+
+.focus\:cursor-move:focus {
+  cursor: move
+}
+
+.focus\:cursor-help:focus {
+  cursor: help
+}
+
+.focus\:cursor-not-allowed:focus {
+  cursor: not-allowed
+}
+
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none
+}
+
+.select-text {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text
+}
+
+.select-all {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all
+}
+
+.select-auto {
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto
+}
+
+.resize-none {
+  resize: none
+}
+
+.resize-y {
+  resize: vertical
+}
+
+.resize-x {
+  resize: horizontal
+}
+
+.resize {
+  resize: both
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none
+}
+
+.hover\:appearance-none:hover {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none
+}
+
+.focus\:appearance-none:focus {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.outline-white {
+  outline: 2px dotted white;
+  outline-offset: 2px
+}
+
+.outline-black {
+  outline: 2px dotted black;
+  outline-offset: 2px
+}
+
+.hover\:outline-none:hover {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.hover\:outline-white:hover {
+  outline: 2px dotted white;
+  outline-offset: 2px
+}
+
+.hover\:outline-black:hover {
+  outline: 2px dotted black;
+  outline-offset: 2px
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.focus\:outline-white:focus {
+  outline: 2px dotted white;
+  outline-offset: 2px
+}
+
+.focus\:outline-black:focus {
+  outline: 2px dotted black;
+  outline-offset: 2px
+}
+
+.content-none {
+  content: none
+}

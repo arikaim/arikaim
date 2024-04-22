@@ -1,0 +1,31 @@
+{
+    "version": "3.3.4",
+    "name": "chart",
+    "title": "Chart.js",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/chart-library.git",
+    "help": "https://www.chartjs.org/docs/latest/",
+    "description": "Simple yet flexible JavaScript charting for designers & developers.",
+    "framework": false,
+    "files": [     
+        "chart.min.js"
+    ],
+    "versions": {
+        "2.9": {
+            "files": [
+                "chart.bundle.min.js"
+            ]
+        },
+        "apex": {
+            "files": [
+                "apex/apexcharts.min.js",
+                "apex/apexcharts.css"
+            ]
+        },
+        "cdn": {
+            "files": [
+                "https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
+            ]            
+        }
+    }       
+}

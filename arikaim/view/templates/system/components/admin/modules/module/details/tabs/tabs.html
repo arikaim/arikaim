@@ -1,0 +1,109 @@
+{% set module = package('module').getPackageProperties(module_name,true) %}
+<div class="ui stackable grid">
+    <div class="stretched row">
+        <div class="ui four wide column">
+            <div class="ui segment">
+                <div class="ui header">
+                    <i class="left floated rounded big bordered blue icon plug"></i>  
+                    <div class="content">
+                        {{ module.title }} 
+                        <div class="ui basic mini label">
+                            {{ labels.version }}
+                            <div class="detail">
+                                {{ module.version }}
+                            </div>
+                        </div>                     
+                        <div class="sub header">{{ module.description }}</div>
+                    </div> 
+                </div>
+            </div>
+            <div class="ui segment">
+                {% if module.help is not null %}
+                <div class="ui mini basic icon label">
+                    <a class="" href="{{ module.help }}" target="_blank" {{ labels.help|attr('title') }}>
+                        <i class="icon info circle blue"></i>   
+                        {{ labels.help }}        
+                    </a>
+                </div>
+                {% endif %}
+                <div class="ui label mini blue basic">
+                    {{ labels.type }}
+                    <div class="detail text-gray-800">                    
+                        {{ module.type }}
+                    </div>
+                </div>      
+                {% if module.bootable == true %}
+                <div class="ui label mini blue basic">
+                    {{ labels.bootable }}
+                </div>
+                {% endif %} 
+                {% if module.facade.alias is not empty %}
+                <div class="ui label mini blue basic">
+                    {{ labels.facade }}
+                    <div class="detail text-gray-800">
+                        {{ module.facade.alias }}
+                    </div>
+                </div>       
+                {% endif %} 
+            </div>
+            {% set package = package('module').createPackage(module_name) %}
+            {% set items = package.validator.validate() %}  
+            {% if items.count > 0 %}                              
+                <div class="ui segment">
+                    {{  component('system:admin.packages.requires',{ 
+                            items: items                          
+                        }) 
+                    }}     
+                </div>    
+                {% if items.composer is not empty %}           
+                <div class="ui segment ">
+                    <button class="ui mini primary basic button module-button update-composer" name="{{ module_name }}">    
+                        <i class="icon download"></i> 
+                        {{ labels.update }}
+                    </button>      
+                </div>                 
+                {% endif %}               
+            {% endif %}                             
+        </div>
+        <div class="ui twelve wide column">
+            <div class="ui segment fluid">
+                {{  component('system:admin.packages.repository',{ 
+                        type: 'module',                    
+                        package_name: module.name, 
+                        repository_name: module.get('repository'),
+                        repository_type: module.get('repository-type',null),
+                        installed_version: module.version           
+                    }) 
+                }}
+            </div>
+            <div class="ui segment fluid">
+                <div class="ui stackable top attached tabular menu" id="module_details_tab">
+                    <a class="item active" data-tab="drivers_tab">
+                        <i class="icon blue code"></i>
+                        {{ tabs.drivers.content }}
+                    </a> 
+                    <a class="item" data-tab="console_tab" {{ tabs.console.title|attr('title') }}>
+                        <i class="icon blue terminal"></i>
+                        {{ tabs.console.content }}
+                    </a>        
+                </div>
+                <div class="ui bottom attached tab segment active {{ tabs.routes.class }}" data-tab="drivers_tab">                                     
+                    {{  component('semantic~list.items',{ 
+                            items: package.getDrivers(),
+                            icon: "code",
+                            help_icon: "terminal" 
+                        }) 
+                    }}    
+                </div>
+                <div class="ui bottom attached tab segment {{ tabs.console.class }}" data-tab="console_tab">
+                    {{  component('semantic~list.description',{ 
+                            items: module.console_commands,
+                            icon: "angle right",
+                            help_icon: "terminal" 
+                        }) 
+                    }}         
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

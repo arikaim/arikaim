@@ -1,0 +1,173 @@
+{   
+    "title": "Fomantic UI",
+    "version": "2.9.3",
+    "name": "fomantic",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/fomantic-library.git",
+    "description": "A community fork of Semantic-UI",
+    "framework": true,
+    "help": "https://fomantic-ui.com/introduction/getting-started.html",
+    "files": [     
+        "semantic.min.js",
+        "semantic.min.css"         
+    ],
+    "versions": {   
+        "slider": {
+            "files": [
+                "components/slider.min.css",
+                "components/slider.min.js"
+            ]
+        },
+        "calendar": {
+            "files": [
+                "components/calendar.min.css",
+                "components/calendar.min.js"
+            ]
+        },
+        "api": {
+            "files": [
+                "components/api.min.js"
+            ]
+        },
+        "form": {
+            "files": [
+                "components/state.min.js",
+                "components/form.min.js",
+                "components/form.min.css",
+                "components/input.min.css",
+                "components/checkbox.min.css",
+                "components/checkbox.min.js",
+                "components/button.min.css",
+                "components/dropdown.min.js",               
+                "components/dropdown.min.css"
+            ]
+        },
+        "input": {
+            "files": [
+                "components/input.min.css"
+            ]
+        },
+        "checkbox": {
+            "files": [
+                "components/checkbox.min.css",
+                "components/checkbox.min.js"
+            ]
+        },
+        "form-validation": {
+            "files": [
+                "components/form.min.js"
+            ]
+        },
+        "breadcrumb": {
+            "files": [
+                "breadcrumb.min.css"
+            ]
+        },
+        "state": {
+            "files": [
+                "components/state.min.js"
+            ]
+        },
+        "button": {
+            "files": [
+                "components/button.min.css"
+            ]
+        },
+        "label": {
+            "files": [               
+                "components/label.min.css"
+            ]
+        },
+        "popup": {
+            "files": [
+                "components/popup.min.js",
+                "components/popup.min.css"
+            ]
+        },
+        "rating": {
+            "files": [
+                "components/rating.min.js",
+                "components/rating.min.css"
+            ]
+        },
+        "progress": {
+            "files": [
+                "components/progress.min.js",
+                "components/progress.min.css"
+            ]
+        },
+        "dimmer": {
+            "files": [
+                "components/dimmer.min.js",
+                "components/dimmer.min.css"
+            ]
+        },
+        "dropdown": {
+            "files": [
+                "components/dropdown.min.js",
+                "components/dropdown.min.css"
+            ]
+        },
+        "transition": {
+            "files": [
+                "components/transition.min.js",
+                "components/transition.min.css"
+            ]
+        },
+        "source": {
+            "files": [
+                "semantic.js",
+                "semantic.css"         
+            ]
+        },
+        "modal": {
+            "files": [
+                "components/modal.min.js",
+                "components/modal.min.css"               
+            ]
+        },
+        "icons": {
+            "files": [
+                "components/icon.min.css"               
+            ]
+        },
+        "flags": {
+            "files": [
+                "components/flag.min.css"               
+            ]
+        },
+        "loader": {
+            "files": [
+                "components/loader.min.css"               
+            ]
+        },
+        "accordion": {
+            "files": [
+                "components/accordion.min.css",
+                "components/accordion.min.js"                   
+            ]
+        },
+        "tab": {
+            "files": [
+                "components/tab.min.css",
+                "components/tab.min.js"                   
+            ]
+        },
+        "table": {
+            "files": [
+                "components/table.min.css"                            
+            ]
+        },
+        "menu": {
+            "files": [
+                "components/menu.min.css"                       
+            ]
+        },
+        "toast": {
+            "files": [
+                "components/toast.min.css",
+                "components/toast.min.js"                                 
+            ]
+        }
+    }
+}

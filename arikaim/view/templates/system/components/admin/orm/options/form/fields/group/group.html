@@ -1,0 +1,10 @@
+{% set groups = createModel('UserGroups').getActive() %}
+<div class="field">
+    <label>{{ option.type.title }}</label>
+    <select class="ui dropdown option-group option-field" name="options[{{ option.key }}]" data-content="{{ option.type.description }}">
+        {% for item in groups.get() %}              
+        <option value="{{ item.slug }}" {{ option.val|ifthen(item.slug,'selected') }} >{{ item.title }}</option>
+        {% endfor %}
+    </select>
+    {{ component('system:admin.orm.options.form.fields.type',{ option: option }) }} 
+</div>

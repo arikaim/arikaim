@@ -1,0 +1,14 @@
+{
+    "error": "Not vlaid params",
+    "labels": {
+        "type": "Type",
+        "relation": "Relation",
+        "remove": "Remove"
+    },
+    "messages": {
+        "remove": {
+            "title": "Confirm Remove",
+            "description": "Remove relation <b><% title %></b>"
+        }
+    }
+}

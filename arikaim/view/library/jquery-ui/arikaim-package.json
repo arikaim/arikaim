@@ -1,0 +1,12 @@
+{
+    "title": "JQuery UI",
+    "name": "jquery-ui",
+    "package-type": "library",
+    "version": "1.12.2",
+    "help": "https://api.jqueryui.com/",
+    "repository": "https://github.com/arikaim/jquery-ui-library.git",
+    "description": "JQuery user interface library",
+    "files": [
+        "jquery-ui.min.js"
+    ]    
+}

@@ -1,0 +1,9 @@
+{  
+    "labels": {
+        "version": "Version",
+        "composer": "Composer Packages",          
+        "modules": "Modules",
+        "console": "Console",
+        "node": "NodeJs Info"       
+    }  
+}

@@ -1,0 +1,25 @@
+{% set params = { extension_name: extension_name } %}
+<div class="p-8" id="help_content">
+    {% if hasModule('docs') == false %}
+        {{  component('system:admin.packages.store.package-message',{ 
+                package_type: 'modules',
+                package_name: 'Docs', 
+                content_id: 'help_content' 
+            }) 
+        }}
+    {% else %}
+        {{  component('semantic~tabs.vertical',{ 
+                items: [ 
+                    { title: labels.api, component: 'system:admin.help.api', icon: 'code', active: true, params }        
+                ], 
+                menu: { id: 'help_menu_tab' }, 
+                item_class: 'help-tab-item',
+                content: {
+                    id: 'help_content',
+                    component: 'system:admin.help.api',
+                    params: params 
+                }
+            })
+        }}
+    {% endif %}
+</div>

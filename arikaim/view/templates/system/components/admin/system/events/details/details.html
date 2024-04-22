@@ -1,0 +1,96 @@
+{% set event = createModel('Events').findById(uuid) %}
+{% set subscribers = event.subscribers() %}
+<div class="ui segment">
+    <div class="ui header">
+        {{ title }}
+    </div>
+    <div class="mt-4">
+        <table class="ui table very basic definition">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="two wide right aligned">{{ labels.id }}</td>
+                    <td>{{ event.uuid }}</td>
+                </tr>
+                <tr>
+                    <td class="two wide right aligned">{{ labels.name }}</td>
+                    <td>{{ event.name }}</td>
+                </tr>
+                <tr>
+                    <td class="two wide right aligned">{{ labels.description }}</td>
+                    <td>
+                        <h5>{{ event.title }}</h5>
+                        <p>
+                            {{ event.description }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="two wide right aligned">{{ labels.status }}</td>
+                    <td>
+                        {{ component('semantic~status.label',{ status: event.status }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="two wide right aligned">{{ labels.extension }}</td>
+                    <td>
+                        {% set name = (event.extension_name is empty) ? 'core' : event.extension_name %}
+                        <div class="ui basix label">
+                            {{ name }}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5 class="ui horizontal divider header left aligned">
+            <i class="icon blue small code"></i>
+            {{ labels.subscribers }}
+        </h5>
+        <div class="ui list">
+            {% if subscribers|length == 0 %}
+            <div class="item">..</div>
+            {% endif %}
+            {% for item in subscribers %}
+            <div class="item">
+                <div class="ui right floated basic label">
+                    {{ labels.priority }}
+                    <div class="detail">
+                        {{ item.priority }}
+                    </div>               
+                </div>
+                <div class="ui right floated basic label">
+                    {{ labels.extension }}
+                    <div class="detail">
+                        <span class="ui text blue">
+                            {{ item.extension_name }}
+                        </span>
+                    </div>
+                </div>          
+                <div class="content">              
+                    {{ component('semantic~status.label',{ status: item.status }) }}
+                    <i class="icon code blue"></i>
+                    {{ item.handler_class }}
+                    {% if item.handler_method is not empty %}
+                    <div class="ui horizontal mini basic label">
+                        {{ item.handler_method }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if event.properties is not empty %}
+        <h5>
+            {{ labels.properties }}
+        </h5>
+        <div>
+            {{ component('semantic~properties.details',{ properties: event.properties }) }}
+        </div>
+        {% endif %}
+    </div>
+</div>

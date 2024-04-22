@@ -1,0 +1,31 @@
+
+{% set items = createModel(model,extension) %}
+{% if uuid is not empty %} 
+{% set relation_model = createModel(items.getRelationModelClass(),extension).findById(uuid) %}
+    {% set id = relation_model.id %}
+{% endif %}  
+{% set items = items.getItemsQuery(relation_id) %}
+{% set items = paginate(items,'relations') %}
+
+{% for item in items.getItems() %}
+    {%  set relation_name = component('system:admin.orm.model.name',{ 
+            extension: extension, 
+            type: item.relation_type, 
+            uuid: item.relation_id 
+        }) 
+    %}
+    <tr id="{{ item.uuid }}">
+        <td>
+            <button class="ui icon basic mini button delete-relation" uuid="{{ item.uuid }}" model="{{ model }}" extension="{{ extension }}" data-title="{{ relation_name|striptags }}">
+                <i class="icon orange trash"></i>
+            </button>
+        </td>
+        <td>{{ item.relation_type }}</td>
+        <td>
+            <button class="ui icon basic mini button model-info" extension="{{ extension }}" type="{{ item.relation_type }}" uuid="{{ item.relation_id }}" data-title="{{ relation_name|striptags }}">
+                <i class="icon info circle"></i>       
+            </button>  
+            {{ relation_name }}                
+        </td>
+    </tr>
+{% endfor %}

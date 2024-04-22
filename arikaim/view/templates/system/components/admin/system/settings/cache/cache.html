@@ -1,0 +1,38 @@
+{% set cache = service('cache') %}
+{% set stats = cache.getStats() %}
+{% set status = getConfigOption('settings/cache') %}
+
+<div class="ui two column grid">
+    <div class="column">
+        {% component 'semantic~panel' %}
+            {% set close_button = false %}
+            <div class="ui equal width form mt-2">    
+                <div class="py-4">
+                    <h4>{{ labels.driver }}</h4>
+                    {{ component('system:admin.system.settings.cache.driver',{ class: 'button basic' }) }}
+                </div>    
+                <div class="ui">
+                    {{ component('semantic~dropdown.enable',{ selected: status, class: 'mini basic button' }) }}
+                    {% if status == true %}
+                        <button 
+                            mountTo="cache_info"
+                            component="system:admin.system.settings.cache.info"
+                            class="ml-2 ui cache-info-button green mini button">
+                            {{ buttons.info }}
+                        </button>
+                        <button 
+                            class="ui green blue mini button" 
+                            id="clear_cache_button">
+                            {{ buttons.clear }}
+                        </button>
+                    {% endif %}
+                </div>     
+                <div class="ui success message opacity-0" id="message"></div>          
+            </div>
+        {% endcomponent %}
+    </div>
+    <div class="column" id="cache_info">
+    </div>
+</div>
+
+

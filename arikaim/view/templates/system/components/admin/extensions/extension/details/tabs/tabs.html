@@ -1,0 +1,151 @@
+{% set extension = package('extension').getPackageProperties(extension_name,true) %}
+<div class="ui stackable grid">
+    <div class="stretched row">
+        <div class="ui four wide column">
+            <div class="ui segment">
+                <div class="ui header">
+                    <i class="left floated rounded big bordered blue icon {{ extension.get('admin_menu').icon }}"></i>  
+                    <div class="content">
+                        {{ extension.title }} 
+                        <div class="ui basic mini label">
+                            {{ labels.version }}
+                            <div class="detail">
+                                {{ extension.version }}
+                            </div>
+                        </div>
+                        {% if extension.primary == 1 %}     
+                        <div class="ui right floated green mini label primary-label">               
+                            {{ labels.primary }}            
+                        </div>  
+                        {% endif %}
+                        <div class="sub header">{{ extension.description }}</div>
+                    </div> 
+                </div>
+            </div>
+            {% set package = package('extension').createPackage(extension_name) %}
+            {% set items = package.validator.validate() %}  
+            {% if items.count > 0 %}
+                <div class="mt-1">                   
+                    <div class="ui segment">
+                        {{ component('system:admin.packages.requires',{ items: items }) }}     
+                    </div>                                                        
+                </div> 
+            {% endif %}    
+        </div>
+        <div class="ui four wide column">
+            <div class="ui segment">
+                {{  component('system:admin.packages.repository',{ 
+                        type: 'extension', 
+                        package_name: extension.name,
+                        repository_name: extension.get('repository'),
+                        repository_type: extension.get('repository-type',null),
+                        installed_version: extension.version 
+                    }) 
+                }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui stackable top attached tabular menu" id="extension_details_tab">
+    <a class="item active" data-tab="routes_tab">
+        <i class="icon blue linkify"></i>
+        {{ tabs.routes.content }}
+    </a> 
+    <a class="item" data-tab="database_tab">
+        <i class="icon blue database"></i>
+        {{ tabs.database.content }}
+    </a> 
+    <a class="item" data-tab="events_tab">
+        <i class="icon blue checked calendar"></i>
+        {{ tabs.events.content }}
+    </a> 
+    <a class="item" data-tab="template_tab">
+        <i class="icon blue browser"></i>
+        {{ tabs.view.content }}
+    </a>   
+    <a class="item" data-tab="console_tab" {{ tabs.console.title|attr('title') }}>
+        <i class="icon blue terminal"></i>
+        {{ tabs.console.content }}
+    </a>
+    <a class="item" data-tab="emails_tab">
+        <i class="icon blue envelope outline"></i>
+        {{ tabs.emails.content }}
+    </a>  
+    <a class="item" data-tab="jobs_tab">
+        <i class="icon blue cogs"></i>
+        {{ tabs.jobs.content }}
+    </a>   
+    <a class="item" data-tab="actions_tab">
+        <i class="icon blue code"></i>
+        {{ tabs.actions.content }}
+    </a>         
+</div>
+<div class="ui bottom attached tab segment active {{ tabs.routes.class }}" data-tab="routes_tab">
+    {{ component('system:admin.routes',{ routes: extension.routes }) }}
+</div>
+<div class="ui bottom attached tab segment {{ tabs.database.class }}" data-tab="database_tab">
+    {{ component('semantic~list.items',{ items: extension.database, icon: "table" }) }} 
+</div>
+<div class="ui up tab {{ tabs.events.class }}" data-tab="events_tab" id="events_tab">
+    <div class="ui horizontal divider"></div>
+    <div class="ui top attached tabular mini menu">
+        <a class="item active" data-tab="events_tab/registered_events_tab">
+            <i class="icon checked calendar"></i>
+            {{ tabs.events.content }}
+        </a>
+        <a class="item" data-tab="events_tab/subscribers_tab">
+            <i class="icon code"></i>
+            {{ tabs.subscribers.content }}
+        </a>
+    </div>
+    <div class="ui bottom attached tab segment active {{ tabs.events.class }}" data-tab="events_tab/registered_events_tab">
+        {{ component('semantic~list.description',{ items: extension.events, icon: "checked calendar" }) }}      
+    </div>
+    <div class="ui bottom attached tab segment {{ tabs.subscribers.class }}" data-tab="events_tab/subscribers_tab">
+        {{ component('system:admin.extensions.extension.subscribers',{ items: extension.subscribers }) }}
+    </div>
+</div>
+<div class="ui up tab {{ tabs.template.class }}" data-tab="template_tab">
+    <div class="ui horizontal divider"></div>
+    <div class="ui stackable top attached tabular mini menu" id="template_tab">
+        <a class="item active" data-tab="template_tab/components_tab">
+            <i class="icon code"></i>
+            {{ tabs.components.content }}
+        </a>     
+        <a class="item" data-tab="template_tab/pages_tab">
+            <i class="icon file text outline"></i>
+            {{ tabs.pages.content }}
+        </a> 
+        <a class="item" data-tab="template_tab/macros_tab">
+            <i class="icon settings"></i>
+            {{ tabs.macros.content }}
+        </a>                
+    </div>
+    <div class="ui bottom attached tab segment active {{ tabs.components.class }}" data-tab="template_tab/components_tab">
+        {{ component('system:admin.component',{ components: extension.components, extension: extension_name }) }} 
+    </div>
+    <div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="template_tab/pages_tab">
+        {{ component('semantic~list.items',{ items: extension.pages, icon: "file text outline" }) }} 
+    </div>
+    <div class="ui bottom attached tab segment {{ tabs.macros.class }}" data-tab="template_tab/macros_tab">
+        {{ component('semantic~list.items',{ items: extension.macros, icon:"settings" }) }} 
+    </div>
+</div>
+<div class="ui bottom attached tab segment {{ tabs.console.class }}" data-tab="console_tab">  
+    {{  component('semantic~list.description',{ 
+            items: extension.console_commands,
+            icon: "angle right",
+            help_icon: "terminal" 
+        }) 
+    }}         
+</div>
+<div class="ui bottom attached tab segment {{ tabs.database.class }}" data-tab="emails_tab">   
+    {{ component('semantic~list.items',{ items: extension.emails, icon: "envelope outline" }) }} 
+</div>
+<div class="ui bottom attached tab segment {{ tabs.jobs.class }}" data-tab="jobs_tab">   
+    {{ component('semantic~list.items',{ items: extension.jobs, icon: "cogs blue" }) }} 
+</div>
+<div class="ui bottom attached tab segment {{ tabs.jobs.class }}" data-tab="actions_tab">   
+    {{ component('semantic~list.items',{ items: extension.actions, icon: "code blue" }) }} 
+</div>
+

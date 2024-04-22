@@ -1,0 +1,85 @@
+{% set template = package('template').getPackageProperties(template_name,true) %}
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="ui three wide column">
+            {{  component('system:admin.templates.template',{ 
+                    template_name: template_name,
+                    show_buttons: 0,
+                    show_requires: true, 
+                    class: 'fluid'
+                }) 
+            }}
+        </div>
+        <div class="ui thirteen wide column">
+            <div class="ui segment">
+                {{  component('system:admin.packages.repository',{ 
+                        type: 'template',
+                        package_name: template.name,
+                        repository_name: template.get('repository'),
+                        repository_type: template.get('repository-type',null),
+                        confirm_overwrite: true,
+                        installed_version: template.version   
+                    }) 
+                }}
+            </div>
+            <div class="ui stackable top attached tabular menu mt-2" id="templates_details_tab">                
+                <a class="item" data-tab="components_tab">
+                    <i class="icon blue code"></i>
+                    {{ tabs.components.content }}
+                </a>    
+                <a class="item" data-tab="macros_tab">
+                    <i class="icon blue settings"></i>
+                    {{ tabs.macros.content }}
+                </a>  
+                <a class="item" data-tab="pages_tab">
+                    <i class="icon blue file text outline"></i>
+                    {{ tabs.pages.content }}
+                </a>   
+                <a class="item" data-tab="routes_tab">
+                    <i class="icon blue linkify"></i>
+                    {{ tabs.routes.content }}
+                </a> 
+                <a class="item" data-tab="languages_tab">
+                    <i class="icon blue globe"></i>
+                    {{ tabs.languages.content }}
+                </a>   
+                <a class="item" data-tab="emails_tab">
+                    <i class="icon blue envelope outline"></i>
+                    {{ tabs.emails.content }}
+                </a>  
+                <a class="item" data-tab="css_tab">
+                    <i class="icon blue css3 outline"></i>
+                    {{ tabs.css.content }}
+                </a>  
+                <a class="item" data-tab="js_tab">
+                    <i class="icon blue js square"></i>
+                    {{ tabs.js.content }}
+                </a>  
+            </div>            
+            <div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="components_tab">   
+                {{ component('system:admin.component',{ components: template.components, template: template_name }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.themes.class }}" data-tab="macros_tab">
+                {{ component('semantic~list.items',{ items:template.macros, icon:"settings" }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="pages_tab">
+                {{ component('semantic~list.items',{ items:template.pages, icon:"file text outline" }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.pages.class }}" data-tab="routes_tab">      
+                {{ component('system:admin.routes',{ routes: template.routes }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.languages.class }}" data-tab="languages_tab">      
+                {{ component('system:admin.templates.template.details.languages',{ languages: template.languages }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.emails.class }}" data-tab="emails_tab">               
+                {{ component('system:admin.templates.template.details.emails',{ emails: template.emails }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.css.class }}" data-tab="css_tab">               
+                {{ component('system:admin.templates.template.details.css',{ template_name: template_name }) }}
+            </div>
+            <div class="ui bottom attached tab segment {{ tabs.js.class }}" data-tab="js_tab">               
+                {{ component('system:admin.templates.template.details.js',{ template_name: template_name }) }}
+            </div>
+        </div>
+    </div>    
+</div>

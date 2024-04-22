@@ -1,0 +1,33 @@
+{% set events = createModel('Events').orderBy('name') %}
+{% set core_only = searchValue('core_only',false) %}
+{% set paginator = paginate(events,'events') %}
+
+{% for event in paginator.getItems() %}
+<div class="item">
+    <div class="content">   
+        <div class="ui right floated basic label">
+            {% if event.extension_name is not empty %}
+                {{ labels.extension }}
+                <div class="detail">
+                    <span class="ui blue text">
+                        {{ event.extension_name }}
+                    </span>               
+                </div>
+            {% else %}
+            core
+            {% endif %}
+        </div>              
+        <div class="ui header">
+            <i class="calendar outline icon small blue"></i>
+            <div class="content">
+                <a class="link event-details" uuid="{{ event.uuid }}">
+                    {{ event.name }}
+                </a>   
+            </div>                   
+        </div>
+        <div class="description">
+            {{ event.title }}
+        </div>                   
+    </div>                               
+</div>
+{% endfor %}

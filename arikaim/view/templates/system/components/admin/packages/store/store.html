@@ -1,0 +1,23 @@
+{%  set items = [           
+    { 
+        id: 'store_settings_tab', 
+        title: labels.settings, 
+        component: 'system:admin.packages.store.settings', 
+        icon: 'cogs',
+        active: true 
+    }    
+]%}
+
+<div class="mt-8 p-2">
+    {{  component('semantic~tabs.vertical',{ 
+            items: items,
+            menu: { id: 'arikakm_store_menu' }, 
+            item_class: 'store-tab-item',
+            content: { 
+                component: 'system:admin.packages.store.settings', 
+                params: params,
+                id: "arikaim_store_content" 
+            } 
+        })
+    }}
+</div>

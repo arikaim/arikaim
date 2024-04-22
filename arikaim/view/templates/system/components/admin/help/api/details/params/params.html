@@ -1,0 +1,37 @@
+<h4>{{ title }}</h4>           
+<table class="ui very basic definition table">
+    <thead>
+        <tr>
+            <th class="two wide right aligned">{{ labels.name }}</th>
+            <th>{{ labels.description }}</th>
+            <th class="one wide">{{ labels.type }}</th>
+            {% if hide_reqired != true %}
+            <th clss="one wide">{{ labels.required }}</th>
+            {% endif %}
+            <th>{{ labels.default }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for param in items %}
+        <tr>
+            <td class="right aligned">
+                {{ param.name }}
+            </td>
+            <td>
+                {{ param.description }}                           
+            </td>
+            <td>
+                {{ param.type }}                           
+            </td>
+            {% if hide_reqired != true %}
+            <td class="text-bold">                           
+                {{ (param.required == true) ? 'true' : 'false' }}                           
+            </td>
+            {% endif %}
+            <td>
+                {{ param.default }}                           
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> 

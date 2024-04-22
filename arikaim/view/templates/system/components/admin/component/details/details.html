@@ -1,0 +1,16 @@
+{% set name = (extension is empty) ? template ~ ':' ~ component : extension ~ '::' ~ component %}
+{% set options = service('page').renderHtmlComponent(name).getOptions() %}
+<div class="ml-3">
+    <div class="ui card">
+        <div class="content">
+            <h5 class="text font-bold">{{ labels.title }}</h5> 
+            <div class="ui divider"></div>          
+            <div class="text">{{ labels.auth }}</div> 
+            {% set auth = options.access.auth|default(labels.none) %}           
+            <div class="ui basic mini blue horizontal label">{{ auth }}</div>  
+            <div class="ui divider"></div>                   
+            <div class="">{{ labels.permissions }}</div>  
+            {{ component("semantic~labels.permissions",{ permissions: options.access.permissions }) }}                           
+        </div>
+    </div>
+</div>

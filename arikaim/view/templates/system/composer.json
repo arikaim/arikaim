@@ -1,0 +1,27 @@
+{
+    "name": "arikaim/system-template",
+    "description": "Arikam CMS Control Panel Template",
+    "keywords": ["Module", "Arikaim Control Panel template"],
+    "type": "arikaim-template",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "arikaim/installer": "^1.0.0",
+        "arikaim/arikaim-library": "^1.0.0",
+        "arikaim/arikaim-ui-library": "^1.0.0",
+        "arikaim/jquery-library": "^3.0.0",
+        "arikaim/jquery-ui-library": "^1.0.0",
+        "arikaim/filepond-library": "^4.0.0",
+        "arikaim/foundation-emails-library": "^2.0.0",
+        "arikaim/fomantic-library": "^2.0.0",
+        "arikaim/highlight-library": "*",
+        "arikaim/tailwind-library": "^1.0.0"
+    },
+    "extra": {
+        "path": "system"
+    }
+}

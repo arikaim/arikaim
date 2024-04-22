@@ -1,0 +1,12 @@
+{
+    "include": {
+        "js": [
+            "system:admin.packages.repository",
+            "system:admin.options"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "permission": "ControlPanel:full"
+    }
+}

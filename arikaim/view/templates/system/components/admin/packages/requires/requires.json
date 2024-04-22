@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "title": "Requires",
+        "library": "UI Library",
+        "extension": "Extensions",
+        "module": "Modules",
+        "theme": "Themes",
+        "pip": "Python Packages",
+        "update": "Update Packages"        
+    }
+}

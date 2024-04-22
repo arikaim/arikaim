@@ -1,0 +1,12 @@
+{
+    "title": "Details",
+    "labels": {
+        "name": "Name",
+        "type": "Type",
+        "details": "Details",
+        "required": "Required",
+        "default": "Default",
+        "description": "Description",
+        "none": "none"
+    }
+}

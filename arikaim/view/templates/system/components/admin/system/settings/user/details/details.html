@@ -1,0 +1,35 @@
+{% set user = access().getUser() %}
+<div class="ui grid">
+    <div class="seven wide column">
+        <div class="ui segment">
+            <div class="ui horizontal divider">             
+                {{ title }}
+            </div>
+            {% if demo_mode != true %}
+                <form class="ui equal width form mt-8" id="user_details_form"> 
+                    <div class="required field">
+                        <label>{{ fields.user_name.label }}</label> 
+                        <div class="ui left icon input">
+                            <i class="icon user"></i>
+                            <input rule="minLength[2]" type="text" name="user_name" id="user_name" {{ fields.user_name.placeholder|attr('placeholder') }} value="{{ user.user_name }}">    
+                        </div>
+                    </div>            
+                    <div class="field">
+                        <label>{{ fields.email.label }}</label>
+                        <div class="ui left icon input">
+                            <i class="icon mail outline"></i>
+                            <input type="text" name="email" id="email" {{ fields.email.placeholder|attr("placeholder") }} value="{{ user.email }}">    
+                        </div>                       
+                    </div>
+                    {% if demo_mode == false %}
+                        {{ component('semantic~form.footer') }}     
+                    {% endif %}            
+                </form>
+            {% else %}
+                <div class="ui warning message">
+                    {{ labels.demo }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

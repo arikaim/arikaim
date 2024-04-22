@@ -1,0 +1,52 @@
+{% set from_email = getOption("mailer.from.email") %}
+{% set from_name = getOption("mailer.from.name") %}
+{% set log_info = getOption("mailer.log") %}
+{% set log_error = getOption("mailer.log.error") %}
+{% if demo_mode == true %}
+    <div class="ui warning message">
+        {{ messages.demo }}
+    </div>
+{% else %}
+<div class="ui segment">
+    <h4>{{ title }}</h4>
+    <form class="ui equal width form" id="mailer_settings_form" method="POST">                                      
+        <h4 class="ui dividing header">{{ labels.from }}</h4>
+        <div class="two fields">
+            <div class="field">
+                <label>{{ fields.from.email.label }}</label> 
+                <input rule="email" optional="true" id="from_email" name="mailer.from.email" value="{{ from_email }}" {{ fields.from.email.placeholder|attr('placeholder') }}>                   
+            </div> 
+            <div class="field">
+                <label>{{ fields.from.name.label }}</label> 
+                <input id="from_name" optional="true" name="mailer.from.name" value="{{ from_name }}" {{ fields.from.name.placeholder|attr('placeholder') }}>                   
+            </div>  
+        </div>
+        {{ component('semantic~form.footer') }}        
+    </form>    
+    <div class="ui horizontal section divider">
+        {{ labels.logs }}
+    </div>
+    <div class="mt-2">
+        <div class="ui two column grid">
+            <div class="column">
+                {{  component('semantic~option.checkbox',{
+                        class: 'toggle',
+                        label: labels.info,
+                        name: 'mailer.log',
+                        value: log_info
+                    })
+                }}
+            </div>
+            <div class="column">
+                {{  component('semantic~option.checkbox',{
+                        class: 'toggle',
+                        label: labels.error,
+                        name: 'mailer.log.error',
+                        value: log_error
+                    })
+                }}
+            </div>
+        </div>
+    </div>
+</div> 
+{% endif %}

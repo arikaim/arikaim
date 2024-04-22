@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "extensions": "Extensions",
+        "stream": "Stream Wrappers",
+        "pdo": "PDO Drivers",
+        "cache": "OPcache",
+        "memory": "Memory",
+        "scripts": "Scripts",      
+        "enabled": "Enabled"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "columns": {
+        "name": "Name",
+        "title": "Display Name",
+        "description": "Description",
+        "status": "Status",
+        "category": "Category",
+        "class": "Class",
+        "config": "Config"
+    },
+    "labels": {
+        "view": "View" 
+    }
+}

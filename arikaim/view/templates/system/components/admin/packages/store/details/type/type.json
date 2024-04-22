@@ -1,0 +1,12 @@
+{
+    "labels": {
+        "extensions": "Extensions",
+        "extension": "Extension",
+        "library": "UI Libraries",
+        "lib": "Librarary",
+        "modules": "Modules",
+        "module": "Module",
+        "themes": "Themes",
+        "theme": "Theme"
+    }
+}

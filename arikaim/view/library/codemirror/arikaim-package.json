@@ -1,0 +1,47 @@
+{
+    "title": "Code Mirror",
+    "package-type": "library",
+    "name": "codemirror",
+    "version": "5.58.2",
+    "description": "Code Mirror UI library",
+    "repository": "https://github.com/arikaim/code-mirror-library.git",
+    "files": [
+        "codemirror.js",       
+        "codemirror.css"
+    ],
+    "versions": {
+        "eclipse": {
+            "files": [
+                "codemirror.js",    
+                "codemirror.css",   
+                "eclipse.css"
+            ]
+        },
+        "xml": {
+            "files": [
+                "xml.js"   
+            ]
+        },
+        "js": {
+            "files": [
+                "javascript.js"   
+            ]
+        },
+        "css": {
+            "files": [
+                "css.js"   
+            ]
+        },
+        "php": {
+            "files": [
+                "php.js"   
+            ]
+        },
+        "template": {
+            "files": [
+                "xml.js",
+                "twig.js"   
+            ]
+        }
+    }
+}

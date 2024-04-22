@@ -1,0 +1,14 @@
+<div class="ui middle aligned divided list">   
+    {% if items is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    {% for subscriber in items %}
+    <div class="item">       
+        {{ component('semantic~status.icon',{ status: subscriber.status }) }}      
+        <div class="content">
+            <i class="icon grey code"></i> 
+            <span class="font-bold">{{ subscriber.handler_class|baseClass }}</span> {{ labels.subscribed }} <div class="ui basic label">{{ subscriber.name }}</div>                     
+        </div>                    
+    </div>
+    {% endfor %}
+</div>

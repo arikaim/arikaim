@@ -1,0 +1,26 @@
+{% set name = name|default(type ~ '_relations') %}
+{% set id = id|default(name) %}
+{% set relationsModel = createModel(model,extension) %}
+{% if selectins is empty %}
+{% set selections = relationsModel.getRelatedItems(relation_id,type) %}
+{% endif %}
+{% set label = label|default(labels.select) %}
+
+<div class="ui clearable multiple selection search dropdown relations-field-dropdown {{ class }}" 
+    id="{{ id }}" 
+    extension="{{ extension }}" 
+    model="{{ model }}" 
+    type="{{ type }}"
+    relation-id="{{ relation_id }}">
+    <input type="hidden" name="{{ name }}" value="{{ selections.toArray()|join(',') }}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{ label }}</div>   
+    <div class="menu">
+        {% for item in items %}      
+        {% set title = item.title|default(item.name) %}    
+        <div class="item {{ item_class }}" data-value="{{ item.id }}" uuid="{{ item.uuid }}">
+            {{ (title is iterable) ? title|string : title }}         
+        </div>
+        {% endfor %}
+    </div>
+</div>

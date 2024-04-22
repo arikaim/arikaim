@@ -1,0 +1,29 @@
+{   
+    "title": "Filepond",
+    "name": "filepond",
+    "package-type": "library",
+    "version": "4.4.5",
+    "description": "Upload anything, from anywhere.",
+    "help": "https://pqina.nl/filepond/docs/",
+    "repository": "https://github.com/arikaim/filepond-library.git",
+    "files": [
+        "filepond.min.js",
+        "filepond.jquery.js",
+        "filepond.min.css",
+        "filepond-plugin-file-validate-type.min.js",
+        "plugins/filepond-file-validate-size.min.js"                        
+    ],
+    "versions": {
+        "preview": {
+            "files": [
+                "filepond-plugin-image-preview.min.css",
+                "filepond-plugin-image-preview.min.js"   
+            ] 
+        },
+        "size": {
+            "files": [
+                "plugins/filepond-file-validate-size.min.js"
+            ] 
+        } 
+    }
+}

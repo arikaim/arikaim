@@ -1,0 +1,12 @@
+{
+    "title": "Route Details",
+    "labels": {
+        "path": "Path",
+        "name": "Name",
+        "method": "Method",
+        "status": "Status",
+        "empty": "..",
+        "controller": "Controller",
+        "middlewares": "Middlewares"
+    }
+}

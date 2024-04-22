@@ -1,0 +1,25 @@
+{% set status = (status is not defined) ? null : status %}
+{% set extensions = package('extension').getPackgesRegistry().getPackagesList({ status: status, type: type }) %}
+{% for extension in extensions %}   
+    {% if extension.admin_menu is not empty %}  
+        {% set menu = extension.admin_menu %}  
+        <div 
+            class="{{ (menu.items is iterable) ? '' : 'admin-menu-link' }} border-0 border-b-2 border-gray-900 border-solid" 
+            component="{{ menu.component }}" {{ extension.name|attr('extension') }} 
+            page-icon="{{ menu['page-icon'] }}" 
+            page-title="{{ menu['page-title'] }}">
+            <div class="popup pl-5 p-3 flex flex-row items-center menu-item-title" 
+                title="{{ extension.description }}"
+                data-position="right center"
+                data-variation="small">          
+                <i class="left icon blue {{ menu.icon }}"></i>      
+                {% if menu.items is iterable %}
+                    <i class="dropdown icon"></i>
+                {% endif %}
+                <span class="text-xl tracking-wide pl-2 text-gray-300 sm:hidden lg:inline md:hidden">
+                {{ menu.title }}
+                </span>
+            </div>            
+        </div>
+    {% endif %}
+{% endfor %}

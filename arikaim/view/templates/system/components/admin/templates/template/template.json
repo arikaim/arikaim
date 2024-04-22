@@ -1,0 +1,18 @@
+{
+    "labels": {
+        "primary": "Primary",
+        "system": "System",
+        "version": "Version"       
+    },
+    "buttons": {
+        "details": {
+            "content": "Details"
+        },
+        "primary": {
+            "content": "Primary"
+        },
+        "update": {
+            "content": "Update"
+        }
+    }
+}

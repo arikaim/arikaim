@@ -1,0 +1,101 @@
+{% if uuid is not empty %}
+    {% set route = service('routes').getRouteDetails(uuid) %}
+{% endif %}
+{% set docs = service('docs').getControllerInfo(class|default(route.handler_class),method|default(route.handler_method)) %}  
+{% set auth = (route.auth > 0) ? service('access').getAuthNames(route.auth) : null %}   
+<div class="ui segment">
+    <h4>{{ title }}</h4>
+    <p class="mt-4 p-4">              
+        {{ docs.api.description }}
+    </p>
+    {% if hide_route_details != true %}
+        <table class="ui very basic definition table">
+            <thead>
+                <tr>
+                    <th class="two wide right aligned"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="right aligned">{{ labels.method }}</td>
+                    <td>
+                        <div class="ui blue label">{{ route.method }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.path }}</td>
+                    <td>
+                        {{ route.pattern }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.auth }}</td>
+                    <td>
+                        {% if auth is iterable %}
+                            {% for item in auth %}
+                            <div class="ui label basic">
+                                {{ item }}
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="ui label">
+                                {{ labels.none }}
+                            </div>
+                        {% endif %}                                   
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+    {% if docs.api.parameters|length > 0 %}
+        {{ component('system:admin.help.api.details.params',{ title: labels.params, items: docs.api.parameters }) }}          
+    {% endif %} 
+
+    {% if docs.response is not empty %}
+        <h4 class="bg-gray-100 p-2 w-full">
+            {{ labels.response }}
+        </h4>
+        <table class="ui very basic definition table">
+            <thead>
+                <tr>
+                    <th class="two wide right aligned"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="right aligned">{{ labels.content }}</td>
+                    <td>
+                        {{ docs.response.contentType }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right aligned">{{ labels.json }}</td>
+                    <td>
+                        {{  component('semantic~code',{ 
+                                language: 'json', 
+                                hide_copy: true,
+                                class: '',
+                                trim_space: false,
+                                content: docs.response.getJson()
+                            }) 
+                        }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      
+        {% if docs.response.fields|length > 0 %}
+            {{  component('system:admin.help.api.details.params',{ 
+                    title: labels.fields,
+                    hide_reqired: true, 
+                    items: docs.response.fields 
+                }) 
+            }}          
+        {% endif %}        
+    {% endif %}
+    {% if hide_route_details != true %}
+        {{ component('system:admin.routes.route',{ route: route }) }} 
+    {% endif %}
+</div>

@@ -1,0 +1,16 @@
+{
+    "items": {
+        "100": "DEBUG",
+        "200": "INFO",
+        "250": "NOTICE",
+        "300": "WARNING",
+        "400": "ERROR",
+        "500": "CRITICAL",
+        "550": "ALERT",
+        "600": "EMERGENCY" 
+    },
+    "labels": {
+        "empty": "Message Type",
+        "all": "All"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "labels": {
+        "version": "Required",
+        "optional": "Optional",
+        "package_version": "Version"
+    }    
+}

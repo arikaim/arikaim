@@ -1,0 +1,50 @@
+{% if type == 'extensions' %}
+    {% set icon = 'puzzle piece' %}
+{% elseif type == 'modules' %}
+    {% set icon = 'plug' %}
+{% elseif type == 'library' %}
+    {% set icon = 'cube' %}
+{% elseif type == 'themes' %}
+    {% set icon = 'browser' %}
+{% endif %}
+<div class="ui raised card min-h-full">
+    <div class="content item"> 
+        <i class="blue icon {{ icon }}"></i>
+        {{ item.title }}         
+    </div>
+    <div class="content h-32">
+        {{ item.options_list.description }}
+    </div>   
+    <div class="extra content"> 
+        <div class="ui horizontal labels mini">                                                         
+            {% if item.is_free == true %}   
+            <div class="ui basic label">
+                <span class="ui text green">{{ labels.free }}</span>
+            </div>
+            {% else %}
+            <div class="ui basic label">
+                <span class="ui text orange">{{ labels.premium }}</span>
+            </div>
+            {% endif %}   
+
+            {% if installed == true %}
+            <div class="ui basic label" id="installed_{{ item.uuid }}">
+                <span class="ui text blue">{{ labels.installed }}</span>
+                <div class="detail package-version" uuid="{{ item.uuid }}" id="version_{{ item.uuid }}" package="{{ item.options_list.repository }}">
+                    {{ labels.version }}
+                    {{ current_version }}
+                </div>                
+            </div>    
+            {% endif %}   
+        </div>      
+    </div>
+    <div class="extra content">                     
+        <button class="ui basic button mini package-details" 
+            uuid="{{ item.uuid }}" 
+            installed="{{ current_version }}"
+            package-name="{{ package_name }}">
+            <i class="icon blue info"></i>
+            {{ labels.details }}
+        </button>       
+    </div>      
+</div>

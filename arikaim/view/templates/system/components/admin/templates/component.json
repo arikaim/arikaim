@@ -1,0 +1,14 @@
+{
+    "include": {
+        "js": [
+            "semantic~upload",
+            "semantic~image.modal",
+            "system:admin.packages"
+        ]   
+    },
+    "access": {
+        "auth": "session",
+        "redirect": "/admin",
+        "permission": "ControlPanel:full"
+    }
+}

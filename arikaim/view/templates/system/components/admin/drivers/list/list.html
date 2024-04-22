@@ -1,0 +1,50 @@
+{% set drivers = service('driver').getList(category) %}
+{% set empty = empty|default(label.empty) %}
+
+<div class="ui list margin-top-2">    
+    {% if drivers is empty %}  
+    <div class="item">    
+        <div class="ui message">
+            {{ empty }}
+        </div>
+    </div>
+    {% endif %}
+    {% for driver in drivers %}
+    <div class="item">        
+        <div class="left floated content">           
+            {% if editable == true %}
+                {{  component('semantic~dropdown.enable',{ 
+                        selected: driver.status,
+                        class: 'mini inline icon basic button change-driver-status', 
+                        attributes: {
+                            driver_name: driver.name 
+                        },
+                        show_label: false
+                    }) 
+                }}                   
+            {% else %}
+                {% if (driver.status == 1) %}
+                <i class="icon olive check" title="{{ label.active }}"></i>
+                {% endif %}  
+            {% endif %}
+            {% if hide_config != true %}
+            <a class="ui mini compact basic icon button driver-config" title="{{ label.settings }}" driver-name="{{ driver.name }}">
+                <i class="icon cog"></i>
+            </a>
+            {% endif %}
+            {% for button in buttons %}
+            <a class="ui mini basic icon button {{ button.class }}" title="{{ button.title }}" driver-name="{{ driver.name }}">
+                <i class="icon {{ button.icon }}"></i>
+            </a>  
+            {% endfor %}
+            {% if driver.name == current %}
+                <div class="ui label basic olive">{{ label.current }}</div>
+            {% endif %}
+        </div>
+        <div class="content">
+            <div class="header">{{ driver.title }}</div>
+            <div class="description">{{ driver.description }}</div>
+        </div>      
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,56 @@
+{
+    "version": "10.6.3",
+    "name": "highlight",
+    "title": "Highlight.js",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/highlight-library.git",
+    "help": "https://highlightjs.org/usage/",       
+    "description": "Syntax highlighting for the Web",
+    "files": [
+        "highlight.pack.js",
+        "darcula.css"       
+    ],
+    "versions": {
+        "microlight": {
+            "files": [
+                "microlight/microlight.js"
+            ]
+        },
+        "prism": {
+            "files": [
+                "prism/prism.js",
+                "prism/prism.css"    
+            ]
+        },
+        "androidstudio": {
+            "files": [
+                "highlight.pack.js",
+                "androidstudio.css"    
+            ]
+        },
+        "github": {
+            "files": [
+                "highlight.pack.js",
+                "github.css"    
+            ]
+        },
+        "dark": {
+            "files": [
+                "highlight.pack.js",
+                "dark.css"    
+            ]
+        },
+        "default": {
+            "files": [
+                "highlight.pack.js",
+                "default.css"    
+            ]
+        },
+        "atelier": {
+            "files": [
+                "highlight.pack.js",
+                "atelier-forest-light.css"    
+            ]
+        }
+    }       
+}

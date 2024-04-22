@@ -1,0 +1,45 @@
+{% set list = service('driver').getList() %}
+{% set paginator = paginate(list,'drivers')  %}
+    
+{% for item in paginator.getItems() %}
+<tr id="{{ item.uuid }}" class="row" name="{{ item.name }}" category="{{ item.category }}">        
+    <td class="two wide">
+        <button 
+            mountTo="driver_details"
+            component="system:admin.modules.drivers.details"
+            class="ui icon mini compact basic button driver-details" 
+            title="{{ labels.details }}"
+            params="driver_name:{{ item.name }}">
+            <i class="icon info"></i>
+        </button>
+        <button 
+            class="ui icon mini compact basic button driver-config" 
+            title="{{ labels.config }}"
+            name="{{ item.name }}" 
+            category="{{ item.category }}">
+            <i class="icon cogs"></i>
+        </button>
+        {% if hide_uninstall != true %} 
+        <button 
+            class="ui icon mini compact basic button driver-uninstall" 
+            title="{{ labels.uninstall }}"
+            name="{{ item.name }}" 
+            uuid="{{ item.uuid }}"
+            category="{{ item.category }}">
+            <i class="icon orange trash"></i>
+        </button>       
+        {% endif %}    
+    </td>
+    <td class="three wide column">
+        {{ component('semantic~status.dropdown',{ status: item.status, uuid: item.uuid, skip: [2,3,4,5] }) }}  
+    </td>
+    <td class="five wide column">{{ item.name }}</td>
+    <td>{{ item.category }}</td>
+    <td>{{ item.title }}</td>          
+</tr>
+{% endfor %}
+<tr>
+    <td colspan="8">
+        {{ component("semantic~paginator",items.paginator) }}
+    </td> 
+</tr>

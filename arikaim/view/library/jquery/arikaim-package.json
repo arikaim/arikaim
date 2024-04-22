@@ -1,0 +1,24 @@
+{
+    "version": "3.6.1",
+    "name": "jquery",
+    "title": "JQuery",
+    "package-type": "library",
+    "repository": "https://github.com/arikaim/jquery-library.git",
+    "help": "https://api.jquery.com/",
+    "description": "jQuery JavaScript library",
+    "files": [
+        "jquery-3.6.1.min.js"
+    ],
+    "versions": {
+        "cdn": {
+            "files": [
+                "https://code.jquery.com/jquery-3.6.1.min.js"   
+            ] 
+        },
+        "zepto": {
+            "files": [
+                "zepto.min.js"   
+            ] 
+        }      
+    }
+}

@@ -1,0 +1,27 @@
+<table class="ui compact borderless basic table">
+    <thead>
+        <tr>
+            <th class="collapsing">{{ labels.remove }}</th>           
+            <th class="one column">{{ labels.type }}</th>
+            <th class="two column">{{ labels.relation }}</th>
+        </tr>
+    </thead>
+    <tbody id="relation_rows" 
+        component="system:admin.orm.relations.view.rows" 
+        namespace="relations" 
+        model="{{ model }}" 
+        extension="{{ extension }}" 
+        uuid="{{ uuid }}" 
+        relation-id="{{ id }}">     
+        {{  component('system:admin.orm.relations.view.rows',{ 
+                model : model,
+                extension: extension,
+                uuid: uuid,
+                relation_id: id 
+            }) 
+        }}
+    </tbody>
+</table>
+<div id="paginator">      
+    {{ component("semantic~paginator",{ namespace: 'relations' }) }}
+</div>

@@ -1,0 +1,35 @@
+{% component 'current>layout' %}   
+    <div class="mt-12 p-4 container mx-auto bg-slate-50 rounded-lg shadow">
+        <h2 class="font-bold text-lg p-2">Requirements</h2>
+        <ul class="p-4 px-8">
+            <li class="list-disc">PHP 8.1</li>
+            <li class="list-disc">PDO php extension</li>
+            <li class="list-disc">Fileinfo PHP extension</li>
+            <li class="list-disc">Curl php extension</li>
+            <li class="list-disc">Zip php extension</li>
+            <li class="list-disc">Apache 2 with mod_rewrite</li>
+            <li class="list-disc">Linux server</li>
+            <li class="list-disc">MySQL 5.7+ with InnoDB </li>
+        </ul>  
+        <h3 class="font-bold text-lg p-2">Installation</h3>
+        <div class="font-lg p-4">
+            <p><strong><em>with composer</em></strong> </p>
+            <pre><code class="language-sh font-lg p-2">composer create-project arikaim/arikaim {project-name}</code></pre>
+            <p class="font-lg"><strong><em>current folder</em></strong></p>
+            <pre><code class="language-sh font-lg p-2">composer create-project arikaim/arikaim .</code></pre>
+            <p><strong><em>with git</em></strong> </p>
+            <p>1.</p>
+            <pre><code class="language-sh font-lg p-2">git clone https://github.com/arikaim/arikaim.git . </code></pre>
+            <p>2.</p>
+            <pre><code class="language-sh font-lg p-2">composer update</code></pre>
+        </div>
+        <div class="p-4">
+            <a class="btn btn-primary btn-sm" href="http://arikaim.com/documentation/installation" target="_docs">
+                Read Documentation
+            </a>
+            <a class="btn btn-secondary btn-sm" href="{{ url('/admin') }}" target="_admin">
+                Control Panel
+            </a>
+        </div>   
+    </div>    
+{% endcomponent %}

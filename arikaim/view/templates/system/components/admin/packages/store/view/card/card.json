@@ -1,0 +1,12 @@
+{
+    "labels": {
+        "version": "Version",
+        "details": "Details",
+        "install": "Download",
+        "free": "Free",
+        "premium": "Premium",
+        "installed": "Installed",
+        "update": "Download",
+        "current": "Current Version"        
+    }
+}

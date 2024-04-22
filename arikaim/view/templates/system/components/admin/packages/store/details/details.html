@@ -1,0 +1,74 @@
+{% set response = arikaimStore().fetchPackageDetails(uuid) %}
+{% set response = response|jsonDecode %}
+{% set details = response.result %}
+{% set type = details.categories[0].slug %}
+{% set repository_type = details.options_list['repository-type'] %}
+{% set private = details.options_list['private-repository'] %}
+
+<div class="mt-2">  
+    <div class="ui stretched grid">
+        <div class="ten wide column">
+            <div class="ui segment" 
+                id="package_details" 
+                uuid="{{ uuid }}" 
+                package-title="{{ details.title }}" 
+                installed="{{ installed_version }}"
+                package-name="{{ package_name }}">              
+                {% if details.is_free == true %}
+                <div class="ui label basic top right attached green">
+                    {{ labels.free }}
+                </div>
+                {% endif %}
+                {% if installed_version is not empty %}
+                <div class="ui label basic top left attached">
+                    {{ labels.version }}
+                    <span class="ui text blue pl-1">
+                        {{ installed_version }}
+                    </span>                   
+                </div>
+                {% endif %}          
+                {% if private == false %}
+                <div class="ui basic bottom right attached right label">
+                    <div class="ui right floated">
+                        {{  component('semantic~repository.link',{ 
+                                package: details.options_list.repository,
+                                target: 'repository',
+                                popup: labels.repository,
+                                class: 'ui basic right floated icon mini blue button show-popup' 
+                            }) 
+                        }}  
+                    </div>                   
+                </div>              
+                {% endif %}    
+                {% if details.is_free == true %}
+                    <div class="ui label basic top right attached">
+                        <span class="ui text olive">{{ labels.free }}</span>                                
+                    </div>
+                {% else %}
+                    <div class="ui label basic top right attached">
+                        <span class="ui text orange">{{ labels.premium }}</span>                                
+                    </div>
+                {% endif %}
+                <h3>
+                    {{ component('system:admin.packages.store.details.type',{ type: type }) }}
+                    {{ details.title }}
+                </h3>
+                <div class="mt-4">
+                    {{ details.options_list.description }}
+                </div>                                                  
+            </div>
+        </div>
+        <div class="six wide column">   
+            <div class="ui segment">               
+            {{  component('system:admin.packages.repository',{ 
+                    type: type, 
+                    package_name: package_name,
+                    installed_version: installed_version,
+                    repository_type: repository_type,
+                    repository_name: details.options_list.repository 
+                }) 
+            }}           
+            </div> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "alert": "Alert",
+    "title": "not installed.",
+    "labels": {
+        "view": "Open Package Repository"
+    }
+}

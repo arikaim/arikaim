@@ -1,0 +1,38 @@
+<div class="w-full fixed z-40">       
+    <div class="p-3 flex flex-row justify-between bg-gradient-to-r from-gray-800 via-indigo-900 to-gray-900 shadow z-40">
+        <div {{ brand.title|attr('title') }} class="w-56">           
+            <div class="page-title flex flex-row items-center">
+                <img class="" width="28px" height="28px" alt="{{ brand.image.alt }}" src="{{ template_url }}/images/{{ brand.image.src }}">
+                <span class="align-middle text-white px-2" style="display:inline">Arikaim</span> 
+            </div>      
+        </div>            
+        <div class="flex flex-row items-center place-self-end menu mr-3 bg-gray-800 rounded-lg">         
+            {% if demo_mode == true %}
+            <div class="p-1">
+                <div class="ui red label" title="{{ labels.disabled }}">{{ labels.demo }}</div>
+            </div>      
+            {% endif %}
+            <div class="px-4">
+                <a class="popup" title="{{ hint.view }}" href="{{ url('',true) }}" target="site">               
+                    <i class="columns icon blue"></i>
+                </a>
+            </div>   
+            <div class="px-4" id="language_menu">    
+                {{ component("semantic~language.select",{ selected: current_language }) }}
+            </div>
+            <div class="px-4" id="user_menu">
+                {{ component("system:admin.user-menu") }}
+            </div>                             
+        </div>  
+    </div>
+    <div class="mx-auto w-72">
+        <div 
+            class="px-4 pb-2 rounded-b-full shadow-xl bg-gradient-to-b from-indigo-900 via-indigo-900 to-indigo-800 bg-opacity-50
+            flex flex-row items-center border-0 border-b border-indigo-200 border-solid">
+            <i class="icon inverted dashboard pl-6" id="page_icon"></i>
+            <div class="flex-grow px-2 text-white font-bold text-xl text-center self-center" id="page_title">
+                {{ labels.dashboard }}
+            </div>
+        </div>  
+    </div>
+</div>

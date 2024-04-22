@@ -1,0 +1,27 @@
+{% if product|length == 0 %}
+    <div class="mt-4 p-2">
+        <form class="ui form" id="register_order_form" method="POST">      
+            <div class=" field">
+                <label>{{ labels.id }}</label>
+                <div class="ui action input">              
+                    <input rule="empty" type="text" name="order_id" id="order_id" value="" placeholder="{{ labels.placeholder }}">              
+                    <button class="ui green button register-sale-order submit-button">
+                        <i class="icon plus"></i>
+                        {{ labels.apply }}
+                    </button>
+                </div>
+            </div>   
+            {{ component('semantic~form.footer.messages') }}
+        </form>
+    </div>
+{% else %}
+    <div class="mt-8 pl-4">
+        <h4>{{ product.title }}</h4>
+    </div>
+    <div class="mt-4 pl-4">
+        <button class="ui basic icon labeled mini button remove-poroduct-order">
+            <i class="icon orange trash"></i>
+            {{ labels.remove }}
+        </button>
+    </div>
+{% endif %}

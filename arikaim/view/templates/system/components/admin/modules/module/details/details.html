@@ -1,0 +1,17 @@
+<div class="ui segment">
+    <div class="ui stackable grid">
+        <div class="four wide column">
+            <div class="flex">
+                <div class="font-bold p-2">
+                    {{ labels.module }}
+                </div>
+                {{ component("system:admin.modules.dropdown",{ selected : module, class: 'fluid' }) }}  
+            </div>
+        </div>                
+    </div>  
+</div>
+<div id="module_details" class="mt-4">   
+{% if module != "" %}  
+    {{ component("system:admin.modules.module.details.tabs",{ module_name : module }) }}
+{% endif %}
+</div>

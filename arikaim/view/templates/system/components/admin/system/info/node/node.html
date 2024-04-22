@@ -1,0 +1,7 @@
+{% set node_version = system().getNodeJsVersion() %}
+<div class="ui basic label" title="{{ (node_version is empty) ? labels.notinstalled : labels.installed }}">
+    {% set icon = (node_version is empty) ? 'red times' : 'olive check' %}
+    <i class="icon {{ icon }}"></i>
+    {{ title }}
+    <span class="pl-2 font-bold">{{ node_version }}</span>
+</div>   

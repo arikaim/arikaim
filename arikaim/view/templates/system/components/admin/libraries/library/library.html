@@ -1,0 +1,70 @@
+{% set library = package('library').getPackageProperties(library_name) %}
+{% set params = package('library').createPackage(library_name).getLibraryParams() %}
+
+{% set disabled = (params.disabled is empty) ? false : params.disabled %}
+    <div class="content">           
+        <i class="ui left floated cube large icon {{ (disabled == true) ? 'red' : 'olive' }} "></i>   
+        <div class="right floated meta">
+            <div class="ui horizontal basic mini label">               
+                {{ labels.version }} 
+                <div class="detail">{{ library.version }}</div>
+            </div>
+            {% if library.help is not empty %}
+            <a class="ui horizontal basic mini label" href="{{ library.help }}" target="_blank">  
+                <i class="question circle outline icon"></i>                            
+                <span class="ui text blue">{{ labels.help }}</span>                          
+            </a>
+            {% endif %}
+        </div>            
+        <div class="font-bold" title="{{ (disabled == true) ? labels.disable : labels.enable }}">
+            {{ library.title|default(library.name) }}             
+        </div>     
+        <div class="ui divider"></div>   
+        <div class="mt-1">
+            {{ library.description }}                                                 
+        </div>         
+        <div class="ui divider"></div>  
+        <div>
+            <div class="ui horizontal basic label">
+                {{ labels.name }}
+                <div class="detail">
+                    <span class="ui text blue">{{ library.name }}</span>                  
+                </div>                   
+            </div>            
+        </div>          
+        <div class="ui divider"></div>     
+        <div class="ui labels">
+            {% if library.async == true %}     
+                <div class="ui basic horizontal label">
+                    <span class="ui blue text">{{ labels.async }}</span>
+                </div>                          
+            {% endif %}
+            {% if library.crossorigin is not empty %}          
+                <div class="ui basic horizontal label">
+                    <span class="ui text blue">
+                        {{ labels.crossorigin }}
+                    </span>    
+                    {{ library.crossorigin }}
+                </div>                   
+            {% endif %}
+        </div>
+    </div>
+    <div class="extra content">
+        <button class="ui mini basic button details-button" library="{{ library.name }}">
+            <i class="icon info"></i>
+            {{ labels.details }}
+        </button>        
+        {% if demo_mode != true %}
+            {% if disabled == true %}
+            <button class="ui basic mini button status-button rigth floated" library="{{ library.name }}" status="1">
+                <i class="icon check olive"></i>
+                {{ labels.enable }}
+            </button>
+            {% else %}
+            <button class="ui basic mini button status-button right floated" library="{{ library.name }}" status="0">
+                <i class="icon times red"></i>
+                {{ labels.disable }}
+            </button>
+            {% endif %}
+        {% endif %}
+    </div>    

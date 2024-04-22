@@ -1,0 +1,14 @@
+{% set items = relationsMap() %}
+{% set id = id|default('relation_type') %}
+{% set name = name|default(id) %}
+{% set class = class|default('basic mini button') %}
+<div class="ui dropdown relation-type-dropdown {{ class }}" id="{{ id }}">   
+    <input type="hidden" name="{{ name }}" value="{{ selected }}">
+    <i class="icon project diagram blue"></i>
+    <div class="default text">{{ empty }}</div>   
+    <div class="menu">
+        {% for key, value in items %}      
+        <div class="item">{{ key }}</div>
+        {% endfor %}
+    </div>
+</div>

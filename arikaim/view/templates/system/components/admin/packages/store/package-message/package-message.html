@@ -1,0 +1,34 @@
+{% set show_icon = show_icon|default(true) %}
+{% set class = class|default('warning icon small') %}
+
+<div class="ui message {{ class }}" {{ id|attr(id) }}>
+    {% if show_icon == true %}
+        <i class="exclamation tiny icon"></i>
+    {% endif %}
+  
+    <div class="content">
+        <div class="header">
+            {{  component('system:admin.packages.store.details.type',{ 
+                    type: package_type, 
+                    hide_icon: true,
+                    show_title: true, 
+                    single: true,
+                    class: 'blue' 
+                }) 
+            }}
+            <span class="uppercase text-bold">"{{ package_name }}"</span>
+            {{ title }}
+        </div>      
+        <p>{{ message }}</p>
+        <div>
+            {% if hide_button != true %}
+            <button 
+                class="ui mini basic primary button open-package-download" 
+                content-id="{{ content_id }}" 
+                package-type="{{ package_type }}">
+                {{ labels.view }}
+            </button>
+            {% endif %}
+        </div>
+    </div>
+</div>

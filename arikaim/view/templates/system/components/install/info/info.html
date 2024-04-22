@@ -1,0 +1,21 @@
+<div class="ui segment fluid streched h-full">
+    <div class="ui header">
+        <i class="icon info"></i>   
+        {{ labels.info }}
+    </div>
+    {% set system_info = system.getInfo() %}                   
+    <div class="ui list">
+        <div class="item">
+            {{ labels.os }}
+            <span class="font-bold">{{ system_info.os_name }}</span>
+        </div>
+        <div class="item">
+            {{ labels.user }}
+            <span>{{ system_info.current_user }}</span>                           
+        </div>
+        <div class="item">
+            {{ labels.id }}
+            <span class="font-bold">{{ system_info.user_id }}</span>                            
+        </div>
+    </div>
+</div>

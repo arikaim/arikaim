@@ -1,0 +1,12 @@
+<div class="ui dropdown driver-settings-helper-dropdown {{ class }}">
+    <i class="icon cogs"></i>
+    <span class="text default">{{ labels.choose }}</span>
+    <i class="icon dropdown"></i>
+    <div class="menu">
+        {% for key, item in items %}
+        <div class="item" data-value="{{ key }}">                  
+            {{ item.title }}            
+        </div>      
+        {% endfor %}     
+    </div>
+</div>

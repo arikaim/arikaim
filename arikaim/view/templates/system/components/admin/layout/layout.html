@@ -1,0 +1,11 @@
+{{ component("system:admin.navbar") }}
+<div class="flex flex-row flex-grow items-stretch h-auto min-h-full">       
+    {{ component("system:admin.menu",{ class: 'w-56 h-auto min-h-full pt-20' }) }}        
+    <div class="w-full mt-28 flex flex-col flex-grow">                                
+        <div class="pl-2" id="tool_content">
+            {% if hasExtension('dashboard') == true %}
+                {{ component('dashboard::admin') }}
+            {% endif %}
+        </div>                                 
+    </div>          
+</div>

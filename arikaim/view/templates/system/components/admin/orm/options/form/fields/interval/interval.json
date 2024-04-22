@@ -1,0 +1,103 @@
+{
+    "items": [
+        {
+            "interval": "01Y",
+            "title": "1 Year"           
+        },
+        {
+            "interval": "02Y",
+            "title": "2 Years"           
+        },
+        {
+            "interval": "03Y",
+            "title": "3 Years"           
+        },
+        {
+            "interval": "04Y",
+            "title": "4 Years"           
+        },
+        {
+            "interval": "05Y",
+            "title": "5 Years"           
+        },
+        {
+            "interval": "06Y",
+            "title": "6 Years"           
+        },
+        {
+            "interval": "01M",
+            "title": "1 Month"           
+        },
+        {
+            "interval": "02M",
+            "title": "2 Months"           
+        },
+        {
+            "interval": "03M",
+            "title": "3 Months"           
+        },
+        {
+            "interval": "04M",
+            "title": "4 Months"           
+        },
+        {
+            "interval": "05M",
+            "title": "5 Months"           
+        },
+        {
+            "interval": "06M",
+            "title": "6 Months"           
+        },
+        {
+            "interval": "01W",
+            "title": "1 Week"           
+        },
+        {
+            "interval": "02W",
+            "title": "2 Weeks"           
+        },
+        {
+            "interval": "03W",
+            "title": "3 Weeks"           
+        },
+        {
+            "interval": "04W",
+            "title": "4 Weeks"           
+        },
+        {
+            "interval": "05W",
+            "title": "5 Weeks"           
+        },
+        {
+            "interval": "06W",
+            "title": "6 Weeks"           
+        },
+        {
+            "interval": "01H",
+            "title": "1 Hour"           
+        },
+        {
+            "interval": "02H",
+            "title": "2 Hours"           
+        },
+        {
+            "interval": "03H",
+            "title": "3 Hours"           
+        },
+        {
+            "interval": "04H",
+            "title": "4 Hours"           
+        },
+        {
+            "interval": "05H",
+            "title": "5 Hours"           
+        },
+        {
+            "interval": "06H",
+            "title": "6 Hours"           
+        }
+    ],
+    "labels": {
+        "empty": "Select Interval"
+    }   
+}

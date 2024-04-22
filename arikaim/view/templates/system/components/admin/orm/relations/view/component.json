@@ -1,0 +1,11 @@
+{
+    "include": {
+        "js": [
+            "system:admin.orm.relations"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "permission": "ControlPanel:full"
+    }
+}

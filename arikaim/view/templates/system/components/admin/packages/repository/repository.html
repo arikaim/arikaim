@@ -1,0 +1,70 @@
+{% if arikaimStore().isLogged() == true %}
+    {% set installed_version = installed_version|default('0.0.0') %}
+    {% set confirm_overwrite = confirm_overwrite|default(false) %}
+    {% set repository_type = repository_type|default('github') %}
+    {% set manager = package(type) %}
+    
+    {% if package_name is not empty and manager.hasPackage(package_name) == true %}
+        {% set repository = manager.getRepository(package_name) %}  
+    {% endif %}
+    {% if repository is empty %}
+        {% set repository = manager.createRepository(repository_name,repo_key,repository_type) %}
+    {% endif %}
+    {% set repo_key = arikaimStore().getPackageKey(repository_name) %}
+    {% set repo_version = repository.getLastVersion() %}
+    <div class="ui header mini">  
+        <i class="icon box open blue"></i>
+        <div class="content w-full">
+            {{ labels.repository }}
+            <div class="ui basic label">
+                <span>{{ labels.version }}</span>
+                {{ repo_version }}
+            </div>
+        </div>
+        <div class="mt-4 ">              
+            <div class="ui basic horizontal label">
+                {{ repository.getPackageName() }}
+            </div>  
+            {% if repository.isPrivate() == true %}
+            <div class="ui basic orange horizontal label rigth floated">
+                {{ labels.premium }}
+            </div>
+            {% endif %}  
+            <div class="ui divider"></div>
+            {% if repo_key is not empty %}
+            <div class="ui header mini">
+                <i class="icon blue lock"></i>
+                <div class="content">               
+                    {{ labels.key }}
+                    <div class="ui sub header">
+                        {{ repo_key }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="mt-4" id="download_package_content">  
+                {% set repo_version = repo_version|default('0.0.0') %}         
+                {% if installed_version is versionCompare(repo_version) %}
+                    {% if repository.isPrivate() == true and repo_key is empty %}
+                    <div class="ui warning message">
+                        {{ labels.license }}
+                    </div>
+                    {% else %}
+                    <button class="ui labeled icon blue mini button download-package"
+                        package-type="{{ type }}"
+                        package-name="{{ package_name }}"
+                        repository="{{ repository.getRepositoryUrl() }}"
+                        repository-type="{{ repository_type }}">
+                        <i class="icon download"></i>
+                        {{ labels.download }}
+                    </button>
+                    {% endif %}
+                {% endif %}
+            </div>       
+        </div>
+    </div>
+{% else %}
+    <div>
+        ..
+    </div>
+{% endif %}

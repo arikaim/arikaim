@@ -1,0 +1,10 @@
+{   
+    "labels": {
+        "params": "Params",          
+        "files": "Files",
+        "version": "Version",     
+        "verisons": "Versions",  
+        "disabled": "Disabled",            
+        "crossorigin": "Crossorigin"
+    }
+}

@@ -1,0 +1,2306 @@
+.list-inside {
+  list-style-position: inside
+}
+
+.list-outside {
+  list-style-position: outside
+}
+
+.list-none {
+  list-style-type: none
+}
+
+.list-disc {
+  list-style-type: disc
+}
+
+.list-decimal {
+  list-style-type: decimal
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis
+}
+
+.overflow-clip {
+  text-overflow: clip
+}
+
+.whitespace-normal {
+  white-space: normal
+}
+
+.whitespace-nowrap {
+  white-space: nowrap
+}
+
+.whitespace-pre {
+  white-space: pre
+}
+
+.whitespace-pre-line {
+  white-space: pre-line
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal
+}
+
+.break-words {
+  overflow-wrap: break-word
+}
+
+.break-all {
+  word-break: break-all
+}
+
+.text-left {
+  text-align: left
+}
+
+.text-center {
+  text-align: center
+}
+
+.text-right {
+  text-align: right
+}
+
+.text-justify {
+  text-align: justify
+}
+
+.align-baseline {
+  vertical-align: baseline
+}
+
+.align-top {
+  vertical-align: top
+}
+
+.align-middle {
+  vertical-align: middle
+}
+
+.align-bottom {
+  vertical-align: bottom
+}
+
+.align-text-top {
+  vertical-align: text-top
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1
+}
+
+.font-thin {
+  font-weight: 100
+}
+
+.font-extralight {
+  font-weight: 200
+}
+
+.font-light {
+  font-weight: 300
+}
+
+.font-normal {
+  font-weight: 400
+}
+
+.font-medium {
+  font-weight: 500
+}
+
+.font-semibold {
+  font-weight: 600
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.font-extrabold {
+  font-weight: 800
+}
+
+.font-black {
+  font-weight: 900
+}
+
+.uppercase {
+  text-transform: uppercase
+}
+
+.lowercase {
+  text-transform: lowercase
+}
+
+.capitalize {
+  text-transform: capitalize
+}
+
+.normal-case {
+  text-transform: none
+}
+
+.italic {
+  font-style: italic
+}
+
+.not-italic {
+  font-style: normal
+}
+
+.ordinal, .slashed-zero, .lining-nums, .oldstyle-nums, .proportional-nums, .tabular-nums, .diagonal-fractions, .stacked-fractions {
+  --tw-ordinal: var(--tw-empty,/*!*/ /*!*/);
+  --tw-slashed-zero: var(--tw-empty,/*!*/ /*!*/);
+  --tw-numeric-figure: var(--tw-empty,/*!*/ /*!*/);
+  --tw-numeric-spacing: var(--tw-empty,/*!*/ /*!*/);
+  --tw-numeric-fraction: var(--tw-empty,/*!*/ /*!*/);
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)
+}
+
+.normal-nums {
+  font-variant-numeric: normal
+}
+
+.ordinal {
+  --tw-ordinal: ordinal
+}
+
+.slashed-zero {
+  --tw-slashed-zero: slashed-zero
+}
+
+.lining-nums {
+  --tw-numeric-figure: lining-nums
+}
+
+.oldstyle-nums {
+  --tw-numeric-figure: oldstyle-nums
+}
+
+.proportional-nums {
+  --tw-numeric-spacing: proportional-nums
+}
+
+.tabular-nums {
+  --tw-numeric-spacing: tabular-nums
+}
+
+.diagonal-fractions {
+  --tw-numeric-fraction: diagonal-fractions
+}
+
+.stacked-fractions {
+  --tw-numeric-fraction: stacked-fractions
+}
+
+.leading-3 {
+  line-height: .75rem
+}
+
+.leading-4 {
+  line-height: 1rem
+}
+
+.leading-5 {
+  line-height: 1.25rem
+}
+
+.leading-6 {
+  line-height: 1.5rem
+}
+
+.leading-7 {
+  line-height: 1.75rem
+}
+
+.leading-8 {
+  line-height: 2rem
+}
+
+.leading-9 {
+  line-height: 2.25rem
+}
+
+.leading-10 {
+  line-height: 2.5rem
+}
+
+.leading-none {
+  line-height: 1
+}
+
+.leading-tight {
+  line-height: 1.25
+}
+
+.leading-snug {
+  line-height: 1.375
+}
+
+.leading-normal {
+  line-height: 1.5
+}
+
+.leading-relaxed {
+  line-height: 1.625
+}
+
+.leading-loose {
+  line-height: 2
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em
+}
+
+.tracking-normal {
+  letter-spacing: 0em
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em
+}
+
+.text-transparent {
+  color: transparent
+}
+
+.text-current {
+  color: currentColor
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.text-gray-50 {
+  --tw-text-opacity: 1;
+  color: rgba(249, 250, 251, var(--tw-text-opacity))
+}
+
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-text-opacity))
+}
+
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgba(229, 231, 235, var(--tw-text-opacity))
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity))
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity))
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity))
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity))
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity))
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity))
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-text-opacity))
+}
+
+.text-red-50 {
+  --tw-text-opacity: 1;
+  color: rgba(254, 242, 242, var(--tw-text-opacity))
+}
+
+.text-red-100 {
+  --tw-text-opacity: 1;
+  color: rgba(254, 226, 226, var(--tw-text-opacity))
+}
+
+.text-red-200 {
+  --tw-text-opacity: 1;
+  color: rgba(254, 202, 202, var(--tw-text-opacity))
+}
+
+.text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgba(252, 165, 165, var(--tw-text-opacity))
+}
+
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgba(248, 113, 113, var(--tw-text-opacity))
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-text-opacity))
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-text-opacity))
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgba(185, 28, 28, var(--tw-text-opacity))
+}
+
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgba(153, 27, 27, var(--tw-text-opacity))
+}
+
+.text-red-900 {
+  --tw-text-opacity: 1;
+  color: rgba(127, 29, 29, var(--tw-text-opacity))
+}
+
+.text-yellow-50 {
+  --tw-text-opacity: 1;
+  color: rgba(255, 251, 235, var(--tw-text-opacity))
+}
+
+.text-yellow-100 {
+  --tw-text-opacity: 1;
+  color: rgba(254, 243, 199, var(--tw-text-opacity))
+}
+
+.text-yellow-200 {
+  --tw-text-opacity: 1;
+  color: rgba(253, 230, 138, var(--tw-text-opacity))
+}
+
+.text-yellow-300 {
+  --tw-text-opacity: 1;
+  color: rgba(252, 211, 77, var(--tw-text-opacity))
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgba(251, 191, 36, var(--tw-text-opacity))
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-text-opacity))
+}
+
+.text-yellow-600 {
+  --tw-text-opacity: 1;
+  color: rgba(217, 119, 6, var(--tw-text-opacity))
+}
+
+.text-yellow-700 {
+  --tw-text-opacity: 1;
+  color: rgba(180, 83, 9, var(--tw-text-opacity))
+}
+
+.text-yellow-800 {
+  --tw-text-opacity: 1;
+  color: rgba(146, 64, 14, var(--tw-text-opacity))
+}
+
+.text-yellow-900 {
+  --tw-text-opacity: 1;
+  color: rgba(120, 53, 15, var(--tw-text-opacity))
+}
+
+.text-green-50 {
+  --tw-text-opacity: 1;
+  color: rgba(236, 253, 245, var(--tw-text-opacity))
+}
+
+.text-green-100 {
+  --tw-text-opacity: 1;
+  color: rgba(209, 250, 229, var(--tw-text-opacity))
+}
+
+.text-green-200 {
+  --tw-text-opacity: 1;
+  color: rgba(167, 243, 208, var(--tw-text-opacity))
+}
+
+.text-green-300 {
+  --tw-text-opacity: 1;
+  color: rgba(110, 231, 183, var(--tw-text-opacity))
+}
+
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-text-opacity))
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgba(16, 185, 129, var(--tw-text-opacity))
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgba(5, 150, 105, var(--tw-text-opacity))
+}
+
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgba(4, 120, 87, var(--tw-text-opacity))
+}
+
+.text-green-800 {
+  --tw-text-opacity: 1;
+  color: rgba(6, 95, 70, var(--tw-text-opacity))
+}
+
+.text-green-900 {
+  --tw-text-opacity: 1;
+  color: rgba(6, 78, 59, var(--tw-text-opacity))
+}
+
+.text-blue-50 {
+  --tw-text-opacity: 1;
+  color: rgba(239, 246, 255, var(--tw-text-opacity))
+}
+
+.text-blue-100 {
+  --tw-text-opacity: 1;
+  color: rgba(219, 234, 254, var(--tw-text-opacity))
+}
+
+.text-blue-200 {
+  --tw-text-opacity: 1;
+  color: rgba(191, 219, 254, var(--tw-text-opacity))
+}
+
+.text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgba(147, 197, 253, var(--tw-text-opacity))
+}
+
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-text-opacity))
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-text-opacity))
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-text-opacity))
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgba(29, 78, 216, var(--tw-text-opacity))
+}
+
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgba(30, 64, 175, var(--tw-text-opacity))
+}
+
+.text-blue-900 {
+  --tw-text-opacity: 1;
+  color: rgba(30, 58, 138, var(--tw-text-opacity))
+}
+
+.text-indigo-50 {
+  --tw-text-opacity: 1;
+  color: rgba(238, 242, 255, var(--tw-text-opacity))
+}
+
+.text-indigo-100 {
+  --tw-text-opacity: 1;
+  color: rgba(224, 231, 255, var(--tw-text-opacity))
+}
+
+.text-indigo-200 {
+  --tw-text-opacity: 1;
+  color: rgba(199, 210, 254, var(--tw-text-opacity))
+}
+
+.text-indigo-300 {
+  --tw-text-opacity: 1;
+  color: rgba(165, 180, 252, var(--tw-text-opacity))
+}
+
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgba(129, 140, 248, var(--tw-text-opacity))
+}
+
+.text-indigo-500 {
+  --tw-text-opacity: 1;
+  color: rgba(99, 102, 241, var(--tw-text-opacity))
+}
+
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-text-opacity))
+}
+
+.text-indigo-700 {
+  --tw-text-opacity: 1;
+  color: rgba(67, 56, 202, var(--tw-text-opacity))
+}
+
+.text-indigo-800 {
+  --tw-text-opacity: 1;
+  color: rgba(55, 48, 163, var(--tw-text-opacity))
+}
+
+.text-indigo-900 {
+  --tw-text-opacity: 1;
+  color: rgba(49, 46, 129, var(--tw-text-opacity))
+}
+
+.text-purple-50 {
+  --tw-text-opacity: 1;
+  color: rgba(245, 243, 255, var(--tw-text-opacity))
+}
+
+.text-purple-100 {
+  --tw-text-opacity: 1;
+  color: rgba(237, 233, 254, var(--tw-text-opacity))
+}
+
+.text-purple-200 {
+  --tw-text-opacity: 1;
+  color: rgba(221, 214, 254, var(--tw-text-opacity))
+}
+
+.text-purple-300 {
+  --tw-text-opacity: 1;
+  color: rgba(196, 181, 253, var(--tw-text-opacity))
+}
+
+.text-purple-400 {
+  --tw-text-opacity: 1;
+  color: rgba(167, 139, 250, var(--tw-text-opacity))
+}
+
+.text-purple-500 {
+  --tw-text-opacity: 1;
+  color: rgba(139, 92, 246, var(--tw-text-opacity))
+}
+
+.text-purple-600 {
+  --tw-text-opacity: 1;
+  color: rgba(124, 58, 237, var(--tw-text-opacity))
+}
+
+.text-purple-700 {
+  --tw-text-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-text-opacity))
+}
+
+.text-purple-800 {
+  --tw-text-opacity: 1;
+  color: rgba(91, 33, 182, var(--tw-text-opacity))
+}
+
+.text-purple-900 {
+  --tw-text-opacity: 1;
+  color: rgba(76, 29, 149, var(--tw-text-opacity))
+}
+
+.text-pink-50 {
+  --tw-text-opacity: 1;
+  color: rgba(253, 242, 248, var(--tw-text-opacity))
+}
+
+.text-pink-100 {
+  --tw-text-opacity: 1;
+  color: rgba(252, 231, 243, var(--tw-text-opacity))
+}
+
+.text-pink-200 {
+  --tw-text-opacity: 1;
+  color: rgba(251, 207, 232, var(--tw-text-opacity))
+}
+
+.text-pink-300 {
+  --tw-text-opacity: 1;
+  color: rgba(249, 168, 212, var(--tw-text-opacity))
+}
+
+.text-pink-400 {
+  --tw-text-opacity: 1;
+  color: rgba(244, 114, 182, var(--tw-text-opacity))
+}
+
+.text-pink-500 {
+  --tw-text-opacity: 1;
+  color: rgba(236, 72, 153, var(--tw-text-opacity))
+}
+
+.text-pink-600 {
+  --tw-text-opacity: 1;
+  color: rgba(219, 39, 119, var(--tw-text-opacity))
+}
+
+.text-pink-700 {
+  --tw-text-opacity: 1;
+  color: rgba(190, 24, 93, var(--tw-text-opacity))
+}
+
+.text-pink-800 {
+  --tw-text-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-text-opacity))
+}
+
+.text-pink-900 {
+  --tw-text-opacity: 1;
+  color: rgba(131, 24, 67, var(--tw-text-opacity))
+}
+
+.text-opacity-0 {
+  --tw-text-opacity: 0
+}
+
+.text-opacity-5 {
+  --tw-text-opacity: 0.05
+}
+
+.text-opacity-10 {
+  --tw-text-opacity: 0.1
+}
+
+.text-opacity-20 {
+  --tw-text-opacity: 0.2
+}
+
+.text-opacity-25 {
+  --tw-text-opacity: 0.25
+}
+
+.text-opacity-30 {
+  --tw-text-opacity: 0.3
+}
+
+.text-opacity-40 {
+  --tw-text-opacity: 0.4
+}
+
+.text-opacity-50 {
+  --tw-text-opacity: 0.5
+}
+
+.text-opacity-60 {
+  --tw-text-opacity: 0.6
+}
+
+.text-opacity-70 {
+  --tw-text-opacity: 0.7
+}
+
+.text-opacity-75 {
+  --tw-text-opacity: 0.75
+}
+
+.text-opacity-80 {
+  --tw-text-opacity: 0.8
+}
+
+.text-opacity-90 {
+  --tw-text-opacity: 0.9
+}
+
+.text-opacity-95 {
+  --tw-text-opacity: 0.95
+}
+
+.text-opacity-100 {
+  --tw-text-opacity: 1
+}
+
+.underline {
+  text-decoration: underline
+}
+
+.line-through {
+  text-decoration: line-through
+}
+
+.no-underline {
+  text-decoration: none
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto
+}
+
+.placeholder-transparent::-moz-placeholder {
+  color: transparent
+}
+
+.placeholder-transparent:-ms-input-placeholder {
+  color: transparent
+}
+
+.placeholder-transparent::placeholder {
+  color: transparent
+}
+
+.placeholder-current::-moz-placeholder {
+  color: currentColor
+}
+
+.placeholder-current:-ms-input-placeholder {
+  color: currentColor
+}
+
+.placeholder-current::placeholder {
+  color: currentColor
+}
+
+.placeholder-black::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-placeholder-opacity))
+}
+
+.placeholder-black:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-placeholder-opacity))
+}
+
+.placeholder-black::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-placeholder-opacity))
+}
+
+.placeholder-white::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-white:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-white::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 250, 251, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 250, 251, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 250, 251, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(229, 231, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(229, 231, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(229, 231, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-placeholder-opacity))
+}
+
+.placeholder-gray-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 242, 242, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 242, 242, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 242, 242, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 226, 226, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 226, 226, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 226, 226, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 202, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 202, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 202, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 165, 165, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 165, 165, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 165, 165, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(248, 113, 113, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(248, 113, 113, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(248, 113, 113, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(185, 28, 28, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(185, 28, 28, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(185, 28, 28, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(153, 27, 27, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(153, 27, 27, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(153, 27, 27, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(127, 29, 29, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(127, 29, 29, var(--tw-placeholder-opacity))
+}
+
+.placeholder-red-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(127, 29, 29, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 251, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 251, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(255, 251, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 243, 199, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 243, 199, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(254, 243, 199, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 230, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 230, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 230, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 211, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 211, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 211, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 191, 36, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 191, 36, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 191, 36, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(217, 119, 6, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(217, 119, 6, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(217, 119, 6, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(180, 83, 9, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(180, 83, 9, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(180, 83, 9, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(146, 64, 14, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(146, 64, 14, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(146, 64, 14, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(120, 53, 15, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(120, 53, 15, var(--tw-placeholder-opacity))
+}
+
+.placeholder-yellow-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(120, 53, 15, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 253, 245, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 253, 245, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 253, 245, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 250, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 250, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(209, 250, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 243, 208, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 243, 208, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 243, 208, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(110, 231, 183, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(110, 231, 183, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(110, 231, 183, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(16, 185, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(16, 185, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(16, 185, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(5, 150, 105, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(5, 150, 105, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(5, 150, 105, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(4, 120, 87, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(4, 120, 87, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(4, 120, 87, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 95, 70, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 95, 70, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 95, 70, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 78, 59, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 78, 59, var(--tw-placeholder-opacity))
+}
+
+.placeholder-green-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(6, 78, 59, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 246, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 246, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(239, 246, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 234, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 234, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 234, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(191, 219, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(191, 219, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(191, 219, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(147, 197, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(147, 197, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(147, 197, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(29, 78, 216, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(29, 78, 216, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(29, 78, 216, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 64, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 64, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 64, 175, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 58, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 58, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-blue-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(30, 58, 138, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(238, 242, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(238, 242, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(238, 242, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(224, 231, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(224, 231, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(224, 231, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(199, 210, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(199, 210, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(199, 210, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(165, 180, 252, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(165, 180, 252, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(165, 180, 252, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(129, 140, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(129, 140, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(129, 140, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(99, 102, 241, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(99, 102, 241, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(99, 102, 241, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(67, 56, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(67, 56, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(67, 56, 202, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 48, 163, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 48, 163, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(55, 48, 163, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(49, 46, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(49, 46, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-indigo-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(49, 46, 129, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 243, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 243, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(245, 243, 255, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(237, 233, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(237, 233, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(237, 233, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(221, 214, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(221, 214, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(221, 214, 254, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(196, 181, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(196, 181, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(196, 181, 253, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 139, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 139, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(167, 139, 250, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(139, 92, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(139, 92, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(139, 92, 246, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(124, 58, 237, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(124, 58, 237, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(124, 58, 237, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(109, 40, 217, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(91, 33, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(91, 33, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(91, 33, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(76, 29, 149, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(76, 29, 149, var(--tw-placeholder-opacity))
+}
+
+.placeholder-purple-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(76, 29, 149, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-50::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 242, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 242, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-50::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(253, 242, 248, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 231, 243, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 231, 243, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-100::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(252, 231, 243, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-200::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 207, 232, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-200:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 207, 232, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-200::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(251, 207, 232, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-300::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 168, 212, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-300:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 168, 212, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-300::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(249, 168, 212, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(244, 114, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-400:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(244, 114, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(244, 114, 182, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-500::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 72, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-500:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 72, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-500::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(236, 72, 153, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-600::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 39, 119, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-600:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 39, 119, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-600::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(219, 39, 119, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-700::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(190, 24, 93, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-700:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(190, 24, 93, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-700::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(190, 24, 93, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-800::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-800:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-800::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(131, 24, 67, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-900:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(131, 24, 67, var(--tw-placeholder-opacity))
+}
+
+.placeholder-pink-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(131, 24, 67, var(--tw-placeholder-opacity))
+}
+
+.placeholder-opacity-0::-moz-placeholder {
+  --tw-placeholder-opacity: 0
+}
+
+.placeholder-opacity-0:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0
+}
+
+.placeholder-opacity-0::placeholder {
+  --tw-placeholder-opacity: 0
+}
+
+.placeholder-opacity-5::-moz-placeholder {
+  --tw-placeholder-opacity: 0.05
+}
+
+.placeholder-opacity-5:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.05
+}
+
+.placeholder-opacity-5::placeholder {
+  --tw-placeholder-opacity: 0.05
+}
+
+.placeholder-opacity-10::-moz-placeholder {
+  --tw-placeholder-opacity: 0.1
+}
+
+.placeholder-opacity-10:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.1
+}
+
+.placeholder-opacity-10::placeholder {
+  --tw-placeholder-opacity: 0.1
+}
+
+.placeholder-opacity-20::-moz-placeholder {
+  --tw-placeholder-opacity: 0.2
+}
+
+.placeholder-opacity-20:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.2
+}
+
+.placeholder-opacity-20::placeholder {
+  --tw-placeholder-opacity: 0.2
+}
+
+.placeholder-opacity-25::-moz-placeholder {
+  --tw-placeholder-opacity: 0.25
+}
+
+.placeholder-opacity-25:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.25
+}
+
+.placeholder-opacity-25::placeholder {
+  --tw-placeholder-opacity: 0.25
+}
+
+.placeholder-opacity-30::-moz-placeholder {
+  --tw-placeholder-opacity: 0.3
+}
+
+.placeholder-opacity-30:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.3
+}
+
+.placeholder-opacity-30::placeholder {
+  --tw-placeholder-opacity: 0.3
+}
+
+.placeholder-opacity-40::-moz-placeholder {
+  --tw-placeholder-opacity: 0.4
+}
+
+.placeholder-opacity-40:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.4
+}
+
+.placeholder-opacity-40::placeholder {
+  --tw-placeholder-opacity: 0.4
+}
+
+.placeholder-opacity-50::-moz-placeholder {
+  --tw-placeholder-opacity: 0.5
+}
+
+.placeholder-opacity-50:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.5
+}
+
+.placeholder-opacity-50::placeholder {
+  --tw-placeholder-opacity: 0.5
+}
+
+.placeholder-opacity-60::-moz-placeholder {
+  --tw-placeholder-opacity: 0.6
+}
+
+.placeholder-opacity-60:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.6
+}
+
+.placeholder-opacity-60::placeholder {
+  --tw-placeholder-opacity: 0.6
+}
+
+.placeholder-opacity-70::-moz-placeholder {
+  --tw-placeholder-opacity: 0.7
+}
+
+.placeholder-opacity-70:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.7
+}
+
+.placeholder-opacity-70::placeholder {
+  --tw-placeholder-opacity: 0.7
+}
+
+.placeholder-opacity-75::-moz-placeholder {
+  --tw-placeholder-opacity: 0.75
+}
+
+.placeholder-opacity-75:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.75
+}
+
+.placeholder-opacity-75::placeholder {
+  --tw-placeholder-opacity: 0.75
+}
+
+.placeholder-opacity-80::-moz-placeholder {
+  --tw-placeholder-opacity: 0.8
+}
+
+.placeholder-opacity-80:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.8
+}
+
+.placeholder-opacity-80::placeholder {
+  --tw-placeholder-opacity: 0.8
+}
+
+.placeholder-opacity-90::-moz-placeholder {
+  --tw-placeholder-opacity: 0.9
+}
+
+.placeholder-opacity-90:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.9
+}
+
+.placeholder-opacity-90::placeholder {
+  --tw-placeholder-opacity: 0.9
+}
+
+.placeholder-opacity-95::-moz-placeholder {
+  --tw-placeholder-opacity: 0.95
+}
+
+.placeholder-opacity-95:-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.95
+}
+
+.placeholder-opacity-95::placeholder {
+  --tw-placeholder-opacity: 0.95
+}
+
+.placeholder-opacity-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1
+}
+
+.placeholder-opacity-100:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1
+}
+
+.placeholder-opacity-100::placeholder {
+  --tw-placeholder-opacity: 1
+}
+
+.content-none {
+  content: none
+}

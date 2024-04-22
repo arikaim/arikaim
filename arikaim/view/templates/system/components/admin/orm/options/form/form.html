@@ -1,0 +1,34 @@
+{% set options = createModel(model,extension).getOptions(model_id) %}
+{% if options.toArray()|length > 0  %}
+    <form class="ui form" id="options_form">   
+        <input type="hidden" value="{{ extension }}" name="extension">
+        <input type="hidden" value="{{ model }}" name="model">
+        <input type="hidden" value="{{ model_id }}" name="id">
+        {% for option in options %}            
+            {% if option.type.type == option.type.TEXT() %}
+                {{ component('system:admin.orm.options.form.fields.text',{ option: option }) }}
+            {% elseif option.type.type == option.type.NUMBER() %}
+                {{ component('system:admin.orm.options.form.fields.text',{ option: option }) }}
+            {% elseif option.type.type == option.type.CHECKBOX() %}
+                {{ component('system:admin.orm.options.form.fields.checkbox',{ option: option }) }}
+            {% elseif option.type.type == option.type.DROPDOWN() %}      
+                {{ component('system:admin.orm.options.form.fields.dropdown',{ option: option }) }}
+            {% elseif option.type.type == option.type.PRICE() %}      
+                {{ component('system:admin.orm.options.form.fields.price',{ option: option }) }}       
+            {% elseif option.type.type == option.type.TEXTAREA() %}      
+                {{ component('system:admin.orm.options.form.fields.textarea',{ option: option }) }}
+            {% elseif option.type.type == option.type.USERGROUP() %}      
+                {{ component('system:admin.orm.options.form.fields.group',{ option: option }) }}
+            {% elseif option.type.type == option.type.PERMISSION() %}      
+                {{ component('system:admin.orm.options.form.fields.permission',{ option: option }) }}
+            {% elseif option.type.type == option.type.TIME_INTERVAL() %}
+                {{ component('system:admin.orm.options.form.fields.interval',{ option: option }) }}
+            {% endif %}
+        {% endfor %}
+        {{ component('semantic~form.footer') }}
+    </form>
+{% else %}
+<div>
+    {{ labels.empty }}
+</div>
+{% endif %}

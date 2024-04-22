@@ -1,0 +1,39 @@
+<div class="ui segment">
+    <div class="ui grid">
+        <div class="six wide column">
+            <div class="p-1">
+                <div class="ui basic label large">
+                    <span class="uppercase text-gray-500">{{ labels.extension }}</span>
+                    <div class="detail">
+                        {{ extension_name }}
+                    </div>
+                </div>
+                <div class="ui basic label large">
+                    <span class="uppercase text-gray-500">{{ labels.url }}</span>
+                    <div class="detail">
+                        {{ url('',true) }}
+                    </div>
+                </div>
+            </div>           
+        </div>
+        <div class="ten wide right aligned column">
+            <span class="pl-2">
+                {{ component('semantic~paginator.dropdown',{ namespace: 'routes.api' }) }}
+            </span> 
+        </div>
+    </div>
+</div>
+<div>
+    <div class="ui two column grid">
+        <div class="column">
+            <div class="ui list" id="api_rotes_list" namespace="help.api" component="system:admin.help.api.items">  
+                {{ component('system:admin.help.api.items',{ extension_name: extension_name }) }}
+            </div>
+            <div id="paginator">
+                {{ component("semantic~paginator",{ namespace: 'help.api' }) }}
+            </div>
+        </div>
+        <div class="column" id="api_details_content">
+        </div>
+    </div>   
+</div>

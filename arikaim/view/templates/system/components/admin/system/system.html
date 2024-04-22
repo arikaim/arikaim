@@ -1,0 +1,12 @@
+{% set items = [ 
+    { id: 'view_settings', title: labels.settings.content, component: 'system:admin.system.settings', icon: 'cogs', active: true },
+    { id: 'view_logs', title: labels.logs.content, component: 'system:admin.system.logs', icon: 'warning circle' },
+    { title: labels.events.content, component: 'system:admin.system.events', icon: 'calendar alternate outline' },    
+    { title: labels.info.content, component: 'system:admin.system.info', icon: 'info circle' },  
+] %}
+
+{{  component('semantic~tabs',{ 
+        items: items,
+        content: { component: 'system:admin.system.settings' } 
+    })
+}}

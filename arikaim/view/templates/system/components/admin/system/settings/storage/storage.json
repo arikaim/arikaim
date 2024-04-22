@@ -1,0 +1,13 @@
+{
+    "title": {
+        "content": "Storage",
+        "icon": "hdd"
+    },
+    "labels": {
+        "path": "Path",
+        "public": "Public Path"
+    },
+    "buttons": {
+        "init": "Init Storage"
+    }
+}

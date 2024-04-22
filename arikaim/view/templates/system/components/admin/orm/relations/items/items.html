@@ -1,0 +1,8 @@
+{% set model = createModel(model,extension) %}
+{% set items = model.getRelationsQuery(relation_id) %}
+
+{% for item in items.get() %}   
+    <div class="ui label {{ class }}">
+        {{ content }}
+    </div>
+{% endfor %}

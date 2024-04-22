@@ -1,0 +1,5 @@
+<div class="field">
+    <label>{{ option.type.title }}</label>
+    <input class="option-field" type="number" name="options[{{ option.key }}]" value="{{ option.val }}" id="{{ option.key }}" data-content="{{ option.type.description }}">
+    {{ component('system:admin.orm.options.form.fields.type',{ option: option }) }} 
+</div>     

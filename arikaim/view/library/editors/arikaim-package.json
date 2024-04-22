@@ -1,0 +1,20 @@
+{
+    "title": "Editors",
+    "package-type": "library",
+    "name": "editors",
+    "version": "1.0.0",
+    "description": "WYSIWYG text editors js library",
+    "repository": "https://github.com/arikaim/editors-library.git",
+    "files": [
+        "trumbowyg/ui/trumbowyg.min.css",
+        "trumbowyg/trumbowyg.min.js"
+    ],
+    "versions": {  
+        "trumbowyg": {
+            "files": [
+                "trumbowyg/ui/trumbowyg.min.css",
+                "trumbowyg/trumbowyg.min.js"
+            ]
+        }
+    }
+}

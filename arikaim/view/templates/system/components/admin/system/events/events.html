@@ -1,0 +1,26 @@
+<div class="ui streched two column grid">
+    <div class="column">
+        <div class="ui segment">
+            <div class="ui grid two column">
+                <div class="column">                      
+                </div>
+                <div class="column right aligned">
+                    {{ component('semantic~paginator.dropdown',{ namespace: 'events' }) }}
+                </div>
+            </div>    
+        </div>
+        <div class="ui segment">
+            <div class="ui header">
+                {{ title }}
+            </div>  
+            <div class="ui list" id="events_rows">
+                {{ component('system:admin.system.events.rows',{}) }}
+            </div>
+            <div class="mt-1" id="paginator">
+                {{ component("semantic~paginator",{ namespace: 'events' }) }}
+            </div>
+        </div>
+    </div>
+    <div class="column" id="event_details">        
+    </div>    
+</div>

@@ -1,0 +1,18 @@
+{% if params|length > 0 %}
+    <form class="ui form" id="library_config" library="{{ library }}">
+        {% for name,param in params %}
+        <div class="field">          
+            {% if show_label == true %}
+                <label>{{ name }}</label>
+            {% endif %}
+            {% set value = (show_value == true) ? params_config[name] : '' %}            
+            <input name="{{ name }}" value="{{ value }}" type="text">
+        </div>
+        {% endfor %}
+        {% if demo_mode == false %}
+            {{ component('semantic~form.footer') }}
+        {% endif %}
+    </form>
+{% else %}
+    <div>..</div>
+{% endif %}

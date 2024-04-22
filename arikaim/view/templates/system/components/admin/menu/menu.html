@@ -1,0 +1,19 @@
+{% set button_status = getOption('admin.menu.button',false) %}
+<div class="flex flex-col bg-gradient-to-b from-gray-800 to-gray-900 pb-10 {{ class }}" id="admin_menu">          
+    <div id="extensions_menu">        
+        {{ component("system:admin.menu.extensions",{ status: 1, type: 0 }) }}
+    </div>
+    <div class="ui horizontal divider">       
+        <h5 class="tiny header">
+            <button 
+                status="{{ button_status|default('false') }}"
+                id="system_menu_button" 
+                class="ui teal icon button mini circular">
+                <i class="dropdown icon"></i>
+            </button>
+        </h5>
+    </div> 
+    <div id="system_menu" class="{{ (button_status != true) ? 'hidden' : '' }}">      
+        {{ component("system:admin.menu.system") }}       
+    </div>    
+</div>

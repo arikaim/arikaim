@@ -1,0 +1,42 @@
+<div class="ui middle aligned divided list">   
+    {% if routes is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    {% for route in routes %}
+    <div class="item">         
+        {% set auth_names = (route.auth is not empty) ? route.auth|split(',') : '' %}
+        <div class="right floated content" title="{{ labels.auth }}">
+            {% set middlewares = route.middlewares|jsonDecode(false) %}
+            {% for middleware in middlewares %}
+                <div class="ui basic horizontal label" title="{{ labels.middleware }}">                    
+                    <span class="ui text grey">{{ middleware|baseClass }}</span>
+                </div>
+            {% endfor %}    
+            {% if auth_names is iterable %}
+                {% for item in auth_names %}
+                    <div class="ui tiny left pointing primary basic label">{{ item }}</div>
+                {% endfor %}
+            {% endif %}           
+            {{ component('semantic~labels.route-type',{ type: route.type }) }}                            
+        </div>          
+        {{ component('semantic~status.icon',{ status: route.status }) }}               
+        {% if icon is defined %} 
+            <i class="icon grey middle aligned {{ icon }}"></i>
+        {% endif %} 
+        <div class="content">
+            {% set methods = route.method|default('GET')|split(",") %}     
+            {% for method in methods %}
+                <div class="ui tiny label">{{ method }}</div>
+            {% endfor %}
+            {{ base_url }}{{ route.path }}{{ route.pattern }}                  
+            {% if route.page_name is not empty %}
+            <div class="ui basic horizontal label">
+                {{ labels.page }}
+                <i class="icon angle right"></i>
+                <span class="bold text">{{ route.page_name }}</span>               
+            </div>
+            {% endif %}         
+        </div>                    
+    </div>
+    {% endfor %}    
+</div>

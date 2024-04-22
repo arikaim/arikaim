@@ -1,0 +1,41 @@
+{% set logs = createModel('Logs') %}
+{% set log_level = searchValue('level','logs') %}
+{% if log_level is not empty %}
+{% set logs = logs.logsLevelQuery(log_level) %}
+{% endif %}
+{% set logs = logs.orderBy('date_created','desc') %}
+{% set paginator = paginate(logs,'events') %}
+{% if paginator.getItems()|length == 0 %}
+<tr>
+    <td>..</td>
+</tr>
+{% endif %}
+{% for row in paginator.getItems() %}
+    <tr>          
+        <td class="single line">
+            {{ row.date_created|dateFormat }} {{ row.date_created|timeFormat }}
+        </td>
+        <td>
+            <div class="ui basic horizontal mini label {{ (row.level == 400) ? 'red' : '' }}">
+                {{ row.level_name }}
+            </div>
+        </td>
+        <td>
+            {{ row.message }}
+        </td>           
+        <td>
+            {% if row.context|length > 0 %}
+                <div class="ui basic horizontal labels">
+                {% for key, value in row.context %}
+                    <div class="ui label">
+                        {{ key }}
+                        <span class="ui blue text pl-1">
+                            {{ (value is iterable) ? value|dump : value }}
+                        </span>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </td>           
+    </tr>
+{% endfor %}

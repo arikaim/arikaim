@@ -1,0 +1,8 @@
+{
+    "labels": {
+        "page": "page",
+        "middleware": "Middleware",
+        "empty": "..",
+        "auth": "Authentication"
+    }   
+}

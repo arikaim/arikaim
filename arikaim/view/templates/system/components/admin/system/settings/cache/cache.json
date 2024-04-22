@@ -1,0 +1,14 @@
+{
+    "title": "Cache",
+    "icon": "sync alternate",
+    "buttons": {
+        "clear": "Clear",
+        "info": "Info"
+    },
+    "labels": {
+        "enabled": "Enabled",
+        "driver": "Driver",
+        "disabled": "Disabled",
+        "status": "Status"           
+    }
+}

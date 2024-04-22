@@ -1,0 +1,56 @@
+{% set disabled_class = (demo_mode == true) ? 'disabled': '' %}
+{% set disabled_default = (default_language == language.code) ? 'disabled' : '' %}
+<div class="ui card raised {{ language.status|ifthen([1,2],"green") }}" {{ language.uuid|attr("id") }}>        
+    <div class="flex flex-row items-center p-2"> 
+        {% if default_language == language.code %}         
+        <div class="ui left corner olive mini label" {{ default_language_icon.title|attr("title") }}>
+            <i class="icon checkmark"></i>
+        </div>
+        {% endif %}       
+        <div class="flex flex-row items-center flex-grow pl-4">
+            <div>
+                <i class="ui left floated small flag {{ language.country_code }}"></i> 
+            </div>                    
+            <div class="font-bold">                          
+                {{ language.title }}                                        
+            </div>  
+        </div>                 
+        <div class="place-content-end">
+            <a class="edit-button" {{ buttons.edit.title|attr("title") }} {{ language.uuid|attr("uuid") }}>
+                <i class="right floated icon edit"></i>
+            </a>  
+            <div class="ui right floated slider checkbox change-status-button {{ disabled_class }}" {{ language.uuid|attr("uuid") }}>
+                {% if demo_mode != true %}
+                    <input name="status" {{ language.status|ifthen(1,"checked") }} type="checkbox">
+                    <label></label>
+                {% elseif language.status != 1 %}
+                    <div clas="ui horizontal label">{{ labels.disabled }}</div>
+                {% endif %}
+            </div>     
+        </div>                                                               
+    </div>       
+    <div class="content">     
+        <div class="ui list">
+            <div class="item">
+                {{ labels.native_name }} <span class="font-bold">{{ language.native_title }}</span>
+            </div>
+            <div class="item">{{ labels.code }}
+                <div class="ui mini left pointing label"><span class="text-uppercase">{{ language.code }}</span></div>
+                <div class="ui mini left pointing label"><span class="text-uppercase">{{ language.code_3 }}</span></div>
+            </div>
+        </div>                                            
+    </div> 
+    <div class="p-2">
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ language.uuid }}"></div>
+    </div> 
+    <div class="extra content">
+        <div class="ui mini fluid buttons">   
+            <button class="ui button language-button set-default-button basic grey {{ buttons.default.class }} {{ disabled_default }} {{ disabled_class }}" language-title="{{ language.title }}" {{ language.uuid|attr("uuid") }} {{ buttons.default.title|attr("title") }}>                   
+                {{ buttons.default.content }}    
+            </button>            
+            <button class="ui button language-button remove-button basic orange {{ buttons.remove.class }} {{ disabled_class }}" language-title="{{ language.title }}" {{ language.uuid|attr("uuid") }} {{ buttons.remove.title|attr("title") }}>                   
+                {{ buttons.remove.content }}    
+            </button>                    
+        </div> 
+    </div>       
+</div>

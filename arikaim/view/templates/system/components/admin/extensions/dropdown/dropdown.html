@@ -1,0 +1,22 @@
+{% set items = package('extension').getPackages(true) %}
+{% set selected_text = (selected is empty) ? labels.select : selected %}
+<div 
+    id="{{ id|default('extensions_dropdown') }}"
+    class="ui dropdown floating labeled search icon basic button {{ class }}">
+    <input name="extensions_dropdown" type="hidden" value="{{ selected }}">
+    <i class="puzzle icon"></i>
+    <span class="text">{{ selected_text }}</span>
+    <div class="menu">
+        {% if all == true %}
+            <div class="item" data-value="">  
+                {{ labels.all }} 
+            </div>
+        {% endif %}
+        {% for item in items %}
+            {% set package = package('extension').createPackage(item).getProperties() %}
+            <div class="item" data-value="{{ package.name }}">           
+                {{ package.title|default(package.name) }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

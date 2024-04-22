@@ -1,0 +1,39 @@
+{% set log_level = searchValue('level','logs') %}
+<div class="ui segment">
+    <div class="ui stackable grid">           
+        <div class="ten wide column">
+            <div class="ui basic blue label">
+                {{ labels.type }}
+            </div>
+            <i class="icon filter"></i>
+            {{ component("system:admin.system.logs.type",{ selected: log_level, show_all: true }) }}
+        </div>
+        <div class="six wide column right aligned">
+            <button class="ui aligned basic button delete-logs">
+                <i class="icon orange trash"></i>
+                {{ buttons.delete.content }}
+            </button>
+            <span class="pl-2">
+                {{ component('semantic~paginator.dropdown',{ namespace: 'logs' }) }}
+            </span>           
+        </div>
+    </div>   
+</div>
+<div class="ui segment">
+    <table class="ui compact stackable striped very basic table">
+        <thead>
+            <tr class="borderless table-head">                       
+                <th class="center aligned collapsing one wide">{{ columns.date }}</th>
+                <th class="collapsing one wide">{{ columns.type }}</th>
+                <th class="three wide">{{ columns.message }}</th> 
+                <th>{{ columns.details }}</th>    
+            </tr>
+        </thead>
+        <tbody id="logs_rows" component="system:admin.system.logs.view.db.rows" namespace="logs">
+            {{ component("system:admin.system.logs.view.db.rows") }}
+        </tbody>  
+    </table>
+    <div class="mt-1" id="paginator">
+        {{ component("semantic~paginator",{ namespace: 'logs' }) }}
+    </div>
+</div>

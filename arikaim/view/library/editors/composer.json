@@ -1,0 +1,17 @@
+{
+    "name": "arikaim/editors-library",
+    "description": "WYSIWYG text editors js library for Arikaim CMS",
+    "keywords": ["UI", "text editors js","Arikaim"],
+    "type": "arikaim-library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+    },
+    "extra": {
+        "path": "editors"
+    }
+}

@@ -1,0 +1,40 @@
+{% set requirements = getSystemRequirements() %}
+<div class="ui container stackable grid">
+    <div class="ui one column">
+        <div class="ui very padded segment raised">
+            <h2 class="ui header">{{ title }}</h2>           
+            <div class="flex flex-row w-full">
+                <div class="w-1/2">                                                           
+                    {{ component("system:install.requirements",{ requirements: requirements }) }}                                                                                
+                </div>
+                <div class="w-1/2 ml-4">
+                    {{ component("system:install.info",{ system: system }) }}  
+                </div>
+            </div>                                                                             
+            <div class="p-1 mt-8">
+                {% if (requirements.errors is empty) %}                            
+                    <div class="middle aligned content">
+                        <div class="ui header" title="{{ labels.connection }}">
+                            <i class="icon database"></i>
+                            {{ labels.database }}
+                        </div>                 
+                        <div class="description">  
+                            {{ component("system:install.form") }}
+                        </div>
+                        <div class="mt-4 hidden" id="continue">
+                            <a href="{{ url('/admin',true) }}" class="ui button olive large mt-1 hidden" id="continue_button">{{ buttons.continue }}</a>     
+                        </div>                        
+                    </div>                
+                {% else %}
+                    <div class="ui icon error message {{ hide }}" id="errors">            
+                        <ul class="ui list">           
+                        {% for error in requirements.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}                
+                        </ul>          
+                    </div>   
+                {% endif %}  
+            </div>            
+        </div>
+    </div>
+</div>

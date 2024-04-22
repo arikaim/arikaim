@@ -1,0 +1,18 @@
+{
+    "title": "Driver Details",
+    "icon": "info",
+    "labels": {
+        "uuid": "Uuid",
+        "name": "Name",   
+        "module": "Module",   
+        "extension": "Extension",   
+        "version": "Version",  
+        "class": "Class",  
+        "title": "Title",  
+        "description": "Description",    
+        "date": "Created",      
+        "status": "Status",
+        "updated": "Updated",
+        "category": "Category"
+    }
+}

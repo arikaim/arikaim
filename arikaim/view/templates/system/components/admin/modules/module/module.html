@@ -1,0 +1,101 @@
+{% set module = package('module').getPackageProperties(module_name,true) %}
+<div class="ui raised card" id="{{ module.name }}">
+    <div class="content item">  
+        {% if icon is not empty %}
+            <i class="icon {{ icon }}"></i>
+        {% endif %}      
+        {{ module.title }}        
+        <div class="ui horizontal labels right floated">  
+            <div class="ui mini icon basic label">           
+                {% if module.installed == true %}
+                    {% if module.status == 0 %}            
+                        <i class="icon exclamation red" title="{{ labels.disabled }}"></i>                        
+                    {% else %}
+                        <i class="icon checkmark olive" title="{{ labels.active }}"></i> 
+                    {% endif %}
+                    {% if module.error != false %}
+                        <i class="icon exclamation triangle red" title="{{ module.error }}"></i>            
+                    {% endif %}
+                {% endif %}               
+            </div>      
+            {% if module.help is not null %}
+            <div class="ui mini basic icon label">
+                <a class="" href="{{ module.help }}" target="_blank" {{ labels.help|attr('title') }}>
+                    <i class="icon info circle"></i>   
+                    {{ labels.help }}        
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="ui divider"></div>
+        <div class="px-1">
+            <div class="ui mini basic label">
+                {{ labels.version }}
+                <div class="detail">{{ module.version }}</div>
+            </div>  
+            <div class="ui label mini blue basic">
+                {{ labels.type }}
+                <div class="detail text-gray-800">                    
+                    {{ module.type }}
+                </div>
+            </div>      
+            {% if module.bootable == true %}
+            <div class="ui label mini blue basic">
+                {{ labels.bootable }}
+            </div>
+            {% endif %} 
+            {% if module.facade.alias is not empty %}
+            <div class="ui label mini blue basic">
+                {{ labels.facade }}
+                <div class="detail text-gray-800">
+                    {{ module.facade.alias }}
+                </div>
+            </div>       
+            {% endif %} 
+        </div>
+        <div class="p-2">
+            {{ module.description }}
+        </div>                           
+    </div>      
+    <div class="extra content">
+        {% if module.error is not empty %}
+        <div class="ui label mini red basic">
+            {{ labels.error }}
+            <div class="detail text-gray-800">
+                {{ module.error }}
+            </div>
+        </div> 
+        {% endif %}
+    </div>
+    <div class="p-2">
+        <div class="ui success mini message opacity-0 m-2" id="message_{{ module.name }}"></div>
+    </div>  
+    <div class="extra content">
+        {% if module.installed == true %}
+            <button class="ui basic mini button update-button module-button" name="{{ module.name }}">     
+                <i class="sync alternate olive icon"></i>
+                {{ labels.update }}
+            </button>
+            {% if module.status == 1 %}
+            <button class="ui basic mini button disable-button module-button red" name="{{ module.name }}"> 
+                <span class="text-gray-800">{{ labels.disable }}</span>
+            </button>
+            {% else %}
+            <button class="ui basic mini button enable-button module-button green" name="{{ module.name }}"> 
+                <span class="text-gray-800">{{ labels.enable }}</span>
+            </button>
+            {% endif %}
+        {% else %}
+            <button class="ui basic mini olive button module-button install-button" name="{{ module.name }}">    
+                <i class="icon download"></i> 
+                {{ labels.install }}
+            </button>
+        {% endif %}    
+        <button 
+            class="ui icon basic mini right floated button module-button details-button" 
+            name="{{ module.name }}"
+            title="{{ labels.details }}">    
+            <i class="icon list layout"></i>            
+        </button>          
+    </div>
+</div>

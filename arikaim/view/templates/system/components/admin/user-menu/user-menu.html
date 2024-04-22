@@ -1,0 +1,21 @@
+{% set user = service('access').getUser() %}
+<div class="ui icon top right dropdown {{ class }}" id="user_menu_dropdown">
+    <i class="icon olive circular user"></i>
+    {% if user == null %}
+        <a class="link {{ login.class }} text-white" href="{{ url() }}">
+            {{ login.content }}
+        </a> 
+    {% else %}
+    <span class="text-gray-200">{{ user.user_name }}</span>
+    <div class="ui vertical menu">
+        <div class="item" data-value="system:admin.system.settings">
+            <i class="icon setting"></i>
+            {{ items.settings.content }}
+        </div>  
+        <div class="item" data-value="system:logout">
+            <i class="icon sign out"></i>
+            {{ items.logout.content }}            
+        </div> 
+    </div>
+    {% endif %}
+</div>

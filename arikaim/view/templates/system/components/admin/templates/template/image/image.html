@@ -1,0 +1,11 @@
+{% if src is empty %}   
+    <div class="ui segment image fluid rounded opacity-25">
+        <div class="ui center aligned text-center bordered">
+            <i class="icon massive image outline fluid"></i> 
+        </div>  
+    </div>            
+{% else %}
+    <a class="image-preview-button" data-src="{{ src }}">
+        <img class="ui image fluid rounded bordered template-image" src="{{ src }}">   
+    </a>           
+{% endif %} 

@@ -1,0 +1,7 @@
+{
+    "title": "Test Email",
+    "labels": {
+        "ok": "Semail send successful.",
+        "error": "Error send test email, check mailer driver config."
+    }
+}

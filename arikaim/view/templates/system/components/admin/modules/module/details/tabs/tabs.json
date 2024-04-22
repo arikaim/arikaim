@@ -1,0 +1,23 @@
+{
+    "tabs": {
+        "drivers": {
+            "content": "Drivers"     
+        },
+        "console": {
+            "content": "Console",
+            "title": "Console Commands"
+        }
+    },
+    "labels": {
+        "active": "Active",       
+        "bootable": "Bootable",            
+        "facade": "Alias",
+        "disabled": "Disabled",
+        "type": "Type",
+        "error": "Error",
+        "service_name": "Service name",
+        "help": "Help",
+        "version": "Version",
+        "update": "Update Composer Packages"
+    }
+}

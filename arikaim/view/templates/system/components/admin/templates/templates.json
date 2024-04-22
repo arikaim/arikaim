@@ -1,0 +1,17 @@
+{ 
+    "labels": {
+        "details": {
+            "content": "Details"
+        },            
+        "view": {
+            "content": "View"
+        },
+        "repository": {
+            "content": "Repository"
+        },
+        "upload": {
+            "content": "Upload",
+            "icon": "upload"
+        }
+    }               
+}

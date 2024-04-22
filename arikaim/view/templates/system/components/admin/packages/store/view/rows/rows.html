@@ -1,0 +1,21 @@
+{% set package_manager = package(type) %}
+{% set result = arikaimStore().fetchPackages(type) %}
+{% set data = result|jsonDecode %}
+
+{% for item in data.result.items %}     
+    {% set package_name = item.options_list['package-name'] %}      
+    {% set installed = package_manager.hasPackage(package_name) %}     
+    {% if installed == true %}
+        {% set current_version = package_manager.createPackage(package_name).getVersion() %}
+    {% else %}
+        {% set current_version = null %}
+    {% endif %}         
+    {{  component('system:admin.packages.store.view.card',{ 
+            item: item,          
+            type: type,
+            current_version: current_version,
+            package_name: package_name,  
+            installed: installed 
+        }) 
+    }}
+{% endfor %}

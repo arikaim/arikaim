@@ -1,0 +1,6 @@
+{% set items = package('extension').getPackages() %}
+<div class="ui stackable six cards">
+{% for item in items %}
+    {{ component("system:admin.extensions.extension",{ extension_name: item }) }}      
+{% endfor %}
+</div>

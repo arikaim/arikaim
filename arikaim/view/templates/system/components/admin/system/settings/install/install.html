@@ -1,0 +1,20 @@
+{% set disable_install_page = service('config').getByPath('settings/disableInstallPage') %}
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'five wide' %}
+<div class="mt-4">
+    <div class="field">
+        <div class="ui slider checkbox" id="install_page_toggle">
+            <input name="install_page" type="checkbox" value="1" {{ disable_install_page|ifthen(true,'checked') }} >
+            <label class="font-bold">{{ labels.disable }}</label>
+        </div>             
+    </div>  
+    <div class="mt-8">
+        <h4>{{ labels.repair }}</h4>
+        <button class="ui button olive repair-install mt-8">
+            {{ buttons.repair }}
+        </button>
+        <div class="ui success message hidden" id="message">
+        </div>
+    </div>
+</div>
+{% endcomponent %}

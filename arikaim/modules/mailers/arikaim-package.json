@@ -1,0 +1,15 @@
+{
+    "title": "Mailer drivers",
+    "name": "mailers",
+    "version": "1.1.6",
+    "package-type": "module",
+    "class": "Mailers",
+    "description": "Mailer drivers.",
+    "type": "package",
+    "category": "mailers",
+    "repository": "https://github.com/arikaim/mailers-module",
+    "require": {
+        "extensions": [          
+        ]
+    }
+}

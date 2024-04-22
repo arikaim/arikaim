@@ -1,0 +1,17 @@
+{% set language = createModel('Language') %}
+{% set language = language.orderBy('position') %}
+{% set items = paginate(language,'language') %}
+{% set default_language = getConfigOption('settings/defaultLanguage') %}
+{% if demo_mode == true %}
+    <div class="ui warning message">
+        <h4>
+            {{ labels.demo }}
+        </h4>
+    </div>
+{% endif %}
+{{ component("system:position",{},'js') }}
+<div class="ui stackable cards" id="languages_list">
+    {% for item in items.getItems() %}
+        {{ component("system:admin.languages.language",{ language: item, default_language: default_language }) }}
+    {% endfor %}
+</div>       

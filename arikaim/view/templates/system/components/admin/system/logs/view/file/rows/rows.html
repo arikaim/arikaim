@@ -1,0 +1,15 @@
+{% set logger = service("logger").readSystemLogs() %}
+{% set paginator = paginate(logger,'logs.file') %}
+{% if paginator.getItems()|length == 0 %}
+    <tr>
+        <td colspan="4">...</td>           
+    </tr>
+{% endif %}
+{% for row in paginator.getItems() %}
+    <tr>
+        <td class="collapsing">{{ row.timestamp|dateFormat }} {{ row.timestamp|timeFormat }}</td>
+        <td class="center aligned collapsing">{{ component('semantic~labels.log',{ name: row.level_name }) }}</td>
+        <td>{{ row.message }}</td>           
+        <td class="">{{ row.extra.details }}</td>           
+    </tr>
+{% endfor %}

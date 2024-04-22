@@ -1,0 +1,18 @@
+{% if model_name is empty %}
+    {% set relations = service('db').getRelationsMap() %}
+    {% set model_name = relations[type] %}
+{% endif %}
+{% set model = createModel(model_name,'*').findById(uuid) %}
+
+{% if model.title is not empty %}
+    {% set name = model.title %}
+{% elseif model.name is not empty %}
+    {% set name = model.name %}
+{% elseif model.user_name is not empty %}
+    {% set name = model.user_name %}
+{% elseif model.uuid is not empty %}
+    {% set name = model.uuid %}
+{% else %}
+    {% set name = model.id %}
+{% endif %}
+<span class="{{ class }}">{{ name }}</span>

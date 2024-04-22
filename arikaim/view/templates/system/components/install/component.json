@@ -1,0 +1,11 @@
+{
+    "include": {
+        "js": [
+            "semantic~progress"
+        ]
+    },
+    "access": {
+        "auth": "none",
+        "deny-request": true        
+    }   
+}

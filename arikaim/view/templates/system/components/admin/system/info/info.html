@@ -1,0 +1,65 @@
+{% set info = system().getSystemInfo()  %}
+<div class="ui stackable grid">
+    <div class="ui six wide column">
+        <div class="ui segment fluid">
+            <div class="ui items">
+                <div class="item">
+                    <div class="content">
+                        {{ component('semantic~segment-title',{ title: 'Arikaim CMS' }) }}                           
+                        <div class="mt-4">                           
+                            <span class="ml-1 small text">
+                                <div class="ui label basic blue">
+                                    {{ info.core }}
+                                </div>
+                            </span>
+                        </div>                   
+                    </div>
+                </div>     
+                <div class="item">
+                    <div class="content">    
+                        <div class="ui basic label">
+                            <i class="icon server"></i>
+                            <span class="small text">{{ info.os_name }}</span> 
+                            <span class="small text">{{ info.os_version }}</span>
+                        </div>                              
+                        <div class="ui basic label">
+                            {{ info.apache_version }}
+                        </div>                      
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">               
+                        <div class="ui accordion" id="php_extensions_info">
+                            <div class="title">                                       
+                                <i class="icon code"></i> 
+                                <i class="dropdown icon"></i>
+                                PHP 
+                                <div class="ui basic min label">{{ info.php_version }}</div>    
+                            </div>                                     
+                            <div class="content ml-2">
+                            {{ component("system:admin.system.info.php-info") }}
+                            </div>
+                        </div>
+                    </div> 
+                </div>     
+                <div class="ui divider horizontal"></div>              
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="buttons right aligned floated">
+                            <button class="ui basic button mini check-console">
+                                <i class="icon blue code"></i>
+                                {{ labels.console }}
+                            </button>   
+                            <button class="ui basic button mini node-info">
+                                <i class="icon blue code"></i>
+                                {{ labels.node }}
+                            </button>   
+                        </div>
+                    </div>
+                    <div class="column right aligned" id="console_content">                                                                        
+                    </div>    
+                </div>                                                                                                             
+            </div>
+        </div>
+    </div>
+</div>

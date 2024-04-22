@@ -1,0 +1,15 @@
+{
+    "labels": {
+        "repository": "Repository",
+        "private": "Private",
+        "premium": "Premium",
+        "version": "Version",
+        "download": "Download",
+        "key": "License Key",
+        "license": "Missing package license key.",
+        "empty": "not set"       
+    },
+    "messages": {
+        "error": ""
+    }
+}

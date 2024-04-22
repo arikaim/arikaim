@@ -1,0 +1,22 @@
+{
+    "smtp-mailer": {
+        "gmail": {          
+            "title": "Gmail",
+            "description": "Gmail smtp settings.",
+            "fields": [
+                {
+                    "id:": "host",
+                    "value": "smtp.gmail.com"
+                },
+                {
+                    "id:": "port",
+                    "value": "465"
+                },
+                {
+                    "id:": "ssl",
+                    "value": true
+                }
+            ]
+        }
+    }      
+}

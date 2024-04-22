@@ -1,0 +1,9 @@
+{% component 'semantic~tabs.vertical.content' %}
+    {% set class = 'six wide' %}
+    <div class="mt-4">
+        {{ component('semantic~language.list') }}        
+    </div>   
+    <div class="mt-8" id="form_content">
+        {{ component('system:admin.languages.language.form') }}
+    </div>   
+{% endcomponent %}

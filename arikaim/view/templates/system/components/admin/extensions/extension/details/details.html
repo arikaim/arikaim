@@ -1,0 +1,15 @@
+<div class="ui grid segment">
+    <div class="four wide column">
+        <div class="flex">
+            <div class="font-bold p-2">
+                {{ labels.extension }}
+            </div> 
+            {{ component("system:admin.extensions.dropdown",{ selected: extension, class: 'fluid' }) }}  
+        </div>           
+    </div>        
+</div>    
+<div id="extension_details" class="mt-4">   
+{% if extension is not empty %}  
+    {{ component("system:admin.extensions.extension.details.tabs",{ extension_name: extension }) }}
+{% endif %}
+</div>

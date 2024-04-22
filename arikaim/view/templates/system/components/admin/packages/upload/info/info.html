@@ -1,0 +1,49 @@
+<div class="ui segment mt-2">
+    <h4 class="ui header">
+        <i class="icon blue browser" id="icon"></i>
+        <div class="content">
+            <span id="title"></span>  
+            <div class="sub header" id="description"></div>       
+        </div>
+    </h4>  
+    <table class="ui very basic table">
+        <tbody>
+            <tr>
+                <td>{{ labels.version }}</td>
+                <td id="version" class="font-bold"></td>
+            </tr>
+            <tr>
+                <td>{{ labels.type }}</td>
+                <td id="type" class="font-bold"></td>
+            </tr>
+            <tr>
+                <td>{{ labels.destination }}</td>
+                <td id="destination" class="font-bold"></td>
+            </tr>
+            <tr>
+                <td>{{ labels.name }}</td>
+                <td id="name" class="font-bold"></td>
+            </tr>
+        </tbody>       
+    </table>
+    <div id="upload_alert" class="invisible">
+        <div class="ui icon message">
+            <i class="exclamation triangle icon orange"></i>
+            <div class="content">
+                <div class="header">
+                    {{ messages.alert.title }}           
+                </div>
+                <p>{{ messages.alert.description }}</p>
+            </div>       
+        </div>
+    </div>   
+    <div class="ui divider"></div>
+    <div class="mt-2">
+        <div class="ui green button confirm-upload-button" package-directory="" id="confirm_button">
+            {{ labels.confirm }}
+        </div>
+        <div class="ui orange button right floated cancel-upload-button">
+            {{ labels.cancel }}
+        </div>
+    </div>  
+</div>

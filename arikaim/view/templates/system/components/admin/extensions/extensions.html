@@ -1,0 +1,8 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'view_button', title: labels.view.content, component: 'system:admin.extensions.view', icon: 'grid layout', active: true },
+            { id: 'details_button', title: labels.details.content, component: 'system:admin.extensions.extension.details', icon: 'info' }
+        ],
+        content: { component: 'system:admin.extensions.view' } 
+    })
+}}
