@@ -3,7 +3,7 @@
         'name' => 'arikaim/arikaim',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '6afcf86f61dc02c475a8499fd62f35c792309c3b',
+        'reference' => '349fc26380dd3ba3103d00743851cd570b215942',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'arikaim/arikaim' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '6afcf86f61dc02c475a8499fd62f35c792309c3b',
+            'reference' => '349fc26380dd3ba3103d00743851cd570b215942',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -497,9 +497,9 @@
             'dev_requirement' => false,
         ),
         'arikaim/system-template' => array(
-            'pretty_version' => '1.11.3',
-            'version' => '1.11.3.0',
-            'reference' => '4c04a94322313cb0c2be1843562c371e64f71dbe',
+            'pretty_version' => '1.11.4',
+            'version' => '1.11.4.0',
+            'reference' => 'f4e0a5bef86c98065af87e92760cf65c6888bf3f',
             'type' => 'arikaim-template',
             'install_path' => __DIR__ . '/../../arikaim/view/templates/system',
             'aliases' => array(),
@@ -1093,8 +1093,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

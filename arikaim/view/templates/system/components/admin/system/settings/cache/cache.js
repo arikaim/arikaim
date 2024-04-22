@@ -46,16 +46,13 @@ function Cache() {
                     arikaim.ui.show('#clear_cache_button');
                     arikaim.ui.show('.cache-info-button');
                     self.enable(function(result) {
-                        arikaim.page.loadContent({
-                            id: 'cache_info',
-                            component: "system:admin.system.settings.cache.info"
-                        });
+                      
                     });
                 } else {
                     arikaim.ui.hide('#clear_cache_button');
                     arikaim.ui.hide('.cache-info-button');
                     self.disable(function(result) {
-                        $('#cache_info').html('');
+                        
                     });
                 }
             }

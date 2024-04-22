@@ -3205,17 +3205,17 @@
         },
         {
             "name": "arikaim/system-template",
-            "version": "1.11.3",
-            "version_normalized": "1.11.3.0",
+            "version": "1.11.4",
+            "version_normalized": "1.11.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/arikaim/system-template.git",
-                "reference": "4c04a94322313cb0c2be1843562c371e64f71dbe"
+                "reference": "f4e0a5bef86c98065af87e92760cf65c6888bf3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arikaim/system-template/zipball/4c04a94322313cb0c2be1843562c371e64f71dbe",
-                "reference": "4c04a94322313cb0c2be1843562c371e64f71dbe",
+                "url": "https://api.github.com/repos/arikaim/system-template/zipball/f4e0a5bef86c98065af87e92760cf65c6888bf3f",
+                "reference": "f4e0a5bef86c98065af87e92760cf65c6888bf3f",
                 "shasum": ""
             },
             "require": {
@@ -3230,7 +3230,7 @@
                 "arikaim/jquery-ui-library": "^1.0.0",
                 "arikaim/tailwind-library": "^1.0.0"
             },
-            "time": "2024-04-18T12:08:12+00:00",
+            "time": "2024-04-22T10:05:39+00:00",
             "type": "arikaim-template",
             "extra": {
                 "path": "system"
@@ -3254,7 +3254,7 @@
             ],
             "support": {
                 "issues": "https://github.com/arikaim/system-template/issues",
-                "source": "https://github.com/arikaim/system-template/tree/1.11.3"
+                "source": "https://github.com/arikaim/system-template/tree/1.11.4"
             },
             "funding": [
                 {
