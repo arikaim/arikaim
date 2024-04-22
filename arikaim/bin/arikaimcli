@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+define('ROOT_PATH',dirname(dirname(__DIR__)));
+
+require __DIR__ . '/../../vendor/autoload.php';
+
+use Arikaim\Core\Console\Application;
+use Arikaim\Core\Arikaim;
+use Arikaim\Core\App\Console;
+
+Arikaim::systemInit(0,true);
+
+$application = new Application(
+    'Arikaim Cli',
+    '',
+    Arikaim::get('config')->getByPath('settings/console',[]),
+    Arikaim::logger()
+);
+
+$application->addCommands(Console::getCoreCommands());
+$application->addCommands(Console::getExtensionsCommands());
+$application->addCommands(Console::getModulesCommands());
+
+$application->run();

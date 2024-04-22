@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
 # Deny access to html, json, zip, jsm, py, phar, txt and yml files
-RewriteRule ^arikaim/.*(?:htm|html|json|zip|phar|txt|yml|yaml|jsm|py|md|mjs)$ - [F,NC]
+RewriteRule ^arikaim/.*(?:htm|html|json|zip|phar|txt|yml|yaml|jsm|py|md|mjs|mjml)$ - [F,NC]
 
 # Deny access for all files in /storage/
 RewriteRule ^arikaim/storage/(.*)$ - [F,NC]

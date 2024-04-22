@@ -43,8 +43,12 @@
     "config": {
         "allow-plugins": {
             "arikaim/installer": true
-        }
+        },
+        "bin-dir": "arikaim/bin"
     },
+    "bin": [
+        "arikaim/bin/arikaimcli"
+    ],
     "scripts": {
         "scripts": {
             "pre-update-cmd": "Arikaim\\Installer\\ComposerEvents::preUpdate",        
