@@ -1,0 +1,43 @@
+{
+    "text": {
+        "all": "All",
+        "status": "Status"
+    },
+    "items": [
+        {
+            "index": 0,
+            "title": "Disabled",
+            "class": "basic mini grey"
+        },
+        {
+            "index": 1,
+            "title": "Active",
+            "class": "olive mini"
+        },
+        {
+            "index": 2,
+            "title": "Completed",
+            "class": "green mini"
+        },
+        {
+            "index": 3,
+            "title": "Deleted",
+            "class": "red mini"
+        },
+        {
+            "index": 4,
+            "title": "Pending",
+            "class": "blue mini"           
+        },
+        {
+            "index": 5,
+            "title": "Suspended",
+            "class": "orange mini"
+        },  
+        {
+            "index": 6,
+            "title": "Cancelled",
+            "class": "orange mini"
+        }
+    ]
+}

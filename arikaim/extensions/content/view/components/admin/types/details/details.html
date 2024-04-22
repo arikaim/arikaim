@@ -1,0 +1,83 @@
+{% set type = service('content').typeRegistry().get(content_type) %}
+{% set title = type.getTitle() ~ ' ' ~ title %}
+{% component 'semantic~panel' %}
+<div class="mt-4">
+    <div class="ui three column divided grid">
+        <div class="column">
+            <h4>{{ labels.details }}</h4>
+            <table class="ui very basic definition mini table">
+                <thead>
+                    <tr>
+                        <th class="two wide"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="right aligned">{{ labels.name }}</td>
+                        <td>{{ type.getName() }}</td>
+                    </tr>   
+                    <tr>
+                        <td class="right aligned">{{ labels.title }}</td>
+                        <td>{{ type.getTitle() }}</td>
+                    </tr>   
+                    <tr>
+                        <td class="right aligned">{{ labels.category }}</td>
+                        <td>{{ type.getCategory() }}</td>
+                    </tr>   
+                    <tr>
+                        <td class="right aligned">{{ labels.handler }}</td>
+                        <td>{{ type.getClass() }}</td>
+                    </tr>           
+                </tbody>  
+            </table>     
+        </div>
+        <div class="column">
+            <h4>{{ labels.fields }}</h4>
+            {% set fields = type.getFields() %}
+            <table class="ui very basic definition mini table">
+                <thead>
+                    <tr>
+                        <th class="two wide">{{ labels.name }}</th>
+                        <th>{{ labels.title }}</th>
+                        <th>{{ labels.type }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for field in fields %}
+                    <tr>
+                        <td class="right aligned">{{ field.getName() }}</td>
+                        <td>{{ field.getTitle() }}</td>
+                        <td>{{ field.getType() }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <h4>{{ labels.actions }}</h4>
+            {% set actions = type.getActions() %}
+            <table class="ui very basic definition mini table">
+                <thead>
+                    <tr>
+                        <th class="two wide">{{ labels.name }}</th>
+                        <th>{{ labels.title }}</th>
+                        <th class="two wide">{{ labels.type }}</th>
+                        <th>{{ labels.handler }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for action in actions %}
+                    <tr>
+                        <td class="right aligned">{{ action.getName() }}</td>
+                        <td>{{ action.getTitle() }}</td>
+                        <td>{{ action.getType() }}</td>
+                        <td title="{{ action.getClass() }}">{{ action.getClass()|baseClass }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>      
+</div>    
+{% endcomponent %}

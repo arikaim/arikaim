@@ -1,0 +1,16 @@
+{
+    "buttons": {
+
+    },    
+    "labels": {      
+        "page": "Page",
+        "next": "View next page",
+        "prev": "View prev page",
+        "first": "View first page",
+        "last": "View last page",
+        "of": "of",
+        "zoom": "Zoom",
+        "plus": "Zoom In",
+        "minus": "Zoom Out"
+    }
+}

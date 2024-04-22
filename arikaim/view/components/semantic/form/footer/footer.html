@@ -1,0 +1,18 @@
+{% set button_title = button_title|default(buttons.save.content) %}
+{% set button_hint = button_hint|default(buttons.save.title) %}
+{% set button_class = button_class|default('button green') %}
+{% set cancel_button_class = cancel_button_class|default('button right floated') %}
+{% set class = class|default('mt-8') %}
+<div class="{{ class }}">
+    <button class="ui submit-button {{ button_class }}" title="{{ button_hint }}">{{ button_title }}</button>    
+    {% if show_cancel_button == true %}
+        <a class="ui cancel-button {{ cancel_button_class }}" title="{{ buttons.cancel.title }}">
+            {{ buttons.cancel.content }}
+        </a>    
+    {% endif %}
+    {% if show_clear_button == true %}
+        {{ component('semantic~form.clear',{ form_id: form_id, class: clear_button_class }) }}
+    {% endif %}
+    <div class="ui error message errors mt-2 {{ error_message_class }}"></div> 
+    <div class="ui success message hidden mt-2 {{ success_message_class }}" id="message"></div>  
+</div>

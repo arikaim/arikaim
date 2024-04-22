@@ -1,0 +1,27 @@
+<div class="{{ class|default('mt-8') }}">
+    {% if hide_title != true %}
+    <h4>{{ title }}</h4>
+    {% endif %}
+    {{  component('image::upload.form',{ 
+            hide_protected: hide_protected,
+            file_name: file_name,  
+            button_class: button_class,
+            button_title: button_title,
+            deny_delete: deny_delete,
+            relation_id: relation_id,
+            max_file_size: max_file_size,
+            relation_type: relation_type,
+            target_path: target_path,
+            create_target_path: create_target_path,
+            resize_width: resize_width,
+            resize_height: resize_height,
+            hide_labels: hide_labels,
+            accept: accept,
+            image_id: image_id,
+            category_id: category_id,
+            private_image: (private_image is empty) ? false : private_image,
+            hide_path: hide_path,
+            collection: collection
+        }) 
+    }}    
+</div>

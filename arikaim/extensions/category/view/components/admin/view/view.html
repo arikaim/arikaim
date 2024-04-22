@@ -1,0 +1,24 @@
+{% set parent_id = parent_id|default(null) %}
+<div class="ui segment">
+    <div class="ui grid">
+        <div class="fourteen wide column pt-1">   
+            <div class="flex flex-row items-center" >
+                <div class="px-2 font-bold">
+                    {{ labels.branch }}
+                </div>
+                {{ component('category::admin.branch',{ class: 'clearable top left pointing selection mini' }) }} 
+            </div>  
+        </div>               
+        <div class="two wide column right aligned px-1 pt-1">
+            {{ component('semantic~paginator.dropdown',{ class: 'mini', namespace: 'category' }) }}
+        </div>
+    </div>
+</div>
+<div class="ui segment">
+    <div class="mt-2" id="category_rows" component="category::admin.view.items" namespace="category" branch="{{ branch }}">
+        {{ component('category::admin.view.items',{ parent_id: parent_id, branch: branch }) }}   
+    </div>
+    <div class="mt-2" id="paginator">
+        {{ component('semantic~paginator',{ namespace: 'category' }) }}
+    </div>
+</div>

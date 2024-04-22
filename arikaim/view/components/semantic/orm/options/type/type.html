@@ -1,0 +1,41 @@
+<table class="ui definition table {{ class }}">
+    <thead>
+        <tr>
+            <th class="one column wide">{{ labels.name }}</th>
+            <th class="four column wide">{{ labels.value }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ labels.title }}</td>
+            <td>{{ type.title }}</td>
+        </tr>
+        <tr>
+            <td>{{ labels.key }}</td>
+            <td>{{ type.key }}</td>
+        </tr>
+        <tr>
+            <td>{{ labels.type }}</td>
+            <td>{{ type.getTypeText() }}</td>
+        </tr>
+        <tr>
+            <td>{{ labels.description }}</td>
+            <td>{{ type.description }}</td>
+        </tr>
+        <tr>
+            <td>{{ labels.default }}</td>
+            <td>{{ type.default }}</td>
+        </tr>
+        {% if type.items is not empty %}
+        <tr>
+            <td>{{ labels.items }}</td>
+            <td>
+                {% for item in type.items %}
+                <span class="p-1">{{ item }}</span>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+

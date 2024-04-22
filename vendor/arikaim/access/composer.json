@@ -1,0 +1,27 @@
+{
+    "name": "arikaim/access",
+    "description": "Arikam CMS Access package",
+    "keywords": ["cms", "auth"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "arikaim/interfaces": "^1.0.0",        
+        "arikaim/collection": "^1.0.0",
+        "arikaim/http": "^1.0.0",
+        "lcobucci/jwt": "4.0.4",
+        "psr/http-message": "^1.0.0",
+        "psr/http-server-middleware": "^1.0.0",
+        "psr/http-server-handler": "^1.0.0"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Access\\": ""
+        }
+    }
+}

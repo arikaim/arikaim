@@ -1,0 +1,96 @@
+{% for property in items %}  
+    {% if property.group is not empty %}
+        {% set field_name = property.group ~ '[' ~ property.name ~ ']' %}
+    {% else %}
+        {% set field_name = property.name %} 
+    {% endif %}    
+    {% set rule = (property.required == true) ? 'empty' : '' %}    
+    {% if property['type'] == 7 %}
+        <div class="field {{ property.required|ifthen(true,'required') }}">      
+            <label>{{ property.title }}</label>
+            <div class="ui labeled input">
+                <div class="ui label">http://</div>
+                <input {{ rule|attr('rule') }} type="text" name="{{ field_name }}" value="{{ property.value }}"> 
+            </div>                
+        </div>
+    {% elseif property['type'] == 3 %}  
+        {{  component('semantic~form.fields.checkbox',{
+                label: property.description,
+                class: property.required|ifthen(true,'required'),
+                name: field_name,   
+                id: property.id,
+                rule: (property.required == true) ? 'empty' : null,
+                field_label: property.title,          
+                value: property.value
+            }) 
+        }}          
+    {% elseif property['type'] == 4 %}
+        <div class="field {{ property.required|ifthen(true,'required') }}">  
+            <label>{{ property.title }}</label>                   
+            <select class="ui dropdown" name="{{ field_name }}" {{ rule }}>
+                {% for item in property.items %}
+                <option value="{{ item }}" {{ property.value|ifthen(item,'selected') }}>{{ item }}</option>
+                {% endfor %}
+            </select>                
+        </div>
+    {% elseif property['type'] == 6 %}
+        {{  component('semantic~form.fields.password',{
+                label: property.title,
+                class: (property.required == true) ? ' field required' : 'field',
+                name: field_name,         
+                id: 'password',       
+                value: property.value
+            }) 
+        }}  
+    {% elseif property['type'] == 8 %}
+        <div class="field {{ property.required|ifthen(true,'required') }}">  
+            <label>{{ property.title }}</label>    
+            <textarea name="{{ field_name }}" {{ rule|attr('rule') }} cols="7" rows="7">{{ property.value }}</textarea>                                       
+        </div>       
+    {% elseif property['type'] == 10 %}
+        {{  component('semantic~properties.items.oauth',{ 
+                update: update,
+                property: property, 
+                field_name: field_name,
+                oauth_provier: properties.getValue('oauth_provider'),
+                oauth_config: properties.getValue('oauth_config')
+            }) 
+        }} 
+    {% elseif property['type'] == 11 %}
+        <div class="field {{ property.required|ifthen(true,'required') }}">  
+            <label>{{ property.title }}</label>
+            {{  component('semantic~language.dropdown',{                
+                    name: field_name,
+                    selected: property.value,
+                    class: 'property-language-dropdown selection',
+                    id: 'property_language_dropdown'
+                }) 
+            }}      
+        </div>
+    {% elseif property['type'] == 13 %}
+    <div class="field {{ property.required|ifthen(true,'required') }}">  
+        <label>
+            {{ property.title }}
+        </label>   
+        <div 
+            id="key_field_{{ property.group }}_{{ property.name }}"
+            class="flex flex-row items-center p-1 border border-solid rounded-lg border-gray-300">    
+            {% if property.value is empty %}    
+                {{  component('semantic~properties.items.key.edit',{ 
+                        group: property.group,
+                        field_name: property.name,
+                        preview: '...'
+                    }) 
+                }}
+            {% else %}  
+                {{ component('semantic~properties.items.key',{ property: property }) }}
+            {% endif %}
+        </div>
+    </div> 
+    {% else %}
+    <div class="field {{ property.required|ifthen(true,'required') }}">      
+        <label>{{ property.title }}</label>                 
+        <input {{ rule|attr('rule') }} type="text" name="{{ field_name }}" value="{{ property.value }}"> 
+    </div>
+    {% endif %}
+{% endfor %}

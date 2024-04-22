@@ -1,0 +1,53 @@
+{% if uuid is not empty %}
+    {% set image = createModel('ImageThumbnails','image').findById(uuid) %}
+{% endif %}
+{% component 'semantic~panel' %}
+
+    <div class="ui mini header">
+        <i class="icon blue circle info"></i>
+        {{ title }} ff
+    </div>
+    <div class="ui grid">
+        <div class="ui two wide column">
+            <div class="ui image reounded">
+                <img class="ui rounded image" src="{{ url(image.src) }}"/>
+            </div>
+        </div>
+        <div class="ui fourteen wide column">
+            <table class="ui mini table very basic definition">                   
+                <tbody>
+                    <tr>
+                        <td class="right aligned">{{ labels.id }}</td>
+                        <td>
+                            <div class="ui basic label">{{ image.id }}</div>
+                            {{ image.uuid }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right aligned">{{ labels.type }}</td>
+                        <td>
+                            {{ image.mime_type }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right aligned">{{ labels.size }}</td>
+                        <td>
+                            {{ image.width }} x {{ image.height }}
+                        </td>
+                    </tr>           
+                    <tr>
+                        <td class="right aligned">{{ labels.file }}</td>
+                        <td>
+                            {{ image.file_name }}
+                        </td>
+                    </tr>           
+                </tbody>
+            </table>            
+        </div>
+    </div>   
+    {% component 'semantic~code' %}  
+    {%- set language = 'p-2 html' -%}                              
+    <img src="{{ url(image.src) }}"/>
+    {% endcomponent %}           
+
+{% endcomponent %}

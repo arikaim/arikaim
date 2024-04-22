@@ -1,0 +1,21 @@
+{% set icon = icon|default('folder') %}
+<div class="list {{ class }}">
+    {% for item in items %}
+        {% if item is iterable %}
+            <div class="item">          
+                <i class="icon {{ icon }}"></i>
+                <div class="content">                                
+                    {{ item.title }}  
+                </div>           
+            </div>
+            {{ component('semantic~list.folder',{ items: item.items, icon: icon, class: class }) }}
+        {% else %}
+            <div class="item">
+                <i class="icon {{ icon }}"></i>
+                <div class="content">                                       
+                    {{ item }}   
+                </div>      
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

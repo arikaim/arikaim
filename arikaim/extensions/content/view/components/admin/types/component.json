@@ -1,0 +1,7 @@
+{
+    "access": {
+        "auth": "session",
+        "permission": "ControlPanel:full",
+        "redirect": "/admin"           
+    }
+}

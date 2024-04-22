@@ -1,0 +1,34 @@
+{% set size = size|default(15) %}
+{% set data_field = data_field|default('uuid') %}
+{% set content_selector = 'content>' ~ provider ~ ',' ~ type ~ ':' ~ type %}
+{% set content_type = service('content').typeRegistry().get(type) %}
+{% set items = service('content').search(content_selector,'') %}
+{% if selected is not empty %}
+   
+{% endif %}
+{% set selectet_text = (selected is empty) ? labels.select : selected.getTitle() %}
+<div 
+    class="ui search selection dropdown content-search-dropdown {{ class }}" 
+    id="{{ id|default('content_search_dropdown') }}" 
+    data-field="{{ data_field }}" 
+    content-provider="{{ provider }}"  
+    content-type="{{ type }}"  
+    content-selector="{{ content_selector }}">
+    <input 
+        {{ rule|attr('rule') }} 
+        name="{{ name|default('content_search') }}" 
+        type="hidden" 
+        value="{{ selected[data_field] }}">
+    {% if show_icon == true %}
+    <i class="user icon {{ icon }}"></i>
+    {% endif %}
+    <div class="default text">{{ selectet_text }}</div>
+    <i class="dropdown icon"></i>
+    <div class="menu">
+        {% for item in items %}
+            <div class="item" data-value="{{ item.getValue(data_field) }}">              
+                {{ item.getTitle() }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

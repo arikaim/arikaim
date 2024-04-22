@@ -1,0 +1,13 @@
+{
+    "title": "Provider",
+    "labels": {    
+        "name": "Name",
+        "data": "Data",
+        "details": "Details",
+        "title": "Title",
+        "types": "Content Types",
+        "category": "Category",
+        "handler": "Handler",
+        "total": "Total Items"                   
+    }
+}

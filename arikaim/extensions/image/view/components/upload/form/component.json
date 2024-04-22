@@ -1,0 +1,10 @@
+{
+    "include": {
+        "js": [
+            "semantic~upload"                       
+        ]
+    },
+    "access": {
+        "auth": "session"                
+    }
+}

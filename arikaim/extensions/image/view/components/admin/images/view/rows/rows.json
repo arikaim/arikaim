@@ -1,0 +1,16 @@
+{
+    "labels": {
+        "empty": "...",
+        "image": "Image",
+        "download": "Download",
+        "edit": "Edit",
+        "delete": "Delete Protected",
+        "protected": "Protected",
+        "public": "Public",
+        "thumbnails": "Thumbnails",
+        "status": {
+            "active": "active",
+            "disabled": "disabled"
+        }       
+    }
+}

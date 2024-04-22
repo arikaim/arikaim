@@ -1,0 +1,12 @@
+{
+    "title": "Thumbnails",
+    "labels": {    
+        "protected": "Protected",
+        "public": "Public",
+        "image": "Image",    
+        "path": "path",
+        "create": "Create",
+        "url": "Url",
+        "view": "View"
+    }   
+}

@@ -1,0 +1,50 @@
+{% set company = company|default('Company') %}
+{% set updated = updated|default(today()) %}
+{% set site = site|default(url('',true)) %}
+{% set item_text_class = item_text_class|default('text-lg text-gray-500') %}
+{% set item_title_class = item_title_class|default('text-gray-300') %}
+{% set show_title = (show_title is not defined) ? true : show_title %}
+
+{% set params = {
+        'company': company,
+        'email': email,
+        'updated': updated|dateFormat,
+        'address': address,
+        'site': site
+    }
+%}
+{% if show_title == true %}
+<h2 class="text-center p-4 w-full text-center {{ class }}">
+    {{ title }}
+</h2>
+<div class="mt-10"></div>
+{% endif %}
+
+{% for item in items %}
+    {% if item.hide != true %}
+        <div class="mt-2">
+            {% if item.title is not empty %}
+            <h3 class="p-4 pb-1 {{ item_title_class }} ">{{ item.title }}</h3>
+            {% endif %}
+            <p class="pl-4 pt-2 pb-1 {{ item_text_class }}">
+                {% for line in item.content %}
+                {{ line|renderText(params) }}
+                {% endfor %}
+            
+                {% if item.list is not empty %}
+                <ul>
+                    {% for line in item.list %}
+                        {% set line = line|renderText(params)|trim %}
+                        {% if line is not empty %}
+                            <li class="{{ item_text_class }}">{{ line }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if item.footer is not empty %}
+                <p class="pl-4 pt-2 pb-1 {{ item_text_class }}">{{ item.footer|renderText(params) }}</p>
+                {% endif %}
+            </p>
+        </div>
+    {% endif %}
+{% endfor %}

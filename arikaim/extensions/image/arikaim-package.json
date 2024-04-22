@@ -1,0 +1,27 @@
+{
+    "title": "Images",
+    "name": "image",
+    "package-type": "extension",
+    "type": "user",
+    "description": "Images media library, create thumbnails, upload or import images.",
+    "short-description": "Manage images.",
+    "repository": "https://github.com/arikaim/image-extension.git",
+    "version": "1.5.12",
+    "position": "3",
+    "install-order": 3,
+    "require": {
+        "extensions": [
+            "users:optional"
+        ],
+        "modules": [
+            "image"           
+        ]
+    },
+    "admin-menu": {        
+        "title": "Images",
+        "icon": "image",
+        "page-title": "Images",
+        "page-icon": "images",
+        "component": "image::admin"
+    }
+}

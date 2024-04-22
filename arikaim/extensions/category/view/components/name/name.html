@@ -1,0 +1,8 @@
+{% set uuid|default(null) %}
+{% set title = createModel('Category','category').findById(uuid).getTitle() %}
+<div class="ui breadcrumb">      
+    {% for item in title %}
+        <div class="divider">/</div>    
+        <div class="section">{{ title }}</div>
+    {% endfor %}
+</div>

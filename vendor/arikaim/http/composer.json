@@ -1,0 +1,24 @@
+{
+    "name": "arikaim/http",
+    "description": "Arikam http package",
+    "keywords": ["cms", "http"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {        
+        "arikaim/collection": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
+        "psr/http-message": "^1.0.0",
+        "guzzlehttp/guzzle": "7.4.5||^7.8"      
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Http\\": ""
+        }
+    }   
+}

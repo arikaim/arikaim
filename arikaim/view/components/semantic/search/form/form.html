@@ -1,0 +1,16 @@
+{% set search = getSearch(namespace) %}
+<form class="ui form {{ class }}" id="search_form">
+    <div class="ui fluid right action left icon input" id="search_input">
+        <i class="search icon"></i>
+        <input placeholder="{{ placeholder }}" class="search-field" type="text" name="search_text" id="search_text" value="{{ search.search_text }}">               
+        <div class="ui basic buttons">
+            <button class="ui basic button show-popup" id="search_button" title="{{ labels.search }}">
+                {{ labels.search }}
+            </button>
+            <button class="ui icon button clear-search-form show-popup" title="{{ labels.clear }}">
+                <i class="remove icon"></i>
+            </button>
+        </div>
+    </div>
+    {{ fields }}
+</form>

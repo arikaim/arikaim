@@ -1,0 +1,31 @@
+{% if hide_title != true %}
+    <h4>
+        {{ title }}
+    </h4> 
+{% endif %}
+{% if options is not empty %} 
+    <table class="ui very basic definition table"> 
+        <thead>
+            <tr>
+                <th class="six wide">{{ labels.key }}</th>
+                <th>{{ labels.value }}</th>                    
+            </tr>
+        </thead>           
+        <tbody>                 
+            {% for key, value in options %}
+            <tr>
+                <td class="right aligned">
+                    {{ key }}
+                </td>
+                <td class="break-all">
+                    {{ value }}
+                </td>
+            </tr>           
+            {% endfor %}                                                          
+        </tbody>
+    </table>      
+{% else %} 
+    <div>
+        ...
+    </div>
+{% endif %}

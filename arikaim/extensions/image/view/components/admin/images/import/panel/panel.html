@@ -1,0 +1,30 @@
+<div class="ui segment {{ class }}">
+    {% if thumbnail_width is not empty %}
+        <div>
+            <span class="font-bold">{{ labels.thumbnail }}</span>
+            <div>
+                {{ thumbnail_width }}px x {{ thumbnail_height }}px
+            </div>
+        </div>
+    {% endif %}
+    {% if file_name is not empty %}
+    <div>
+        <span class="font-bold">{{ labels.file }}</span>
+        <div>
+            {{ file_name }}
+        </div>
+    </div>
+    {% endif %}
+    {{  component('image::admin.images.import.form',{ 
+            url: url,
+            file_name: file_name,
+            relation_id: relation_id,
+            relation_type: relation_type,
+            target_path: target_path,
+            create_thumbnail: create_thumbnail,
+            thumbnail_width: thumbnail_width,
+            thumbnail_height: thumbnail_height,
+            hide_preview: hide_preview 
+        }) 
+    }}   
+</div>

@@ -1,0 +1,29 @@
+{
+    "buttons": {
+        "edit": {               
+            "title": "Edit Category",
+            "content": "Edit"
+        },
+        "relations": {               
+            "title": "Category Relations",
+            "content": "Relations"
+        },
+        "delete": {               
+            "title": "Delete Category",
+            "content": "Delete"
+        },
+        "add": {               
+            "title": "Add sub Category",
+            "content": "Add"
+        },
+        "disable": {               
+            "title": "Disable Category",
+            "content": "Disable"
+        },
+        "enable": {               
+            "title": "Enable Category",
+            "content": "Enable"
+        }  
+      
+    }
+}

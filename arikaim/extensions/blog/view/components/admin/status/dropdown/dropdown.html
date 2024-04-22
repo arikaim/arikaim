@@ -1,0 +1,25 @@
+{% set selected_text = (selected == 1) ? labels.published : labels.draft %}
+<div 
+    class="ui dropdown {{ class }} status-dropdown field" 
+    uuid="{{ uuid }}" 
+    {{ id|attr('id') }}>
+    <div class="text">
+        {% if selected == 1 %}
+            <i class="icon check olive"></i>
+        {% else %}
+            <i class="icon pencil ruler orange"></i> 
+        {% endif %}
+        {{ selected_text }}
+    </div>
+    <i class="dropdown icon"></i>   
+    <div class="ui menu">
+        <div class="item" data-value="0"> 
+            <i class="icon pencil ruler orange"></i>       
+            {{ labels.draft }}
+        </div>  
+        <div class="item" data-value="1">  
+            <i class="icon check olive"></i>
+            {{ labels.published }}
+        </div>              
+    </div>
+</div>

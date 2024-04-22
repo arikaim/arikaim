@@ -1,0 +1,25 @@
+{% set info = system().getSystemInfo()  %}
+<div class="ui card raised">
+    <h3 class="bg-gray-200 p-4">
+        <i class="icon info circle blue"></i>
+        {{ labels.title }}
+    </h3>
+    <div class="ui divider horizontal"> 
+        <i class="info circle icon"></i>
+    </div>    
+    <div class="p-4 mb-10">
+        <h3 class="text-center">Arikaim CMS</h3>
+        <div class="text-center">
+            <span class="font-bold">
+                {{ labels.version }}
+            </span>
+            {{ info.core }}
+        </div>       
+        <div class="mt-4 text-center">
+            <a class="link" href="http://arikaim.com/documentation" target="_blank">
+                <i class="icon info circle"></i>
+                {{ labels.docs }}
+            </a>
+        </div>
+    </div>   
+</div>

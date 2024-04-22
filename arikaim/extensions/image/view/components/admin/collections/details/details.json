@@ -1,0 +1,14 @@
+{
+    "title": "Image Collection Details",
+    "icon": "info",
+    "labels": {        
+        "id": "Id",   
+        "slug": "Slug",           
+        "title": "Title",  
+        "images": "Images",         
+        "description": "Description",
+        "status": "Status",
+        "owner": "Owner",       
+        "date": "Created"      
+    }
+}

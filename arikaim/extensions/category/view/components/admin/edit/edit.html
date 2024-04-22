@@ -1,0 +1,28 @@
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'sixteen wide column' %}
+{% set panel_class = '' %}
+<div class="ui equal width form mt-4">
+    <div class="ui segment mt-4">
+        <div class="ui two column grid">
+            <div class="column">               
+                {{  component("category::dropdown",{ 
+                        selected: uuid,                      
+                        name: 'select_category', 
+                        id: 'select_category',
+                        data_type: 'uuid',
+                        menu_class: "down pointing secondary",
+                        class: 'basic'                    
+                    }) 
+                }}
+            </div>
+            <div class="right aligned column">               
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="mt-4" id="category_tabs_content">     
+    {% if uuid is not empty %}
+        {{ component('category::admin.edit.tabs',{ uuid: uuid }) }}
+    {% endif %}
+</div>
+{% endcomponent %}

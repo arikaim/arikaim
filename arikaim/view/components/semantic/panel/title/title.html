@@ -1,0 +1,19 @@
+{% set close_button = (close_button is null) ? true : close_button %}
+<div class="{{ border|default('border-solid border border-gray-300') }} 
+    {{ class|default('p-3 rounded') }}
+    {{ color|default('bg-gray-100') }}">
+    <div class="flex flex-row items-center">
+        {% if icon is not empty %}
+            <i class="icon blue {{ icon }}"></i>
+        {% endif %}
+        <div class="flex-grow font-bold {{ title_class }}">
+            {{ title }}
+        </div>
+        {% if close_button == true %}                
+            <button 
+                class="ui compact mini icon button right aligned panel-close-button {{ close_button_class }}">
+                <i class="icon close"></i>
+            </button>
+        {% endif %}
+    </div>
+</div>

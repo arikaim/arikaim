@@ -1,0 +1,6 @@
+
+{% set selector = service('content').createSelector(provider,type,'uuid',uuid) %}
+{% set item = service('content').get(selector) %}
+<div class="w-full">   
+    {{ component('content::item',{ class: 'mt-4', content_item: item }) }}
+</div>

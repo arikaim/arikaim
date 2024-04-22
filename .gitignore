@@ -1,6 +1,3 @@
-vendor/
-arikaim/extensions/*
-arikaim/view/components/*
 node_modules
 composer.lock
 arikaim/cache/*

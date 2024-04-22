@@ -1,0 +1,57 @@
+{% set paginator = getPaginator(namespace) %}
+{% set page_links = page_links|default(4) %}
+{% set from_page = paginator.current_page - page_links %}
+{% set from_page = (from_page < 1) ? 1 : from_page  %}
+{% set to_page = (from_page + page_links) %}
+{% set to_page = (to_page > paginator.last_page) ? paginator.last_page : to_page %}
+{% set icon_size = icon_size|default('h-4 w-4') %}
+<div 
+    id="{{ component_id }}"
+    rows-selector="{{ rows_selector }}"
+    component="{{ component }}"
+    namespace="{{ namespace }}"
+    {{ params|attr() }}
+    last-page="{{ paginator.last_page }}"
+    from-page="{{ from_page }}" 
+    to-page="{{ to_page }}" 
+    current-page="{{ paginator.current_page }}"
+    class="ui menu pagination {{ class }}">
+    <btn 
+        class="item link page-link first-page
+        {{ button_class|default('btn-sm') }} 
+        {{ (paginator.current_page == 1) ? 'hidden' : '' }}
+        {{ (paginator.current_page == 1) ? 'btn-active' : '' }}"
+        page="1">
+        <i class="ui icon angle double left"></i>
+    </btn>
+    <btn 
+        class="item link prev-page page-link {{ button_class|default('btn-sm') }} 
+        {{ (paginator.current_page == 1) ? 'hidden' : '' }}" 
+        page="prev">
+        <i class="ui icon angle left"></i>
+    </btn> 
+    {% for index in from_page..to_page %}
+        <btn 
+            class="item link page-link page-{{ index }}
+            {{ button_class|default('btn-sm') }}            
+            {{ (paginator.current_page == index) ? 'btn-active' : '' }}" 
+            page="{{ index }}">
+            {{ index }}  
+        </btn>
+    {% endfor %}    
+    <btn 
+        class="item link page-link next-page page-link 
+        {{ button_class|default('btn-sm') }}
+        {{ (paginator.current_page == paginator.last_page) ? 'hidden' : '' }}"
+        page="next">
+        <i class="ui icon angle right"></i>
+    </btn>
+    <btn 
+        class="item link page-link last-page
+        {{ button_class|default('btn-sm') }} 
+        {{ (paginator.current_page == paginator.last_page) ? 'hidden' : '' }}
+        {{ (paginator.current_page == paginator.last_page) ? 'btn-active' : '' }}"
+        page="{{ paginator.last_page }}">
+        <i class="ui icon angle double right"></i>
+    </btn>   
+</div>

@@ -1,0 +1,30 @@
+{% if interval is not empty %}
+    {% set item_label_class = item_label_class|default('px-1') %}
+    {% set item_value_class = item_value_class|default('font-bold') %}
+    <div class="{{ class|default('p-1') }}">
+        {% if interval.y > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.y }}</span>
+            <span class="{{ item_label_class }}">{{ labels.years }}</span>
+        {% endif %}
+        {% if interval.m > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.m }}</span>
+            <span class="{{ item_label_class }}">{{ labels.months }}</span>
+        {% endif %}
+        {% if interval.d > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.d }}</span>
+            <span class="{{ item_label_class }}">{{ labels.days }}</span>
+        {% endif %}
+        {% if interval.h > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.h }}</span>
+            <span class="{{ item_label_class }}">{{ labels.hours }}</span>
+        {% endif %}
+        {% if interval.i > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.i }}</span>
+            <span class="{{ item_label_class }}">{{ labels.minutes }}</span>
+        {% endif %}
+        {% if interval.s > 0 %}
+            <span class="{{ item_value_class }}">{{ interval.s }}</span>
+            <span class="{{ item_label_class }}">{{ labels.seconds }}</span>
+        {% endif %}
+    </div>
+{% endif %}

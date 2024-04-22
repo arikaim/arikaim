@@ -1,0 +1,8 @@
+{    
+    "buttons": {
+        "details": "View Blog Post Details",
+        "delete": "Delte Blog Post",
+        "edit": "Edit Post",
+        "relations":"View Relations"
+    }
+}

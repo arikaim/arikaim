@@ -1,0 +1,27 @@
+{% set parent_id = parent_id|default(null) %}
+{% set max_items = max_items|default(null) %}
+{% set model = createModel('Category','category').getActive().where('parent_id','=',parent_id) %}
+{% if branch is not empty %}
+    {% set model = model.where('branch','=',branch) %}
+{% endif %}
+{% set items = model.orderBy('position','asc').orderBy('id','asc').get()  %}
+
+{% if max_items is empty %}
+    {% set max_items = items.count()  %}
+{% endif %}
+{% set page_url = page_url|default('{{ slug }}') %}
+{% set index = 1 %}
+
+<div class="ui list {{ class }}">
+    {% for item in items %} 
+        {%- if index <= max_items %}
+            {%- set url = page_url|renderText({ slug: item.getSlug() }) -%}
+            <div class="item {{- item_class -}}">      
+                <a href="{{ url(url,true) }}">        
+                    <span class="{{ item_text_class }}">{{ item.getTitle()|string }}</span>
+                </a>           
+            </div>
+            {%- set index = index + 1 -%}
+        {% endif %}
+    {% endfor %}    
+</div>

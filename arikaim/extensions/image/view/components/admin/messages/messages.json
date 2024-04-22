@@ -1,0 +1,24 @@
+{
+    "upload": "Image uploaded successfully.",    
+    "update": "Saved successfully.",         
+    "delete": "Image deleted successfully.",          
+    "errors": {
+        "thumbnail": {
+        },
+        "id": "Not valid image Id",          
+        "upload": "Upload image error",   
+        "update": "Update image error",
+        "path": "Can't create image assets directory",
+        "exists": "Image title not available!"    
+    },
+    "messages": {
+        "thumbnail_remove": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove thumbnail '<b><% title %></b>'."
+        },
+        "remove": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove image '<b><% title %></b>'."
+        }
+    }  
+}

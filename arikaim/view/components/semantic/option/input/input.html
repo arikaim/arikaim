@@ -1,0 +1,18 @@
+<div 
+    class="ui action input" 
+    option-name="{{ name }}"
+    validator-rule="{{ rule }}"
+    id="{{ component_id }}">
+    <button class="ui basic icon left button clear-option-button" title="{{ labels.clear }}">
+        <i class="icon eraser"></i>
+    </button>
+    <input 
+        {{ rule|attr('rule') }}
+        name="{{ name }}"
+        value="{{ value }}"
+        type="text" 
+        placeholder="{{ placeholder }}">        
+    <button class="ui green right button disabled save-option-button">
+        {{ labels.save }}
+    </button>
+</div>

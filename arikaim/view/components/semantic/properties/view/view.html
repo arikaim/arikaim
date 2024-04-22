@@ -1,0 +1,31 @@
+{% set readonly = properties.getPropertiesList(true,false) %}
+{% set editable = properties.getPropertiesList(false,false) %}
+{% set hiddens = properties.getPropertiesList(false,true) %}
+{% set groups = properties.getGroups() %}
+{% set show_readonly = show_readonly|default(true) %}
+
+{% if hiddens|length == 0 and readonly|length == 0 and editable|length == 0 and groups|length == 0 %}
+    <div class="ui segment">
+        {{ labels.empty }}
+    </div>
+{% else %}
+    {{ component('semantic~properties.view.items',{ items: editable, table_class: table_class }) }}  
+
+    {% for group in groups %}  
+        {% set editable = properties.getPropertiesList(false,false,group.value) %}   
+        <div class="ui segment">
+            <h4>{{ group.title }}</h4>
+            {{ component('semantic~properties.view.items',{ items: editable, table_class: table_class }) }}  
+        </div>   
+    {% endfor %}
+
+    {% if readonly is not empty %}
+        {{ component('semantic~properties.view.items',{ items: hiddens, title: labels.readonly, table_class: table_class }) }}  
+    {% endif %}
+
+    {% if hiddens is not empty %}
+        {{ component('semantic~properties.view.items',{ items: hiddens, title: labels.hidden, table_class: table_class }) }}           
+    {% endif %}
+
+{% endif %}
+   

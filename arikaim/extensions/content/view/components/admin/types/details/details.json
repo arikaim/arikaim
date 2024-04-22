@@ -1,0 +1,13 @@
+{
+    "title": "Content Type ",
+    "labels": {    
+        "name": "Name",
+        "type": "Type",
+        "details": "Details",
+        "title": "Title",
+        "category": "Category",
+        "handler": "Handler",
+        "fields": "Fields",
+        "actions": "Actions"                           
+    }
+}

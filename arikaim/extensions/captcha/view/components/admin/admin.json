@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "view": {
+            "content": "Drivers",
+            "title": "Captcha drivers"
+        },                
+        "settings": {
+            "content": "Settings",
+            "title": "Settings"
+        }, 
+        "preview": {
+            "content": "View",
+            "title": "View"
+        }
+    },
+    "messages": {
+       
+    }
+}

@@ -1,0 +1,15 @@
+{% set providers = service('content').getProviders(category,type) %}
+{% set name = name|default('content_provider') %}
+{% set id = id|default(name) %}
+<div class="ui dropdown content-providers {{ class|default('search selection') }}" id="{{ id }}">
+    <input name="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{ labels.select }}</div>
+    <div class="menu">   
+    {% for key, provider in providers %}
+        <div class="item" data-value="{{ key }}">
+            {{ provider.title }}
+        </div>      
+    {% endfor %}
+    </div>
+</div>

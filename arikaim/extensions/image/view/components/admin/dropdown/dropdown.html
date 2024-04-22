@@ -1,0 +1,24 @@
+{% set id = id|default('image_dropdown') %}
+{% set name = name|default('media') %}
+{% set size = size|default(15) %}
+{% set model = createModel('Image','image') %}
+{% set items = model.orderBy('file_name').take(size).get() %}
+{% if selected is not empty %}
+    {% set selected = model.findById(selected) %}
+{% endif %}
+{% set icon = icon|default('dropdown') %}
+{% set selected_text = (selected is empty) ? labels.select : selected.file_name %}
+{% set data_field = data_field|default('uuid') %}
+<div class="ui search image-dropdown dropdown selection {{ class }}" id="{{ id }}" data-field="{{ data_field }}">
+    <input name="{{ name }}" type="hidden" value="{{ selected[data_field] }}">   
+    <i class="icon {{ icon }}"></i>
+    <div class="text">{{ selected_text }}</div>
+    <div class="menu">
+        {% for item in items %}           
+            <div class="item" data-value="{{ item[data_field] }}">                        
+                <img class="ui avatar image" src="{{ url(item.thumbnail(64,64).src) }}">               
+                {{ item.base_name }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

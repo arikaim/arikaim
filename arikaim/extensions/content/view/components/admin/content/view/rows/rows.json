@@ -1,0 +1,14 @@
+{    
+    "buttons": {
+        "delete": {      
+            "content": "Delete",          
+            "title": "Delte content item"
+        }
+       
+    },
+    "labels": {
+        "details": "Details",
+        "edit": "Edit",
+        "delete": "Delete"
+    }  
+}

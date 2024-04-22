@@ -1,0 +1,74 @@
+{% if uuid is not empty %}
+    {% set content = createModel('Content','content').findById(uuid) %}  
+{% endif %}
+{% component 'semantic~panel' %}
+<div>
+    <table class="ui very basic definition table">
+        <thead>
+            <tr>
+                <th class="three wide"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="right aligned">{{ labels.id }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ content.id }}
+                    </div>
+                    {{ content.uuid }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.key }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ content.key }}
+                    </div>                    
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.status }}</td>
+                <td>
+                    {{ component('semantic~status.label',{ status: content.status }) }}                   
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.title }}</td>
+                <td>
+                    {{ content.title }}
+                </td>
+            </tr>           
+            <tr>
+                <td class="right aligned">
+                    {{ labels.type }}
+                </td>
+                <td>
+                    <div class="ui basic label">
+                        {{ content.content_type }}
+                    </div>
+                </td>
+            </tr>      
+            <tr>
+                <td class="right aligned">
+                    {{ labels.item_id }}
+                </td>
+                <td>
+                    <div class="ui basic label">
+                        {{ content.content_id }}
+                    </div>
+                </td>
+            </tr>      
+        </tbody>  
+    </table>   
+    <h4 class="font-bold">
+        {{ labels.content }}
+    </h4>  
+    {{  component('content::item',{
+            content_type: content.content_type,
+            content_id: content.content_id
+        }) 
+    }}
+</div>
+{% endcomponent %}

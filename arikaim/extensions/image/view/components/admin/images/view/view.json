@@ -1,0 +1,21 @@
+{
+    "title": {
+        "content": "View",
+        "icon": "list"      
+    },
+    "columns": {        
+        "action": "Action",  
+        "user": "User",   
+        "category": "Category", 
+        "status": "Status",
+        "name": "File Name",
+        "file_size": "File Size",
+        "size": "Size",
+        "thumbnail": "Thumbnail",
+        "type": "Type",
+        "created": "Date"
+    },
+    "labels": {
+        "user": "User"
+    }
+}

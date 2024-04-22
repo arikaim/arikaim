@@ -1,0 +1,17 @@
+{
+    "title": "Page MetaTags",
+    "items": [
+        {
+            "title": "Title",
+            "key": "meta_title"
+        },
+        {
+            "title": "Description",
+            "key": "meta_description"
+        },
+        {
+            "title": "Keyqords",
+            "key": "meta_keywords"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+<div class="item">
+    <div class="flex flex-row items-center">
+        <button 
+            class="ui button mini icon basic compact view-panel-button" 
+            data-visible="{{ visible }}"
+            component-name="{{ component_name }}">
+            <i class="icon outline eye outline {{ (visible == false) ? 'slash' : '' }}"></i>
+        </button>                       
+        <span class="font-bold px-2">
+            {{ extension|capitalize }}
+        </span>
+    </div>                                             
+</div>  

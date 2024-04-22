@@ -1,0 +1,23 @@
+<h4>
+    {{ title }}
+</h4>
+<table class="ui very basic definition table">
+    <thead>
+        <tr>
+            <th class="three wide"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody> 
+    {% for item in items %}
+        <tr>
+            <td class="right aligned">
+                {{ item.title }}
+            </td>
+            <td>                   
+                {{ model[item.key] }}                  
+            </td>
+        </tr>  
+    {% endfor %}  
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+<table class="ui table {{ class }}">
+    <thead {{ head_class|attr('class') }}>
+        <tr>
+        {% for column in columns %}        
+            <th {{ header_cell_class|attr('class') }}>{{ column }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody {{ body_class|attr('class') }}>
+        {% for row in rows %}      
+            <tr>
+                {% for item in row %}
+                <td {{ row_cell_class|attr('class') }}>{{ item }}</td>
+                {% endfor %}
+            </tr>       
+        {% endfor %}
+        {{ content }}
+    </tbody>
+    {% if footer is not empty %}
+    <tfoot {{ footer_class|attr('class') }}>
+        <tr>
+            {% for item in footer %}
+            <td {{ footer_cell_class|attr('class') }}>{{ item }}</td>
+            {% endfor %}
+        </tr>        
+    </tfoot>  
+    {% endif %}
+</table>

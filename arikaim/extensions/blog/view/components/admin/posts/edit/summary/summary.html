@@ -1,0 +1,13 @@
+{% set post = createModel('Posts','blog').findById(uuid) %}
+<div class="ui grid">
+    <div class="seven wide column">
+        <form class="ui form" id="post_summary_form">
+            <input type="hidden" value="{{ post.uuid }}" name="uuid" id="uuid">
+            <div class="field">
+                <label>{{ labels.summary }}</label>
+                <textarea name="summary" id="summary">{{ post.summary }}</textarea>    
+            </div>                     
+            {{ component('semantic~form.footer') }}                    
+        </form>
+    </div>
+</div>

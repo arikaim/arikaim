@@ -1,0 +1,14 @@
+{
+    "tooltip": {
+        "create": "Create"
+    },
+    "columns": {
+        "action": "Action",
+        "status": "Status",
+        "edit": "Edit",
+        "title": "Title",
+        "key": "Key",
+        "user": "User",
+        "type": "Type"
+    }
+}

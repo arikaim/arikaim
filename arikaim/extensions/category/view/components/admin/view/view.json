@@ -1,0 +1,13 @@
+{
+    "title": {
+        "content": "View",
+        "icon": "list"              
+    },
+    "labels": {
+        "branch": "Branch"
+    },
+    "messages": {
+        "empty": "No categories"
+    },
+    "sub": "View sub categories"
+}

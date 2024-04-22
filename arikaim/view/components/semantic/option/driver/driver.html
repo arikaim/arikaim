@@ -1,0 +1,10 @@
+{% set label = label|default(labels.driver) %}
+<div class="field {{ class }}" id="driver_field" option-name="{{ option_name }}">
+    <label>{{ label }}</label>
+    {{  component('system:admin.drivers.dropdown',{ 
+            selected: selected,
+            category: category,
+            calss: 'fluid' 
+        }) 
+    }}                       
+</div>

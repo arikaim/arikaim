@@ -1,0 +1,38 @@
+{% if uuid is not empty %}
+    {% set item = createModel('Posts','blog').findById(uuid) %}
+{% endif %}
+<tr id="row_{{ item.uuid }}">        
+    <td>
+        <button 
+            title="{{ buttons.details }}"
+            mountTo="details_content"
+            component="blog::admin.posts.details"
+            class="ui icon mini compact basic button post-action" 
+            params="uuid:{{ item.uuid }}">
+            <i class="icon info"></i>
+        </button>       
+        <button 
+            title="{{ buttons.edit }}"
+            mountTo="details_content"
+            component="blog::admin.posts.edit"
+            params="uuid:{{ item.uuid }}"
+            class="ui icon mini compact basic button post-action">
+            <i class="icon edit"></i>
+        </button>
+        <button 
+            title="{{ buttons.delete }}"
+            class="ui icon basic mini compact button delete-post" 
+            uuid="{{ item.uuid }}">
+            <i class="icon trash orange"></i>
+        </button>                          
+    </td>
+    <td>
+        {{ item.date_created|dateFormat }}
+    </td>
+    <td>
+        {{ component('blog::admin.status.dropdown',{ selected: item.status, uuid: item.uuid }) }} 
+    </td>
+    <td>
+        {{ item.title }}
+    </td>       
+</tr>

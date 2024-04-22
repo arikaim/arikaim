@@ -1,0 +1,19 @@
+{
+    "title": "Dashboard",
+    "name": "dashboard",
+    "package-type": "extension",
+    "class": "Dashboard",
+    "type": "user",
+    "description": "Control Panel Dashboard",
+    "short-description": "Dashboard",
+    "version": "1.2.5",
+    "position": "1",
+    "repository": "https://github.com/arikaim/dashboard-extension.git",
+    "admin-menu": {        
+        "title": "Dashboard",
+        "icon": "dashboard",       
+        "page-icon": "dashboard",
+        "page-title": "Dashboard", 
+        "component": "dashboard::admin"
+    }
+}

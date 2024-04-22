@@ -1,0 +1,42 @@
+{% set status_filter = searchValue('status','images') %}
+<div class="ui segment">
+    <div class="ui stackable three column grid">
+        <div class="column left aligned">
+            {% if hasExtension('users') == true %}
+                <span class="font-bold px-1">{{ labels.user }}</span>
+                {{ component('users::admin.users.dropdown',{ class: 'clearable', data_field: 'id' }) }}
+            {% endif %}
+        </div>      
+        <div class="column">   
+            {{ component('semantic~search.form',{ namespace: 'images' }) }}      
+        </div> 
+        <div class="right aligned column">                  
+            {{ component('semantic~paginator.dropdown',{ namespace: 'images' }) }}
+        </div>                 
+    </div>
+</div>
+<div class="flex flex-row items-start">
+    <div class="ui segment flex-grow">
+        <table class="ui compact stackable selectable borderless basic table">
+            <thead class="table-head">
+                <tr>              
+                    <th class="two wide collapsing left aligned">{{ columns.action }}</th>
+                    <th class="two wide">{{ columns.status }}</th>         
+                    <th class="two wide collapsing">{{ columns.created }}</th>              
+                    <th class="collapsing center aligned">{{ columns.thumbnail }}</th>   
+                    <th class="one wide center aligned">{{ columns.size }}</th> 
+                    <th>{{ columns.name }}</th>                         
+                    <th class="two wide">{{ columns.user }}</th>                   
+                </tr>
+            </thead>
+            <tbody id="image_rows" component="image::admin.images.view.rows" namespace="images">
+                {{ component('image::admin.images.view.rows') }} 
+            </tbody>
+        </table> 
+        <div id="paginator">      
+            {{ component("semantic~paginator",{ namespace: 'images' }) }}
+        </div>
+    </div>  
+    <div class="pl-2 w-94 hidden" id="details_content">
+    </div>
+</div>

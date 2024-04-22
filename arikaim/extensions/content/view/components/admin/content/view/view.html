@@ -1,0 +1,38 @@
+<div class="ui segment">
+    <div class="ui stackable grid">
+        <div class='ten wide column'>
+            <button 
+                mountTo="content_details"
+                component="content::admin.content.add"
+                title="{{ tooltip.create }}"
+                class="ui mini curcular green icon button create-content">
+                <i class="icon plus"></i>
+            </button>
+        </div>
+        <div class="six wide column right aligned">       
+            {{ component('semantic~paginator.dropdown',{ class: 'mini', namespace: 'content' }) }}
+        </div>
+    </div>
+</div>
+<div class="ui segment">
+    <table class="ui compact stackable borderless basic table">
+        <thead>
+            <tr class="table-head">                          
+                <th class="three wide">{{ columns.action }}</th>
+                <th class="three wide">{{ columns.status }}</th>
+                <th class="three wide">{{ columns.key }}</th>
+                <th class="one wide">{{ columns.type }}</th>
+                <th class="two wide">{{ columns.user }}</th>               
+            </tr>
+        </thead>
+        <tbody 
+            id="items_list" 
+            component="content::admin.content.view.rows" 
+            namespace="content">
+            {{ component('content::admin.content.view.rows',{}) }}   
+        </tbody>  
+    </table>
+    <div class="mt-2">
+        {{ component('semantic~paginator',{ namespace: 'content' }) }}
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{% set image = createModel('Image','image').findById(uuid) %}
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'seven wide' %}
+<div class="mt-4">  
+    {% if uuid is empty %}
+        <div class="ui warning message">{{ messages.empty }}</div>
+    {% else %}
+    <div class="py-2">
+        <img class="ui image small rounded bordered" src="{{ url(image.src) }}">
+    </div>
+    <form class="ui equal width form" id="update_image_form">    
+        <input type="hidden" id="uuid" name="uuid" value="{{ uuid }}">
+        <div class="two fields">
+            <div class="field">      
+                <label>{{ fields.category.label }}</label>     
+                {{ component('category::dropdown',{ name: 'category_id', selected: image.category_id }) }}                                             
+            </div>  
+        </div>   
+        {{ component('semantic~form.footer') }}             
+    </form>   
+    {% endif %}  
+</div>    
+{% endcomponent %}

@@ -1,0 +1,32 @@
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'seven wide' %}
+{% if uuid is not empty %}
+    {% set image = createModel('Image','image').findById(uuid) %}
+{% endif %}
+<div class="ui equal width form mt-4">
+    <div class="ui segment mt-4">
+        <div class="field">
+            <label>{{ labels.image }}</label>
+            {{  component("image::admin.dropdown",{ 
+                    selected: uuid,                  
+                    name: 'select_image', 
+                    id: 'select_image',
+                    data_field: 'id',
+                    class: 'basic'                    
+                }) 
+            }}
+        </div>
+    </div>    
+</div>
+<div class="mt-8" id="relations_content">   
+    {% if uuid is not empty %}   
+        {{  component('system:admin.orm.relations.view',{ 
+                uuid: uuid,
+                extension: 'image',
+                model: 'ImageRelations',
+                id: image.id 
+            }) 
+        }}
+    {% endif %}
+</div>
+{% endcomponent %}

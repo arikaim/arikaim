@@ -1,0 +1,30 @@
+{
+    "labels": {
+        "empty": "..",
+        "title": "Title",
+        "key": "Key",
+        "required": "Requred",
+        "type": "Type"
+    },
+    "type": [
+        "text",
+        "number",
+        "custom",
+        "boolean",
+        "list",
+        "class",
+        "password",
+        "url",
+        "text-area",
+        "group",
+        "oauth",
+        "language-dropdown",
+        "image",
+        "key",
+        "price",
+        "file",
+        "date",
+        "time",
+        "time-interval"
+    ]
+}

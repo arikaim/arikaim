@@ -1,0 +1,16 @@
+{% set name = name|default('country_code') %}
+{% set id = id|default(name) %}
+{% set class = class|default('fluid search selection') %}
+<div class="ui dropdown country-dropdown {{ class }}" id="{{ id }}">
+    <input name="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{ label.default }}</div>
+    <div class="menu">   
+    {% for item in items %}
+        <div class="item" data-value="{{ item.code|lower }}">
+            <i class="flag {{ item.code|lower }}"></i>
+            {{ item.name }}
+        </div>      
+    {% endfor %}
+    </div>
+</div>

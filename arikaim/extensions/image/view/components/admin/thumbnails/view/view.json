@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "name": "File Name",
+        "size": "Size",
+        "type": "Mime Type",     
+        "delete": "Delete",
+        "width": "Width",
+        "height": "Height"
+    }
+}

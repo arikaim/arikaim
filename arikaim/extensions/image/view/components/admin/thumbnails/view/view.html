@@ -1,0 +1,6 @@
+{% set items = createModel('ImageThumbnails','image').imageThumbnails(image_id).get() %}
+<div class="ui cards" id="thumbnail_view_content">       
+    {% for item in items %}    
+        {{ component('image::admin.thumbnails.item',{ item: item }) }}
+    {% endfor %}
+</div>

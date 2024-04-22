@@ -1,0 +1,11 @@
+{% set image_src = (model.hasImage() == false) ? '/api/image/svg/view/icons~image' : model.image.thumbnail(64,64).src %}
+<div class="p-2 {{ class }}"> 
+    {% if hide_title != true %}
+    <h4 class="font-bold">
+        {{ title }} 
+    </h4>
+    {% endif %}
+    <img       
+        class="ui tiny image bordered rounded" 
+        src="{{ url(image_src) }}?t={{ today() }}">   
+</div>

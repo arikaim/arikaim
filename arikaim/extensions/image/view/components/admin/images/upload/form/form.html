@@ -1,0 +1,46 @@
+<form class="ui equal width form" id="upload_form" enctype="multipart/form-data">  
+    <input type="hidden" name="file_name" id="file_name" value="{{ file_name }}">
+    <input type="hidden" name="deny_delete" id="deny_delete" value="{{ deny_delete }}">
+    <input type="hidden" name="relation_id" id="relation_id" value="{{ relation_id }}">
+    <input type="hidden" name="relation_type" id="relation_type" value="{{ relation_type }}">
+    <input type="hidden" name="create_target_path" id="create_target_path" value="{{ create_target_path }}">
+    <input type="hidden" name="target_path" id="target_path" value="{{ target_path }}"> 
+    <input type="hidden" name="resize_width" id="resize_width" value="{{ resize_width }}">  
+    <input type="hidden" name="resize_height" id="resize_height" value="{{ resize_height }}">       
+    {% if target_path is not empty %}
+    <div class="field">        
+        <label>{{ fields.path.label }}</label>
+        <div class="ui basic label">
+            ..{{ target_path|relativePath }} {{ file_name }}
+        </div>
+    </div>
+    {% endif %}    
+    <div class="field required">                    
+        <input name="file" id="file" type="file">                                          
+    </div>       
+    {% if deny_delete == true %}
+    <div class="field">
+        <div class="ui basic label">
+            {{ labels.delete }}
+        </div>
+    </div>  
+    {% endif %}
+    {% if resize_width is not empty and resize_height is not empty %}
+    <div>
+        {{ labels.resize }}
+        <div class="ui basic label">{{ resize_width }}px</div> x
+        <div class="ui basic label">{{ resize_height }}px</div>
+    </div>
+    {% endif %} 
+    <div class="field">
+        <div class="ui checkbox private-image">
+            <input type="checkbox" name="private_image" id="private_image" value="1">
+            <label>{{ fields.protected.label }}</label>
+        </div>
+        <span class="px-1">
+            {{ fields.protected.placeholder }}
+        </span>
+    </div>
+
+    {{ component('semantic~form.footer',{ button_title: buttons.save.content }) }}   
+</form>

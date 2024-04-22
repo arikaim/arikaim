@@ -1,0 +1,14 @@
+
+{% set providers = service('content').getProviders() %}
+{% set items = paginate(providers,'providers') %}
+
+{% set items = items.getItems() %}
+{% if items|length == 0 %}
+    <div class="item">
+        {{ labels.empty }}
+    </div>
+{% endif %}
+
+{% for provider in items %}
+    {{ component('content::admin.providers.view.item',{ provider: provider }) }}   
+{% endfor %}

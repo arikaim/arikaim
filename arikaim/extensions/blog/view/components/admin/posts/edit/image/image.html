@@ -1,0 +1,13 @@
+{% if uuid is not empty %}
+    {% set post = createModel('Posts','blog').findById(uuid) %}
+{% endif %}
+<div>
+    {{  component('image::admin.library',{
+            model: post,
+            relation_id: post.id,
+            relation_type: 'post',
+            extension: 'blog',
+            model_class: 'Posts'
+        }) 
+    }}
+</div>

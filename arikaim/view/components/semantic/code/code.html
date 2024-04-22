@@ -1,0 +1,21 @@
+{% set code_id = code_id|default('code') %}
+{% set language = language|default('html') %}
+{% set trim_space = (trim_space is null) ? true : trim_space %}
+<div class="{{ class|default('p-1 border rounded') }}">   
+    {% if hide_copy != true %}  
+        {{  component('semantic~clipboard.copy',{ 
+                selector: '#' ~ code_id, 
+                type: 'element',
+                escape: true,
+                class: 'ui mini compact basic icon button' 
+            }) 
+        }}         
+    {% endif %}
+    {% if trim_space == true %}
+    {% apply spaceless %}
+    <pre><code class="{{ language }}" id="{{ code_id }}">{% autoescape false %}{{ content|escape }}{% endautoescape %}</code></pre>
+    {% endapply %}
+    {% else %}
+    <pre><code class="{{ language }}" id="{{ code_id }}">{% autoescape false %}{{ content|escape }}{% endautoescape %}</code></pre>
+    {% endif %}
+</div>

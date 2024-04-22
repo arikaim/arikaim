@@ -1,0 +1,26 @@
+<form class="ui mini form {{ class }}" id="create_thumbnail_form">
+    <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">  
+    <div class="field">
+        <label>{{ labels.size }}</label>
+        {{ component('image::thumbnails.size',{ skip: ['custom'], class: 'selection mini fluid' }) }}
+    </div> 
+    <div class="mt-12">
+        <div class="field">
+            <label>{{ labels.width }}</label>
+            <div class="ui right labeled input">    
+                <input type="text" rule="integer" id="width" name="width" value="">
+                <div class="ui basic label">px</div>
+            </div>   
+        </div>
+        <div class="field">
+            <label>{{ labels.height }}</label>
+            <div class="ui right labeled input">               
+                <input type="text" rule="integer" id="height" name="height" value="">
+                <div class="ui basic label">px</div>
+            </div>           
+        </div>     
+    </div>      
+    <div class="field">
+        {{ component('semantic~form.footer',{ button_class: 'button green mini', button_title: labels.create }) }}               
+    </div>
+</form>

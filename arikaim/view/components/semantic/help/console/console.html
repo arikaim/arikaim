@@ -1,0 +1,37 @@
+{% set icon = icon|default('terminal blue') %}
+{% if title is not empty  %}
+<div class="ui header {{ title_class }}">
+    {{ title }}
+</div>
+{% endif %}
+<div class="ui message {{ class }}">        
+    <div class="mt-1 {{ command_class }}">
+        <i class="icon {{ icon }}"></i>
+        [{{ labels.folder }}] 
+        <span class="font-bold">$</span>
+        <span class="font-bold">php</span>
+        <span class="pl-1">cli</span> 
+        <span class="font-bold pl-1 pr-1">{{ command }}</span>
+        {% if params is iterable %}
+            {% for item in params %}
+            { <span class="font-bold pl-1">{{ item.name }}</span> }
+            {% endfor %}        
+        {% endif %}
+    </div>
+    {% if description is not empty %}
+    <p {{ description_class|attr('class') }} >
+        {{ description }}
+    </p>
+    {% endif %}
+    {% if params is iterable %}
+    <div class="font-bold mt-4">{{ labels.params }}</div>
+    <ul class="ui list {{ params_class }}">
+        {% for item in params %}
+        <li class="item">
+            { <span class="font-bold">{{ item.name }}</span> }              
+            <span class="pl-2">{{ item.description }}</span>
+        </li>    
+        {% endfor %}   
+    </ul>
+    {% endif %}
+</div>

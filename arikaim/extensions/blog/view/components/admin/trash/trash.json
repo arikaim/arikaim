@@ -1,0 +1,25 @@
+{   
+    "buttons": {
+        "empty": {
+            "content": "Empty",
+            "title": "Delete all blog pages and posts."
+        },
+        "restore": {
+            "content": "Restore",
+            "title": "Restore all blog pages and posts."
+        }       
+    },
+    "labels": {
+        "trash": "Trash",
+        "actions": "Actions",      
+        "name": "Name",
+        "type": "Type",
+        "created": "Date Created"
+    },
+    "messages": {
+        "empty": {
+            "title": "Empty Trash",
+            "description": "Delete all blog pages adn posts from trash."
+        }
+    }
+}

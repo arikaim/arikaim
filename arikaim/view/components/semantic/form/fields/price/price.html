@@ -1,0 +1,25 @@
+{% set name = name|default('price') %}
+{% set id = id|default(name) %}
+{% set label = label|default(price.label) %}
+{% set value = value|default(0) %}
+
+<div class="field {{ class }}">
+    <label>{{ label }}</label>
+    <div class="ui right labeled left icon action input">
+        {% if icon is not empty %}
+            <i class="icon currency-icon {{ icon }}"></i>
+        {% else %}
+            <div class="ui label">{{ currency_code }}</div>
+        {% endif %}      
+        <input 
+            {{ rule|attr('rule') }} 
+            type="text" 
+            placeholder="{{ placeholder }}" 
+            name="{{ name }}" 
+            id="{{ id }}" 
+            value="{{ value|numberFormat }}">
+        <div class="ui icon basic button clear-price" price-field="{{ id }}">
+            <i class="icon eraser"></i>
+        </div>
+    </div>
+</div>

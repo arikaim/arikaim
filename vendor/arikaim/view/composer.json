@@ -1,0 +1,27 @@
+{
+    "name": "arikaim/view",
+    "description": "Arikam CMS View package",
+    "keywords": ["cms", "view"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": "^7.4|^8.0",
+        "arikaim/interfaces": "^1.0.0",        
+        "arikaim/collection": "^1.0.0",
+        "arikaim/http": "^1.0.0",
+        "arikaim/utils": "^1.0.0",
+        "twig/twig": "3.4.3",
+        "erusev/parsedown-extra": "^0.7"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\View\\": ""
+        }
+    }
+}

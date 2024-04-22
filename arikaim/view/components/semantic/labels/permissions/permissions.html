@@ -1,0 +1,12 @@
+{% if permissions is empty %}
+    <div class="ui mini basic blue label">{{ labels.none }}</div>
+{% else %}
+    {% set permissions = (permissions is iterable) ? permissions : service('access').resolvePermissionName(permissions) %}  
+    <div class="ui basic fluid blue label">{{ permissions[0] }}
+        <div class="detail">
+        {% for permission in permissions[1] %}
+            <span class="text-gray-800 underline">{{ permission }}</span>
+        {% endfor %}
+        </div>
+    </div>   
+{% endif %}  

@@ -1,0 +1,19 @@
+{
+    "fields": {
+        "protected": {
+            "label": "Protected",               
+            "placeholder": "Upload image in protected storage."        
+        },
+        "url": {
+            "label": "Url",               
+            "placeholder": "Enter image url"            
+        },
+        "thumbnail": {
+            "label": "Thumbnail Size",               
+            "placeholder": "Enter Thumbnail Size"            
+        }              
+    },
+    "buttons": {
+        "import": "Import"           
+    }
+}

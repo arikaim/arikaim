@@ -1,0 +1,14 @@
+{{  component('semantic~tabs.vertical',{ 
+        items: [ 
+            { id: 'view_images', title: labels.view, component: 'image::admin.images.view', icon: 'list', active: true },
+            { title: labels.upload, component: 'image::admin.images.upload', icon: 'upload' },   
+            { title: labels.import, component: 'image::admin.images.import', icon: 'file import' },
+            { id: 'thumbnails_image', title: labels.thumbnails, component: 'image::admin.thumbnails', icon: 'images' },
+            { id: 'edit_image', title: labels.edit, component: 'image::admin.images.edit', icon: 'edit' },
+            { id: 'image_relations', title: labels.relations, component: 'image::admin.images.relations', icon: 'project diagram' }
+        ], 
+        menu: { id: 'image_menu' }, 
+        item_class: 'image-tab-item',
+        content: { id: 'image_content', component: 'image::admin.images.view', params: params } 
+    })
+}}

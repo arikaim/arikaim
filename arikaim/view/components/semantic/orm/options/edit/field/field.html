@@ -1,0 +1,17 @@
+{% if option.type.type == option.type.TEXT() %}
+    {{ component('semantic~orm.options.edit.fields.text',{ option: option, reference_id: reference_id }) }}
+{% elseif option.type.type == option.type.NUMBER() %}
+    {{ component('semantic~orm.options.edit.fields.text',{ option: option, reference_id: reference_id }) }}
+{% elseif option.type.type == option.type.CHECKBOX() %}
+    {{ component('semantic~orm.options.edit.fields.checkbox',{ option: option, reference_id: reference_id }) }}
+{% elseif option.type.type == option.type.DROPDOWN() %}      
+    {{ component('semantic~orm.options.edit.fields.dropdown',{ option: option }) }}
+{% elseif option.type.type == option.type.PRICE() %}      
+    {{ component('semantic~orm.options.edit.fields.price',{ option: option }) }}       
+{% elseif option.type.type == option.type.TEXTAREA() %}      
+    {{ component('semantic~orm.options.edit.fields.textarea',{ option: option }) }}
+{% elseif option.type.type == option.type.USERGROUP() %}      
+    {{ component('semantic~orm.options.edit.fields.group',{ option: option }) }}
+{% elseif option.type.type == option.type.PERMISSION() %}      
+    {{ component('semantic~orm.options.edit.fields.permission',{ option: option }) }}
+{% endif %}

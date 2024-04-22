@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "description": {
+            "label": "Meta Description"
+        },
+        "title": {
+            "label": "Meta Title"
+        },
+        "keywords": {
+            "label": "Meta Keywords"
+        }
+    }
+}

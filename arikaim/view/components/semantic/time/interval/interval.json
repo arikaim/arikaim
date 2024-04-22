@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "interval": "* * * * *",
+            "title": "Every Minute"           
+        },
+        {
+            "interval": "*/5 * * * *",
+            "title": "Every 5 Minutes"           
+        },
+        {
+            "interval": "*/10 * * * *",
+            "title": "Every 10 Minutes"           
+        },
+        {
+            "interval": "0 * * * *",
+            "title": "Every Hour"           
+        },
+        {
+            "interval": "0 0 * * *",
+            "title": "Every Day"           
+        },
+        {
+            "interval": "0 0 * * 0",
+            "title": "Every Week"           
+        },
+        {
+            "interval": "0 0 1 * *",
+            "title": "Every Month"           
+        },
+        {
+            "interval": "0 0 1 1 *",
+            "title": "Every Year"           
+        }
+    ],
+    "labels": {
+        "empty": "Select Interval"
+    }   
+}

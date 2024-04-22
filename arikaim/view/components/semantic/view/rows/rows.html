@@ -1,0 +1,8 @@
+{% set items = (items is defined) ? items.getItems() : paginator.getItems() %}
+{% if items is empty %}
+<tr>
+    <td colspan="{{ columns }}">{{ labels.empty }}</td>
+</tr>
+{% else %}   
+    {{ content }}
+{% endif %}

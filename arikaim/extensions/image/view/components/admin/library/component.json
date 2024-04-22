@@ -1,0 +1,13 @@
+{
+    "include": {
+        "js": [
+            "image::api",
+            "system:admin.orm.relations"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "redirect": "/admin",
+        "permission": "ControlPanel:full"           
+    }
+}

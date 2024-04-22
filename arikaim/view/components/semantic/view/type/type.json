@@ -1,0 +1,20 @@
+{  
+    "title": "View Type",
+    "items": {
+        "table": {
+            "value": "table",
+            "title": "Table",
+            "icon": "list alternate outline"
+        },
+        "card": {
+            "value": "card",
+            "title": "Cards",
+            "icon": "th"
+        },
+        "grid": {
+            "value": "grid",
+            "title": "Grid",
+            "icon": "border none"   
+        }
+    }
+}

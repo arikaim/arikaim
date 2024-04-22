@@ -1,0 +1,13 @@
+{% set name = name|default('schema') %}
+<div class="ui dropdown button http-schema-dropdown {{ class }}">
+    <input {{ rule|attr('rule') }} type="hidden" name="{{ name }}" id="{{ id|default(name) }}" value="{{ selected|default(default) }}">
+    <div class="text">{{ selected|default(default) }}</div>
+    <i class="icon dropdown"></i>
+    <div class="menu">
+        {% for item in items %}
+        <div class="item" data-value="{{ item }}">               
+            {{ item }}         
+        </div>    
+        {% endfor %}
+    </div>
+</div>

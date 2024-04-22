@@ -1,0 +1,17 @@
+{% if uuid is not empty %}
+    {% set category = createModel('Category','category').findById(uuid) %}
+{% endif %}
+<div class="ui two column grid">
+    <div class="column">
+        <div class="ui segment mt-1">
+            <form class="ui equal width form" id="category_description_form">  
+                <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">  
+                <div class="field">
+                    <label>{{ description.label }}</label>
+                    <textarea rows="14" cols="14" name="description" id="description" {{ description.placeholder|attr('placeholder') }}>{{ category.description }}</textarea>
+                </div> 
+                {{ component('semantic~form.footer') }}   
+            </form>
+        </div>
+    </div>
+</div>

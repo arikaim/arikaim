@@ -1,0 +1,11 @@
+{% set class = class|default('success') %}
+{% set data_value = data_value|default(1) %}
+{% set id = id|default('progress') %}
+<div class="ui progress hidden {{ class }}" data-value="{{ data_value }}" data-total="100" id="{{ id }}" style="visibility: hidden">
+    <div class="bar">
+        <div class="progress"></div>
+    </div>
+    {% if hide_label != true %}
+    <div class="label">{{ label }}</div>
+    {% endif %}
+</div>

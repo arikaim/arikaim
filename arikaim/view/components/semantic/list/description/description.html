@@ -1,0 +1,27 @@
+<div class="ui list">
+    {% if items is empty %}
+        <div class="item">{{ labels.empty }}</div>
+    {% endif %}
+    {% for item in items %}
+    <div class="item">
+        <i class="icon grey middle aligned {{ icon }}"></i>
+        <div class="content">
+            <div class="header">{{ item.name }}</div>
+            <div class="description">
+                {{ item.title }}
+                {% if item.help is defined %}                   
+                    <div class="ui basic label">
+                        <i class="info circle icon"></i>                                           
+                        <div class="detail">
+                            {% if help_icon is not empty %}
+                                <i class="icon {{ help_icon }}"></i>       
+                            {% endif %}
+                            {{ item.help }}
+                        </div>
+                    </div>                   
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,30 @@
+{% set label = label|default(labels.url) %}
+{% set slug_source = slug_source|default('title') %}
+{% set field_class = field_class|default('basic large label') %}
+{% set show_url = (show_url is not defined) ? true : show_url %}
+{% set url_path = url_path|default('') %}
+{% set slug = slug|default('&nbsp;') %}
+{% set editable = editable|default(false) %}
+{% set name = name|default('slug') %}
+{% set id = id|default('slug') %}
+{% set disable_update = disable_update|default(false) %}
+<div class="field {{ class }}">   
+    <label>{{ label }}</label>   
+    {% if editable == true %}
+        <input 
+            type="text" 
+            name="{{ name }}" 
+            id="{{ id }}" 
+            slug-source="{{ slug_source }}" 
+            value="{{ value }}" 
+            editable="{{ editable }}"
+            disable-update="{{ disable_update }}"/>
+    {% else %}
+        <div class="ui {{ field_class }}">   
+            {% if show_url == true %}         
+                {{ url(url_path,true) }}   
+            {% endif %}       
+            <span id="{{ id }}" slug-source="{{ slug_source }}" editable="false">{{ slug }}</span>                           
+        </div>  
+    {% endif %}     
+</div>

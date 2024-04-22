@@ -1,0 +1,41 @@
+{% set field_name = 'fields[' ~ field.getName() ~ ']' %}
+<div class="field">    
+    <label>{{ field.getTitle() }}</label>
+    {% if field.getType() == 'url' %}
+        <div class="ui labeled input">
+            <div class="ui label">http://</div>
+            <input 
+                type="text" 
+                name="{{ field_name }}" 
+                value="{{ value }}"> 
+        </div>                
+    {% elseif field.getType() == 'bool' %}  
+        {{  component('semantic~form.fields.checkbox',{
+                name: field_name,   
+                id: field_name,
+                field_label: field.getTitle(),          
+                value: value
+            }) 
+        }}          
+    {% elseif field.getType() == 'list' %}                       
+        <select class="ui dropdown" name="{{ field_name }}" {{ rule }}>
+            {% for item in field.items %}
+            <option value="{{ item }}" {{ value|ifthen(item,'selected') }}>{{ item }}</option>
+            {% endfor %}
+        </select>                
+    {% elseif field.getType() == 'password' %}
+        {{  component('semantic~form.fields.password',{                            
+                name: field_name,         
+                id: 'password',       
+                value: value
+            }) 
+        }}  
+    {% elseif field.getType() == 'text.area' %}       
+        <textarea name="{{ field_name }}" cols="7" rows="7">{{ value }}</textarea>                                             
+    {% else %}
+        <input 
+            type="text" 
+            name="{{ field_name }}" 
+            value="{{ value }}"> 
+    {% endif %}
+</div>

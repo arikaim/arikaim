@@ -1,0 +1,3 @@
+{% set option = createModel(model,extension).getOption(key,id) %}
+
+{{ component('semantic~orm.options.edit.field',{ option: option, reference_id: id }) }}      

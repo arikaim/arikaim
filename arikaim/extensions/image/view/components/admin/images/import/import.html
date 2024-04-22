@@ -1,0 +1,20 @@
+{% component 'semantic~tabs.vertical.content' %}
+{% set class = 'seven wide' %}
+<div class="mt-8" id="import_image_content">
+    {% if demo_mode != true %}
+    <div class="ui equal width form">      
+        <div class="field required">      
+            <label>{{ fields.url.label }}</label>              
+            <input rule="empty" name="url" id="url" type="text" placeholder="{{ fields.url.placeholder }}">                                          
+        </div>  
+        <button class="ui primary button load-image">          
+            {{ labels.load }}
+        </button>             
+    </div>   
+    {% else %}
+    <div class="ui waring message">
+        {{ labels.disabled }}
+    </div>
+    {% endif %}
+</div>    
+{% endcomponent %}

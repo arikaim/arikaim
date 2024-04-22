@@ -1,0 +1,93 @@
+{% set image = createModel('Image','image').where('id','>',0) %}
+{% set user_filter = searchValue('user_id','images') %}
+{% if user_filter is not empty %}
+    {% set image = image.userImagesQuery(user_filter) %}
+{% endif %}
+{{ createSearch('file_name','images','ilike:{value}%') }}
+{% set image = applySearch(image,'images') %}
+{% set items = paginate(image,'images')  %}
+{% if items.getItems()|length == 0 %}
+    <tr>
+        <td colspan="9">{{ labels.empty }}</td>
+    </tr>
+{% endif %}
+{% for item in items.getItems() %}  
+    <tr id="{{ item.uuid }}">             
+        <td>            
+            <div class="ui buttons"> 
+                <button 
+                    class="ui icon mini basic button details-button" 
+                    uuid="{{ item.uuid }}" 
+                    title="{{ labels.details }}">
+                    <i class="icon info"></i>
+                </button>                       
+                <button class="ui icon mini basic button thumbnails-button" uuid="{{ item.uuid }}" title="{{ labels.thumbnails }}">
+                    <i class="icon images"></i>
+                </button>   
+                <button class="ui icon mini basic button edit-button" uuid="{{ item.uuid }}" title="{{ labels.edit }}">
+                    <i class="icon edit"></i>
+                </button>     
+                <button class="ui icon mini basic button image-relations-button" uuid="{{ item.uuid }}" title="{{ labels.relations }}">
+                    <i class="icon blue project diagram"></i>
+                </button>       
+                <a 
+                    title="{{ labels.download }}"
+                    href="{{ url('/api/image/download/' ~ item.uuid) }}" 
+                    class="ui icon mini basic button">
+                    <i class="icon download"></i>
+                </a>   
+                {% if item.deny_delete != true %}                                      
+                <button class="ui icon mini basic button delete-button" uuid="{{ item.uuid }}" data-title="{{ item.file_name }}">
+                    <i class="icon trash orange"></i>
+                </button>  
+                {% endif %}
+            </div>          
+        </td>  
+        <td>
+            {{  component('semantic~status.dropdown',{ 
+                    status: item.status, 
+                    uuid: item.uuid, 
+                    skip: [2,3,4,5,6] 
+                }) 
+            }} 
+        </td>    
+        <td>
+            {{ item.date_created|dateFormat }}
+        </td>       
+        <td class="center aligned">
+            {% set thumbnail = item.thumbnail(64,64) %}
+            {% if thumbnail is not empty %}
+                <img src="{{ url(thumbnail.src) }}" class="ui image rounded center aligned" title="{{ item.mime_type }}">
+            {% else %}
+                <div class="ui image rounded center aligned bordered">
+                    {{ component('icons~image',{ size: 'h-full w-full', color: 'gray-400' },'svg') }}                   
+                </div>
+            {% endif %}
+        </td>
+        <td class="center aligned">
+            {% if item.width is not empty and item.height is not empty %}
+                {{ item.width }} x {{ item.height }}
+            {% else %}
+                ..
+            {% endif %}
+        </td>
+        <td title="{{ item.file_name }}">  
+            {% if item.deny_delete is not empty %}
+                <div class="ui basic label">{{ labels.delete }}</div>
+            {% endif %}  
+            {% if item.private == true %}
+                <div class="ui basic icon label" title="{{ labels.protected }}">
+                    <i class="icon orange lock"></i>
+                </div>
+            {% else %}
+                <div class="ui basic icon label" title="{{ labels.public }}">
+                    <i class="icon green unlock"></i>                  
+                </div>
+            {% endif %}    
+            <span title="{{ item.file_size|fileSize }}">
+                {{ item.file_name|baseName }}
+            </span>   
+        </td>                                           
+        <td>{{ item.user.user_name }}</td>                                               
+    </tr>
+{% endfor %}

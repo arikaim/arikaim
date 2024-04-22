@@ -1,0 +1,42 @@
+<div class="ui two column grid">
+    <div class="column">
+        <div class="ui segment">     
+            <div class="ui stackable two column grid">      
+                <div class="column">
+                    <button 
+                        mountTo="collection_content"
+                        component="image::admin.collections.add"
+                        title="{{ tooltip.create }}"
+                        class="ui mini curcular green icon button create-collection">
+                        <i class="icon plus"></i>
+                    </button>
+                </div>
+                <div class="right aligned column">                   
+                    {{ component('semantic~paginator.dropdown',{ class: 'mini', namespace: 'collections' }) }}
+                </div>
+            </div>
+        </div>     
+        <div class="ui segment">      
+            <table class="ui compact stackable selectable basic borderless table">
+                <thead class="table-head">
+                    <tr>             
+                        <th class="three wide">{{ columns.actions }}</th>
+                        <th class="three wide">{{ columns.date }}</th>   
+                        <th class="four wide">{{ columns.slug }}</th>   
+                        <th>{{ columns.title }}</th>
+                        <th class="one wide">{{ columns.images }}</th>         
+                        <th class="two wide">{{ columns.owner }}</th>                                                                         
+                    </tr>
+                </thead>
+                <tbody id="collections_rows" component="image::admin.collections.view.items" namespace="collections">
+                    {{ component('image::admin.collections.view.items') }}
+                </tbody>
+            </table>
+        </div>
+        <div id="paginator">
+            {{ component("semantic~paginator",{ namespace: 'collections' }) }}
+        </div>            
+    </div>
+    <div class="column" id="collection_content">
+    </div>
+</div>

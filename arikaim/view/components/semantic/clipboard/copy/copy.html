@@ -1,0 +1,18 @@
+{% set class = class|default('button icon basic mini') %}
+{% set type = type|default('field') %}
+{% set icon = icon|default('copy outline') %}
+{% set escape = escape|default(false) %}
+{% set hint = hint|default(labels.hint) %}
+<a 
+    class="cursor-pointer link clipboard-copy {{ class }}" 
+    content-selector="{{ selector }}" 
+    content-type="{{ type }}" 
+    content-options="{{ options }}" 
+    focus-element="{{ focus_element }}"
+    title="{{ hint }}"
+    escape-content="{{ escape }}">
+    {% if hide_icon != true %}
+        <i class="icon {{ icon }}"></i>
+    {% endif %}
+    {{ title }}
+</a>

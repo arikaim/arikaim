@@ -1,0 +1,25 @@
+{
+    "name": "arikaim/packages",
+    "description": "Arikam CMS Packages package",
+    "keywords": ["cms", "packages"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": "^7.4|^8.0",     
+        "arikaim/utils": "^1.0.0",       
+        "arikaim/collection": "^1.0.0",
+        "composer/composer": "^2.0.0",
+        "arikaim/interfaces": "^1.0.0"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Packages\\": ""
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'posts_button', title: labels.posts, component: 'blog::admin.posts', icon: 'list', active: true },                 
+            { id: 'trash_button', title: labels.trash, component: 'blog::admin.trash', icon: 'trash' },    
+            { id: 'settings_button', title: labels.settings, component: 'blog::admin.settings', icon: 'cogs' }
+        ],
+        menu: { component: 'system:admin.extensions.menu.actions', extension: 'blog' },
+        content: { component: 'blog::admin.posts' } 
+    })
+}}

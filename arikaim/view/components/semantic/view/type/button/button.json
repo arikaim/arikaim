@@ -1,0 +1,15 @@
+{  
+    "title": "View Type",
+    "items": {
+        "table": {
+            "value": "table",
+            "title": "Table",
+            "icon": "list"
+        },      
+        "grid": {
+            "value": "grid",
+            "title": "Grid",
+            "icon": "th"   
+        }
+    }
+}

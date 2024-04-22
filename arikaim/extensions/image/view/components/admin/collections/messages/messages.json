@@ -1,0 +1,16 @@
+{
+    "create": "Image collection created successfully.",       
+    "update": "Image collection saved successfully.",         
+    "delete": "Image collection deleted successfully.",          
+    "errors": {
+        "id": "Not valid collection Id",          
+        "update": "Update collection error",
+        "exists": "Collection title not available!"    
+    },
+    "messages": {
+        "remove": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove image collection '<b><% title %></b>'."
+        }
+    }  
+}

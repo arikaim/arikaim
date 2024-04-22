@@ -1,0 +1,8 @@
+{
+    "title": "Edit Content Item",
+    "icon": "edit",
+    "labels": {
+        "item": "Item Key",
+        "type": "Content Type"
+    }                
+}

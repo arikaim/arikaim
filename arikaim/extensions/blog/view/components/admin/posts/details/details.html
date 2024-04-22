@@ -1,0 +1,62 @@
+{% if uuid is not empty %}
+    {% set post = createModel('Posts','blog').findById(uuid) %}  
+{% endif %}
+{% component 'semantic~panel' %}
+<div>
+    {{ component('semantic~view.image',{ model: post }) }}
+    <table class="ui very basic definition table">
+        <thead>
+            <tr>
+                <th class="three wide"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="right aligned">{{ labels.id }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ post.id }}
+                    </div>
+                    {{ post.uuid }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.status }}</td>
+                <td>
+                    {{ component('semantic~status.label',{ status: post.status }) }}                   
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.title }}</td>
+                <td>
+                    {{ post.title }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.slug }}</td>
+                <td>
+                    {{ post.slug }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">
+                    {{ labels.content }}
+                </td>
+                <td>                   
+                    {{ post.content|md }}                  
+                </td>
+            </tr>   
+            <tr>
+                <td class="right aligned">
+                    {{ labels.summary }}
+                </td>
+                <td>                   
+                    {{ post.summary }}                  
+                </td>
+            </tr>                   
+        </tbody>  
+    </table>     
+    {{ component('semantic~view.metatags',{ model: post }) }}    
+</div>
+{% endcomponent %}

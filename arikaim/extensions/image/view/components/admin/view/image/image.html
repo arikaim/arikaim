@@ -1,0 +1,22 @@
+<div class="flex flex-row items-start {{ class }}">                 
+    <div>   
+        {% if image.src is not empty %} 
+            <img class="ui image {{ image_class|default('small rounded bordered') }}" src="{{ url(image.src) }}"/>
+        {% else %}
+            <i class="icon image big"></i>
+        {% endif %}
+    </div>           
+    {% if image.src is not empty %}           
+    <div class="px-1">
+        <div class="font-bold">{{ labels.file }}</div>
+        {{ image.base_name }}
+        <div class="font-bold">Id</div>
+        <div class="ui basic label">
+            {{ image.id }}
+        </div>    
+        <div class="ui basic label">
+            {{ image.uuid }}
+        </div>       
+    </div>
+    {% endif %}
+</div>

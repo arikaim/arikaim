@@ -1,0 +1,26 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { 
+                id: 'image_view_button', 
+                title: labels.view, 
+                component: 'image::admin.images', 
+                icon: 'list', 
+                active: true 
+            },
+            { 
+                id: 'collections_button', 
+                title: labels.collections, 
+                component: 'image::admin.collections.view', 
+                icon: 'images'       
+            },
+            { 
+                id: 'qrcode_button', 
+                title: labels.qrcode, 
+                component: 'image::admin.qrcode', 
+                icon: 'qrcode'       
+            }
+        ],
+        menu: { extension: 'image' },
+        content: { component: 'image::admin.images' } 
+    })
+}}

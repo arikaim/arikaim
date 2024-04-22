@@ -1,0 +1,23 @@
+{
+    "name": "arikaim/mail",
+    "description": "Arikam CMS mail package",
+    "keywords": ["cms", "http"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {         
+        "arikaim/utils": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
+        "symfony/mailer": "^5.4"        
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Mail\\": ""
+        }
+    }
+}

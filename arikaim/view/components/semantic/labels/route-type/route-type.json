@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "page": "Page",
+        "api": "Api",
+        "admin": "Admin Api",
+        "home": "Page",
+        "title": "Route Type"
+    } 
+}

@@ -1,0 +1,20 @@
+{% set has_child = category.hasChild() %}
+{% set title = category.title %}
+
+<div class="title class-{{ category.uuid }} m-0" has-child="{{ has_child }}">              
+    {{ component('category::admin.actions',{ category: category }) }} 
+    {% if category.status == 1 %}
+        <i class="icon middle aligned checkmark olive" {{ labels.enabled.title|attr('title') }}></i>
+    {% else %}
+        <i class="icon middle aligned ban grey" {{ labels.disabled.title|attr('title') }}></i>
+    {% endif %}
+    <i class="dropdown icon"></i>
+    <span>
+        {{ category.image.thumbnail(64,64).src }}
+    </span>
+    <img src="{{ category.image.thumbnail(64,64).src }}">  
+    <span class="font-bold">{{ title }}</span>    
+</div>     
+<div class="content {{ has_child|ifthen(1,'ml-4') }} class-{{ category.uuid }} m-0"> 
+    <span class="ui gray text">{{ category.description }}</span>  
+</div>

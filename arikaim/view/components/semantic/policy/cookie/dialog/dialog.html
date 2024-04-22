@@ -1,0 +1,25 @@
+{% set interval = interval|default(14) %}
+{% set button_class = button_class|default('green') %}
+{% if type == 'toast' %}
+<div class="ui toast {{ class }}" id="cookie_policy_modal">
+    <div class="content">
+        <div class="ui header {{ title_class }}">{{ title }}</div>
+        <p class="mt-1 pt-1">{{ content }}</p>
+        <div>{{ details|renderText({ here: link }) }}</div>
+    </div>
+    <div class="left basic actions">
+        <button class="ui positive button {{ button_class }}">{{ button }}</button>
+    </div>
+</div>
+{% else %}
+<div class="ui tiny modal bottom aligned {{ class }}" id="cookie_policy_modal" interval="{{ interval }}">   
+    <h4 class="p-4 {{ title_class }}">{{ title }}</h4>  
+    <div class="pl-4 {{ content_class }}">
+        <p>{{ content }}</p>
+        <div>{{ details|renderText({ here: link }) }}</div>
+        <div class="mt-2 actions">
+            <button class="ui approve button {{ button_class }}">{{ button }}</button>
+        </div>     
+    </div>   
+</div>
+{% endif %}

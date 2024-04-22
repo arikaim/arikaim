@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "enabled": {
+            "title": "Enabled"
+        },
+        "disabled": {
+            "title": "Disabled"
+        }
+    }
+}

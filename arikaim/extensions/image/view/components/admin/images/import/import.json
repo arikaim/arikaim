@@ -1,0 +1,16 @@
+{   
+    "title": {
+        "content": "Import Image",
+        "icon": "download"
+    },
+    "fields": {      
+        "url": {
+            "label": "Url",               
+            "placeholder": "Enter image url"            
+        }      
+    },
+    "labels": {
+        "load": "Load",
+        "disabled": "Disabled in demo mode."
+    }
+}

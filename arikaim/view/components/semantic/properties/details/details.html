@@ -1,0 +1,36 @@
+{% if properties|length == 0 %}
+<div>
+    {{ empty|default('..') }}
+</div>
+{% else %}
+    <table class="ui very basic definition table {{ class }}">
+        <thead>
+            <tr>
+                <th class="four wide">{{ labels.key }}</th>
+                <th>
+                    {{ labels.title }}
+                </th>
+                <th>
+                    {{ labels.type }}
+                </th>
+                <th>
+                    {{ labels.required }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, property in properties %}
+            <tr>
+                <td >{{ key }}</td>
+                <td >{{ property.title }}</td>
+                <td>
+                    {{ type[property.type] }}
+                </td>
+                <td>
+                    {{ (property.required == true) ? 'yes' : 'no' }}
+                </td>
+            </tr>  
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

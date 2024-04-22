@@ -1,0 +1,27 @@
+<div>
+    {% if title is not empty %}
+        <h4>{{ title }}</h4>        
+    {% endif %}
+        <table class="ui very basic definition table {{ table_class }}">
+            <thead>
+                <tr>
+                    <th class="four wide"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for property in items %}
+                <tr>
+                    <td class="right aligned">{{ property.title }}</td>
+                    <td>
+                        {% if property.type == 11 %}
+                            {{ component('semantic~language.label',{ class: 'basic label', language: property.value }) }}
+                        {% else %}                       
+                            {{ property.value|string }}  
+                        {% endif %} 
+                    </td>
+                </tr>  
+                {% endfor %}
+            </tbody>
+        </table>
+</div>

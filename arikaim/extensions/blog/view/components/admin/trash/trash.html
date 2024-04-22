@@ -1,0 +1,24 @@
+{% set deletedPages = createModel('Pages','blog').getDeletedCount() %}  
+{% set deletedPosts = createModel('Posts','blog').getDeletedCount() %}
+{% set disabled = ((deletedPages + deletedPosts) == 0) ? 'disabled' : '' %}
+<div class="ui segment  mt-8">
+    <button class="ui basic orange mini button empty-trash {{ disabled }} trash-button" {{ buttons.empty.title|attr('title') }}>
+        <i class="icon trash alternate outline orange"></i>
+        {{ buttons.empty.content }}
+    </button>
+</div>
+<div class="ui segment">
+    <table class="ui compact stackable borderless basic table">
+        <thead class="table-head">
+            <tr>           
+                <th class="one wide column collapsing">{{ labels.actions }}</th>    
+                <th class="one wide column collapsing">{{ labels.type }}</th> 
+                <th class="two wide column collapsing">{{ labels.created }}</th>                 
+                <th class="collapsing">{{ labels.name }}</th>           
+            </tr>
+        </thead>
+        <tbody id="items_rows" component="blog::admin.trash.rows" namespace="trash">
+            {{ component("blog::admin.trash.rows") }}
+        </tbody>
+    </table>
+</div>

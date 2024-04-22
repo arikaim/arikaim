@@ -1,0 +1,19 @@
+<div
+    id="{{ component_id }}"
+    class="ui {{ class|default('ui segment') }}">
+    {% if hide_title != true %}
+    {{  component('semantic~panel.title',{ 
+            title: title, 
+            icon: icon,
+            close_button: close_button,
+            close_button_class: close_button_class, 
+            class: title_class,
+            color: title_color,
+            border: title_border 
+        }) 
+    }}
+    {% endif %}
+    <div class="panel-content {{ tpanel_content_class|default('p-4') }}">
+        {{ content }}
+    </div>
+</div>

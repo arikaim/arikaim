@@ -1,0 +1,65 @@
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ head.title }}</title>
+    <meta charset="{{ head.charset|default('utf-8') }}">  
+    <meta name="language" content="{{ current_language|default('en') }}">
+    <meta name="robots" content="{{ head.robots|default(robots)|default('index,follow,all') }}"/>
+    <meta name="googlebot" content="{{ head.robots|default(robots)|default('index,follow,all') }}"/>
+    <meta name="Cache-Control" content="{{ head.cache_control|default("max-age=31536000") }}"/>   
+    {% for key,value in head %}      
+    {%- if value is not empty and key not in ['viewport','favicon','og','twitter','title','code'] -%}
+        <meta name="{{ key }}" content="{{ value }}"/>
+    {% endif %}
+    {% endfor %}
+    {%- for item in head.og %}
+    <meta property="og:{{ item.name }}" content="{{ item.value }}"/>
+    {% for key, value in item.options %}
+    <meta property="og:{{ item.name }}:{{ key }}" content="{{ value }}"/>
+    {% endfor -%}
+    {%- endfor -%}
+    {%- for item in head.twitter %}
+    <meta name="twitter:{{ item.name }}" content="{{ item.value }}"/>
+    {% endfor -%}
+    {%- if head.favicon is defined -%}
+    <link rel="icon" type="image/png" href="{{ head.favicon }}">
+    {%- endif %}    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale={{ head.minimum_scale|default("1.0") }},maximum-scale={{ head.maximum_scale|default("1.0") }}" />   
+    <!-- library files -->
+    {% for file in library_files -%}            
+    {%- if file.type == "js" -%} 
+    <script id="library_{{ file.library }}" type="text/javascript" src="{{ file.file }}" {{- file.params_text|raw -}} {{ (file.async == true) ? ' async' : '' -}} {{- file.crossorigin|attr('crossorigin') -}}></script>
+    {% endif %}
+    {%- if file.type == "css" and file.async == true -%} 
+    <link media="all" rel="preload" href="{{ file.file }}" as="style" onload="this.onload=null;this.rel='stylesheet'">    
+    {% elseif file.type == "css" %}
+    <link rel="stylesheet" type="text/css" href="{{ file.file }}" media="all">
+    {% endif -%}
+    {%- endfor -%}      
+    <!-- template files -->
+    {% for file in template_files['js'] -%}
+    {% if file is iterable -%}
+    <script class="component-file" component-type="{{ file.component_type }}" component-name="{{ file.component_name }}" component-id="{{ file.component_id }}" src="{{ file.url }}" type="text/javascript"></script>
+    {% else -%}
+    <script {{ (file.async == true) ? ' async' : '' -}} src="{{ file }}" type="text/javascript"></script>
+    {% endif -%}
+    {% endfor %}
+    {%- for file in template_files['css'] -%}
+    <link rel="stylesheet" type="text/css" href="{{ file }}" media="all">      
+    {% endfor -%}
+    <!-- component files --> 
+    {% for file in component_files['js'] %}            
+    {%- set crossorigin = ('crossorigin' in file.params) ? 'crossorigin="anonymous"' : '' -%}
+    <script async {{ options.component_files }} class="component-file" component-type="{{ file.component_type }}" component-name="{{ file.component_name }}" component-id="{{ file.component_id }}" src="{{ file.url }}" type="text/javascript" {{ crossorigin -}}></script>
+    {% endfor -%}   
+    <!-- page files -->
+    {% for file in page_files['js'] -%}        
+        <script async {{ options.page_files }} class="component-file" component-type="{{ file.component_type }}" component-name="{{ file.component_name }}" component-id="{{ file.component_id }}" src="{{ file.url }}" type="text/javascript"></script>
+    {%- endfor -%}     
+    <!-- component instances -->
+    {% for item in component_instances -%}
+    <meta class="component-instance" component-name="{{ item.name }}" component-type="{{ item.type }}" component-id="{{ item.id }}">
+    {% endfor -%}
+    <!-- custom code -->
+    {{ head.code }}
+    {{- content }}
+</head>

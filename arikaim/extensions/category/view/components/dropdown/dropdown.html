@@ -1,0 +1,25 @@
+{% set name = name|default('category') %}
+{% set data_type = data_type|default('id') %}
+{% set id = id|default('category_dropdown') %}
+{% set selected = selected|default(null) %}
+{% set exclude = exclude|default([]) %}
+{% set category = createModel('Category','category') %}
+{% if selected is not empty %}
+    {% set selected_text = category.findById(selected).title %}
+{% endif %}
+{% set items = category.getList() %}
+
+<div class="ui icon top left pointing dropdown {{ class }}" id="{{ id }}">
+    <input name="{{ name }}" id="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="list icon"></i>
+    <div class="text">{{ (selected_text is not empty) ? selected_text : default }}</div>    
+    {{  component('category::dropdown.menu',{           
+            selected: selected, 
+            items: items,
+            exclude: exclude,
+            data_type: data_type,
+            class: menu_class,
+            root: root
+        }) 
+    }}
+</div>

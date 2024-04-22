@@ -1,0 +1,12 @@
+{    
+    "fields": {
+        "title":{
+            "label": "Title",
+            "placeholder": "Enter image collection title"            
+        },
+        "description": {
+            "placeholder": "Enter image collection description",
+            "label": "Description"
+        }        
+    }  
+}

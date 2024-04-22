@@ -1,0 +1,16 @@
+{% if order[field] == 'asc' %}
+    {% set icon = 'sort down' %}
+    {% set type = 'desc' %}
+{% endif %}
+{% if order[field] == 'desc' %}
+    {% set icon = 'sort up' %}
+    {% set type = 'asc' %}   
+{% endif %}
+{% if order[field] is empty %}
+    {% set icon = 'sort' %}
+    {% set type = 'asc' %}   
+{% endif %}
+<a class="link order-by-link" order-by="{{ field }}" order-by-type="{{ type|default('asc') }}">
+    <i class="icon {{ icon|default('sort') }}"></i>
+</a>
+{{ title }}

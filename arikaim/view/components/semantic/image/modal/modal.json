@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "title": "Image"
+    },
+    "buttons": {
+        "close": {
+            "content": "Close"
+        }
+    }
+}

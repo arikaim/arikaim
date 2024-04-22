@@ -1,0 +1,5 @@
+{% if status == 1 %}
+<i class="icon olive check {{ class }}" title="{{ labels.published }}"></i>
+{% else %}
+<i class="icon pencil ruler orange {{ class }}" title="{{ labels.draft }}"></i>
+{% endif %}

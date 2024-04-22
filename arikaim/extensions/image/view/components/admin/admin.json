@@ -1,0 +1,8 @@
+{
+    "labels": {
+        "view": "View",   
+        "qrcode": "QR Code",      
+        "collections": "Collections",
+        "settings": "Settings"                       
+    }  
+}

@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "empty": "..",
+        "editable": "Editable",
+        "group": "Grup",
+        "readonly": "Readonly",
+        "hidden":  "Hidden"
+    }
+}

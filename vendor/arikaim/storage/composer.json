@@ -1,0 +1,23 @@
+{
+    "name": "arikaim/storage",
+    "description": "Arikam CMS local storage package",
+    "keywords": ["cms", "storage"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {        
+        "arikaim/utils": "^1.0.0",
+        "arikaim/interfaces": "^1.0.0",
+        "league/flysystem": "^1.0.66"
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Storage\\": ""
+        }
+    }   
+}

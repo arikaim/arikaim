@@ -1,0 +1,62 @@
+{% set collections = createModel('ImageCollections','image').orderBy('id') %}
+{% set items = paginate(collections,'collections') %}
+
+{% set items = items.getItems() %}
+{% if items|length == 0 %}
+    <tr>
+        <td colspan="6">
+            {{ labels.empty }}
+        </td>       
+    </tr>
+{% endif %}
+
+{% for item in items %}
+    <tr id="row_{{ item.uuid }}">
+        <td>
+            <button 
+                mountTo="collection_content"
+                component="image::admin.collections.edit"
+                params="uuid:{{ item.uuid }}"
+                class="ui icon mini basic compact button collection-action-button">
+                <i class="icon edit"></i>
+            </button>  
+            <button 
+                mountTo="collection_content"
+                component="image::admin.collections.details"
+                params="uuid:{{ item.uuid }}"
+                class="ui icon mini basic compact button collection-action-button">
+                <i class="icon info"></i>
+            </button>  
+            <button 
+                mountTo="collection_content"
+                component="image::admin.collections.images"
+                params="uuid:{{ item.uuid }}"
+                class="ui icon mini basic compact button collection-action-button">
+                <i class="icon images"></i>
+            </button>  
+            <button                
+                uuid="{{ item.uuid }}"
+                data-title="{{ item.title }}"
+                class="ui icon mini basic compact button delete-collection">
+                <i class="icon trash orange"></i>
+            </button>  
+        </td>
+        <td>
+            {{ item.date_created|dateFormat }}
+        </td>
+        <td>
+            <div class="ui basic label">
+                {{ item.slug }}
+            </div>
+        </td>
+        <td>
+            {{ item.title }}
+        </td>
+        <td>
+            {{ item.items.count() }}
+        </td>
+        <td>
+            {{ item.user.user_name_or_email }}
+        </td>
+    </tr>
+{% endfor %}

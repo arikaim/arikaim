@@ -1,0 +1,31 @@
+{% set paginator = getPaginator(namespace) %} 
+{% set show_current_page = show_current_page|default(true) %}
+{% if paginator.last_page != -1 %}
+    {% set show_next_button = (paginator.current_page < paginator.last_page) ? '' : 'invisible' %}
+{% endif %}
+{% set show_prev_button = (paginator.current_page == 1) ? 'invisible' : '' %}
+{% set class = class|default('ui icon button') %}
+{% set init = init|default(false) %}
+{% if paginator.last_page > 1 %}
+<div 
+    class="flex paginator" 
+    last-page="{{ paginator.last_page }}" 
+    component="{{ rows_component }}" 
+    component-params="{{ rows_component_params }}"
+    namespace="{{ namespace }}"
+    init="{{ init }}"
+    rows-selector="{{ rows_selector }}"
+    current-page="{{ paginator.current_page }}">
+    <div class="{{ class }} page-link prev-page {{ show_prev_button }}" page="prev">
+        <i class="icon angle chevron left {{ icon_class }} page-link-icon"></i>    
+    </div>   
+    <div class="pt-1 {{ current_page_class }}" page="{{ paginator.current_page }}">
+        {% if show_current_page == true %}
+        <span class="text-lg font-bold" id="current_page">{{ paginator.current_page }}</span>
+        {% endif %}
+    </div>  
+    <div class="{{ class }} page-link next-page {{ show_next_button }}" page="next">
+        <i class="icon angle chevron right {{ icon_class }} page-link-icon" style="background-color: none"></i>     
+    </div>   
+</div>
+{% endif %}

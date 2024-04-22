@@ -1,0 +1,11 @@
+{
+    "title": "AI Text Generator",
+    "buttons": {
+        "generate": "Generate"
+    },
+    "labels": {
+        "module": "NLP module no installed",
+        "text": "Text",
+        "placeholder": "Enter input text"
+    }
+}

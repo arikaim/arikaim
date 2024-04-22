@@ -1,0 +1,16 @@
+{% if group is not empty %}
+    {% set field = group ~ '[' ~ field_name ~ ']' %}
+{% else %}
+    {% set field = field_name %}
+{% endif %}
+<div class="ui action input">     
+    <input {{ rule|attr('rule') }} type="text" name="{{ field }}" value=""> 
+    <a 
+        title="{{ labels.cancel }}"
+        field="{{ field_name }}"
+        group="{{ group }}"
+        preview-value="{{ preview }}"
+        class="ui button compact icon basic cancel-edit-key-button">
+        <i class="icon cancel"></i>        
+    </a>
+</div>    

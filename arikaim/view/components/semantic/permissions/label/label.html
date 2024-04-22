@@ -1,0 +1,25 @@
+{% set text_class = text_class|default('text-gray-800 underline') %}
+{% set label_class = label_class|default('basic horizontal') %}
+{% set yes_icon = yes_icon|default('check green') %}
+{% set no_icon = no_icon|default('cross red') %}
+<div class="{{ class }}">     
+    {{ permission.name }}     
+    <div class="ui {{ label_class }} labels">       
+        <div class="ui label">            
+            <i class="icon {{ (permission.read == 1) ? yes_icon : no_icon }}"></i>           
+            <span class="{{ text_class }}">{{ labels.read }}</span>
+        </div>             
+        <div class="ui label">
+            <i class="icon {{ (permission.write == 1) ? yes_icon : no_icon }}"></i>   
+            <span class="{{ text_class }}">{{ labels.write }}</span>
+        </div>       
+        <div class="ui label">
+            <i class="icon {{ (permission.delete == 1) ? yes_icon : no_icon }}"></i>  
+            <span class="{{ text_class }}">{{ labels.delete }}</span>
+        </div>
+        <div class="ui label">
+            <i class="icon {{ (permission.execute == 1) ? yes_icon : no_icon }}"></i>  
+            <span class="{{ text_class }}">{{ labels.execute }}</span>
+        </div>       
+    </div>
+</div>

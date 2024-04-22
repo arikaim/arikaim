@@ -1,0 +1,68 @@
+{% if uuid is not empty %}
+    {% set collection = createModel('ImageCollections','image').findById(uuid) %}  
+{% endif %}
+
+{% component 'semantic~panel' %}
+<div>
+    <table class="ui very basic definition table">
+        <thead>
+            <tr>
+                <th class="three wide"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="right aligned">{{ labels.id }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ collection.id }}
+                    </div>
+                    {{ collection.uuid }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.title }}</td>
+                <td>
+                    {{ collection.title }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">
+                    {{ labels.slug }}
+                </td>
+                <td>
+                    <div class="ui basic label">
+                        {{ collection.slug }}
+                    </div>
+                </td>
+            </tr>   
+            <tr>
+                <td class="right aligned">{{ labels.description }}</td>
+                <td>
+                    {{ collection.description }}
+                </td>
+            </tr>         
+            <tr>
+                <td class="right aligned">{{ labels.date }}</td>
+                <td>
+                    <i class="icon outline calendar blue"></i>
+                    {{ collection.date_created|dateFormat }}
+                </td>
+            </tr> 
+            <tr>
+                <td class="right aligned">{{ labels.images }}</td>
+                <td>
+                    {{ collection.items.count() }}
+                </td>
+            </tr>  
+            <tr>
+                <td class="right aligned">{{ labels.owner }}</td>
+                <td>
+                    {{ collection.user.user_name_or_email }}
+                </td>
+            </tr>         
+        </tbody>  
+    </table>     
+</div>
+{% endcomponent %}

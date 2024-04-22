@@ -1,0 +1,16 @@
+{
+    "title": "Image Details",
+    "icon": "info",
+    "labels": {
+        "id": "Id",
+        "size": "Size",
+        "owner": "Owner",
+        "status": "Status",
+        "type": "Type",
+        "code": "Code",
+        "file_name": "File Name",
+        "path": "Path",
+        "src": "Src",
+        "file_size": "File Size"
+    }
+}

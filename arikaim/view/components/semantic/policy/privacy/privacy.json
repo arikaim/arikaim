@@ -1,0 +1,148 @@
+{
+    "title": "Privacy Policy",
+    "items": {
+        "1": {
+            "title": "",
+            "content": [
+                "This Privacy Policy explains how your personal data is collected and processed by <b>{{ company }}</b> when you use the web site <b>{{ site }}</b>.",
+                "Cookie Policy explains what cookies are and how we use them on the website." 
+            ],
+            "list": []
+        },
+        "2": {
+            "title": "Information We Collect:",
+            "content": [
+                "When you access or use the website, we automatically collect general information about you using cookies<br>"              
+            ],
+            "list": [
+                "<b>Personal identification information</b> (Name, Email address )",
+                "IP address",
+                "Analytics: We may allow Third Party service providers to use cookies or similar technologies to collect information about your browsing activities over time and across different websites "
+            ]
+        },
+        "3": {
+            "title": "How we collect information:",
+            "content": [
+               "You directly provide <b>{{ company }}</b> with most of the data we collect. We collect data and process data when you:"               
+            ],
+            "list": [
+                "Register online or place an order for any of our products or services.",
+                "Voluntarily complete a customer survey or provide feedback on any of our message boards or via email.",
+                "Use or view our website via your browser’s cookies.",
+                "<b>Contact Form</b> - If you fill out a contact form on the website or send us an email, the data you provide will be retained for as long as is necessary depending on the nature of the form or the content of your email, to fully answer and correctly handle your message or email."              
+            ]
+        },
+        "4": {
+            "title": "Our Use of Your Personal Data and Other Information:",
+            "content": [
+                "We use information about you for the following purposes in accordance with the legal bases for each type of personal data as described below:<br>"
+            ],
+            "list": [
+                "Manage your account.",
+                "Email you with special offers on other products and services we think you might like."
+            ]
+        },
+        "5": {
+            "title": "How do we store your data",
+            "content": [
+                "<b>{{ company }}</b> will store your personal data for as long as necessary in order to provide you with the Website or otherwise fulfil the purposes as described above,",
+                "unless further storage is required in order to establish, exercise or defend a legal claim or to comply with applicable law, including accounting rules.",
+                "Your personal data are deleted or anonymized as soon as it no longer serves one of the above-mentioned purposes and in any event no later than 12 months after your interaction with <b>{{ company }}</b> has ceased."
+            ],
+            "list": []
+        },
+        "6": {
+            "hide": true,
+            "title": "Marketing",
+            "content": [
+                ""
+            ],
+            "list": []
+        },
+        "7": {
+            "title": "Children",
+            "content": [
+                "<b>{{ company }}</b> does not knowingly collect personal data from children under the age of 13.<br>",
+                "If personal data on children (as this term is construed under GDPR in EU, COPPA in the US and relevant applicable legislation in other jurisdictions) ",
+                "under the minimum age limit that is prescribed by the legislation in the individual jurisdictions have been processed without <b>{{ company }}</b> knowledge,",
+                 "<b>{{ company }}</b>, after having become aware of the incident, immediately take reasonable measures to stop such processing and promptly delete any such data from our databases."
+            ],
+            "list": [],
+            "footer": "If you have additional questions about <b>{{ company }}</b> privacy practices related to children under the applicable minimum age, please contact us at <b>{{ email }}</b>."
+        },
+        "8": {
+            "title": "Your data protection rights:",
+            "content": [
+                "<b>{{ company }}</b> would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following: <br>",
+                "You also have the right to request <b>{{ company }}</b> to complete the information you believe is incomplete."
+            ],
+            "list": [
+                "<b>The right to access</b> – You have the right to request <b>{{ company }}</b> for copies of your personal data. We may charge you a small fee for this service.",
+                "<b>The right to rectification</b> – You have the right to request that <b>{{ company }}</b> correct any information you believe is inaccurate. ",
+                "<b>The right to erasure</b> – You have the right to request that <b>{{ company }}</b> erase your personal data, under certain conditions.",
+                "<b>The right to restrict processing</b> – You have the right to request that <b>{{ company }}</b> restrict the processing of your personal data, under certain conditions.",
+                "<b>The right to object to processing</b> – You have the right to object to <b>{{ company }}</b>’s processing of your personal data, under certain conditions.",
+                "<b>The right to data portability</b> – You have the right to request that <b>{{ company }}</b> transfer the data that we have collected to another organization, or directly to you, under certain conditions."
+            ],
+            "footer": "If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at our email: <b>{{ email }}</b>"        
+        },
+        "9": {
+            "title": "Cookies",
+            "content": [
+                "Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. ",
+                "When you visit our websites, we may collect information from you automatically through cookies or similar technology.<br>",
+                "For further information, visit allaboutcookies.org."
+            ]
+        },
+        "10": {
+            "title": "How do we use cookies",
+            "content": [
+                "{{ company }} uses cookies in a range of ways to improve your experience on our website, including:"
+            ],
+            "list": [
+                "Keeping you signed in",
+                "Understanding how you use our website"
+            ]
+        },
+        "11": {
+            "title": "What types of cookies do we use",
+            "content": [
+                "There are a number of different types of cookies, however, our website uses:"
+            ],
+            "list": [
+                "Functionality – <b>{{ company }}</b> uses these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.",
+                "Google Analytics to facilitate, optimize and measure traffic. Google Analytics uses both persistent and session cookies.",
+                "Facebook, Twitter, YouTube and Vimeo for promoting the website. The cookies may be either persistent or session cookies."
+            ]
+        },
+        "12": {
+            "title": "How to manage cookies",
+            "content": [
+                "You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser.",
+                "However, in a few cases, some of our website features may not function as a result."
+            ]
+        },
+        "13": {
+            "title": "Privacy policies of other websites",
+            "content": [
+                "The <b>{{ company }}</b> website contains links to other websites. Our privacy policy applies only to our website, so if you click on a link to another website, you should read their privacy policy."
+            ]
+        },
+        "14": {
+            "title": "Privacy Policy Changes",
+            "content": [
+                "<b>{{ company }}</b> keeps its privacy policy under regular review and places any updates on this web page. This privacy policy was last updated on <b>{{ updated }}</b>."
+            ]
+        },
+        "15": {
+            "title": "Contact and complaints",
+            "content": [
+                "If you have any questions about <b>{{ company }}</b> privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us."
+            ],
+            "list": [
+                " {{ address }}",
+                "email: <b>{{ email }}</b>"
+            ]
+        }
+    }
+}

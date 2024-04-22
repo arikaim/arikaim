@@ -1,0 +1,48 @@
+{
+    "labels": {
+        "select": "Thumbnail Size",
+        "custom": "Custom"
+    },
+    "items": {
+        "video": {
+            "width": 1280,
+            "height": 720           
+        },
+        "video-small": {
+            "width": 640,
+            "height": 360   
+        },
+        "square": {
+            "width": 400,
+            "height": 400           
+        },
+        "square-256": {
+            "width": 256,
+            "height": 256           
+        },
+        "square-small": {
+            "width": 200,
+            "height": 200           
+        },
+        "small": {
+            "width": 164,
+            "height": 164           
+        },
+        "smal-128": {
+            "width": 128,
+            "height": 128           
+        },
+        "mini": {
+            "width": 64,
+            "height": 64           
+        }, 
+        "nano": {
+            "width": 32,
+            "height": 32           
+        },      
+        "custom": {
+            "width": "",
+            "height": ""   
+        }
+    }  
+}

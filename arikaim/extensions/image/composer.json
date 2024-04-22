@@ -1,0 +1,19 @@
+{
+    "name": "arikaim/image-extension",
+    "description": "Arikaim CMS image extension",
+    "keywords": ["Extension", "Arikaim CMS image extension"],
+    "type": "arikaim-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "arikaim/installer": "*",
+        "arikaim/image-module": "*"
+    },
+    "extra": {
+        "path": "image"
+    }
+}

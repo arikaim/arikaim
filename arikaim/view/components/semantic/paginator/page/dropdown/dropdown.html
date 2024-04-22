@@ -1,0 +1,17 @@
+{% set paginator = getPaginator(namespace) %}
+{% set items = [1,5,15,25,35,45,55,65,75,85,95,100] %}
+{% set currentPage = (selected is empty) ? paginator.current_page : selected %}
+<div 
+    class="ui icon labeled dropdown basic button page-go-menu {{ class }}" 
+    {{ title|attr('title') }}
+    namespace="{{ namespace }}">
+    <i class="ui icon {{ icon|default('file alternate outline') }}"></i>
+    <span class="header text">{{ currentPage }}</span>
+    <div class="ui menu">
+    {% for value in items %} 
+        <div class="item" data-value="{{ value }}">
+            {{ value }}
+        </div>    
+    {% endfor %}      
+    </div>
+</div>

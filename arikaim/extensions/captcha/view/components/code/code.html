@@ -1,0 +1,8 @@
+{% set current = getOption('captcha.current') %}
+{% set driver_name = (driver_name is empty) ? current : driver_name %}
+
+{% if driver_name is not empty %}
+    {{ component('captcha::code.' ~ driver_name,{ class: class, captcha_theme: captcha_theme }) }}
+{% else %}
+    <div class="ui message">{{ errors.driver }}</div>
+{% endif %}

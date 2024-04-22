@@ -1,0 +1,30 @@
+{
+    "name": "arikaim/framework",
+    "type": "library",
+    "description": "Arikam CMS Framework",
+    "keywords": ["Arikaim"],
+    "license": "GPL-3.0-or-later",
+    "homepage": "http://arikaim.com",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "php": "^7.4|^8.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "nyholm/psr7-server": "^1.0",
+        "nyholm/psr7": "1.8.*",      
+        "nikic/fast-route": "^1.3",
+        "arikaim/container": "^1.1",
+        "arikaim/http": "^1.0",
+        "arikaim/validator": "^1.2"                
+    },   
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Framework\\": ""   
+        }
+    }
+}

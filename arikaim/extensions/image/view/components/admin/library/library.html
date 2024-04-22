@@ -1,0 +1,52 @@
+{%  set params = { 
+        relation_id: relation_id,      
+        relation_type: relation_type,
+        type: type
+    } 
+%}
+<div 
+    id="image_library"
+    relation-id="{{ relation_id }}"
+    relation-type="{{ relation_type }}"
+    extension="{{ extension }}"
+    model-class="{{ model_class }}"
+    uuid="{{ model.uuid }}">
+    <div class="w-full flex flex-rows items-start flex-grow">
+        <div class="w-1/4">
+            <h4 class="bg-gray-100 p-2 px-4 rounded">
+                {{ labels.main }}
+            </h4>
+            {{  component('image::admin.library.image',{
+                    model: model
+                }) 
+            }}
+        </div>
+        <div class="w-3/4 pl-2">
+            <h4 class="bg-gray-100 p-2 px-4 rounded">
+                {{ labels.images }}
+            </h4>   
+            <div class="p-2" id="image_relations_content">
+                {{  component('image::admin.library.relations',{                   
+                        relation_id: relation_id,
+                        relation_type: relation_type
+                    }) 
+                }}   
+            </div>           
+        </div>
+    </div>
+    <div class="flex-grow w-full">
+        {{  component('semantic~tabs',{ 
+                items: [  
+                    { id: 'library_tab', title: labels.library, component: 'image::admin.library.view', icon: 'images', active: true },        
+                    { title: labels.upload, component: 'image::admin.library.upload', icon: 'upload', params },              
+                ], 
+                item_class: 'images-library-tab-item',
+                content: { 
+                    id: 'images_library_content',
+                    component: 'image::admin.library.view',
+                    params: {} 
+                } 
+            })
+        }}
+    </div>
+</div>

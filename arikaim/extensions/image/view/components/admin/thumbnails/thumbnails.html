@@ -1,0 +1,20 @@
+{% set image = createModel('Image','image').findById(uuid) %}
+<div class="ui segment">
+    <div class="ui two column grid">
+        <div class="ui column">
+            <div class="flex">
+                <div class="font-bold p-2">
+                    {{ labels.image }}
+                </div>
+                {{ component('image::admin.dropdown',{ selected: image.id, id: 'select_image', class: 'fluid' }) }}
+            </div>        
+        </div> 
+        <div class="column">
+        </div>        
+    </div>   
+</div>
+<div class="mt-2" id="image_details_content">
+    {% if image is not empty %}
+        {{ component('image::admin.thumbnails.details',{ image: image }) }} 
+    {% endif %}
+</div>

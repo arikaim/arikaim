@@ -1,0 +1,44 @@
+{% set accept = accept|default('image/*') %}
+<form class="ui form {{ class }}" id="upload_form" enctype="multipart/form-data">  
+    <input type="hidden" name="file_name" id="file_name" value="{{ file_name }}">
+    <input type="hidden" name="deny_delete" id="deny_delete" value="{{ deny_delete }}">
+    <input type="hidden" name="relation_id" id="relation_id" value="{{ relation_id }}">
+    <input type="hidden" name="relation_type" id="relation_type" value="{{ relation_type }}">
+    <input type="hidden" name="create_target_path" id="create_target_path" value="{{ create_target_path }}">
+    <input type="hidden" name="private_image" id="private_image" value="{{ private_image|default(0) }}">
+    <input type="hidden" name="target_path" id="target_path" value="{{ target_path }}">    
+    <input type="hidden" name="resize_width" id="resize_width" value="{{ resize_width }}">  
+    <input type="hidden" name="resize_height" id="resize_height" value="{{ resize_height }}">  
+    <input type="hidden" name="max_file_size" id="max_file_size" value="{{ max_file_size|default('1000MB') }}"> 
+    <input type="hidden" name="category_id" id="category_id" value="{{ category_id }}"> 
+    <input type="hidden" name="image_id" id="image_id" value="{{ image_id }}"> 
+    <input type="hidden" name="collection" id="collection" value="{{ collection }}"> 
+
+    {% if target_path is not empty and hide_path != true %}
+    <div class="field">
+        <label>{{ fields.path.label }}</label>
+        <div class="ui basic label">
+            ..{{ target_path|relativePath }} {{ file_name }}
+        </div>
+    </div>
+    {% endif %}    
+    <div class="field required">                    
+        <input name="file" id="file" type="file" accepted-file-types="{{ accept }}">                                          
+    </div>       
+    {% if deny_delete == true and hide_labels != true %}
+    <div class="field">
+        <div class="ui basic label">
+            {{ labels.delete }}
+        </div>
+    </div>
+    {% endif %} 
+    {% if resize_width is not empty and resize_height is not empty and hide_labels != true %}
+        <div class="p-1 my-2">         
+            <div class="ui basic mini label">{{ resize_width }}px</div> x
+            <div class="ui basic mini label">{{ resize_height }}px</div>
+        </div>
+    {% endif %} 
+    <a class="upload-image-button {{ button_class|default('ui green button') }}">
+        {{ button_title|default(buttons.save.content) }}
+    </a>
+</form>

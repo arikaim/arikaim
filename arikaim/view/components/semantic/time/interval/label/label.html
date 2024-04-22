@@ -1,0 +1,15 @@
+{% set selected_title = interval %}
+{% if interval is not empty %}
+    {% for item in items %}       
+        {% if (item.interval == interval) %}      
+            {% set selected_title = item.title %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<div class="ui label {{ class|default('basic') }}" title="{{ interval }}">
+    {{ labels.interval }}
+    <span class="p-1 text-blue-500">
+        {{ selected_title }}
+    </span>
+</div>  

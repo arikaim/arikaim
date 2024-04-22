@@ -1,0 +1,5 @@
+{% set class = class|default('mt-8') %}
+<div class="{{ class }}">
+    <div class="ui error message errors mt-2 {{ error_message_class }}"></div> 
+    <div class="ui success message hidden mt-2 {{ success_message_class }}" id="message"></div>  
+</div>

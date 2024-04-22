@@ -1,0 +1,15 @@
+{% set form_id = form_id|default('options_form') %}
+{% set options = createModel(model,extension).getOptions(id,only_types) %}
+{% if options.toArray()|length > 0  %}
+    <form class="ui form {{ class }}" id="{{ form_id }}">   
+        <input type="hidden" value="{{ id }}" name="id">
+        {% for option in options %}   
+            {{ component('semantic~orm.options.edit.field',{ option: option }) }}              
+        {% endfor %}
+        {{ component('semantic~form.footer') }}
+    </form>
+{% else %}
+<div>
+    {{ labels.empty }}
+</div>
+{% endif %}

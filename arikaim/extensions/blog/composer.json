@@ -1,0 +1,18 @@
+{
+    "name": "arikaim/blog-extension",
+    "description": "Arikaim CMS Blog extension",
+    "keywords": ["Extension", "Arikaim CMS Blog extension"],
+    "type": "arikaim-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {       
+        "arikaim/installer": "*"
+    },
+    "extra": {        
+        "path": "blog"
+    }
+}

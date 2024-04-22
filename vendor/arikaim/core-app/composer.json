@@ -1,0 +1,20 @@
+{
+    "name": "arikaim/core-app",
+    "description": "Arikam CMS app package",
+    "keywords": ["cms","arikaim"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\App\\": ""
+        }
+    }    
+}

@@ -1,0 +1,21 @@
+{
+    "title": "Content Manager",
+    "name": "content",
+    "package-type": "extension",
+    "type": "user",
+    "description": "Content manager and content types registry details.",
+    "short-description": "Content manager.",
+    "version": "1.1.1",
+    "repository": "https://github.com/arikaim/content-providers-extension.git",
+    "position": "2",
+    "install-order": 1,
+    "requires": {      
+    },
+    "admin-menu": {        
+        "title": "Content",
+        "icon": "list alternate outline icon",
+        "page-title": "Content Manager",
+        "page-icon": "list alternate outline icon",       
+        "component": "content::admin"
+    }
+}

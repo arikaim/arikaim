@@ -1,0 +1,40 @@
+{% set path = path|default('') %}
+{% set separator = separator|default(DIRECTORY_SEPARATOR) %}
+{% set show_home_icon = show_icon|default(true) %}
+{% set hide_links = hide_links|default(false) %}
+{% set icon = icon|default('folder open outline') %}
+{% set id = id|default('breadcrumb') %}
+{% set items = path|split(separator) %}
+{% set home_path = home_path|default('') %}
+
+<div class="ui breadcrumb {{ class }}" 
+    separator="{{ separator }}" 
+    id="{{ id }}" 
+    current-path="{{ path }}" 
+    home-path="{{ home_path }}">             
+    {% if show_home_icon == true %}
+        {% if hide_links != true %}
+            <a class="section breadcrumb-item" path="{{ home_path }}">
+                <i class="icon {{ icon }}"></i>
+            </a>
+        {% else %}
+            <div class="section">      
+                <i class="icon {{ icon }}"></i>
+            </div>   
+        {% endif %}
+    {% endif %}             
+    <div class="divider">{{ separator }}</div>      
+    <span class="breadcrumb-items">
+    {% for item in items %}         
+        {% if item is not empty %}
+            {% set open_path = open_path ~ separator ~ item %}
+            {% if hide_links != true %}           
+                <a class="section breadcrumb-item" path="{{ open_path }}" {{ params|attr }}>{{ item }}</a>
+            {% else %}
+                <div class="section breadcrumb-item">{{ item }}</div>
+            {% endif %}
+            <div class="divider">{{ separator }}</div>
+        {% endif %}          
+    {% endfor %} 
+    </span>               
+</div>

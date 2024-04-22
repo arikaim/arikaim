@@ -1,0 +1,19 @@
+{% set types = service('content').typeRegistry().getContentTypes() %}
+{% set name = name|default('content_type') %}
+{% set id = id|default('content_type_dropdown') %}
+<div class="ui search dropdown content-type-dropdown 
+    {{ class|default('basic button fluid') }}" 
+    id="{{ id }}">
+    <input name="{{ name }}" type="hidden">
+    <div class="text">
+        {{ selectet_text }}
+    </div>
+    <i class="dropdown icon"></i>
+    <div class="menu">
+        {% for item in types %}
+            <div class="item" data-value="{{ item.name }}">
+                {{ item.title }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

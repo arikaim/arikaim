@@ -1,0 +1,24 @@
+{
+    "title": "Categories",
+    "name": "category",
+    "package-type": "extension",
+    "type": "user",
+    "description": "Add, edit or remove site categories.",
+    "short-description": "Manage site categories.",
+    "version": "1.8.9",
+    "repository": "https://github.com/arikaim/category-extension.git",
+    "position": "2",
+    "install-order": 1,
+    "require": {
+        "extensions": [
+            "translations:optional"                      
+        ]
+    },
+    "admin-menu": {        
+        "title": "Categories",
+        "icon": "list",
+        "page-title": "Categories",
+        "page-icon": "list",       
+        "component": "category::admin"
+    }
+}

@@ -1,0 +1,26 @@
+{% set id = id|default('thumbnail_size_dropdown') %}
+{% set name = name|default('thumbnail_size') %}
+{% set size = size|default(15) %}
+{% set icon = icon|default('expand') %}
+{% set selected_text = (selected is empty) ? labels.select : items[selected].width ~ ' x ' ~ items[selected].height %}
+{% set skip = skip|default([]) %}
+<div class="ui dropdown {{ class }}" id="{{ id }}">
+    <input name="{{ name }}" type="hidden" value="{{ selected.uuid }}">   
+    <i class="icon {{ icon }}"></i>
+    <div class="text">{{ selected_text }}</div>
+    <div class="menu">       
+        {% for key, value in items %}          
+            {% if key not in skip %}        
+                <div 
+                    class="item" 
+                    data-value="{{ key }}" 
+                    data-size="{{ key }}" 
+                    data-width="{{ value.width }}" 
+                    data-height="{{ value.height }}">   
+                    {% set title = (value.width is not empty) ? value.width ~ ' x ' ~ value.height : labels.custom %}
+                    {{ title }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

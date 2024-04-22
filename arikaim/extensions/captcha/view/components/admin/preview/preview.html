@@ -1,0 +1,16 @@
+{% set current = getOption('captcha.current') %}
+{% set driver_name = (driver_name is empty) ? current : driver_name %}
+
+{% component 'semantic~tabs.vertical.content' %}
+<div class="ui form mt-8">
+    <div class="field">
+        <label>{{ labels.type }}</label>          
+        {{ component('system:admin.drivers.dropdown',{ selected: driver_name, category: 'captcha' }) }}
+    </div>
+</div>
+<div class="mt-4" id="preview_captcha">
+    {% if driver_name is not empty %}
+        {{ component('captcha::code.' ~ driver_name) }}
+    {% endif %}
+</div>
+{% endcomponent %}

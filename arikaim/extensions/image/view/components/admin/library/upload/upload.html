@@ -1,0 +1,25 @@
+<div class="w-full {{ class }}">
+    {{  component('image::upload',{ 
+            class: 'border border-solid rounded border-gray-300 p-2',
+            relation_id: relation_id,
+            relation_type: relation_type,
+            hide_path: true,
+            hide_title: true,
+            hide_protected: hide_protected,
+            file_name: file_name,  
+            button_class: button_class,
+            button_title: button_title,
+            deny_delete: deny_delete,
+            max_file_size: max_file_size,
+            target_path: target_path,
+            create_target_path: create_target_path,
+            resize_width: resize_width,
+            resize_height: resize_height,
+            hide_labels: hide_labels,
+            accept: accept,
+            image_id: image_id,
+            category_id: category_id,
+            private_image: (private_image is empty) ? false : private_image,
+        }) 
+    }}    
+</div>       

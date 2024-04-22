@@ -1,0 +1,24 @@
+{% set id = id|default('time_format') %}
+{% set default = default|default(labels.default) %}
+{% set config = loadConfig('date-time-format.json') %}
+{% set items = config.time %}
+
+<div class="ui basic button dropdown {{ class }}" id="{{ id }}">   
+    <i class="icon calendar"></i>
+    <i class="icon dropdown"></i>   
+    {% if selected is empty %}      
+        <div class="text">{{ default }}</div>
+    {% else %}
+        <div class="text">{{ "now"|date(selected) }}</div>
+    {% endif %}   
+    <div class="menu">   
+    {% for key, item in items %}
+        <div class="item {{ item.value|ifthen(selected,'active') }}" data-value="{{ item }}">
+            {{ "now"|date(item) }}
+            <div class="description">              
+                {{ key }}                    
+            </div>
+        </div>      
+    {% endfor %}
+    </div>
+</div>

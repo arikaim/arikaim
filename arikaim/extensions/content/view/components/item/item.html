@@ -1,0 +1,68 @@
+{% if content_type and content_id is not empty %}
+    {% set content_item = content().type(content_type).get(content_id) %}
+{% endif %}
+{% set fields = content_item.fields() %}
+{% set exclude = exclude|default([]) %}
+{% if fields is not iterable %}
+<div class="ui message">
+    {{ message }}
+</div>
+{% endif %}
+<div {{ class|attr('class') }}>
+    {% if hide_title != true %}
+        {{  component('semantic~segment-title',{ 
+                icon: icon, 
+                title: content_item.getType.getTitle(),
+                close_button: close_button, 
+            }) 
+        }}      
+    {% endif %}
+    <table class="ui table very basic definition {{ table_class }}">
+        <thead>
+            <tr>
+                <th class="four wide"></th>
+                <th></th>              
+            </tr>
+        </thead>
+        <tbody>
+            {% if hide_id != true %}
+            <tr>
+                <td class="right aligned">{{ labels.id }}</td>
+                <td>
+                    <div class="ui basic label">
+                        {{ content_item.getId() }}
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+            {% for field in fields %}   
+                {% set value = field.getValue() %}
+                {% if (value is not empty) or (hide_empty != true and value is empty) %}
+                    {% if field.getName() not in exclude %}
+                    <tr>
+                        <td class="right aligned flex flex-rows items-center">
+                            <div class="px-1">
+                                {% if value is not empty and hide_copy != true %}
+                                    {{  component('semantic~clipboard.copy',{ 
+                                            type: 'element',
+                                            focus_element: focus_element, 
+                                            selector: '#field_' ~ field.getName() 
+                                        }) 
+                                    }}
+                                {% endif %}
+                            </div>      
+                            <div class="flex-grow self-end">
+                                {{ field.getTitle() }}
+                            </div>                                                 
+                        </td>
+                        <td 
+                            style="word-break: break-all;" 
+                            class="break-all"
+                            id="field_{{ field.getName() }}">{{ value }}</td>                      
+                    </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>   
+</div>

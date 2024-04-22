@@ -1,0 +1,20 @@
+{% set type = type|default('github') %}
+{% if type == 'github' %}
+    {% set url = 'http://api.github.com/repos/' ~ package ~ '/releases/latest' %}
+{% elseif type == 'arikaim' %}
+    {% set url = arikaimStore().getPackageVersionUrl(package) %}
+{% endif %}
+
+{% set version = service('cache').fetch('repository.' ~ package ~ '.version') %}
+{% if version is empty %}
+    {% set data = fetch(url)|jsonDecode %}   
+    {% set saved = service('cache').save('repository.' ~ package ~ '.version',version,10) %}
+{% endif %}
+{% if type == 'github' %}
+    {% set version = data['tag_name'] %}
+{% elseif type == 'arikaim' %}
+    {% set version = data['result']['version'] %}
+{% endif %}
+<span {{ class|attr('class') }} id="version_value">
+    {{ version }}
+</span>

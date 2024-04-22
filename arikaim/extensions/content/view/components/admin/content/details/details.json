@@ -1,0 +1,13 @@
+{
+    "title": "Content Details",
+    "icon": "info",
+    "labels": {        
+        "id": "Id",          
+        "key": "Key",           
+        "title": "Title",         
+        "type": "Type",
+        "status": "Status",
+        "content": "Content Item",
+        "item_id": "Item Id"
+    }
+}

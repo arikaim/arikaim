@@ -1,0 +1,12 @@
+{% set user_id = service('access').getId() %}
+{% set image = createModel('Image','image').userQuery(user_id) %}
+{% set items = paginate(image,'images.library')  %}
+{% if items.getItems()|length == 0 %}
+    <div class="p-2 ui message">
+        {{ labels.empty }}
+    </div>
+{% else %}
+    {% for item in items.getItems() %}
+        {{ component('image::admin.library.view.card',{ image: item }) }}   
+    {% endfor %}    
+{% endif %} 

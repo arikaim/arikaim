@@ -1,0 +1,5 @@
+{% if status == 1 %}
+    <i class="icon middle aligned checkmark olive" {{ labels.enabled.title|attr('title') }}></i>
+{% else %}
+    <i class="icon middle aligned ban grey" {{ labels.disabled.title|attr('title') }}></i>
+{% endif %}

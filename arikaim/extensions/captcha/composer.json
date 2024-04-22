@@ -1,0 +1,20 @@
+{
+    "name": "arikaim/captcha-extension",
+    "description": "Arikaim CMS captcha service extension",
+    "keywords": ["Module", "Arikaim captcha extension"],
+    "type": "arikaim-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "php": ">=7.1",
+        "arikaim/installer": "^1.0.0",
+        "arikaim/captcha-module": "^1.0.0"
+    },
+    "extra": {
+        "path": "captcha"
+    }
+}

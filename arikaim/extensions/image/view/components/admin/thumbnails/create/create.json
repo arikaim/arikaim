@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "create": "Create",
+        "delete": "Delete",
+        "size": "Size",
+        "width": "Width",
+        "height": "Height"
+    }
+}

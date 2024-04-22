@@ -1,0 +1,49 @@
+<form class="ui equal width form" id="import_image_form">    
+    <input type="hidden" name="url" id="url" value="{{ url }}">
+    <input type="hidden" name="file_name" id="file_name" value="{{ file_name }}">
+    <input type="hidden" name="thumbnail_width" id="thumbnail_width" value="{{ thumbnail_width }}">
+    <input type="hidden" name="thumbnail_height" id="thumbnail_height" value="{{ thumbnail_height }}">
+    <input type="hidden" name="relation_id" id="relation_id" value="{{ relation_id }}">
+    <input type="hidden" name="relation_type" id="relation_type" value="{{ relation_type }}">
+    {% if custom_fields is iterable %}
+        {% for field in custom_fields %}
+            <input type="hidden" name="{{ field.name }}" id="{{ field.id|default(field.name) }}" value="{{ field.value }}">
+        {% endfor %}
+    {% endif %}
+
+    {% if hide_preview != true %}
+    <div class="field">      
+        <img class="ui rounded image medium bordered" src="{{ url }}">
+        <div class="mt-4">
+            <div class="ui basic label">
+                {{ url }}
+            </div>
+        </div>      
+    </div>
+    {% endif %}
+
+    {% if target_path is not empty %}
+    <div class="field">
+        <input type="hidden" name="target_path" id="target_path" value="{{ target_path }}">      
+        <label>{{ fields.path.label }}</label>
+        <div class="ui basic label">
+            ..{{ target_path|relativePath }} {{ file_name }}
+        </div>
+    </div>
+    {% endif %}   
+       
+    {% if create_thumbnail == true %}
+    <div class="field">
+        <label>{{ fields.thumbnail.label }}</label>
+        {{ component('image::thumbnails.size',{ skip: ['custom'], class: 'selection mini fluid' }) }}
+    </div> 
+    {% endif %}
+    <div class="field">
+        <label>{{ fields.protected.label }}</label>
+        <input type="checkbox" name="private" id="private" value="1">
+        <span class="px-1">
+            {{ fields.protected.placeholder }}
+        </span>
+    </div>
+    {{ component('semantic~form.footer',{ button_title: buttons.import }) }}   
+</form>

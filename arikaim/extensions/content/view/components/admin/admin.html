@@ -1,0 +1,10 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'content_button', title: labels.content, component: 'content::admin.content', icon: 'list', active: true },     
+            { id: 'providers_button', title: labels.providers, component: 'content::admin.providers.view', icon: 'database'},     
+            { id: 'types_button', title: labels.types, component: 'content::admin.types.view', icon: 'code' },       
+        ],
+        menu: { extension: 'content' },
+        content: { component: 'content::admin.content'} 
+    })
+}}

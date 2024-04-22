@@ -1,0 +1,32 @@
+{% set parent_id = parent_id|default(null) %}
+{% set model = createModel('Category','category') %}
+{% set items = model.where('parent_id','=',parent_id)  %}
+{% if branch is not empty %}
+    {% set items = items.where('branch','=',branch) %}
+{% endif %}
+{% set items = paginate(items,'category') %}  
+<div class="{{ parent_id|ifthen(null,'ui') }} accordion fluid m-0 p-0" 
+    style="padding:0px 0px 0px 20px!important;margin:0px 0px 0px 0px!important;"
+    {{ uuid|attr('id') }}>
+    {% for category in items.getItems() %}
+        <div class="title class-{{ category.uuid }} m-0">  
+            {{ component('category::admin.actions',{ category: category }) }} 
+            {% if category.status == 1 %}
+                <i class="icon middle aligned checkmark olive" {{ labels.enabled.title|attr('title') }}></i>
+            {% else %}
+                <i class="icon middle aligned ban grey" {{ labels.disabled.title|attr('title') }}></i>
+            {% endif %}
+            <i class="dropdown icon"></i>                    
+            <span class="font-bold">{{ category.title }}</span>                        
+        </div>     
+        <div 
+            parent-id="{{ category.id }}" 
+            id="item_{{ category.uuid }}" 
+            uuid="{{ uuid }}"
+            class="content class-{{ category.uuid }}" 
+            style="padding:0px 0px 0px 20px!important;margin:0px 0px 0px 0px!important;"
+            has-child="{{ category.hasChild() }}"> 
+            <span class="ui gray text">{{ category.description }}</span>  
+        </div>
+    {% endfor %}
+</div>

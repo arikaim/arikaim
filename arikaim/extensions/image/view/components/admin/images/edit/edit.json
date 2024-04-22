@@ -1,0 +1,15 @@
+{   
+    "title": {
+        "content": "Edit Image",
+        "icon": "edit"
+    },
+    "fields": {      
+        "category": {
+            "label": "Category",               
+            "placeholder": "Select image category"            
+        }      
+    },
+    "messages": {
+        "empty": "Image not selected"
+    }
+}

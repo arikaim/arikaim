@@ -1,0 +1,39 @@
+{% set selected = selected|default(getCurrentLanguage()) %}
+{% set selected = (selected is string) ? createModel('Language').findByColumn(selected,'code') : selected %}
+{% set data_type = data_type|default('code') %}
+{% set active_only = show_title|default(true) %}
+{% set show_title = show_title|default(false) %}
+{% set show_native_title = show_title|default(false) %}
+{% set id = id|default('language_dropdown') %}
+{% set class = class|default('icon inline top right pointing') %}
+
+{% set language = createModel('Language') %}
+{% set items = (active_only == true) ? language.where('status',1).orderBy('position').get() : language.orderBy('position').get() %}
+
+<div class="ui dropdown show-popup {{ class }}" id="{{ id }}" {{ tooltip|attr('data-content') }}>      
+    {% if name is not empty %}           
+        <div class="default text">{{ label.default }}</div>
+        <input name="{{ name }}" type="hidden" value="{{ selected.code }}">
+    {% else %}  
+        <i class="flag {{ selected.country_code }}" title="{{ selected.title }}"></i>
+    {% endif %}
+    {% if show_title == true %}      
+        {{ selected.title }}
+    {% endif %}
+    <div class="ui mini vertical menu">  
+        {% if title is not empty %} 
+            <div class="ui header">{{ title }}</div>
+        {% endif %}
+        {% for item in items %}
+            <div title="{{ item.title }}" class="item" data-value="{{ (data_type == 'code') ? item.code : item.uuid }}">            
+                <i class="flag {{ item.country_code|lower }}"></i>
+                {% set bold_style = (item.code == selected.code) ? 'font-bold' : '' %}             
+                {% if show_native_title == true %}
+                    <span class="{{ bold_style }}">{{ item.native_title }}</span>
+                {% else %}
+                    <span class="{{ bold_style }}">{{ item.title }}</span>
+                {% endif %}
+            </div>      
+        {% endfor %}
+    </div>
+</div>

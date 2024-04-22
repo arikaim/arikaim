@@ -1,0 +1,25 @@
+{% set posts = createModel('Posts','blog').softDeletedQuery().get() %}  
+{% if posts|length == 0 %}
+    <tr>
+        <td>..</td>
+    </tr>
+{% endif %}
+{% for post in posts %}
+    <tr id="row_{{ post.uuid }}" class="item-{{ post.item.uuid }}">
+        <td>
+            <button class="ui icon button basic restore-post" uuid="{{ post.uuid }}" {{ buttons.restore|attr('title') }}>
+                <i class="trash restore olive alternate icon"></i>
+            </button>    
+        </td>
+        <td>
+            <i class="icon pen fancy"></i>
+            {{ labels.post }}
+        </td>    
+        <td>
+            {{ post.date_created|dateFormat }}
+        </td>                         
+        <td>
+            {{ post.title }}
+        </td>    
+    </tr>
+{% endfor %}

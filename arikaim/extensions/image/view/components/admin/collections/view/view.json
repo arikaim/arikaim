@@ -1,0 +1,15 @@
+{
+    "tooltip": {    
+        "create": "Create Collection" 
+    },
+    "columns": {        
+        "actions": "Actions",
+        "title": "Title",
+        "slug": "Slug",
+        "images": "Images",
+        "owner": "Owner",       
+        "description": "Description",
+        "date": "Date Created",
+        "edit": "Edit"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "content": {
+            "label": "Content Provider"
+        },
+        "type": {
+            "label": "Content Type"
+        }
+    }
+}

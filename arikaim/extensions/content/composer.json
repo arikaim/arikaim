@@ -1,0 +1,18 @@
+{
+    "name": "arikaim/content-providers-extension",
+    "description": "Arikaim CMS Content Providers Extension",
+    "keywords": ["Module", "Arikaim CMS"],
+    "type": "arikaim-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "require": {
+        "arikaim/installer": "*"       
+    },
+    "extra": {
+        "path": "content"
+    }
+}

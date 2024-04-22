@@ -1,0 +1,6 @@
+{% set posts = createModel('Posts','blog').getNotDeletedQuery() %}
+{% set items = paginate(posts,'posts') %}
+
+{% for item in items.getItems() %}
+    {{ component('blog::admin.posts.view.row',{ item: item }) }}
+{% endfor %}

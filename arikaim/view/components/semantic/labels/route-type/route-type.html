@@ -1,0 +1,15 @@
+{% set class = class|default('tiny left pointing') %}
+{% if type == 1 %}
+    <div class="ui {{ class }} blue label" {{ labels.title|attr('title') }}>{{ labels.page }}</div>
+{% elseif type == 2 %}
+    <div class="ui {{ class }} label" {{ labels.title|attr('title') }}>{{ labels.api }}</div>
+{% elseif type == 3 %}
+    <div class="ui {{ class }} green label" {{ labels.title|attr('title') }}>
+        <i class="icon home"></i>
+        {{ labels.home }}
+    </div>
+{% elseif type == 4 %}
+    <div class="ui {{ class }} label" {{ labels.title|attr('title') }}>
+        {{ labels.admin }}
+    </div>
+{% endif %}

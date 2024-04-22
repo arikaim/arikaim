@@ -1,0 +1,20 @@
+{% set skip = skip|default([]) %} 
+{% set id = id|default('view_type') %}
+{% set selected = selected|default(getViewType(namespace)) %}
+{% set show_title = show_title|default(false) %}
+{% set class = class|default('inline') %}
+<div class="ui icon dropdown view-type {{ class }}" {{ title|attr('title') }} id="{{ id }}" {{ namespace|attr('namespace') }}>
+    <span class="text">
+        <i class="icon view-type-icon {{ items[selected].icon }}"></i>
+    </span>
+    <div class="ui menu">
+    {% for item in items %}   
+        <div class="item {{ item.title|ifthen(selected,'active') }}" data-value="{{ item.value }}">
+            <i class="icon {{ item.icon }}"></i>
+            {%- if item.title is not empty and show_title == true -%}
+            {{ item.title }}
+            {%- endif -%}
+        </div>    
+    {% endfor %}      
+    </div>
+</div>

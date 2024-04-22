@@ -1,0 +1,14 @@
+<div class="flex flex-row items-starft">
+    <div class="flex flex-col flex-grow ">
+        <div class="content-end place-content-end self-end">
+            <button 
+                class="ui mini icon circular blue button nlp-button" 
+                title="{{ labels.nlp }}">
+                <i class="lightbulb outline icon"></i>
+            </button>
+        </div>
+        {{ component('blog::admin.posts.form',{ uuid: uuid }) }}
+    </div>
+    <div class="w-96 hidden pl-2" id="nlp_content">
+    </div>       
+</div>

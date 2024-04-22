@@ -1,0 +1,9 @@
+<div class="ui two column grid">
+    <div class="column">
+        <div class="ui segment mt-2" id="form_content">       
+            {% if uuid is not empty %}
+                {{ component('category::admin.form',{ uuid: uuid }) }}
+            {% endif %}   
+        </div>
+    </div>
+</div>

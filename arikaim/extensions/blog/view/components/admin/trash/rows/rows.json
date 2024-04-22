@@ -1,0 +1,9 @@
+{
+    "buttons": {
+        "restore": "Restore"           
+    },
+    "labels": {
+        "page": "Page",
+        "post": "Post"
+    }      
+}

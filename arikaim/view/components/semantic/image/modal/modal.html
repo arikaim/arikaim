@@ -1,0 +1,15 @@
+<div class="ui modal image-preview-modal {{ class }}" id="image_preview_modal">   
+    {% if hidde_title != true %}
+    <i class="close icon"></i>
+    <div class="header {{ header_class }}" id="image_modal_header">
+        <i class="image-modal-icon icon blue large image outline {{ dialogs.confirm.icon }}"></i>
+        <span class="image-modal-title">{{ labels.title }}</span>       
+    </div>  
+    {% endif %}
+    <div class="content image-modal-description" id="image_modal_content">
+      <img class="image rounded bordered" data-src="" id="image_preview">
+    </div>
+    <div class="actions">     
+        <button class="ui blue approve button {{ buttons.close.class }}">{{ buttons.close.content }}</button>
+    </div>
+</div>

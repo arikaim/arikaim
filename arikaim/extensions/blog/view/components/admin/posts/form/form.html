@@ -1,0 +1,70 @@
+{% if uuid is not empty %}
+    {% set post = createModel('Posts','blog').findById(uuid) %}
+{% endif %}
+<form class="ui form" id="editor_form">
+    <input type="hidden" value="{{ page }}" name="page" id="page">
+    <input type="hidden" value="{{ uuid }}" name="uuid" id="uuid">
+    <div class="two fields">
+        <div class="field">
+            {% if uuid is not empty %}
+                <label>{{ labels.date }}</label>
+                <div class="flex flex-row items-center">
+                    {% if post.date_created is not null %}
+                    <div class="flex flex-row items-center px-4">
+                        <span class="px-2">{{ labels.created }}</span>
+                        <span class="ui basic horizontal label">
+                            {{ post.date_created|dateFormat }}
+                        </span>
+                    </div>
+                    {% endif %}                
+                    {% if post.date_updated is not null %}
+                    <div class="flex flex-row items-center px-4">
+                        <span class="px-2">{{ labels.updated }}</span>
+                        <span class="ui basic horizontal label">
+                            {{ post.date_updated|dateFormat }}
+                        </span>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div> 
+        <div class="field">
+              
+        </div>    
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label>{{ labels.title }}</label>
+            <input 
+                rule="minLength[2]" 
+                id="title"
+                name="title" 
+                type="text" 
+                placeholder="{{ placeholders.title }}" 
+                value="{{ post.title }}">
+        </div>
+        {% if uuid is not empty %}
+        <div class="field">
+            <label>{{ labels.category }}</label>
+            {% set category = createModel('Category','category').getList(null,'blog') %}
+            {{  component('system:admin.orm.relations.fields.dropdown',{ 
+                    model: 'CategoryRelations',
+                    extension: 'category',
+                    type: 'post',
+                    relation_id: post.id,
+                    items: category,
+                    class: 'fluid'
+                }) 
+            }}   
+        </div>
+        {% endif %}
+        <div class="three wide field">
+            <label>{{ labels.status }}</label>
+            {{ component('blog::admin.status.dropdown',{ id: 'post_status', selected: post.status, uuid: uuid, class: 'p-2' }) }}   
+        </div>        
+    </div>
+    <div class="field">
+        <textarea name="content" id="editor">{{ post.content }}</textarea>     
+    </div>
+    {{ component('semantic~form.footer') }}    
+</form>

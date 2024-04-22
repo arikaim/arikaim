@@ -1,0 +1,25 @@
+{% set post = createModel('Posts','blog').findById(uuid) %}
+{% set title = title ~ ' ' ~ post.title %}
+{% component 'semantic~panel' %}
+    <div class="ui stackable tabular menu product-edit-tabs">      
+        <div class="item link active blog-post-tab-item" component="blog::admin.posts.edit.content" uuid="{{ uuid }}">
+            <i class="icon stream blue"></i>
+            {{ labels.content }}     
+        </div>   
+        <div class="item link blog-post-tab-item" component="blog::admin.posts.edit.summary" uuid="{{ uuid }}">
+            <i class="file alternate outline icon blue"></i>
+            {{ labels.summary }}     
+        </div> 
+        <div class="item link blog-post-tab-item" component="blog::admin.posts.edit.image" uuid="{{ uuid }}">
+            <i class="image icon blue"></i>
+            {{ labels.image }}     
+        </div>    
+        <div class="item link blog-post-tab-item" component="blog::admin.posts.edit.meta" uuid="{{ uuid }}">
+            <i class="code icon blue"></i>
+            {{ labels.meta }}     
+        </div> 
+    </div>
+    <div class="ui active tab" id="blog_post_edit_content">    
+        {{ component('blog::admin.posts.edit.content',{ uuid: uuid }) }}
+    </div> 
+{% endcomponent %}

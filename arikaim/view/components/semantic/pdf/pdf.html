@@ -1,0 +1,62 @@
+{% set width = width|default('100%') %}
+{% set height = height|default('100%') %}
+{% set class = class|default('p-1 w-full h-full') %}
+{% set navbar_class = navbar_class|default('icon menu fixed') %}
+
+<div class="ui pdf-view-navbar {{ navbar_class }}"> 
+    <div class="item pdf-view-title">
+        <div class="ui header">
+            <div class="content">
+                {% if hide_icon != true %}
+                    <i class="file outline pdf icon blue"></i>
+                {% endif %}
+                {{ (title is not empty) ? title }}
+                <span id="pdf_view_file">{{ file_name }}</span>
+            </div>
+        </div>              
+    </div>
+    
+    <div class="item">
+        <span class="font-bold">{{ labels.zoom }}</span>
+        <span class="pdf-view-page-zoom pl-2 pr-2"></span>
+        <div class="ui icon buttons">
+            <button class="ui button pdf-view-zoom-plus show-popup" title="{{ labels.plus }}">
+                <i class="search plus icon {{ buttons_icon }}"></i>     
+            </button>         
+            <button class="ui button pdf-view-zoom-minus show-popup" title="{{ labels.minus }}">            
+                <i class="search minus icon {{ buttons_icon }}"></i>     
+            </button>
+        </div>
+    </div>  
+    <div class="item" id="pdf_view_page">
+        <span class="font-bold">{{ labels.page }}</span>      
+        <div classs="ui page-panel hidden">
+            <span class="pdf-view-page pl-1"></span>
+            {{ labels.of }}
+            <span class="pdf-view-total-pages"></span>
+        </div>
+    </div>    
+    <div class="item right aligned">       
+        <div class="ui icon buttons">
+            <button class="ui button pdf-view-first-page show-popup" title="{{ labels.first }}">
+                <i class="step backward icon {{ buttons_icon }}"></i>     
+            </button>         
+            <button class="ui button pdf-view-prev-page show-popup" title="{{ labels.prev }}">
+                <i class="caret left icon {{ buttons_icon }}"></i>     
+            </button>
+            <button class="ui button pdf-view-next-page show-popup" title="{{ labels.next }}">
+                <i class="caret right icon {{ buttons_icon }}"></i>    
+            </button>
+            <button class="ui button pdf-view-last-page show-popup" title="{{ labels.last }}">
+                <i class="step forward icon {{ buttons_icon }}"></i>     
+            </button>  
+        </div>
+    </div>
+</div>
+<div id="pdf_view_content" class="{{ class }}">
+    <canvas id="pdf_view_canvas" class="pdf-view-canvas {{ cnavas_class }}" width="{{ width }}" height="{{ height }}">
+    </canvas>
+    <div class="ui dimmer inverted transition visible active pdf-view-loader">
+        <div class="ui loader slow medium elastic"></div>
+    </div>
+</div>

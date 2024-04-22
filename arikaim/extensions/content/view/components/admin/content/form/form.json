@@ -1,0 +1,16 @@
+{
+    "fields": {
+        "title": {
+            "label": "Title",
+            "placeholder": "Enter Title"
+        },
+        "type": {
+            "label": "Type",
+            "placeholder": "Seleect type"
+        },
+        "key": {
+            "label": "Key",
+            "placeholder": "Enter content key"
+        }
+    }
+}

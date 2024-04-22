@@ -1,0 +1,21 @@
+<div 
+    class="ui card" 
+    id="row_{{ relation_uuid|default(image.uuid) }}">
+    <div class="image">
+        <img src="{{ url(image.thumbnail(64,64).src) }}">   
+    </div>
+    <div class="extra content">
+        <button 
+            class="ui basic button mini icon set-main" 
+            title="{{ labels.main }}"                   
+            image-id="{{ image.id }}">
+            <i class="icon home"></i>         
+        </button>
+        <button 
+            class="ui basic button mini icon add-image-relation" 
+            title="{{ labels.add }}"
+            image-id="{{ image.id }}">
+            <i class="icon plus"></i>
+        </button>          
+    </div>   
+</div>    

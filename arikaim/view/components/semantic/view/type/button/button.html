@@ -1,0 +1,16 @@
+{% set skip = skip|default([]) %} 
+{% set id = id|default('view_type') %}
+{% set selected = selected|default(getViewType(namespace)) %}
+{% set show_title = show_title|default(false) %}
+{% set class = class|default('basic icon') %}
+<button 
+    class="ui button view-type {{ class }}" 
+    id="{{ id }}" 
+    {{ namespace|attr('namespace') }} 
+    data-value="{{ items[selected].value }}" 
+    {{ title|attr('title') }}>
+    <i class="icon view-type-icon {{ items[selected].icon }}"></i>
+    {% if show_title == true %}
+        {{ item[selected].title }}
+    {% endif %}
+</button>

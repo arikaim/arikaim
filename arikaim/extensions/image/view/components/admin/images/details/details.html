@@ -1,0 +1,71 @@
+{% if uuid is not empty %}
+    {% set image = createModel('Image','image').findById(uuid) %}
+{% endif %}
+{% component 'semantic~panel' %}
+    <div class="ui image p-4 bordered">
+        <img src="{{ image.thumbnail(64,64).src }}">
+    </div>
+    <table class="ui table very basic definition">
+        <tbody>
+            <tr>
+                <td class="right aligned">{{ labels.id }}</td>
+                <td>
+                    <div class="ui basic label">{{ image.id }}</div>
+                    {{ image.uuid }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.status }}</td>
+                <td>
+                    {{ component('semantic~status.label',{ status: image.status }) }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.path }}</td>
+                <td>
+                    {{ image.file_name }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.file_name }}</td>
+                <td>
+                    {{ image.base_name }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.type }}</td>
+                <td>
+                    {{ image.mime_type }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.size }}</td>
+                <td>
+                    {% if image.width is empty and image.height is empty %}
+                        N/A
+                    {% else %}
+                        {{ image.width }} x {{ image.height }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.file_size }}</td>
+                <td>
+                    {{ image.file_size|fileSize }}
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">{{ labels.owner }}</td>
+                <td>
+                    {{ image.user.user_name_or_email }}
+                </td>
+            </tr>  
+            <tr>
+                <td class="right aligned">{{ labels.src }}</td>
+                <td>
+                    {{ url(image.src) }}
+                </td>
+            </tr>           
+        </tbody>
+    </table>
+{% endcomponent %}

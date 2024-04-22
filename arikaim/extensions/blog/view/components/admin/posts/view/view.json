@@ -1,0 +1,17 @@
+{
+    "title": {
+        "content": "View",
+        "icon": "list"              
+    },
+    "tooltip": {
+        "create": "Create"
+    },
+    "columns": {
+        "action": "Action",
+        "status": "Status",
+        "edit": "Edit",
+        "title": "Title",
+        "user": "User",      
+        "date": "Date"
+    }
+}

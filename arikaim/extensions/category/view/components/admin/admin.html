@@ -1,0 +1,9 @@
+{{  component('semantic~tabs',{ 
+        items: [
+            { id: 'language_button',icon: 'list',active: true,component: 'category::admin.menu',params: { language: current_language },title: labels.view }
+        ],
+        menu: { extension: 'category' },
+        help: { component: 'category::admin.help', extension: 'category' }, 
+        content: { component: 'category::admin.menu' } 
+    })
+}}

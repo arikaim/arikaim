@@ -1,0 +1,20 @@
+<div 
+    class="pb-4 pl-4" 
+    id="{{ component_id }}">
+    <button 
+        title="{{ tooltips.settings }}"
+        class="ui basic mini icon button dashboard-settings">
+        <i class="icon cog"></i>
+    </button>        
+</div>
+<div class="flex flex-row items-start">
+    <div 
+        class="hidden w-64 p-2" 
+        id="dashboard_settings_content">
+    </div>
+    <div 
+        class="px-4 flex-grow" 
+        id="dashboard_content">
+        {{ component('dashboard::admin.dashboard.items') }}
+    </div>       
+</div>

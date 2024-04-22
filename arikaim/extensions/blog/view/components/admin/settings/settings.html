@@ -1,0 +1,9 @@
+{{  component('semantic~tabs.vertical',{ 
+    items: [ 
+        { title: labels.nlp, component: 'blog::admin.settings.nlp', active: true, icon: 'robot' }
+    ], 
+        menu: { id: 'settings_menu' }, 
+        item_class: 'settings-item',
+        content: { id: 'settings_content', component: 'blog::admin.settings.nlp' } 
+    })
+}}

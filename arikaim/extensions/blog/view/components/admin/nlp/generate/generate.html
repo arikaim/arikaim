@@ -1,0 +1,18 @@
+{% set driver = service('driver').create('huggingface') %}
+{% set result = driver.generateText(text,{ max_new_tokens: random(10, 200), num_return_sequences: 5 }) %}
+<div>
+    {% for item in result %}
+    <div>
+        {{  component('semantic~clipboard.copy',{ 
+                selector: '#generated_text', 
+                type: 'element',
+                escape: true,
+                class: 'ui mini compact basic icon blue button' 
+            }) 
+        }} 
+        <p id="generated_text">
+            {{ item }}
+        </p>
+    </div>
+    {% endfor %}  
+</div>

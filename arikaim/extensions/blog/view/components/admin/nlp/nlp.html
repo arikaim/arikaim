@@ -1,0 +1,25 @@
+<div class="ui segment">
+    {{ component('semantic~segment-title',{ title: title, icon: 'file alternate outline blue', close_button: true }) }}
+    {% if hasModule('nlp') == true %}
+    <div class="mt-4">
+        <div class="ui form">
+            <div class="field">
+                <label>{{ labels.text }}</label>
+                <div class="ui action input">
+                    <input type="text" id="text" placeholder="{{ labels.placeholder }}">
+                    <a class="ui basic blue button generate-text-button">
+                        {{ buttons.generate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="mt-4" id="text_generation_result">
+    </div>
+    {% else %}
+    <div class="ui warning message">
+        {{ labels.module }}
+    </div>
+    {% endif %}
+</div>

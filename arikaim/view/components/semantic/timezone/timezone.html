@@ -1,0 +1,17 @@
+{% set items = getTimeZonesList() %}
+{% set id = id|default('time_zone') %}
+{% set default = default|default(default.text) %}
+{% set name = name|default(id) %}
+{% set selected_text = selected|default(default) %}
+
+<div class="ui basic search button dropdown {{ class }}" id="{{ id }}">   
+    <input name="{{ name }}" type="hidden" value="{{ selected }}">
+    <i class="icon world"></i>
+    <span class="text active">{{ selected_text }}</span>
+    <i class="icon dropdown"></i>   
+    <div class="menu">          
+        {% for item in items %}
+            <div class="item {{ item|ifthen(selected,'active') }}" data-value="{{ item }}">{{ item }}</div>      
+        {% endfor %}
+    </div>
+</div>

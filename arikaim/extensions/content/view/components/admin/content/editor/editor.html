@@ -1,0 +1,15 @@
+{% set provider = service('content').getDefaultProvider(content_type) %}
+{% if provider is not empty %}
+    {% set content = provider.get(content_id) %}
+{% endif %}
+
+<form class="ui form" id="content_edit_form">
+    <input type="hidden" name="key" value="{{ key }}">
+    {% for field in fields %} 
+        {{ component('content::admin.content.editor.field',{ 
+            field: field,
+            value: (content is empty) ? null : content.getValue(field.getName())
+        }) }}
+    {% endfor %}
+    {{ component('semantic~form.footer') }}   
+</form>

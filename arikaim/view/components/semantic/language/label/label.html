@@ -1,0 +1,24 @@
+{% set show_label = show_label|default(true) %}
+{% set text_class = text_class|default('font-bold') %}
+
+{% set icon = icon|default('globe') %}
+{% if model is empty %}
+    {% set model = createModel('Language') %}
+{% endif %}
+{% set model = model.findByColumn(language,'code') %}
+
+<div class="ui icon label {{ class }}">
+    {% if show_icon == true %}
+        <i class="icon {{ icon }}"></i>
+    {% endif %}  
+    {% if show_label == true %}
+        {{ (show_title == true) ? title : '' }}
+        {% set conuntry_code = (model.country_code is not empty) ? model.country_code : language %}
+        <span class="font-bold">           
+            <i class="flag {{ conuntry_code|lower }}"></i>
+            <span class="{{ text_class }}">{{ language }}</span>
+        </span>
+    {% else %}
+        <span class="{{ text_class }}">{{ language }}</span>
+    {% endif %}
+</div>  

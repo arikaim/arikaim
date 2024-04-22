@@ -1,0 +1,10 @@
+{  
+    "title": {
+        "content": "Settings",
+        "icon": "cogs"       
+    },
+    "labels": {
+        "page": "Page",
+        "nlp": "NLP"
+    }
+}

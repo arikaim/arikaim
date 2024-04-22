@@ -1,0 +1,33 @@
+{
+    "restore": "Item was restored successfully.",
+    "metatags": "Metatags saved successfully.",
+    "post": {
+        "update": "Saved.",
+        "add": "Post was created successfully.",
+        "delete": "Post was deleted successfully.",
+        "metatags": "Post meta tags was saved successfully.",
+        "restore": "Post was restored successfully."
+    },
+    "errors": {
+        "metatags": "Error save metatags",
+        "post": {
+            "id": "Not vlaid post Id",
+            "exist": "Post with this title exist.",
+            "update": "Can't save post.",
+            "add": "Can't create post.",
+            "metatags": "Can't save post metatags.",
+            "restore": "Can't restore post.",
+            "delete": "Can't delete post."
+        }      
+    },
+    "messages": {
+        "remove": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove post '<b><% title %></b>'."
+        },
+        "page": {
+            "title": "Confirm Remove",
+            "content": "Confirm remove page '<b><% title %></b>'."
+        }
+    }
+}

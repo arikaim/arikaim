@@ -1,0 +1,23 @@
+{
+    "title": "Captcha Service",
+    "name": "captcha",
+    "package-type": "extension",
+    "type": "system",
+    "description": "Captcha service.",
+    "short-description": "Captcha service.",
+    "version": "1.1.2",
+    "repository": "https://github.com/arikaim/captcha-extension.git",
+    "position": "2",
+    "requires": {
+        "module": [
+            "captcha"
+        ]
+    },
+    "admin-menu": {        
+        "title": "Captcha",
+        "icon": "fingerprint",
+        "page-title": "Captcha",
+        "page-icon": "fingerprint",       
+        "component": "captcha::admin"
+    }
+}

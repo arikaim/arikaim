@@ -1,0 +1,21 @@
+{
+    "name": "arikaim/content-providers",
+    "description": "Arikam CMS content providers manager.",
+    "keywords": ["cms", "content-providers"],
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Konstantin Atanasov",
+        "email": "info@arikaim.com",
+        "homepage": "http://arikaim.com"
+    }],
+    "homepage": "http://arikaim.com",
+    "require": {
+        "php": ">=7.2"     
+    },
+    "autoload": {       
+        "psr-4": {
+            "Arikaim\\Core\\Content\\": ""
+        }
+    }
+}

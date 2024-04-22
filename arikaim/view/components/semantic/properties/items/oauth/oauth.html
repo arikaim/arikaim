@@ -1,0 +1,21 @@
+{% if hasExtension('oauth') == false %}
+<div class="ui warning message">
+    {{ msssage.warning }}
+</div>
+{% else %}
+
+{% set access_token = (update == true) ? getSessionVar('access-token') : property.value %}
+<div class="field {{ property.required|ifthen(true,'required') }}">      
+    <label>{{ property.title }}</label>   
+    <div class="ui action input">     
+        <input {{ rule|attr('rule') }} readonly type="text" name="{{ field_name }}" value="{{ access_token }}"> 
+        <a 
+            class="ui button blue oauth-authorize-button"
+            provider="{{ oauth_provider|default('google') }}"
+            config-name="{{ oauth_config }}"
+            action="get-token">
+            {{ labels.authorize }}
+        </a>
+    </div>              
+</div>   
+{% endif %}

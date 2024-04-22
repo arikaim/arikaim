@@ -1,0 +1,21 @@
+{
+    "fields": {        
+        "path": {
+            "label": "Destination Path",               
+            "placeholder": "Enter target path"            
+        },  
+        "title": {
+            "label": "Title",               
+            "placeholder": "Enter media title"            
+        }      
+    },
+    "labels": {
+        "delete": "Deny delete",
+        "resize": "Resize"
+    },
+    "buttons": {
+        "save": {
+            "content": "Upload"
+        }
+    }
+}

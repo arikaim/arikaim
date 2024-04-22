@@ -1,0 +1,29 @@
+{% if hasModule('qrcode') == false %}
+    <div class="ui basic message">
+        <span class="ui text red">
+            {% error 'QrCode module not installed' %}
+        </span>       
+    </div>
+{% endif %}
+{% component 'semantic~tabs.vertical.content' %}
+    {% set title = title %}
+    {% set class = 'seven wide' %}
+    <div class="mt-4 p-2">
+        <form class="ui form" id="qr_code_form">
+            <div class="field">
+                <label>{{ fields.data.label }}</label>
+                <textarea rule="empty" name="data" id="data" rows="5" cols="5"></textarea>
+            </div>          
+            {{ component('semantic~form.footer',{ button_title: buttons.generate }) }}   
+        </form>
+    </div>   
+    <div class="ui image rounded" id="qr_code_content">
+        <div class="mt-4 p-2">
+            <img 
+                style="border:0px"
+                class="ui image borderless" 
+                width="240px" 
+                height="240px" id="qrcode_image"/>
+        </div>
+    </div>
+{% endcomponent %}

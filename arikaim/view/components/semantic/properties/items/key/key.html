@@ -1,0 +1,14 @@
+{% set value = value|default(property.value|default('..')|sliceLabel(8,'...')) %}
+<div class="flex-grow px-2">
+    {{ value }}
+</div>
+<div class="self-align-right">
+    <a 
+        title="{{ labels.change }}"
+        field="{{ property.name|default(field_name) }}"
+        group="{{ property.group|default(group) }}"
+        preview-value="{{ value }}"
+        class="ui mini compact edit-key-button basic icon button">
+        <i class="icon blue edit"></i>
+    </a>
+</div>

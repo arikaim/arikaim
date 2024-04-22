@@ -1,0 +1,8 @@
+{
+    "msssage": {
+        "warning": "Oauth extension not installed!"
+    },
+    "labels": {
+        "authorize": "Authorize"
+    }
+}

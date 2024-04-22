@@ -1,0 +1,42 @@
+{% if uuid is not empty %}
+    {% set category = createModel('Category','category') %}
+    {% set category = category.findById(uuid) %}
+    {% set parent_id = category.parent_id|default(null) %}
+    {% set branch = category.branch|default(branch) %}
+{% endif %}
+{% set parent_id = parent_id|default(null) %}
+
+<form class="ui equal width form" id="category_form">  
+    <input type="hidden" name="uuid" id="uuid" value="{{ uuid }}">
+    <div class="field mt-4">
+        <label>{{ parent.label }}</label>
+        <span id="parent_category">
+        {{  component("category::dropdown",{ 
+                selected: parent_id,            
+                name: 'parent_id',           
+                class: 'basic',
+                root: { title: '/' }            
+            }) 
+        }}
+        </span>
+    </div>
+    <div class="field required">
+        <label>{{ title.label }}</label>
+        <input type="text" name="title" id="title" {{ title.placeholder|attr('placeholder') }} value="{{ category.title }}">  
+    </div>   
+    {{  component('semantic~form.fields.slug',{ 
+            slug_source: 'title',
+            url_path: '',
+            label: 'Slug',
+            show_url: false  
+        }) 
+    }}  
+    <div class="field">
+        <label>{{ labels.branch.label }}</label>
+        <div class="ui action input">
+            <input type="text" name="branch" id="branch" {{ labels.branch.placeholder|attr('placeholder') }} value="{{ branch }}"> 
+            {{ component('category::admin.branch',{ class: ' compact selection',label_choice: labels.choose }) }} 
+        </div>
+    </div>                   
+    {{ component('semantic~form.footer') }}   
+</form>

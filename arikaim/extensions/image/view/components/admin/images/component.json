@@ -1,0 +1,13 @@
+{
+    "include": {
+        "js": [
+            "semantic~search",
+            "system:order"            
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "redirect": "/admin",
+        "permission": "ControlPanel:full"           
+    }
+}

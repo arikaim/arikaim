@@ -1,0 +1,11 @@
+{% component 'semantic~tabs.vertical.content' %}
+<div class="p-2">
+    <div class="mt-2" id="form_content"> 
+        {{  component('category::admin.form',{ 
+                parent_id: parent_id,
+                branch: branch    
+            }) 
+        }}
+    </div> 
+</div>
+{% endcomponent %}

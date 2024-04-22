@@ -1,0 +1,12 @@
+{
+    "include": {
+        "js": [
+            "image::admin.collections"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "redirect": "/admin",
+        "permission": "ControlPanel:full"           
+    }
+}
