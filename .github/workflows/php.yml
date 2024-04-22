@@ -1,6 +1,0 @@
-- uses: "ramsey/composer-install@v3"
-  with:
-    composer-options: "--no-dev --ignore-platform-reqs --optimize-autoloader"
-    php-version: "8.1"
-    dest_branch: 'download'
-    source_branch: 'master'
