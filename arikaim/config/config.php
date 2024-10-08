@@ -25,9 +25,9 @@ return [
         'dateFormat'		=> 'F j, Y',
 		'timeFormat'		=> 'g:i:s A',
 		'numberFormat'		=> 'accounting',
-        'logger'			=> true,
+        'logger'			=> false,
         'sessionInterval'	=> '2',
-        'loggerHandler'		=> 'file'             
+        'loggerHandler'		=> 'db'             
 	],
 	// database settings
 	'db' => [
