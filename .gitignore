@@ -1,5 +1,4 @@
 node_modules
-server
 composer.lock
 arikaim/cache/*
 arikaim/logs/*
