@@ -34,7 +34,8 @@
         "arikaim/code-mirror-library": "*",
         "arikaim/markdown-editor-library": "^1.0.0",
         "arikaim/editors-library": "*",
-        "arikaim/icons-components": "*"
+        "arikaim/icons-components": "*",
+        "arikaim/calendar-library": "*"
     },
     "config": {
         "allow-plugins": {
