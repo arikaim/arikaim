@@ -15,6 +15,7 @@ return [
 		'defaultLanguage'	=> 'en',
         'cache'				=> false,     
         'primaryTemplate'	=> 'blog',
+        'templateTheme'		=> 'default',
         'cacheDriver'       => 'void',
         'logEvents'			=> false,
         'console'           => [
